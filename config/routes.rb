@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :stu_work_experiences
+
   get 'pages/about'
   get 'pages/contact'
 
