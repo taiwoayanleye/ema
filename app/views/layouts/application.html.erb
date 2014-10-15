@@ -13,8 +13,13 @@
 
   <body>
 
+    <!-- Flash messages for devise -->
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <!-- Header file -->
     <%= render 'layouts/header' %>
     <%= yield %>
+    <!-- Footer file -->
     <%= render 'layouts/footer' %>
     
     <%= javascript_include_tag "application" %>
