@@ -4,12 +4,14 @@ CREATING MVC
 Student work experience
 column:5
 {company:string, position:string, start_date:date, end_date:date, description:text}
+command:
 [rails generate scaffold StuWorkExperience company:string position:string start_date:date end_date:date description:text]
 
 2
 Skill
 column:1
 {description:string}
+command:
 [rails generate scaffold skill description:string]
 
 
