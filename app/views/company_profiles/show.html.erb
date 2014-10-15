@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Company name:</strong>
+  <%= @company_profile.company_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @company_profile.email %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @company_profile.description %>
+</p>
+
+<p>
+  <strong>Company type:</strong>
+  <%= @company_profile.company_type %>
+</p>
+
+<p>
+  <strong>Number of employees:</strong>
+  <%= @company_profile.number_of_employees %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @company_profile.website %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @company_profile.location %>
+</p>
+
+<p>
+  <strong>Reg code:</strong>
+  <%= @company_profile.reg_code %>
+</p>
+
+<p>
+  <strong>Verified:</strong>
+  <%= @company_profile.verified %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @company_profile.image %>
+</p>
+
+<%= link_to 'Edit', edit_company_profile_path(@company_profile) %> |
+<%= link_to 'Back', company_profiles_path %>

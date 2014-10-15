@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141015224840) do
+ActiveRecord::Schema.define(version: 20141015225149) do
+
+  create_table "company_profiles", force: true do |t|
+    t.string   "company_name"
+    t.string   "email"
+    t.text     "description"
+    t.string   "company_type"
+    t.integer  "number_of_employees"
+    t.string   "website"
+    t.string   "location"
+    t.string   "reg_code"
+    t.boolean  "verified"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "skills", force: true do |t|
     t.string   "description"
