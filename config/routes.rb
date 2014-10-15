@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :student_profiles
+
+  resources :skills
+
   resources :stu_work_experiences
 
   get 'pages/about'
