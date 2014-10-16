@@ -43,13 +43,13 @@ class JobPostingsController < ApplicationController
   def create
     # @job_posting = JobPosting.new(params[:job_posting])
     @job_posting = JobPosting.new(job_posting_params)
-    @job_posting.user_id = @user.id
-    @job_posting.company_profile_id = @user.id
+    # @job_posting.user_id = @user.id
+    @job_posting.company_profile_id = current_user.id
     @job_posting.posted_on = Time.now
 
     respond_to do |format|
       if @job_posting.save
-        format.html { redirect_to company_profile_url(@user), notice: 'Job posting was successfully created.' }
+        format.html { redirect_to company_profiles_url(@user), notice: 'Job posting was successfully created.' }
         format.json { render json: @job_posting, status: :created, location: @job_posting }
       else
         format.html { render action: "new" }

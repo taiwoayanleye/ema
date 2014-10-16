@@ -1,6 +1,33 @@
-<h1>Listing job_postings</h1>
+<h1>Job Postings</h1>
+<div>
+  <% @job_postings.each do |job_posting| %>
+  <div class="row">
+    <div class="col-xs-6 col-md-3">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3><%= job_posting.position %></h3>
+        </div>
+       <!--  link_to image_tag, job_posting -->
+        <div class="caption">
+          <p><%=  job_posting.job_id %></p>
+          <p><%= job_posting.job_description %></p>
+          <p><%= job_posting.job_start %></p>
+          <p><%= %></p>
+          <p><%= %></p>
+          <p><%= %></p>
+          <p><%= %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
 
-<table>
+
+<br>
+
+<%= link_to 'New Job posting', new_job_posting_path %>
+<!-- <table>
   <thead>
     <tr>
       <th>Job</th>
@@ -26,7 +53,7 @@
         <td><%= job_posting.job_end %></td>
         <td><%= job_posting.posted_on %></td>
         <td><%= job_posting.position_time %></td>
-        <td><%= job_posting.job %></td>
+        <td><%= job_posting.job_paid %></td>
         <td><%= job_posting.job_requirements %></td>
         <td><%= link_to 'Show', job_posting %></td>
         <td><%= link_to 'Edit', edit_job_posting_path(job_posting) %></td>
@@ -34,8 +61,4 @@
       </tr>
     <% end %>
   </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Job posting', new_job_posting_path %>
+</table> -->
