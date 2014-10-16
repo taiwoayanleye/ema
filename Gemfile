@@ -15,6 +15,8 @@ gem 'foundation-rails'
 gem 'devise'
 # Admin man
 gem 'rails_admin'
+# Authorization can
+gem 'cancan'
 
 group :doc do 
 	gem 'sdoc', '~> 0.4.0'
