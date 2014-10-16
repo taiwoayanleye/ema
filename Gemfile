@@ -9,8 +9,12 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
+# Frontend stunts
 gem 'foundation-rails'
+# Authentication room
 gem 'devise'
+# Admin man
+gem 'rails_admin'
 
 group :doc do 
 	gem 'sdoc', '~> 0.4.0'
