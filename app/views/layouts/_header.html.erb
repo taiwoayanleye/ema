@@ -5,13 +5,17 @@
         <h1><%= link_to "Stutern", '/' %></a></h1>
       </li>
     </ul>
+
     <section class="top-bar-section">
-      <ul class="left">
-        <li class="divider"></li>
-        <li><%= link_to "About", pages_about_path %></li>
-        <li class="divider"></li>
-        <li><%= link_to "Contact", pages_contact_path %></li>
-        <li class="divider"></li>
+      <!-- Right bar -->
+      <ul class="right">
+        <% if user_signed_in? %>
+        <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+        <% else %>
+        <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
+        <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+        <% end %>
       </ul>
     </section>
   </nav>
