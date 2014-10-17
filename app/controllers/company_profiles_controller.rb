@@ -10,6 +10,13 @@ class CompanyProfilesController < ApplicationController
   # GET /company_profiles/1
   # GET /company_profiles/1.json
   def show
+    @company_profile = CompanyProfile.find(params[:id])
+    # @company_profile = current_user
+
+    respond_to do |format|
+      format.html #show.html.erb
+      format.json { render json: @company_profile }
+    end
   end
 
   # GET /company_profiles/new
@@ -65,10 +72,11 @@ class CompanyProfilesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_company_profile
       @company_profile = CompanyProfile.find(params[:id])
+      # @company_profile = current_user.company_profile.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def company_profile_params
-      params.require(:company_profile).permit(:company_name, :email, :description, :company_type, :number_of_employees, :website, :location, :reg_code, :verified, :image, user_attributes: [ :id, :email, :name, :password ])
+      params.require(:company_profile).permit(:company_name, :description, :company_type, :number_of_employees, :website, :location, :reg_code, :verified, :image, user_attributes: [ :id, :email, :password ])
     end
 end

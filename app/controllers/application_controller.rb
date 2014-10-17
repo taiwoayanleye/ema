@@ -20,7 +20,54 @@ class ApplicationController < ActionController::Base
    #  end
    # end
 
-   
+    #Returns the type of profile for the current user
+    def get_profile_type
+      return current_user.user_type
+    end
+
+    #checks if profile with the given id exists, if not, it redirects them to new
+    def profile_redir
+      if get_profile_type == "student"
+        if !StudentProfile.exists?(current_user.id)
+          redirect_to new_student_profile_url, notice: 'You are not authorized to access that page yet!'
+        end
+      elsif get_profile_type == "company"
+        if !CompanyProfile.exists?(current_user.id)
+          redirect_to new_company_profile_url, notice: 'You are not authorized to access that page yet!'
+        end
+      end
+    end
+
+    #gets the current user's profile
+    def get_user
+      if get_profile_type == "student"
+        @user = StudentProfile.find_by_user_id(current_user.id.to_s)
+      elsif get_profile_type == "company"
+        @user = CompanyProfile.find_by_user_id(current_user.id.to_s)
+      else #for admin
+        @user = current_user
+      end
+    end
+
+    #Redirects the user after successful sign in
+    def after_sign_in_path_for(user)
+      user_type = current_user.user_type
+      user_id = current_user.id.to_s
+
+      if user_type == "student"
+        student_profile_url(user_id)
+
+      elsif user_type == "company"
+        company_profile_url(user_id)
+
+      elsif user_type == "admin"
+        admin_root_url
+      else
+        #do nothing here. There isn't another kind of user but I wanted to be specific for the admin case in
+        #case there is some hole I'm not thinking of like a user being able to get access without having a
+        #type
+      end
+    end
 
     protected
 

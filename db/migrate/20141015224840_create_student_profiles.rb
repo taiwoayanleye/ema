@@ -4,7 +4,6 @@ class CreateStudentProfiles < ActiveRecord::Migration
       t.string :first_name
       t.string :last_name
       t.string :school
-      t.string :email
       t.string :expected_graduation
       t.string :school_year
       t.string :last_completed_degree

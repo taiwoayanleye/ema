@@ -2,7 +2,6 @@ class CreateCompanyProfiles < ActiveRecord::Migration
   def change
     create_table :company_profiles do |t|
       t.string :company_name
-      t.string :email
       t.text :description
       t.string :company_type
       t.integer :number_of_employees
