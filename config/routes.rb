@@ -1,20 +1,19 @@
 Rails.application.routes.draw do
-  resources :job_postings
+  
+
+  root 'home#home'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   # devise_for :users
-  root 'student_profiles#index'
-
-
+  
+  resources :job_postings
   resources :company_profiles
-
   resources :student_profiles
-
   resources :skills
-
   resources :stu_work_experiences
 
+  get 'home/home'
   get 'pages/about'
   get 'pages/contact'
 
