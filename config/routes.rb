@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   
 
+  get 'registrations/destroy'
+
+  get 'registration/destroy'
+
   root 'home#home'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

@@ -49,9 +49,10 @@ Add user_id and company_profile_id with migration
 [ rails generate migration AddCompanyProfileIdToJobPosting company_profile_id:integer]
 
 Add Home controller and views
-[ rails generate migration controller Home home ]
-Add Regeistraion controller
-[ rails generate migration contoller Registration ]
+[ rails generate controller Home home ]
+Add Registration controller
+[ rails generate controller Registration destroy ]
+
 
 
 9
