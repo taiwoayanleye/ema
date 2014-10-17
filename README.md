@@ -43,6 +43,17 @@ column:8
 {job_id:string, position:string, job_description:text, job_start:date, job_end:date, posted_on:date, position_time:string, job_paid:string, job_requirements:text}
 [rails generate scaffold JobPosting job_id position job_description:text job_start:date job_end:date posted_on:date position_time job:paid job_requirements:text]
 
+Others:
+Add user_id and company_profile_id with migration
+[ rails generate migration AddUserIdToJobPosting user_id:string ]
+[ rails generate migration AddCompanyProfileIdToJobPosting company_profile_id:integer]
+
+Add Home controller and views
+[ rails generate migration controller Home home ]
+Add Regeistraion controller
+[ rails generate migration contoller Registration ]
+
+
 9
 Student references
 column:5

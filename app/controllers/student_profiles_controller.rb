@@ -5,12 +5,22 @@ class StudentProfilesController < ApplicationController
   # GET /student_profiles.json
   def index
     @student_profiles = StudentProfile.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @student_profiles }
+    end
   end
 
   # GET /student_profiles/1
   # GET /student_profiles/1.json
   def show
-    # @student_profile = StudentProfile.find(params[:id])
+    @student_profile = StudentProfile.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @student_profile }
+    end
   end
 
   # GET /student_profiles/new
@@ -20,12 +30,18 @@ class StudentProfilesController < ApplicationController
 
   # GET /student_profiles/1/edit
   def edit
+    @student_profile = StudentProfile.find(params[:id])
   end
 
   # POST /student_profiles
   # POST /student_profiles.json
   def create
-    @student_profile = StudentProfile.new(student_profile_params)
+    # @student_profile = StudentProfile.new(student_profile_params)
+    @student_profile = StudentProfile.new(params[:student_profile])
+    @cur_user = current_user
+    @student_profile.user_id = @cur_user.id
+    @student_profile.id = @cur_user.id
+    @student_profile.email = @cur_user.email
 
     respond_to do |format|
       if @student_profile.save
@@ -41,6 +57,8 @@ class StudentProfilesController < ApplicationController
   # PATCH/PUT /student_profiles/1
   # PATCH/PUT /student_profiles/1.json
   def update
+    @student_profile = StudentProfile.find(params[:id])
+
     respond_to do |format|
       if @student_profile.update(student_profile_params)
         format.html { redirect_to @student_profile, notice: 'Student profile was successfully updated.' }
@@ -55,7 +73,9 @@ class StudentProfilesController < ApplicationController
   # DELETE /student_profiles/1
   # DELETE /student_profiles/1.json
   def destroy
+    @student_profile = StudentProfile.find(params[:id])
     @student_profile.destroy
+    
     respond_to do |format|
       format.html { redirect_to student_profiles_url, notice: 'Student profile was successfully destroyed.' }
       format.json { head :no_content }
