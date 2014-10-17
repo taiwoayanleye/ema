@@ -19,12 +19,20 @@ column:10
 { first_name:string, last_name:string, school:string, email:string, expected_graduation:string, school_year:string, last_completed_degree:string, residential_address:string, major:string, resume:string, image:string}
 [rails generate scaffold StudentProfile first_name last_name school email expected_graduation school_year last_completed_degree residential_address major resume image]
 
+Others:
+Add user_id_to_student_profiles
+[ rails generate migration AddUserIdToStudentProfiles user_id]
+
 
 4
 Company profile
 column:9
 {company_name:string, email:string, description:text, company_type:string, number_of_employees:integer, website:string, location:string, reg_code:string, verified:boolean, image:string}
 [rails generate scaffold CompanyProfile company_name email description:text company_type number_of_employees:integer website location reg_code verified:boolean image]
+
+Others:
+Add user_id_to_company_profiles
+[ rails generate migration AddUserIdToCompanyProfiles user_id ]
 
 5
 Devise
