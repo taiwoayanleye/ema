@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+
 	#ASSOCIATIONS
 	belongs_to :profileable, :polymorphic => true
 	#DEVISE GOODIES
