@@ -1,0 +1,51 @@
+<section class="top-bar-section">
+	<ul class="right">
+		<% if user_signed_in? %>
+		  <% current_user_id = current_user.id.to_s() %>
+		  <%  if current_user.user_type == "student" %>
+		    <li>
+		      <%= link_to 'Profile', student_profile_path(current_user_id), :class => 'navbar-link' %>
+		    </li>
+		    <li>
+		      <%= link_to 'Edit Profile', edit_student_profile_path(current_user_id), :class => 'navbar-link' %>
+		    </li>
+		    <li>
+		       <%= link_to 'Browse Companies', company_profiles_path, :class => 'navbar-link' %>
+		    </li>
+		    <li>
+		      <%= link_to 'Browse Jobs', job_postings_path, :class => 'navbar-link' %>
+		    </li>
+		    <li>
+		    	<%= link_to 'Search for Jobs', search_job_postings_path, :class => 'navbar-link' %>
+		    </li>
+		  <% elsif current_user.user_type == "company" %>
+		     <li>
+		       <%= link_to 'Profile', company_profile_path(current_user_id), :class => 'navbar-link' %>
+		     </li>
+		     <li>
+		       <%= link_to 'Edit Profile', edit_company_profile_url(current_user_id), :class => 'navbar-link' %>
+		     </li>
+		     <li>
+		       <%= link_to 'Browse Candidates', student_profiles_path, :class => 'navbar-link' %>
+		     </li>
+		        <li><%= link_to('Search for Candidates', search_student_profiles_url) %></li>
+		  <% else %>
+		      <!-- #something to do here for admin -->
+		  <% end %>
+
+		<% end %>
+	</ul>
+</section>
+
+<section class="top-bar-section">
+      <!-- Right bar -->
+      <ul class="right">
+        <% if user_signed_in? %>
+        <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+        <% else %>
+        <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
+        <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+        <% end %>
+      </ul>
+</section>
