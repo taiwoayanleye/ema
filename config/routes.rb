@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
-  
-
-  get 'registrations/destroy'
-
-  get 'registration/destroy'
-
+  #Website root page
   root 'home#home'
-
+  
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users
+
   # devise_for :users
+  # # devise_for :users
+
+  #Devise routes
+  devise_for :users, :controllers => {:registrations => "registrations"}
+  #devise_for :users, :controllers => {:users => "users"}
   
   resources :job_postings
   resources :company_profiles
@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'home/home'
   get 'pages/about'
   get 'pages/contact'
+  get 'registrations/destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
