@@ -1,56 +1,52 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></table>
 
-<%= image_tag @company_profile.image_url %>
+<h3>Company Profile</h3>
+<table>
+  <%= image_tag @company_profile.image_url %>
+  <th>Company name:</th>
+  <td><%= @company_profile.company_name %></td>
+</table>
 
-<p>
-  <strong>Company name:</strong>
-  <%= @company_profile.company_name %>
-</p>
+<!-- <table>
+  <th>Email:</th>
+  <td><%# @company_profile.email %></td>
+</table> -->
 
-<p>
-  <strong>Email:</strong>
-  <%= @company_profile.email %>
-</p>
+<table>
+  <th>Description:</th>
+  <td><%= @company_profile.description %></td>
+</table>
 
-<p>
-  <strong>Description:</strong>
-  <%= @company_profile.description %>
-</p>
+<table>
+  <th>Company type:</th>
+  <td><%= @company_profile.company_type %></td>
+</table>
 
-<p>
-  <strong>Company type:</strong>
-  <%= @company_profile.company_type %>
-</p>
+<table>
+  <th>Number of employees:</th>
+  <td><%= @company_profile.number_of_employees %></td>
+</table>
 
-<p>
-  <strong>Number of employees:</strong>
-  <%= @company_profile.number_of_employees %>
-</p>
+<table>
+  <th>Website:</th>
+  <td><%= @company_profile.website %></td>
+</table>
 
-<p>
-  <strong>Website:</strong>
-  <%= @company_profile.website %>
-</p>
+<table>
+  <th>Location:</th>
+  <td><%= @company_profile.location %></td>
+</table>
 
-<p>
-  <strong>Location:</strong>
-  <%= @company_profile.location %>
-</p>
+<table>
+  <th>Reg code:</th>
+  <td><%= @company_profile.reg_code %></td>
+</table>
 
-<p>
-  <strong>Reg code:</strong>
-  <%= @company_profile.reg_code %>
-</p>
+<table>
+  <th>Verified:</th>
+  <td><%= @company_profile.verified %></td>
+</table>
 
-<p>
-  <strong>Verified:</strong>
-  <%= @company_profile.verified %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @company_profile.image %>
-</p>
 
 <%= link_to 'Edit', edit_company_profile_path(@company_profile) %> |
 <%= link_to 'Back', company_profiles_path %>

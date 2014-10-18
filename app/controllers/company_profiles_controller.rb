@@ -44,12 +44,12 @@ class CompanyProfilesController < ApplicationController
   # POST /company_profiles
   # POST /company_profiles.json
   def create
-    # @company_profile = CompanyProfile.new(company_profile_params)
-    @company_profile = CompanyProfile.new(params[:company_profile])
+    @company_profile = CompanyProfile.new(company_profile_params)
+    # @company_profile = CompanyProfile.new(params[:company_profile])
     @cur_user = current_user
     @company_profile.user_id = @cur_user.id
     @company_profile.id = @cur_user.id
-    @company_profile.email = @cur_user.email
+    # @company_profile.email = @cur_user.email
 
     respond_to do |format|
       if @company_profile.save
@@ -68,7 +68,8 @@ class CompanyProfilesController < ApplicationController
     @company_profile = CompanyProfile.find(params[:id])
 
     respond_to do |format|
-      if @company_profile.update_attributes(params[:company_profile])
+      # if @company_profile.update_attributes(params[:company_profile])
+      if @company_profile.update_attributes(company_profile_params)
         format.html { redirect_to company_profile_url(@company_profile), notice: 'Company profile was successfully updated.' }
         format.json { head :no_content }
       else
@@ -100,6 +101,7 @@ class CompanyProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def company_profile_params
-      params.require(:company_profile).permit(:company_name, :description, :company_type, :number_of_employees, :website, :location, :reg_code, :verified, :image, user_attributes: [ :id, :email, :password, :user_id ])
+      params.require(:company_profile).permit(:company_name, :description, :company_type, :number_of_employees, :website, :location, :reg_code, :verified, :image, :user_id, user_attributes: [ :id, :email, :password ])
+
     end
 end
