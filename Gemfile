@@ -17,6 +17,9 @@ gem 'devise'
 gem 'rails_admin'
 # Authorization can
 gem 'cancan'
+# Carrierwave
+gem 'carrierwave'
+gem 'rmagick'
 
 group :doc do 
 	gem 'sdoc', '~> 0.4.0'
