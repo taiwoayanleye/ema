@@ -1,59 +1,58 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></tr>
 
-<p>
-  <strong>First name:</strong>
-  <%= @student_profile.first_name %>
-</p>
+<h3>Candidate Profile</h3>
+<table>
+  <%= image_tag @student_profile.image_url.to_s %>
+  <tr>
+    <th>First name:</th>
+    <td><%= @student_profile.first_name %></td>
+  </tr>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @student_profile.last_name %>
-</p>
+  <tr>
+    <th>Last name:</th>
+    <td><%= @student_profile.last_name %></td>
+  </tr>
 
-<p>
-  <strong>School:</strong>
-  <%= @student_profile.school %>
-</p>
+  <tr>
+    <th>School:</th>
+    <td><%= @student_profile.school %></td>
+  </tr>
 
-<!-- <p>
-  <strong>Email:</strong>
-  @student_profile.email
-</p>
- -->
-<p>
-  <strong>Expected graduation:</strong>
-  <%= @student_profile.expected_graduation %>
-</p>
+  <!-- <tr>
+    <th>Email:</th>
+    @student_profile.email
+  </tr>
+   -->
+  <tr>
+    <th>Expected graduation:</th>
+    <td><%= @student_profile.expected_graduation %></td>
+  </tr>
 
-<p>
-  <strong>School year:</strong>
-  <%= @student_profile.school_year %>
-</p>
+  <tr>
+    <th>School year:</th>
+    <td><%= @student_profile.school_year %></td>
+  </tr>
 
-<p>
-  <strong>Last completed degree:</strong>
-  <%= @student_profile.last_completed_degree %>
-</p>
+  <tr>
+    <th>Last completed degree:</th>
+    <td><%= @student_profile.last_completed_degree %></td>
+  </tr>
 
-<p>
-  <strong>Residential address:</strong>
-  <%= @student_profile.residential_address %>
-</p>
+  <tr>
+    <th>Residential address:</th>
+    <td><%= @student_profile.residential_address %></td>
+  </tr>
 
-<p>
-  <strong>Major:</strong>
-  <%= @student_profile.major %>
-</p>
+  <tr>
+    <th>Major:</th>
+    <td><%= @student_profile.major %></td>
+  </tr>
 
-<p>
-  <strong>Resume:</strong>
-  <%= @student_profile.resume %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @student_profile.image %>
-</p>
+  <tr>
+    <th>Resume:</th>
+    <td><%= @student_profile.resume %></td>
+  </tr>
+</table>
 
 <%= link_to 'Edit', edit_student_profile_path(@student_profile) %> |
 <%= link_to 'Back', student_profiles_path %>

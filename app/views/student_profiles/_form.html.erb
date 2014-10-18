@@ -1,4 +1,4 @@
-<%= form_for(@student_profile) do |f| %>
+<%= form_for(@student_profile, :html => {:multipart => true}) do |f| %>
   <% if @student_profile.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@student_profile.errors.count, "error") %> prohibited this student_profile from being saved:</h2>
@@ -11,6 +11,11 @@
     </div>
   <% end %>
 
+  <div class="form-group">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %> 
+  </div>
+  
   <div class="field">
     <%= f.label :first_name %><br>
     <%= f.text_field :first_name %>
@@ -33,11 +38,13 @@
   </div>
   <div class="field">
     <%= f.label :school_year %><br>
-    <%= f.text_field :school_year %>
+    <%# f.text_field :school_year %>
+    <%= f.select :school_year, [['First Year', 'First Year'], ['Second Year', 'Second Year'], ['Third Year', 'Third Year'], ['Fourth Year', 'Fourth Year'], ['Final Year', 'Final Year'], ['N/A', 'N/A']] %>
   </div>
   <div class="field">
     <%= f.label :last_completed_degree %><br>
-    <%= f.text_field :last_completed_degree %>
+    <%# f.text_field :last_completed_degree %>
+    <%= f.select :last_completed_degree, [['SSCE', 'SSCE'], ['Diploma', 'Diploma'], ['BSc', 'BSc']] %>
   </div>
   <div class="field">
     <%= f.label :residential_address %><br>
@@ -51,10 +58,7 @@
     <%= f.label :resume %><br>
     <%= f.text_field :resume %>
   </div>
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.text_field :image %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
