@@ -36,12 +36,12 @@ class StudentProfilesController < ApplicationController
   # POST /student_profiles
   # POST /student_profiles.json
   def create
-    # @student_profile = StudentProfile.new(student_profile_params)
-    @student_profile = StudentProfile.new(params[:student_profile])
+    # @student_profile = StudentProfile.new(params[:student_profile])
+    @student_profile = StudentProfile.new(student_profile_params)
     @cur_user = current_user
     @student_profile.user_id = @cur_user.id
     @student_profile.id = @cur_user.id
-    @student_profile.email = @cur_user.email
+    # @student_profile.email = @cur_user.email
 
     respond_to do |format|
       if @student_profile.save
