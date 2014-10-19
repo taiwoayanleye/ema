@@ -1,5 +1,12 @@
 class StudentProfilesController < ApplicationController
   before_action :set_student_profile, only: [:show, :edit, :update, :destroy]
+  #make sure the user is logged in
+  before_filter :authenticate_user!
+  #keep user from accessing their profile if they haven't created it yet
+  before_filter(:except => [:new, :create]) {|c| c.profile_redir}
+  #keep user from accessing any method that isn't connected to their profile
+  before_filter(:only =>[:edit, :new, :destroy, :create, :update]) {|c| c.deny_access(params[:id])}
+  before_filter(:only=>[:index]) {|c| if c.get_profile_type == 'student'; c.deny_access(-1) end}
 
   # GET /student_profiles
   # GET /student_profiles.json

@@ -1,5 +1,9 @@
 class CompanyProfilesController < ApplicationController
   before_action :set_company_profile, only: [:show, :edit, :update, :destroy]
+  #keep user from accessing their profile if they haven't created it yet
+  before_filter(:except => [:new, :create]) {|c| c.profile_redir}
+  #keep user from accessing any method that isn't connected to their profile
+  before_filter(:only =>[:edit, :new, :destroy, :create, :update]) {|c| c.deny_access(params[:id])}
 
   # GET /company_profiles
   # GET /company_profiles.json
