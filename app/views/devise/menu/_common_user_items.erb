@@ -16,7 +16,7 @@
 		      <%= link_to 'Browse Jobs', job_postings_path, :class => 'navbar-link' %>
 		    </li>
 		    <li>
-		    	<!-- #search for jobs with search_job_postings_path -->
+		    	<%= link_to 'Search Jobs', search_job_postings_path, :class => 'navbar-link' %>
 		    </li>
 		  <% elsif current_user.user_type == "company" %>
 		     <li>
