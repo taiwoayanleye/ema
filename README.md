@@ -82,6 +82,10 @@ column:5
 {position_text:string, description_text:string, paid_text:string, requirements_text:string, culture:string}
 [rails generate scaffold SavedJobPosting position_text description_text paid_text requirements_text culture]
 
+Others:
+Add student_profile_id_to_saved_job_postings
+[ rails generate migration AddStudentProfileIdToSavedJobPostings student_profile_id:integer ]
+
 12
 Saved student profiles
 column:4
