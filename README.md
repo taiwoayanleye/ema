@@ -12,6 +12,13 @@ column:1
 {description:string}
 [rails generate scaffold skill description:string]
 
+Others:
+Add user_id_to_skills
+[rails generate migration AddUserIdToSkills user_id:integer]
+
+Add student_profile_id_to_skills
+[rails generate migration AddStudentProfileIdToSkills student_profile_id:integer]
+
 
 3
 Student profile
