@@ -2,13 +2,14 @@ class CompanyProfile < ActiveRecord::Base
 	#ASSOCIATIONS
 	has_one :user, as: :profileable, dependent: :destroy
 	accepts_nested_attributes_for :user
+
 	has_many :job_postings
+  has_many :saved_student_profiles
 
 	# Used for image uploading
 	mount_uploader :image, ImageUploader
 
   #VALIDATIONS HERE
-  # =begin
   validates :company_name, :company_type,
             :format => { :with => /\A[a-zA-Z\'\-\,\!\.\&\(\)\@\#\$\%\" ]*\z/,
                          :message => "Numbers are not allowed." },
@@ -34,5 +35,4 @@ class CompanyProfile < ActiveRecord::Base
                          :message => "Symbols are not allowed." },
             :length => { :minimum => 1,
                          :message => "This field cannot be empty" }
-  # =end
 end
