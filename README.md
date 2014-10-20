@@ -92,3 +92,7 @@ column:4
 {school_text:string, year_text:string, skill_text:string, culture:string}
 [rails generate scaffold SavedStudentProfile school_text year_text skill_text culture]
 
+Others:
+Add company_profile_id_to_saved_student_profiles
+[rails generate migration AddCompanyProfileIdToSavedStudentProfiles company_profile_id:integer]
+
