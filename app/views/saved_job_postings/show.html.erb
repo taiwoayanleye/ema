@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Position text:</strong>
+  <%= @saved_job_posting.position_text %>
+</p>
+
+<p>
+  <strong>Description text:</strong>
+  <%= @saved_job_posting.description_text %>
+</p>
+
+<p>
+  <strong>Paid text:</strong>
+  <%= @saved_job_posting.paid_text %>
+</p>
+
+<p>
+  <strong>Requirements text:</strong>
+  <%= @saved_job_posting.requirements_text %>
+</p>
+
+<%= link_to 'Edit', edit_saved_job_posting_path(@saved_job_posting) %> |
+<%= link_to 'Back', saved_job_postings_path %>

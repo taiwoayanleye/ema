@@ -1,0 +1,31 @@
+<h1>Listing saved_job_postings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Position text</th>
+      <th>Description text</th>
+      <th>Paid text</th>
+      <th>Requirements text</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @saved_job_postings.each do |saved_job_posting| %>
+      <tr>
+        <td><%= saved_job_posting.position_text %></td>
+        <td><%= saved_job_posting.description_text %></td>
+        <td><%= saved_job_posting.paid_text %></td>
+        <td><%= saved_job_posting.requirements_text %></td>
+        <td><%= link_to 'Show', saved_job_posting %></td>
+        <td><%= link_to 'Edit', edit_saved_job_posting_path(saved_job_posting) %></td>
+        <td><%= link_to 'Destroy', saved_job_posting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Saved job posting', new_saved_job_posting_path %>

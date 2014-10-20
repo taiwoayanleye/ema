@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  position_text: MyString
+  description_text: MyString
+  paid_text: MyString
+  requirements_text: MyString
+
+two:
+  position_text: MyString
+  description_text: MyString
+  paid_text: MyString
+  requirements_text: MyString
