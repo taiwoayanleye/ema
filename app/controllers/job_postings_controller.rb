@@ -1,6 +1,24 @@
 class JobPostingsController < ApplicationController
   before_action :set_job_posting, only: [:show, :edit, :update, :destroy]
 
+# GET /job_postings
+# GET /job_postings.json
+  before_filter :authenticate_user!, :get_user
+  #keep user from accessing their profile if they haven't created it yet
+  before_filter :profile_redir
+  #keep user from accessing any method that isn't connected to their profile
+  before_filter(:except =>[:index, :search]) {
+      |c|
+    if JobPosting.exists?(params[:id])
+      c.deny_access(JobPosting.find(params[:id].to_i).company_profile_id)
+    else
+      if c.get_profile_type != "company"
+        c.deny_access(-1)
+      end
+    end}
+  #redirect company if they haven't been verified
+  # before_filter :verified?
+
   def index
     @job_postings = JobPosting.all
 
