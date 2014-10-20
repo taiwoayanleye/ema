@@ -77,6 +77,10 @@ column:5
 {uid:string, name:string, relationship:string, phone:string, email:string}
 [rails generate scaffold StudentReference uid name relationship phone email]
 
+Other:
+Add student_profile_id_to_student_references
+[rails generate migration AddStudentProfileIdToStudentReferences student_profile_id:integer]
+
 10
 Groups
 column:1
