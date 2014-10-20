@@ -6,6 +6,10 @@ column:5
 {company:string, position:string, start_date:date, end_date:date, description:text}
 [rails generate scaffold StuWorkExperience company:string position:string start_date:date end_date:date description:text]
 
+Others:
+Add student_profile_id_to_stu_work_experience
+[rails generate migration AddStudentProfileIdToStuWorkExperience student_profile_id:integer]
+
 2
 Skill
 column:1
