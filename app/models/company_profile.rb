@@ -6,13 +6,10 @@ class CompanyProfile < ActiveRecord::Base
 
 	# Used for image uploading
 	mount_uploader :image, ImageUploader
-end
 
-#VALIDATIONS HERE
-=begin
-=end
-
-validates :company_name, :company_type,
+  #VALIDATIONS HERE
+  # =begin
+  validates :company_name, :company_type,
             :format => { :with => /\A[a-zA-Z\'\-\,\!\.\&\(\)\@\#\$\%\" ]*\z/,
                          :message => "Numbers are not allowed." },
             :length => { :minimum => 1,
@@ -37,3 +34,5 @@ validates :company_name, :company_type,
                          :message => "Symbols are not allowed." },
             :length => { :minimum => 1,
                          :message => "This field cannot be empty" }
+  # =end
+end
