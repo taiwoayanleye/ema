@@ -50,6 +50,7 @@ Job postings
 column:8
 {job_id:string, position:string, job_description:text, job_start:date, job_end:date, posted_on:date, position_time:string, job_paid:string, job_requirements:text}
 [rails generate scaffold JobPosting job_id position job_description:text job_start:date job_end:date posted_on:date position_time job:paid job_requirements:text]
+Display: Duration, Location, Sector, Date Postion is expiring, Company's Name, Job Title. Details.
 
 Others:
 Add user_id and company_profile_id with migration
