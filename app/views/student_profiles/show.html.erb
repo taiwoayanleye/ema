@@ -56,3 +56,34 @@
 
 <%= link_to 'Edit', edit_student_profile_path(@student_profile) %> |
 <%= link_to 'Back', student_profiles_path %>
+
+<br/>
+<br/>
+<br/>
+
+<% if !@student_profile.stu_work_experience.empty? %>
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Position</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th>Job description</th>
+    <% if  @user.id == @student_profile.id %>
+    <th></th>
+    <th></th>
+    <% end %>
+  </tr>
+
+  <% @work_histories.each do |work_history| %>
+  <tr>
+    <td><%= work_history.company %>
+    </td>
+    <td><%= work_history.position %></td>
+    <td><%= work_history.start_date %></td>
+    <td><%= work_history.end_date %></td>
+    <td><% work_history.description%></td>
+    <% if @user.id == @student_profile.id %>
+
+  </tr>
+</table>
