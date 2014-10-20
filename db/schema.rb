@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20141020040231) do
   end
 
   create_table "stu_references", force: true do |t|
+    t.string   "uid"
     t.string   "name"
     t.string   "relationship"
     t.string   "phone"
