@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>School text:</strong>
+  <%= @saved_student_profile.school_text %>
+</p>
+
+<p>
+  <strong>Year text:</strong>
+  <%= @saved_student_profile.year_text %>
+</p>
+
+<p>
+  <strong>Skill text:</strong>
+  <%= @saved_student_profile.skill_text %>
+</p>
+
+<%= link_to 'Edit', edit_saved_student_profile_path(@saved_student_profile) %> |
+<%= link_to 'Back', saved_student_profiles_path %>
