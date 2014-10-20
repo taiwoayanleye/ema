@@ -16,7 +16,7 @@
 		      <%= link_to 'Browse Jobs', job_postings_path, :class => 'navbar-link' %>
 		    </li>
 		    <li>
-		    	<%= link_to 'Search Jobs', search_job_postings_path, :class => 'navbar-link' %>
+		    	<%= link_to 'Search for Jobs', search_job_postings_path, :class => 'navbar-link' %>
 		    </li>
 		  <% elsif current_user.user_type == "company" %>
 		     <li>
@@ -29,7 +29,7 @@
 		       <%= link_to 'Browse Candidates', student_profiles_path, :class => 'navbar-link' %>
 		     </li>
 		     <li>
-		     	<!-- #search for candidates with search_student_profiles_path -->
+		     	<%= link_to 'Search for Candidates',search_student_profiles_path, :class => 'navbar-link' %>
 		     </li>
 		  <% else %>
 		      <!-- #something to do here for admin -->

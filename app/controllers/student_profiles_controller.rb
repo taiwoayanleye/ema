@@ -23,11 +23,7 @@ class StudentProfilesController < ApplicationController
 
   def search
     @return = []
-    @cultures = ['']
-    Groups.all.each do |culture|
-      @cultures.push(culture.description)
-    end
-    @years = ['', 'Freshman', 'Sophomore', 'Junior', 'Senior', 'N/A']
+        @years = ['', 'First Year', 'Second Year', 'Third Year', 'Fourth Year', 'Final Year', 'N/A']
 
     @student_profiles_all = StudentProfile.all
     @saved = SavedStudentProfile.find_all_by_company_profile_id(@user.id)

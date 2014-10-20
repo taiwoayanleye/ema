@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  resources :stu_references
-
-  resources :student_references
 
   resources :saved_student_profiles
 
@@ -10,6 +7,7 @@ Rails.application.routes.draw do
   #Website root page
   root 'home#home'
   
+  #RailsAdmin
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   # devise_for :users
@@ -19,10 +17,21 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations"}
   #devise_for :users, :controllers => {:users => "users"}
   
-  resources :job_postings
-  resources :company_profiles
-  resources :student_profiles
+  #Resources
   resources :skills
+  resources :stu_references
+  #resources :users
+  resources :job_postings do
+    collection do
+      get 'search'
+    end
+  end
+  resources :company_profiles
+  resources :student_profiles do
+    collection do
+      get 'search'
+    end
+  end  
   resources :stu_work_experiences
 
   get 'home/home'
