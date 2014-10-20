@@ -54,36 +54,123 @@
   </tr>
 </table>
 
-<%= link_to 'Edit', edit_student_profile_path(@student_profile) %> |
-<%= link_to 'Back', student_profiles_path %>
+<br/>
+<br/>
+<br/>
+
+<h3>Work Experience</h3>
+<% if !@student_profile.stu_work_experiences.empty? %>
+    <table>
+      <tr>
+        <th>Company</th>
+        <th>Position</th>
+        <th>Start date</th>
+        <th>End date</th>
+        <th>Job Description</th>
+        <% if @user.id == @student_profile.id %>
+            <th></th>
+            <th></th>
+        <% end %>
+      </tr>
+
+      <% @work_histories.each do |work_history| %>
+          <tr>
+            <td><%= work_history.company %></td>
+            <td><%= work_history.position %></td>
+            <td><%= work_history.start_date %></td>
+            <td><%= work_history.end_date %></td>
+            <td><%= work_history.description %></td>
+            <% if @user.id == @student_profile.id %>
+                <td><%= link_to 'Edit', edit_stu_work_experience_url(work_history) %></td>
+                <td><%= link_to 'Destroy',  work_history, :method => :delete, :confirm => 'Are you sure?' %></td>
+            <% end %>
+          </tr>
+      <% end %>
+    </table>
+<% else %>
+    <p>No work experiences have been added yet!</p>
+<% end %>
+
+<% if @user.id == @student_profile.id %>
+    <%= link_to 'Add Work Experience', new_stu_work_experience_url %>
+<% end %>
 
 <br/>
 <br/>
 <br/>
 
-<% if !@student_profile.stu_work_experience.empty? %>
-<table>
-  <tr>
-    <th>Company</th>
-    <th>Position</th>
-    <th>Start date</th>
-    <th>End date</th>
-    <th>Job description</th>
-    <% if  @user.id == @student_profile.id %>
-    <th></th>
-    <th></th>
-    <% end %>
-  </tr>
+<div style="overflow: auto">
 
-  <% @work_histories.each do |work_history| %>
-  <tr>
-    <td><%= work_history.company %>
-    </td>
-    <td><%= work_history.position %></td>
-    <td><%= work_history.start_date %></td>
-    <td><%= work_history.end_date %></td>
-    <td><% work_history.description%></td>
-    <% if @user.id == @student_profile.id %>
+  <div style="display:inline-block; float:left; width:30%;">
+<h3>Skills</h3>
 
-  </tr>
-</table>
+<% if !@student_profile.skills.empty? %>
+
+    <table>
+      <tr>
+        <th>Description</th>
+        <% if @user.id == @student_profile.id %>
+            <th></th>
+            <th></th>
+        <% end %>
+      </tr>
+
+      <% @skills.each do |skill| %>
+          <tr>
+            <td><%= skill.description %></td>
+            <% if @user.id == @student_profile.id %>
+                <td><%= link_to 'Edit', edit_skill_url(skill) %></td>
+                <td><%= link_to 'Destroy', skill, :method=>:delete, :confirm=>'Are you sure?' %></td>
+            <% end %>
+          </tr>
+      <% end %>
+    </table>
+<% else %>
+    <p>No skills have been added yet!</p>
+<% end %>
+
+<br/>
+<% if @user.id == @student_profile.id %>
+    <%= link_to 'Add A Skill', new_skill_url %>
+<% end %>
+  </div>
+
+  <div style="display:inline-block; width:65%; margin-left:25px;">
+<h3>References</h3>
+
+<% if !@student_profile.stu_references.empty? %>
+
+    <table>
+      <tr>
+        <th>Name</th>
+    <th>Relationship</th>
+    <th>Phone</th>
+        <th>Email</th>
+        <% if @user.id == @student_profile.id %>
+            <th></th>
+            <th></th>
+        <% end %>
+      </tr>
+
+      <% @references.each do |reference| %>
+          <tr>
+            <td><%= reference.name %></td>
+      <td><%= reference.relationship %></td>
+      <td><%= reference.phone %></td>
+            <td><%= mail_to reference.email %></td>
+            <% if @user.id == @student_profile.id %>
+                <td><%= link_to 'Edit', edit_stu_reference_url(reference) %></td>
+                <td><%= link_to 'Destroy', reference, :method=>:delete, :confirm=>'Are you sure?' %></td>
+            <% end %>
+          </tr>
+      <% end %>
+    </table>
+<% else %>
+    <p>No references have been added yet!</p>
+<% end %>
+<br />
+<% if @user.id == @student_profile.id %>
+        <%= link_to 'Add A Reference', new_stu_reference_url %>
+<% end %>
+</div>
+  </div>
