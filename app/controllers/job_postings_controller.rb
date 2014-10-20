@@ -28,6 +28,131 @@ class JobPostingsController < ApplicationController
     end
   end
 
+  def search()
+
+    @job_postings_all = JobPosting.all
+    @saved = SavedJobPosting.find_all_by_student_profile_id(@user.id)
+    @return = []
+    @cultures = ['']
+    Groups.all.each do |culture|
+      @cultures.push(culture.description)
+    end
+    @pay = ['', 'Paid', 'Unpaid']
+
+    #@params = params[:student_profile_id] = @user.id
+    if params[:save_search]
+      #@saved_job_posting = SavedJobPosting.new(params[:saved_job_posting])
+      @saved_job_posting = SavedJobPosting.new
+      #@saved_job_posting.student_profile_id = params[:student_profile_id]
+      @saved_job_posting.student_profile_id = @user.id
+      @saved_job_posting.position_text = params[:position_text]
+      @saved_job_posting.description_text = params[:description_text]
+      @saved_job_posting.paid_text = params[:paid_text]
+      @saved_job_posting.requirements_text = params[:requirements_text]
+      @saved_job_posting.culture = params[:culture]
+
+      respond_to do |format|
+        if @saved_job_posting.save
+          format.html { redirect_to :back, notice: 'Saved job posting was successfully created.' }
+          format.json { render json: @saved_job_posting, status: :created, location: @saved_job_posting }
+        else
+          format.html { render action: "new" }
+          format.json { render json: @saved_job_posting.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+
+    if params[:position_text]
+      if params[:position_text] != "" and params[:description_text] != "" and params[:paid_text] != "" and params[:requirements_text] != ""
+        match_term1 = "%" + params[:position_text] + "%"
+        match_term2 = "%" + params[:description_text] + "%"
+        match_term3 = params[:paid_text]
+        match_term4 = "%" + params[:requirements_text] + "%"
+        @job_postings = JobPosting.where("Position LIKE ? AND Job_description LIKE ? AND Job_paid = ? AND Job_requirements LIKE ?", match_term1, match_term2, match_term3, match_term4)
+      elsif params[:position_text] != "" and params[:description_text] != "" and params[:paid_text] != ""
+        match_term1 = "%" + params[:position_text] + "%"
+        match_term2 = "%" + params[:description_text] + "%"
+        match_term3 = params[:paid_text]
+        @job_postings = JobPosting.where("Position LIKE ? AND Job_description LIKE ? AND Job_paid = ?", match_term1, match_term2, match_term3)
+      elsif params[:position_text] != "" and params[:description_text] != "" and params[:requirements_text] != ""
+        match_term1 = "%" + params[:position_text] + "%"
+        match_term2 = "%" + params[:description_text] + "%"
+        match_term4 = "%" + params[:requirements_text] + "%"
+        @job_postings = JobPosting.where("Position LIKE ? AND Job_description LIKE ? AND Job_requirements LIKE ?", match_term1, match_term2, match_term4)
+      elsif params[:position_text] != "" and params[:paid_text] != "" and params[:requirements_text] != ""
+        match_term1 = "%" + params[:position_text] + "%"
+        match_term3 = params[:paid_text]
+        match_term4 = "%" + params[:requirements_text] + "%"
+        @job_postings = JobPosting.where("Position LIKE ? AND Job_paid = ? AND Job_requirements LIKE ?", match_term1, match_term3, match_term4)
+      elsif params[:description_text] != "" and params[:paid_text] != "" and params[:requirements_text] != ""
+        match_term2 = "%" + params[:description_text] + "%"
+        match_term3 = params[:paid_text]
+        match_term4 = "%" + params[:requirements_text] + "%"
+        @job_postings = JobPosting.where("Job_description LIKE ? AND Job_paid LIKE ? AND Job_requirements LIKE ?", match_term2, match_term3, match_term4)
+      elsif params[:position_text] != "" and params[:description_text] != ""
+        match_term1 = "%" + params[:position_text] + "%"
+        match_term2 = "%" + params[:description_text] + "%"
+        @job_postings = JobPosting.where("Position LIKE ? AND Job_description LIKE ?", match_term1, match_term2)
+      elsif params[:position_text] != "" and params[:paid_text] != ""
+        match_term1 = "%" + params[:position_text] + "%"
+        match_term3 = params[:paid_text]
+        @job_postings = JobPosting.where("Position LIKE ? AND Job_paid = ?", match_term1, match_term3)
+      elsif params[:position_text] != "" and params[:requirements_text] != ""
+        match_term1 = "%" + params[:position_text] + "%"
+        match_term4 = "%" + params[:requirements_text] + "%"
+        @job_postings = JobPosting.where("Position LIKE ? AND Job_requirements LIKE ?", match_term1, match_term4)
+      elsif params[:description_text] != "" and params[:paid_text] != ""
+        match_term2 = "%" + params[:description_text] + "%"
+        match_term3 = params[:paid_text]
+        @job_postings = JobPosting.where("Job_description LIKE ? AND Job_paid = ?", match_term2, match_term3)
+      elsif params[:description_text] != "" and params[:requirements_text] != ""
+        match_term2 = "%" + params[:description_text] + "%"
+        match_term4 = "%" + params[:requirements_text] + "%"
+        @job_postings = JobPosting.where("Job_description LIKE ? AND Job_requirements LIKE ?", match_term2, match_term4)
+      elsif params[:paid_text] != "" and params[:requirements_text] != ""
+        match_term3 = params[:paid_text]
+        match_term4 = "%" + params[:requirements_text] + "%"
+        @job_postings = JobPosting.where("Job_paid = ? AND Job_requirements LIKE ?", match_term3, match_term4)
+      elsif params[:position_text] != ""
+        match_term1 = "%" + params[:position_text] + "%"
+        @job_postings = JobPosting.where("Position LIKE ?", match_term1)
+      elsif params[:description_text] != ""
+        match_term2 = "%" + params[:description_text] + "%"
+        @job_postings = JobPosting.where("Job_description LIKE ?", match_term2)
+      elsif params[:paid_text] != ""
+        match_term3 = params[:paid_text]
+        @job_postings = JobPosting.where("Job_paid = ?", match_term3)
+      elsif params[:requirements_text] != ""
+        match_term4 = "%" + params[:requirements_text] + "%"
+        @job_postings = JobPosting.where("Job_requirements LIKE ?", match_term4)
+      end
+
+      if params[:culture] != ''
+        #culture is set but there are no search hits
+        if @job_postings.nil?
+          @job_postings_all.each do |profile|
+            if CompanyProfile.find(profile.company_profile_id).qsort == params[:culture]
+              @return.append(profile)
+            end
+          end
+          #culture is set and there are search hits
+        else
+          @job_postings.each do |profile|
+            if CompanyProfile.find(profile.company_profile_id).qsort == params[:culture]
+              @return.append(profile)
+            end
+          end
+        end
+        #no culture is set
+      else
+        @return = @job_postings
+      end
+    else
+      #when the search page is initially visited, displays all of the job postings
+      #@return = @job_postings_all
+    end
+  end
+
   # GET /job_postings/1
   # GET /job_postings/1.json
   def show
