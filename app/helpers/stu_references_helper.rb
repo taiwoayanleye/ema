@@ -1,0 +1,2 @@
+module StuReferencesHelper
+end

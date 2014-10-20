@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @stu_reference.name %>
+</p>
+
+<p>
+  <strong>Relationship:</strong>
+  <%= @stu_reference.relationship %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @stu_reference.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @stu_reference.email %>
+</p>
+
+<%= link_to 'Edit', edit_stu_reference_path(@stu_reference) %> |
+<%= link_to 'Back', stu_references_path %>

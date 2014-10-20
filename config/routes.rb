@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :stu_references
+
   resources :student_references
 
   resources :saved_student_profiles

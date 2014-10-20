@@ -1,6 +1,6 @@
-class CreateStudentReferences < ActiveRecord::Migration
+class CreateStuReferences < ActiveRecord::Migration
   def change
-    create_table :student_references do |t|
+    create_table :stu_references do |t|
       t.string :name
       t.string :relationship
       t.string :phone
