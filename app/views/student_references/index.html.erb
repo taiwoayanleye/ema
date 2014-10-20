@@ -1,0 +1,31 @@
+<h1>Listing student_references</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Relationship</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @student_references.each do |student_reference| %>
+      <tr>
+        <td><%= student_reference.name %></td>
+        <td><%= student_reference.relationship %></td>
+        <td><%= student_reference.phone %></td>
+        <td><%= student_reference.email %></td>
+        <td><%= link_to 'Show', student_reference %></td>
+        <td><%= link_to 'Edit', edit_student_reference_path(student_reference) %></td>
+        <td><%= link_to 'Destroy', student_reference, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Student reference', new_student_reference_path %>

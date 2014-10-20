@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :student_references
+
   resources :saved_student_profiles
 
   resources :saved_job_postings
