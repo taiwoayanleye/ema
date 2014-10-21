@@ -71,6 +71,7 @@ class ApplicationController < ActionController::Base
 
     protected
 
+    #needed for strong parameters to customize our views for Devise in Rails 4
     def configure_permitted_parameters
       devise_parameter_sanitizer.for(:sign_up) << :user_type
     end

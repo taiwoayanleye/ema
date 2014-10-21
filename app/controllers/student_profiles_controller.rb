@@ -1,5 +1,6 @@
 class StudentProfilesController < ApplicationController
   before_action :set_student_profile, only: [:show, :edit, :update, :destroy]
+  
   #make sure the user is logged in
   before_filter :authenticate_user!, :get_user
   #keep user from accessing their profile if they haven't created it yet

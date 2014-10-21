@@ -31,12 +31,10 @@ class JobPostingsController < ApplicationController
   def search()
 
     @job_postings_all = JobPosting.all
-    # @saved = SavedJobPosting.find_all_by_student_profile_id(@user.id)
     @saved = SavedJobPosting.where(student_profile_id: @user.id)
     @return = []
     @pay = ['', 'Paid', 'Unpaid']
 
-    #@params = params[:student_profile_id] = @user.id
     if params[:save_search]
       #@saved_job_posting = SavedJobPosting.new(params[:saved_job_posting])
       @saved_job_posting = SavedJobPosting.new
@@ -122,8 +120,36 @@ class JobPostingsController < ApplicationController
         match_term4 = "%" + params[:requirements_text] + "%"
         @job_postings = JobPosting.where("Job_requirements LIKE ?", match_term4)
       end
+
+      if params[:culture] != ''
+    #culture is set but there are no search hits
+    if @job_postings.nil?
+      @job_postings_all.each do |profile|
+        # if CompanyProfile.find(profile.company_profile_id).qsort == params[:culture]
+          @return.append(profile)
+        # end
+      end
+      #culture is set and there are search hits
+    else
+      @job_postings.each do |profile|
+        # if CompanyProfile.find(profile.company_profile_id).qsort == params[:culture]
+          @return.append(profile)
+        # end
+      end
     end
+    #no culture is set
+  else
+    @return = @job_postings
   end
+    else
+      #when the search page is initially visited, displays all of the job postings
+      @return = @job_postings_all
+    end
+      @position_text = params[:position_text]
+      @description_text = params[:description_text]
+      @paid_text = params[:paid_text]
+      @requirements_text = params[:requirements_text]
+    end
 
   # GET /job_postings/1
   # GET /job_postings/1.json

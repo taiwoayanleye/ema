@@ -12,10 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :job_id %><br>
-    <%= f.text_field :job_id %>
-  </div>
-  <div class="field">
     <%= f.label :position %><br>
     <%= f.text_field :position %>
   </div>
@@ -32,16 +28,12 @@
     <%= f.date_select :job_end %>
   </div>
   <div class="field">
-    <%= f.label :posted_on %><br>
-    <%= f.date_select :posted_on %>
-  </div>
-  <div class="field">
     <%= f.label :position_time %><br>
-    <%= f.text_field :position_time, [['Full-time', 'Full-time'], ['Part-time', 'Part-time']] %>
+    <%= f.select :position_time, [['Full-time', 'Full-time'], ['Part-time', 'Part-time']] %>
   </div>
   <div class="field">
     <%= f.label :job_paid %><br>
-    <%= f.text_field :job_paid %>
+    <%= f.select :job_paid, [['Paid', 'Paid'], ['Unpaid', 'Unpaid']] %>
   </div>
   <div class="field">
     <%= f.label :job_requirements %><br>
