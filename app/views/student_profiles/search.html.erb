@@ -36,7 +36,6 @@
             <th>School</th>
             <th>Year</th>
             <th>Skill</th>
-            <!-- <th>Culture</th> -->
             <th></th>
             <th></th>
             <th></th>
@@ -47,11 +46,9 @@
                 <td><%= search.school_text %></td>
                 <td><%= search.year_text %></td>
                 <td><%= search.skill_text %></td>
-                <td><%= search.culture %></td>
                 <td><%= link_to "Visit", search_student_profiles_url(:school_text => search.school_text,
                                                                       :year_text => search.year_text,
-                                                                      :skill_text => search.skill_text,
-                                                                      :culture => search.culture) %></td>
+                                                                      :skill_text => search.skill_text) %></td>
                 <td><%= link_to "Edit", edit_saved_student_profile_url(search) %></td>
                 <td><%= link_to 'Destroy', search, :method=>:delete, :confirm=>'Are you sure?' %></td>
               </tr>

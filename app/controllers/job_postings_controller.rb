@@ -31,12 +31,9 @@ class JobPostingsController < ApplicationController
   def search()
 
     @job_postings_all = JobPosting.all
-    @saved = SavedJobPosting.find_all_by_student_profile_id(@user.id)
+    # @saved = SavedJobPosting.find_all_by_student_profile_id(@user.id)
+    @saved = SavedJobPosting.where(student_profile_id: @user.id)
     @return = []
-    @cultures = ['']
-    Groups.all.each do |culture|
-      @cultures.push(culture.description)
-    end
     @pay = ['', 'Paid', 'Unpaid']
 
     #@params = params[:student_profile_id] = @user.id
@@ -127,27 +124,27 @@ class JobPostingsController < ApplicationController
         @job_postings = JobPosting.where("Job_requirements LIKE ?", match_term4)
       end
 
-      if params[:culture] != ''
-        #culture is set but there are no search hits
-        if @job_postings.nil?
-          @job_postings_all.each do |profile|
-            if CompanyProfile.find(profile.company_profile_id).qsort == params[:culture]
-              @return.append(profile)
-            end
-          end
-          #culture is set and there are search hits
-        else
-          @job_postings.each do |profile|
-            if CompanyProfile.find(profile.company_profile_id).qsort == params[:culture]
-              @return.append(profile)
-            end
-          end
-        end
-        #no culture is set
-      else
-        @return = @job_postings
-      end
-    else
+    #   if params[:culture] != ''
+    #     #culture is set but there are no search hits
+    #     if @job_postings.nil?
+    #       @job_postings_all.each do |profile|
+    #         if CompanyProfile.find(profile.company_profile_id).qsort == params[:culture]
+    #           @return.append(profile)
+    #         end
+    #       end
+    #       #culture is set and there are search hits
+    #     else
+    #       @job_postings.each do |profile|
+    #         if CompanyProfile.find(profile.company_profile_id).qsort == params[:culture]
+    #           @return.append(profile)
+    #         end
+    #       end
+    #     end
+    #     #no culture is set
+    #   else
+    #     @return = @job_postings
+    #   end
+    # else
       #when the search page is initially visited, displays all of the job postings
       #@return = @job_postings_all
     end

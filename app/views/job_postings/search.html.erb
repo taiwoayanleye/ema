@@ -23,10 +23,6 @@
           <%= text_field_tag :requirements_text, @requirements_text %>
         </p>
         <p>
-          <%= label_tag :Culture %><br/>
-          <%= select_tag :culture, options_for_select(@cultures, @culture) %>
-        </p>
-        <p>
           <%= submit_tag 'Search' %>
           <%= submit_tag 'Save Search', :name => 'save_search'%>
         </p>
