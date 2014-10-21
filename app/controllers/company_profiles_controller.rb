@@ -6,9 +6,9 @@ class CompanyProfilesController < ApplicationController
   #keep user from accessing thier profile if they haven't created it yet
   before_filter(:except => [:new, :create]) {|c| c.profile_redir}
   #keep user from accessing any method that isn't connected to thier profile
-  before_filter(:only => [:edit, :new, :destroy, :create, :update]) { |c| c.deny_acces(params[:id])}
+  before_filter(:only => [:new, :destroy, :create, :update]) { |c| c.deny_acces(params[:id])}
   # redirect company if they haven't been verified
-  before_filter :verified?, :except => [:show, :edit, :update]
+  # before_filter :verified?, :except => [:show, :edit, :update]
   
   # GET /company_profiles
   # GET /company_profiles.json

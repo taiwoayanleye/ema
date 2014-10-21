@@ -121,26 +121,16 @@ class JobPostingsController < ApplicationController
         @job_postings = JobPosting.where("Job_requirements LIKE ?", match_term4)
       end
 
-      if params[:culture] != ''
-    #culture is set but there are no search hits
-    if @job_postings.nil?
+      if @job_postings.nil?
       @job_postings_all.each do |profile|
-        # if CompanyProfile.find(profile.company_profile_id).qsort == params[:culture]
           @return.append(profile)
-        # end
-      end
-      #culture is set and there are search hits
-    else
-      @job_postings.each do |profile|
-        # if CompanyProfile.find(profile.company_profile_id).qsort == params[:culture]
+        end
+      else
+          @job_postings.each do |profile|
           @return.append(profile)
-        # end
+        end
       end
-    end
-    #no culture is set
-  else
-    @return = @job_postings
-  end
+
     else
       #when the search page is initially visited, displays all of the job postings
       @return = @job_postings_all
