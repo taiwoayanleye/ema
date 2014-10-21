@@ -23,10 +23,11 @@ class StudentProfilesController < ApplicationController
 
   def search
     @return = []
-        @years = ['', 'First Year', 'Second Year', 'Third Year', 'Fourth Year', 'Final Year', 'N/A']
+    @years = ['', 'First Year', 'Second Year', 'Third Year', 'Fourth Year', 'Final Year', 'N/A']
 
     @student_profiles_all = StudentProfile.all
-    @saved = SavedStudentProfile.find_all_by_company_profile_id(@user.id)
+    # @saved = SavedStudentProfile.find_all_by_company_profile_id(@user.id)
+    @saved = SavedStudentProfile.where(company_profile_id: @user.id)
 
     if params[:save_search]
       @saved_student_profile = SavedStudentProfile.new
@@ -34,7 +35,6 @@ class StudentProfilesController < ApplicationController
       @saved_student_profile.school_text = params[:school_text]
       @saved_student_profile.year_text = params[:year_text]
       @saved_student_profile.skill_text = params[:skill_text]
-      @saved_student_profile.culture = params[:culture]
 
       respond_to do |format|
         if @saved_student_profile.save
@@ -80,28 +80,28 @@ class StudentProfilesController < ApplicationController
       end
 
       if params[:culture] != ''
-        #culture is set but there are no search hits
-        if @student_profiles.nil?
-            @student_profiles_all.each do |profile|
-              if profile.qsort == params[:culture]
-                @return.append(profile)
-              end
-            end
-        #culture is set and there are search hits
-        else
-          @student_profiles.each do |profile|
-            if profile.qsort == params[:culture]
-              @return.append(profile)
-            end
-          end
-        end
-      #culture is not set
-      else
+        # culture is set but there are no search hits
+      #   if @student_profiles.nil?
+      #       @student_profiles_all.each do |profile|
+      #         if profile.qsort == params[:culture]
+      #           @return.append(profile)
+      #         end
+      #       end
+      #   #culture is set and there are search hits
+      #   else
+      #     @student_profiles.each do |profile|
+      #       if profile.qsort == params[:culture]
+      #         @return.append(profile)
+      #       end
+      #     end
+      #   end
+      # #culture is not set
+      # else
         @return = @student_profiles
       end
     else
       #when the search page is initially visited, display all interns
-      #@return = @student_profiles_all
+      @return = @student_profiles_all
     end
     @school_text = params[:school_text]
     @year_text = params[:year_text]

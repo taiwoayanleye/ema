@@ -93,14 +93,14 @@
               <td><%= student_profile.first_name %></td>
               <td><%= student_profile.last_name %></td>
               <td><%= student_profile.school %></td>
-              <!-- <td><%= mail_to student_profile.email %></td> -->
+              <!-- <td><%# mail_to student_profile.email %></td> -->
               <td><%= student_profile.major %></td>
               <td><%= student_profile.expected_graduation %></td>
               <td><%= student_profile.school_year %></td>
               <td><%= student_profile.last_completed_degree %></td>
               <td><%= student_profile.residential_address %></td>
 
-              <td><%= link_to 'Show', student_profile_url(StudentProfile.find_by_email(student_profile.email)) %></td>
+             <!--  <td><%# link_to 'Show', student_profile_url(StudentProfile.find_by_email(student_profile.email)) %></td> -->
             </tr>
         <% end %>
       </table>
