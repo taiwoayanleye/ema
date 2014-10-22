@@ -115,11 +115,14 @@ class StudentProfilesController < ApplicationController
   # GET /student_profiles/1.json
   def show
     @student_profile = current_user.profile
+    @skills = @student_profile.skills
+    @work_histories = @student_profile.stu_work_experiences
+    @references = @student_profile.stu_references
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @student_profile }
-    end
+    # respond_to do |format|
+    #   format.html # show.html.erb
+    #   format.json { render json: @student_profile }
+    # end
   end
 
   # GET /student_profiles/new

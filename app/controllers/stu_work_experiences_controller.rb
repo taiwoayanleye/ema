@@ -3,9 +3,9 @@ class StuWorkExperiencesController < ApplicationController
 
   # GET /stu_work_experiences
   # GET /stu_work_experiences.json
-  def index
-    @stu_work_experiences = StuWorkExperience.all
-  end
+  # def index
+  #   @stu_work_experiences = StuWorkExperience.all
+  # end
 
   # GET /stu_work_experiences/1
   # GET /stu_work_experiences/1.json
@@ -25,6 +25,7 @@ class StuWorkExperiencesController < ApplicationController
   # POST /stu_work_experiences.json
   def create
     @stu_work_experience = StuWorkExperience.new(stu_work_experience_params)
+    @stu_work_experience.student_profile_id = current_user.profileable_id
 
     respond_to do |format|
       if @stu_work_experience.save

@@ -44,16 +44,11 @@ class SkillsController < ApplicationController
     @skill = Skill.new(skill_params)
     @skill.user_id = current_user.id
     @skill.student_profile_id = current_user.profileable_id
-
-    respond_to do |format|
       if @skill.save
-        format.html { redirect_to @skill, notice: 'Skill was successfully created.' }
-        format.json { render :show, status: :created, location: @skill }
+        redirect_to @skill, notice: 'Skill was successfully created.' 
       else
-        format.html { render :new }
-        format.json { render json: @skill.errors, status: :unprocessable_entity }
+        render :new 
       end
-    end
   end
 
   # PATCH/PUT /skills/1

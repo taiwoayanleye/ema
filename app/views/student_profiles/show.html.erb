@@ -18,11 +18,11 @@
     <td><%= @student_profile.school %></td>
   </tr>
 
-  <!-- <tr>
+  <tr>
     <th>Email:</th>
-    @student_profile.email
-  </tr>
-   -->
+    <td><%= @student_profile.user.email %></td>
+   </tr>
+  
   <tr>
     <th>Expected graduation:</th>
     <td><%= @student_profile.expected_graduation %></td>
@@ -80,7 +80,7 @@
             <td><%= work_history.start_date %></td>
             <td><%= work_history.end_date %></td>
             <td><%= work_history.description %></td>
-            <% if @user.id == @student_profile.id %>
+             <% if current_user.id == @student_profile.user_id %>
                 <td><%= link_to 'Edit', edit_stu_work_experience_url(work_history) %></td>
                 <td><%= link_to 'Destroy',  work_history, :method => :delete, :confirm => 'Are you sure?' %></td>
             <% end %>
@@ -109,7 +109,7 @@
     <table>
       <tr>
         <th>Description</th>
-        <% if @user.id == @student_profile.id %>
+         <% if current_user.id == @student_profile.user_id %>
             <th></th>
             <th></th>
         <% end %>
@@ -118,7 +118,7 @@
       <% @skills.each do |skill| %>
           <tr>
             <td><%= skill.description %></td>
-            <% if @user.id == @student_profile.id %>
+             <% if current_user.id == @student_profile.user_id %>
                 <td><%= link_to 'Edit', edit_skill_url(skill) %></td>
                 <td><%= link_to 'Destroy', skill, :method=>:delete, :confirm=>'Are you sure?' %></td>
             <% end %>
