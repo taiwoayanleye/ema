@@ -6,8 +6,19 @@
 		  </li>
 		 <% else %>
 		   <li>
-		   	<%= link_to 'Register', new_user_registration_path, :class => 'navbar-link' %>
+		   	
 		   </li>
+		   <li class="has-dropdown">
+	        <a href="#">Register</a>
+	        <ul class="dropdown">
+	          <li>
+	          	<%= link_to 'Candidate', new_user_registration_path(user_type: "student"), :class => 'navbar-link' %>
+	          </li>
+	          <li>
+	          	<%= link_to 'Employer', new_user_registration_path(user_type: "company"),:class => 'navbar-link' %>
+	          </li>
+	        </ul>
+	      </li>
 		<% end %>
 	</ul>
 </section>

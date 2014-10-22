@@ -56,13 +56,12 @@ class StuReferencesController < ApplicationController
   def create
     # @stu_reference = StuReference.new(stu_reference_params)
     @stu_reference = StuReference.new(params[:stu_refenreces])
-    @user = current_user
-    @stu_reference.uid = user.id
-    @stu_reference.student_profile_id = @user.id
+    @stu_reference.uid = current_user.id
+    @stu_reference.student_profile_id = current_user.profileable_id
     
     resond_to do |format|
       if @stu_reference.save
-        format.html { redirect_to student_profile_url(@user), notice: 'Refenrece was successfully created.' }
+        format.html { redirect_to student_profile_url(current_user.profileable_id), notice: 'Refenrece was successfully created.' }
         format.json { render json: @stu_reference, status: :created, location: @stu_reference }
       else
         format.html { render action: "new" }
@@ -78,7 +77,7 @@ class StuReferencesController < ApplicationController
 
     resond_to do |format|
       if @stu_reference.update_attributes(params[:stu_reference])
-        format.html { redirect_to student_profile_url(@user), notice: 'Reference was successfully updated.' }
+        format.html { redirect_to student_profile_url(current_user.profileable_id), notice: 'Reference was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -94,7 +93,7 @@ class StuReferencesController < ApplicationController
     @stu_reference.destroy
 
     respond_to do |format|
-      format.html { redirect_to student_profile_url(@user), notice: 'Reference was successfully destroyed. '}
+      format.html { redirect_to student_profile_url(current_user.profileable_id), notice: 'Reference was successfully destroyed. '}
       format.json { head :no_content }
     end
   end

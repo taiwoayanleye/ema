@@ -2,10 +2,7 @@ class SavedJobPostingsController < ApplicationController
   before_action :set_saved_job_posting, only: [:edit, :update, :destroy]
 
   before_filter :authenticate_user!
-  #keep user from accessing thier profile if they haven't created it yet
-  before_filter :profile_redir
-  #redirect company if they haven't been verified
-  before_filter :verified?
+ 
   #keep user from accesing any method that isn't connected to thier profile
   before_filter {
     |c|

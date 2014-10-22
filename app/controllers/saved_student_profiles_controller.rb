@@ -3,20 +3,9 @@ class SavedStudentProfilesController < ApplicationController
 
   before_filter :authenticate_user!
   #keep user from accessing thier profile if they haven't created it yet
-  before_filter :profile_redir
   # #redirect company if they haven't been verified
   before_filter :verified?
-  #keep user form accessing any method that isn't connected to their profile
-  before_filter {
-    |c|
-    if SavedStudentProfile.exists?(params[:id])
-      c.deny_access(SavedStudentProfile.find(params[:id]).company_profile_id)
-    else
-      if c.get_profile_type != "company"
-        c.deny_access(-1)
-      end
-    end
-  }
+
 
   # def index
   #   @saved_student_profiles = SavedStudentProfile.all

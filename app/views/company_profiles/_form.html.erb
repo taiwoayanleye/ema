@@ -47,10 +47,13 @@
     <%= f.label :reg_code %><br>
     <%= f.text_field :reg_code %>
   </div>
-  <div class="field">
-    <%= f.label :verified %><br>
-    <%= f.check_box :verified %>
-  </div>
+
+  <% if admin? %>
+    <div class="field">
+      <%= f.label :verified %><br>
+      <%= f.check_box :verified %>
+    </div>
+  <% end %>
 
   <div class="actions">
     <%= f.submit %>

@@ -2,21 +2,7 @@ class SkillsController < ApplicationController
   before_action :set_skill, only: [:show, :edit, :update, :destroy]
 
   before_filter :authenticate_user!, :get_user
-  #keep user form accessing thier profile if they haven't created it yet
-  before_filter :profile_redir
-  #keep user form accessing any method that isn't connected to their profile
-  before_filter {
-    |c|
-    if Skill.exists?(params[:id])
-      c.deny_access(Skill.find(params[:id].to_i).student_profile_id)
-    else
-      if c.get_profile_type != "student"
-        c.deny_access(-1)
-      end
-    end
-  }
   #redirect company if they haven't been verified
-  before_filter :verified?
 
   # GET /skills
   # GET /skills.json
@@ -55,10 +41,9 @@ class SkillsController < ApplicationController
   # POST /skills.json
   def create
     # @skill = Skill.new(skill_params)
-    @skill = Skill.new(params[:skill])
-    @user = current_user
-    @skill.user_id = @user.id
-    @skill.student_profile_id = @user.id
+    @skill = Skill.new(skill_params)
+    @skill.user_id = current_user.id
+    @skill.student_profile_id = current_user.profileable_id
 
     respond_to do |format|
       if @skill.save
@@ -78,8 +63,8 @@ class SkillsController < ApplicationController
 
     respond_to do |format|
       # if @skill.update(skill_params)
-      if @skill.update_attributes(params[:skill])
-        format.html { redirect_to student_profile_url(@user), notice: 'Skill was successfully updated.' }
+      if @skill.update_attributes(skill_params)
+        format.html { redirect_to student_profile_url(current_user.profileable_id), notice: 'Skill was successfully updated.' }
         format.json { head :no_content }
         # format.json { render :show, status: :ok, location: @skill }
       else

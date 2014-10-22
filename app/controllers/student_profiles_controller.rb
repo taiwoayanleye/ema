@@ -2,12 +2,12 @@ class StudentProfilesController < ApplicationController
   before_action :set_student_profile, only: [:show, :edit, :update, :destroy]
   
   #make sure the user is logged in
-  before_filter :authenticate_user!, :get_user
+  before_action :authenticate_user!, :get_user
   #keep user from accessing their profile if they haven't created it yet
-  before_filter(:except => [:new, :create]) { |c| c.profile_redir}
+  # before_filter(:except => [:new, :create]) { |c| c.profile_redir}
   #keep user from accessing any method that isn't connected to thier profile
   # before_filter(:only =>[:edit, :new, :destroy, :create, :update]) {|c| c.deny_access(params[:id])}
-  before_filter(:only=>[:index]) {|c| if c.get_profile_type == 'student'; c.deny_access(-1) end}
+  # before_action(:only=>[:index]) {|c| if c.get_profile_type == 'student'; c.deny_access(-1) end}
   #redirect company if they haven't been verified
   # before_filter :verified?
 
@@ -27,12 +27,12 @@ class StudentProfilesController < ApplicationController
     @years = ['', 'First Year', 'Second Year', 'Third Year', 'Fourth Year', 'Final Year', 'N/A']
 
     @student_profiles_all = StudentProfile.all
-    # @saved = SavedStudentProfile.find_all_by_company_profile_id(@user.id)
-    @saved = SavedStudentProfile.where(company_profile_id: @user.id)
+    # @saved = SavedStudentProfile.find_all_by_company_profile_id(current_user.profileable_id)
+    @saved = SavedStudentProfile.where(company_profile_id: current_user.profileable_id)
 
     if params[:save_search]
       @saved_student_profile = SavedStudentProfile.new
-      @saved_student_profile.company_profile_id = @user.id
+      @saved_student_profile.company_profile_id = current_user.profileable_id
       @saved_student_profile.school_text = params[:school_text]
       @saved_student_profile.year_text = params[:year_text]
       @saved_student_profile.skill_text = params[:skill_text]
@@ -114,7 +114,7 @@ class StudentProfilesController < ApplicationController
   # GET /student_profiles/1
   # GET /student_profiles/1.json
   def show
-    @student_profile = StudentProfile.find(params[:id])
+    @student_profile = current_user.profile
 
     respond_to do |format|
       format.html # show.html.erb
@@ -125,32 +125,16 @@ class StudentProfilesController < ApplicationController
   # GET /student_profiles/new
   def new
     @student_profile = StudentProfile.new
+
+      respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @company_profile }
+    end
   end
 
   # GET /student_profiles/1/edit
   def edit
-    @student_profile = StudentProfile.find(params[:id])
-  end
-
-  # POST /student_profiles
-  # POST /student_profiles.json
-  def create
-    # @student_profile = StudentProfile.new(params[:student_profile])
-    @student_profile = StudentProfile.new(student_profile_params)
-    @cur_user = current_user
-    @student_profile.user_id = @cur_user.id
-    @student_profile.id = @cur_user.id
-    # @student_profile.email = @cur_user.email
-
-    respond_to do |format|
-      if @student_profile.save
-        format.html { redirect_to @student_profile, notice: 'Student profile was successfully created.' }
-        format.json { render :show, status: :created, location: @student_profile }
-      else
-        format.html { render :new }
-        format.json { render json: @student_profile.errors, status: :unprocessable_entity }
-      end
-    end
+    @student_profile = current_user.profile
   end
 
   # PATCH/PUT /student_profiles/1
@@ -159,11 +143,11 @@ class StudentProfilesController < ApplicationController
     @student_profile = StudentProfile.find(params[:id])
 
     respond_to do |format|
-      if @student_profile.update(student_profile_params)
-        format.html { redirect_to @student_profile, notice: 'Student profile was successfully updated.' }
+      if @student_profile.update_attributes(student_profile_params)
+        format.html { redirect_to student_profile_path(current_user.profileable_id), notice: 'Student profile was successfully updated.' }
         format.json { render :show, status: :ok, location: @student_profile }
       else
-        format.html { render :edit }
+        format.html { render action: "edit" }
         format.json { render json: @student_profile.errors, status: :unprocessable_entity }
       end
     end
@@ -172,7 +156,7 @@ class StudentProfilesController < ApplicationController
   # DELETE /student_profiles/1
   # DELETE /student_profiles/1.json
   def destroy
-    @student_profile = StudentProfile.find(params[:id])
+    @student_profile = current_user.profile
     @student_profile.destroy
     
     respond_to do |format|
@@ -184,7 +168,7 @@ class StudentProfilesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_student_profile
-      @student_profile = StudentProfile.find(params[:id])
+      @student_profile = current_user.profile
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
