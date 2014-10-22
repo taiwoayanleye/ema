@@ -78,7 +78,7 @@ Rails.application.configure do
 
   # Needed for Devise gem as the defined default options for url
   # Should set to the actual host of your application
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'http://stuternbeta.herokuapp.com/' }
 
   #Devise mail verification
   config.action_mailer.perform_deliveries = true
