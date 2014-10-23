@@ -1,18 +1,19 @@
 RailsAdmin.config do |config|
-
   ### Popular gems integration
 
   ## == Devise ==
-  # config.authenticate_with do
-  #   warden.authenticate! scope: :user
-  # end
-  # config.current_user_method(&:current_user)
+  config.authenticate_with do
+    warden.authenticate! scope: :user
+  end
 
-  ## == Cancan ==
-  RailsAdmin.config do |config|
-  # config.authorize_with :cancan
-  # config.current_user_method &:current_user
+  config.current_user_method &:current_admin
+
+
+config.authorize_with do
+   redirect_to main_app.root_path unless warden.user.admin?
 end
+
+  
 
   ## == PaperTrail ==
   # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0

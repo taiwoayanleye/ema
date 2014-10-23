@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   #strong parameters to customize our views for Devise in Rails 4
   before_action :configure_permitted_parameters, if: :devise_controller?
   helper_method :admin?
+  helper_method :current_admin
 
    # def authenticate_active_admin_user!
    #  authenticate_user!
@@ -46,6 +47,10 @@ class ApplicationController < ActionController::Base
 
     def admin?
       return true if current_user.try(:admin)
+    end
+
+    def current_admin
+      return current_user if current_user.try(:admin)
     end
 
     protected

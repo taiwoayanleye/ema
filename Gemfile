@@ -16,7 +16,7 @@ gem 'devise'
 # Admin man
 gem 'rails_admin'
 # Authorization can
-gem 'cancan'
+# gem 'cancan'
 # Carrierwave
 gem 'carrierwave'
 gem 'rmagick'
