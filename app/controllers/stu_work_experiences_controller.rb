@@ -10,6 +10,7 @@ class StuWorkExperiencesController < ApplicationController
   # GET /stu_work_experiences/1
   # GET /stu_work_experiences/1.json
   def show
+    # stu_work_experience = StuWorkExperience.find(params[:id])
   end
 
   # GET /stu_work_experiences/new

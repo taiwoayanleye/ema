@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
     end
 
 
-    #gets the current user's profile
+    #Gets the current user's profile
     def get_user
       current_user.profile
     end
@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
     def after_sign_in_path_for(user)
       user_type = current_user.user_type
       if user_type == "student"
-        student_profile_url(current_user.profileable_id)
+        job_postings_url
 
       elsif user_type == "company"
         company_profile_url(current_user.profileable_id)
@@ -61,7 +61,7 @@ class ApplicationController < ActionController::Base
     end
 
     def verified?
-      unless current_user && current_user.company_verified?
+      unless current_user || current_user.company_verified?
         redirect_to root_path, notice: "Not allowed"
       end
     end

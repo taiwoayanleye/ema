@@ -53,8 +53,10 @@
     <td><%= @student_profile.resume %></td>
   </tr>
 </table>
+<% if current_user.id == @student_profile.user_id.to_i %>
+  <td><%= link_to 'Edit Profile', edit_student_profile_path %></td>
+<% end %>
 
-<br/>
 <br/>
 <br/>
 

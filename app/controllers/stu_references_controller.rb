@@ -5,28 +5,18 @@ class StuReferencesController < ApplicationController
   #keep user from accessing thier profile if they haven't created it yet
   # before_filter :profile_redir
   #keep user from accessing any method that isn't connected to their profile
-  # before_filter {
-  #   |c|
-  #   if StuReference.exists?(params[:id])
-  #     c.deny_access(StuReference.find(params[:id].to_i).student_profile_id)
-  #   else
-  #     if c.get_profile_type != "student"
-  #       c.deny_access(-1)
-  #     end
-  #   end
-  # }
+
   #redirect company if they haven't been verified
   # before_filter :verified?
 
-  # def index
-  #   @stu_references = StuReference.all
-  #   respond_with(@stu_references)
-  # end
+  def index
+    @stu_references = StuReference.all
+    respond_with(@stu_references)
+  end
 
   # GET /stu_references/1
   # GET /stu_references/1.json
   def show
-    # respond_with(@stu_reference)
     @stu_reference = StuReference.find(params[:id])
   end
 
@@ -59,7 +49,7 @@ class StuReferencesController < ApplicationController
   # PUT /stu_references/1.json
   def update
     @stu_reference.update(stu_reference_params)
-      if @stu_reference.update_attributes(params[:stu_reference])
+      if @stu_reference.update_attributes(stu_reference_params)
         redirect_to student_profile_url(current_user.profileable_id), notice: 'Reference was successfully updated.' 
       else
         render action: "edit" 
