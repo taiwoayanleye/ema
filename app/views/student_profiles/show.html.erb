@@ -67,7 +67,7 @@
         <th>Start date</th>
         <th>End date</th>
         <th>Job Description</th>
-        <% if current_user.id == @student_profile.user_id %>
+        <% if current_user.id == @student_profile.user_id.to_i %>
             <th></th>
             <th></th>
         <% end %>
@@ -80,7 +80,7 @@
             <td><%= work_history.start_date %></td>
             <td><%= work_history.end_date %></td>
             <td><%= work_history.description %></td>
-             <% if current_user.id == @student_profile.user_id %>
+             <% if current_user.id == @student_profile.user_id.to_i %>
                 <td><%= link_to 'Edit', edit_stu_work_experience_url(work_history) %></td>
                 <td><%= link_to 'Destroy',  work_history, :method => :delete, :confirm => 'Are you sure?' %></td>
             <% end %>
@@ -91,7 +91,7 @@
     <p>No work experiences have been added yet!</p>
 <% end %>
 
-<% if current_user.id == @student_profile.user_id %>
+<% if current_user.id == @student_profile.user_id.to_i %>
     <%= link_to 'Add Work Experience', new_stu_work_experience_url %>
 <% end %>
 
@@ -109,7 +109,7 @@
     <table>
       <tr>
         <th>Description</th>
-         <% if current_user.id == @student_profile.user_id %>
+         <% if current_user.id == @student_profile.user_id.to_i %>
             <th></th>
             <th></th>
         <% end %>
@@ -118,7 +118,7 @@
       <% @skills.each do |skill| %>
           <tr>
             <td><%= skill.description %></td>
-             <% if current_user.id == @student_profile.user_id %>
+             <% if current_user.id == @student_profile.user_id.to_i %>
                 <td><%= link_to 'Edit', edit_skill_url(skill) %></td>
                 <td><%= link_to 'Destroy', skill, :method=>:delete, :confirm=>'Are you sure?' %></td>
             <% end %>
@@ -130,7 +130,7 @@
 <% end %>
 
 <br/>
-<% if current_user.id == @student_profile.user_id %>
+<% if current_user.id == @student_profile.user_id.to_i %>
     <%= link_to 'Add A Skill', new_skill_url %>
 <% end %>
   </div>
@@ -146,7 +146,7 @@
     <th>Relationship</th>
     <th>Phone</th>
         <th>Email</th>
-        <% if current_user.id == @student_profile.user_id %>
+        <% if current_user.id == @student_profile.user_id.to_i %>
             <th></th>
             <th></th>
         <% end %>
@@ -158,7 +158,7 @@
       <td><%= reference.relationship %></td>
       <td><%= reference.phone %></td>
             <td><%= mail_to reference.email %></td>
-            <% if current_user.id == @student_profile.user_id %>
+            <% if current_user.id == @student_profile.user_id.to_i %>
                 <td><%= link_to 'Edit', edit_stu_reference_url(reference) %></td>
                 <td><%= link_to 'Destroy', reference, :method=>:delete, :confirm=>'Are you sure?' %></td>
             <% end %>
@@ -169,7 +169,7 @@
     <p>No references have been added yet!</p>
 <% end %>
 <br />
-<% if current_user.id == @student_profile.user_id %>
+<% if current_user.id == @student_profile.user_id.to_i %>
         <%= link_to 'Add A Reference', new_stu_reference_url %>
 <% end %>
 </div>

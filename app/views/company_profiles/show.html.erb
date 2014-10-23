@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></table>
 
-<h3>Company Profile</h3>
+<h1>We are <br><%= @company_profile.company_name.upcase %></h1>
 <table>
   <%= image_tag @company_profile.image_url %>
   <th>Company name:</th>
@@ -42,11 +42,11 @@
   <td><%= @company_profile.reg_code %></td>
 </table>
 
-<table>
+<!-- <table>
   <th>Verified:</th>
   <td><%= @company_profile.verified %></td>
-</table>
+</table> -->
 
 
 <%= link_to 'Edit', edit_company_profile_path(@company_profile) %> |
-<%= link_to 'Back', company_profiles_path %>
+<%= link_to 'Back', :back %>

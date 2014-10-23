@@ -16,7 +16,7 @@ class StuReferencesController < ApplicationController
   #   end
   # }
   #redirect company if they haven't been verified
-  before_filter :verified?
+  # before_filter :verified?
 
   # def index
   #   @stu_references = StuReference.all

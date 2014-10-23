@@ -19,11 +19,11 @@
 		    	<%= link_to 'Search for Jobs', search_job_postings_path, :class => 'navbar-link' %>
 		    </li>
 		  <% elsif current_user.user_type == "company" %>
+			 <li>
+			 	<%= link_to 'Post Jobs', new_job_posting_path, :class => 'navbar-link'  %>
+			 </li>	
 		     <li>
 		       <%= link_to 'Profile', company_profile_path(current_user_id), :class => 'navbar-link' %>
-		     </li>
-		     <li>
-		       <%= link_to 'Edit Profile', edit_company_profile_url(current_user_id), :class => 'navbar-link' %>
 		     </li>
 		     <li>
 		       <%= link_to 'Browse Candidates', student_profiles_path, :class => 'navbar-link' %>

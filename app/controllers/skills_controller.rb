@@ -6,9 +6,9 @@ class SkillsController < ApplicationController
 
   # GET /skills
   # GET /skills.json
-  # def index
-  #   @skills = Skill.all
-  # end
+  def index
+    @skills = Skill.all
+  end
 
   # GET /skills/1
   # GET /skills/1.json
