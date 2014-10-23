@@ -180,6 +180,10 @@ class StudentProfilesController < ApplicationController
       params.require(:student_profile).permit(:first_name, :last_name, :school, :expected_graduation, :school_year, :last_completed_degree, :residential_address, :major, :resume, :image, user_attributes: [ :id, :email, :password, :user_type ])
     end
     def allowed_user
-      redirect_to root_url, notice: "You shall not pass!" unless current_user.try(:user_type) === "company" && current_user.company_verified? === true
+      # redirect_to root_url, notice: "You shall not pass!" unless current_user.try(:user_type) === "company" && current_user.company_verified? === true
+      if current_user.user_type === "company" && unless current_user.company_verified? === true
+      redirect_to root_url, notice: "You shall not pass!"
+        end
+      end
     end
 end
