@@ -9,7 +9,8 @@ class StudentProfilesController < ApplicationController
   # before_filter(:only =>[:edit, :new, :destroy, :create, :update]) {|c| c.deny_access(params[:id])}
   # before_action(:only=>[:index]) {|c| if c.get_profile_type == 'student'; c.deny_access(-1) end}
   #redirect company if they haven't been verified
-  # before_filter :verified?
+  # Stops current student users and non verified companies from accessing all actions except index and search
+  before_action :allowed_user
 
   # GET /student_profiles
   # GET /student_profiles.json
@@ -177,5 +178,8 @@ class StudentProfilesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_profile_params
       params.require(:student_profile).permit(:first_name, :last_name, :school, :expected_graduation, :school_year, :last_completed_degree, :residential_address, :major, :resume, :image, user_attributes: [ :id, :email, :password, :user_type ])
+    end
+    def allowed_user
+      redirect_to root_url, notice: "You shall not pass!" unless current_user.try(:user_type) === "company" && current_user.company_verified? === true
     end
 end
