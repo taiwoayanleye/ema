@@ -4,7 +4,11 @@
       <li class="name">
         <% if current_user.present? %>
           <% if current_user.user_type == "company" %>
-            <h1><%= link_to "Stutern", '/student_profiles' %></a></h1>
+            <% if current_user.profile.verified == true %>
+              <h1><%= link_to "Stutern", '/student_profiles' %></a></h1>
+            <% else %>
+              <h1><%= link_to "Stutern", '/' %></a></h1>
+            <% end %>
           <% elsif current_user.user_type == "student" %>
             <h1><%= link_to "Stutern", '/job_postings' %></a></h1>
           <% end %>

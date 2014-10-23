@@ -39,13 +39,14 @@ class ApplicationController < ActionController::Base
       user_type = current_user.user_type
       if user_type == "student"
         job_postings_url
-
-      elsif user_type == "company"
-        if user.profile.verified == true
-          student_profiles_url
-        else
-          company_profile_url(current_user.profileable_id)
-        end
+      else
+        company_profile_url(current_user.profileable_id)
+      # elsif user_type == "company"
+      #   if @user.profile.verified? === true
+      #     company_profile_url(current_user.profileable_id)
+      #   else
+      #     student_profiles_url
+      #   end
       end
     end
 
