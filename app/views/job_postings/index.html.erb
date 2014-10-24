@@ -1,30 +1,25 @@
 <h1>Job Postings</h1>
 <div>
+  <!-- current_user.profile.image -->
   <% @job_postings.each do |job_posting| %>
   <div class="row">
     <div class="col-xs-6 col-md-3">
-      <div class="thumbnail">
-        <div class="caption">
-          <h3><%= job_posting.position %></h3>
+        <div class="thumbnail">
+          <%= image_tag CompanyProfile.find(job_posting.company_profile.id).image_url %>
         </div>
-       <!--  link_to image_tag, job_posting -->
-        <div class="caption">
-          <p><%=  job_posting.job_id %></p>
-          <p><%= job_posting.job_description %></p>
-          <p><%= job_posting.job_start %></p>
-          <p><%= %></p>
-          <p><%= %></p>
-          <p><%= %></p>
-          <p><%= %></p>
-        </div>
-      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <p><%= "Posted by #{job_posting.company_profile.company_name}" %></p>
+      <h3><%= job_posting.position %></h3>
+      <p><%=  job_posting.job_id %></p>
+      <p><%= job_posting.job_start %></p>
     </div>
   </div>
   <% end %>
 </div>
 <br>
 
-<table>
+<!-- <table>
   <thead>
     <tr>
       <th>Job</th>
@@ -58,4 +53,4 @@
       </tr>
     <% end %>
   </tbody>
-</table>
+</table> -->

@@ -12,6 +12,8 @@ class JobPostingsController < ApplicationController
 
   def index
     @job_postings = JobPosting.all
+    # @company = @job_postings.first.company_profile
+    # @image = @company.image.url
 
     respond_to do |format|
       format.html # index.html.erb
