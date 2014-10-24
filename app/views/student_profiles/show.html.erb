@@ -132,43 +132,56 @@
                   <% if !@student_profile.stu_work_experiences.empty? %>
 
                     <% @work_histories.each do |work_history| %>
-
-                    <!-- experience_subheader -->
-                    <div class = 'experience_subheader'>
-                      <!-- experience_position -->
-                      <i class="fa fa-briefcase"></i>
-                      <span class = 'experience_position'><a><%= work_history.position %></a></span>
-                      <%= '|' %>
-                      <!-- experience_company -->
-                      <i class="fa fa-users"></i>
-                      <span class = 'experience_company'><a><%= work_history.company %></a></span>
-                      <%= '|' %>
-                      <!-- experience_date -->
-                      <i class="fa fa-calendar"></i>
-                      <span class = 'experience_date'><a><%= work_history.start_date %> | <%= work_history.end_date %></a></span>
+                    <div class="row"> 
+                      <div class ="large-12 small-12 columns">
+                        <!-- experience_subheader -->
+                        <div class = 'experience_subheader'>
+                          <!-- experience_position -->
+                          <i class="fa fa-briefcase"></i>
+                          <span class = 'experience_position'><a><%= work_history.position %></a></span>
+                          <%= '|' %>
+                          <!-- experience_company -->
+                          <i class="fa fa-users"></i>
+                          <span class = 'experience_company'><a><%= work_history.company %></a></span>
+                          <%= '|' %>
+                          <!-- experience_date -->
+                          <i class="fa fa-calendar"></i>
+                          <span class = 'experience_date'><a><%= work_history.start_date %> | <%= work_history.end_date %></a></span>
+                        </div>
+                      </div>
                     </div>
-                           
+                    
+
                     <!-- experience_description -->
                     <div class = 'experience_description'>
                       <p><%= work_history.description %></p>
                     </div>
 
-
-                    <% if current_user.id == @student_profile.user_id.to_i %>
-                    <p><%= link_to 'Edit', edit_stu_work_experience_url(work_history) %></p>
-                    <p><%= link_to 'Destroy',  work_history, :method => :delete, :confirm => 'Are you sure?' %></p>
-                    <% end %>
+                    <!--
+                    <div class ="row">
+                      <div class="large-12 small-12 columns">
+                        commentAdd 
+                        <%# if current_user.id == @student_profile.user_id.to_i %>
+                        <%= link_to 'Add', new_stu_work_experience_url %>
+                        <%# end %>
+                        commentEdit & Destro 
+                        <%# if current_user.id == @student_profile.user_id.to_i %>
+                        <%= link_to 'Edit', edit_stu_work_experience_url(work_history) %>
+                        <%= link_to 'Destroy',  work_history, :method => :delete, :confirm => 'Are you sure?' %>
+                        <%# end %>
+                      </div>
+                    </div>
+                    -->
+                    
+                  <div class = "exp_space"></div>
 
                   <% end %>
-
                   <% else %>
                     <p>No work experiences have been added yet!</p>
                   <% end %>
                   
-                  <% if current_user.id == @student_profile.user_id.to_i %>
-                      <%= link_to 'Add Work Experience', new_stu_work_experience_url %>
-                  <% end %>
                 </div>
+                
               </div>
             </div>
           </div>

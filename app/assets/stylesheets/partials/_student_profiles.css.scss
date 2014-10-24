@@ -85,7 +85,7 @@
 		}
 
 		.experience{
-			margin-top: 20px;
+			margin: rem-calc(30px 0px 30px 0px);
 
 			.experience_position{
 
@@ -93,6 +93,7 @@
 					font-size: $varfontsize_h3;
 					pointer-events: none;
        				cursor: default;
+       				color: black;
 
 				}
 			}
@@ -102,6 +103,7 @@
 					font-size: $varfontsize_h3;
 					pointer-events: none;
        				cursor: default;
+       				color: black;
 				}
 			}
 
@@ -110,6 +112,7 @@
 					font-size: $varfontsize_h3;
 					pointer-events: none;
        				cursor: default;
+       				color: black;
 				}
 			}
 			
@@ -121,6 +124,10 @@
 				}
 			}
 
+		}
+
+		.exp_space{
+			margin-bottom: rem-calc(10px);
 		}
 
 	}
