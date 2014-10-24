@@ -1,5 +1,26 @@
-<h1>Post new job</h1>
+<div class="site-content">
+	<div class="row" style="max-width: 30em;">
+  		<div class="all">
+			<!--title: New Internship-->
+	  		<div class="welcome">
+	          <div class="row">
+	            <div class="large-12 small-12 columns">
+	              <h2>New Intership</h2><hr>
+	            </div>
+	          </div>
+	        </div>
 
-<%= render 'form' %>
+			<!-- renders form -->
+			<%= render 'form' %>
+		
+			<!--cancels post-->
+			<div class="row">
+    			<div class="large-12 medium-12 small-12 columns">
+    				<%= link_to 'Cancel', '/', class:"button radius large-12 small-12 medium-12" %>
+    			</div>
+  			</div>
+			
 
-<%= link_to 'Back', job_postings_path %>
+		</div>
+	</div>
+</div>
