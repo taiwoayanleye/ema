@@ -1,178 +1,329 @@
-<p id="notice"><%= notice %></tr>
+<div class="site-content">
 
-<h3>Candidate Profile</h3>
-<table>
-  <%= image_tag @student_profile.image_url %>
-  <tr>
-    <th>First name:</th>
-    <td><%= @student_profile.first_name %></td>
-  </tr>
+  <p id="notice"><%= notice %></p>
 
-  <tr>
-    <th>Last name:</th>
-    <td><%= @student_profile.last_name %></td>
-  </tr>
-
-  <tr>
-    <th>School:</th>
-    <td><%= @student_profile.school %></td>
-  </tr>
-
-  <tr>
-    <th>Email:</th>
-    <td><%= @student_profile.user.email %></td>
-   </tr>
-  
-  <tr>
-    <th>Expected graduation:</th>
-    <td><%= @student_profile.expected_graduation %></td>
-  </tr>
-
-  <tr>
-    <th>School year:</th>
-    <td><%= @student_profile.school_year %></td>
-  </tr>
-
-  <tr>
-    <th>Last completed degree:</th>
-    <td><%= @student_profile.last_completed_degree %></td>
-  </tr>
-
-  <tr>
-    <th>Residential address:</th>
-    <td><%= @student_profile.residential_address %></td>
-  </tr>
-
-  <tr>
-    <th>Major:</th>
-    <td><%= @student_profile.major %></td>
-  </tr>
-
-  <tr>
-    <th>Resume:</th>
-    <td><%= @student_profile.resume %></td>
-  </tr>
-</table>
-<% if current_user.id == @student_profile.user_id.to_i %>
-  <td><%= link_to 'Edit Profile', edit_student_profile_path %></td>
-<% end %>
-
-<br/>
-<br/>
-
-<h3>Work Experience</h3>
-<% if !@student_profile.stu_work_experiences.empty? %>
-    <table>
-      <tr>
-        <th>Company</th>
-        <th>Position</th>
-        <th>Start date</th>
-        <th>End date</th>
-        <th>Job Description</th>
-        <% if current_user.id == @student_profile.user_id.to_i %>
-            <th></th>
-            <th></th>
-        <% end %>
-      </tr>
-
-      <% @work_histories.each do |work_history| %>
-          <tr>
-            <td><%= work_history.company %></td>
-            <td><%= work_history.position %></td>
-            <td><%= work_history.start_date %></td>
-            <td><%= work_history.end_date %></td>
-            <td><%= work_history.description %></td>
-             <% if current_user.id == @student_profile.user_id.to_i %>
-                <td><%= link_to 'Edit', edit_stu_work_experience_url(work_history) %></td>
-                <td><%= link_to 'Destroy',  work_history, :method => :delete, :confirm => 'Are you sure?' %></td>
-            <% end %>
-          </tr>
-      <% end %>
-    </table>
-<% else %>
-    <p>No work experiences have been added yet!</p>
-<% end %>
-
-<% if current_user.id == @student_profile.user_id.to_i %>
-    <%= link_to 'Add Work Experience', new_stu_work_experience_url %>
-<% end %>
-
-<br/>
-<br/>
-<br/>
-
-<div style="overflow: auto">
-
-  <div style="display:inline-block; float:left; width:30%;">
-<h3>Skills</h3>
-
-<% if !@student_profile.skills.empty? %>
-
-    <table>
-      <tr>
-        <th>Description</th>
-         <% if current_user.id == @student_profile.user_id.to_i %>
-            <th></th>
-            <th></th>
-        <% end %>
-      </tr>
-
-      <% @skills.each do |skill| %>
-          <tr>
-            <td><%= skill.description %></td>
-             <% if current_user.id == @student_profile.user_id.to_i %>
-                <td><%= link_to 'Edit', edit_skill_url(skill) %></td>
-                <td><%= link_to 'Destroy', skill, :method=>:delete, :confirm=>'Are you sure?' %></td>
-            <% end %>
-          </tr>
-      <% end %>
-    </table>
-<% else %>
-    <p>No skills have been added yet!</p>
-<% end %>
-
-<br/>
-<% if current_user.id == @student_profile.user_id.to_i %>
-    <%= link_to 'Add A Skill', new_skill_url %>
-<% end %>
+  <!-- candidate profile top bar
+  <div class="candidate_profile">
+    <div class="panel">
+      <div class='row'>
+        <div class="large-12 small-12 columns">
+           Candidate's Profile 
+          <h3>Profile</h3>
+        </div>
+        </div>
+    </div>
   </div>
+-->
+  <!-- top card -->
+  <div class="top-card">
+    <div class="row"> 
+      <div class="large-12 small-12 columns">
+        <div class="panel">
+          
+          <!-- approx 33% of top_card profile image -->
+            
+            <div class="row">
+              
+              <!-- image -->
+              <div class="large-4 small-4 columns">
+              <div class="profile_image">
+                <%= image_tag @student_profile.image_url(:thumb) %>
+              </div>
+              </div>
+               
+              <div class="large-8 small-8 columns">
+              <div class = 'profile_overview'>
+                
+                <!-- Name -->
+                <div class='intern_name'>
+                  <div class="row">
+                     <div class="large-12 small-12 columns">
+                      <p><%= @student_profile.first_name %> <%= @student_profile.last_name %></p>
+                     </div>
+                  </div>
+                </div>
+                
+                <!-- Education/University -->
+                <div class='education'>
+                  <div class="row">
+                    <div class="large-12 small-12 columns">
+                      <i class="fa fa-university"></i><p><%= @student_profile.school %> <%='|'%> <%= @student_profile.major %></p>
+                    </div>
+                   </div>
+                 </div>
 
-  <div style="display:inline-block; width:65%; margin-left:25px;">
-<h3>References</h3>
+               <!-- Major 
+               <div class='major'>
+                 <div class="row">
+                    <div class="large-12 small-12 columns">
+                      <i class="fa fa-star"></i><p><%= @student_profile.major %></p>
+                    </div>
+                  </div>
+                </div>
+               
 
-<% if !@student_profile.stu_references.empty? %>
+                Email 
+                <tr>
+                  <th>Email:</th>
+                  <td><%= @student_profile.user.email %></td>
+                </tr>
+                
+                Edit Profile
+                <%# if current_user.id == @student_profile.user_id.to_i %>
+                <td><%# link_to 'Edit Profile', edit_student_profile_path %></td>
+                <%# end %>
+                -->
+                
+                <!-- School Year % Graduation-->
+                <div class='year_graduation'>
+                  <div class="row">
+                    <div class="large-12 small-12 columns">
+                        <i class="fa fa-graduation-cap"></i><p><%= @student_profile.school_year %> <%= '-' %> <%= @student_profile.expected_graduation %></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-    <table>
-      <tr>
-        <th>Name</th>
-    <th>Relationship</th>
-    <th>Phone</th>
-        <th>Email</th>
-        <% if current_user.id == @student_profile.user_id.to_i %>
-            <th></th>
-            <th></th>
-        <% end %>
-      </tr>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
 
-      <% @references.each do |reference| %>
-          <tr>
-            <td><%= reference.name %></td>
-      <td><%= reference.relationship %></td>
-      <td><%= reference.phone %></td>
-            <td><%= mail_to reference.email %></td>
+  <!-- bottom card -->
+  <div class="bottom-card">
+    <div class="row"> 
+      <div class="large-12 small-12 columns">
+        <div class="panel">
+          
+          <!-- bio_header -->
+          <div class="large-12 small-12 columns">
+            <div class="bio_header">
+              <h3> <%= @student_profile.first_name %> <%="'s"%> Bio </h3>
+            </div>
+          </div>
+
+          <!-- brief (2 Children)-->
+          <div class="large-12 small-12 columns">
+            <div class = "brief">
+              <!-- child1: brief Title -->
+              <div class ="brief_title">
+                <p>Brief</p>
+              </div>
+              <!-- child2: brief_text -->
+              <div class="brief_text">
+                <%= @student_profile.resume %>
+              </div>
+            </div>
+          </div>
+
+          
+          <!-- experience (2 Children)-->
+          <div class="large-12 small-12 columns">
+            <div class = "experience">
+              <!-- child1: brief Title -->
+              <div class ="brief_title">
+                <p>Experience</p>
+              </div>
+              <!-- child2: brief_text -->
+              <div class="brief_text">
+                <div id="intern_experience">
+                  <!-- Work Experience -->
+                  <h3>Work Experience</h3><hr>
+                  <% if !@student_profile.stu_work_experiences.empty? %>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <th>Company</th>
+                          <th>Position</th>
+                          <th>Start date</th>
+                          <th>End date</th>
+                          <th>Job Description</th>
+                          <% if current_user.id == @student_profile.user_id.to_i %>
+                          <th></th>
+                          <th></th>
+                          <% end %>
+                        </tr>
+
+                        <% @work_histories.each do |work_history| %>
+                        
+                        <tr>
+                          <td><%= work_history.company %></td>
+                          <td><%= work_history.position %></td>
+                          <td><%= work_history.start_date %></td>
+                          <td><%= work_history.end_date %></td>
+                          <td><%= work_history.description %></td>
+                          <% if current_user.id == @student_profile.user_id.to_i %>
+                          <td><%= link_to 'Edit', edit_stu_work_experience_url(work_history) %></td>
+                          <td><%= link_to 'Destroy',  work_history, :method => :delete, :confirm => 'Are you sure?' %></td>
+                          <% end %>
+                        </tr>
+                        <% end %>
+                      </tbody>
+                    </table>
+                  <% else %>
+                  <p>No work experiences have been added yet!</p>
+                  <% end %>
+
+                  <% if current_user.id == @student_profile.user_id.to_i %>
+                      <%= link_to 'Add Work Experience', new_stu_work_experience_url %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- education -->
+          <div class="education">
+            <h3>EDUCATION</h3>
+            <p>Summary</p>
+            <p>Objective</p>
+          </div>
+          
+          <!-- skills -->
+          <div class="skills">
+            <h3>SKILLS & CERTIFICATION</h3>
+            <p>Skills</p>
+              <ul>
+                <li>
+                
+                </li>
+              </ul>
+            <p>Certification</p>
+              <ul>
+                <li>
+                
+                </li>
+              </ul>
+          </div>
+
+          <div class="Interest">
+            <h3>Interest</h3>
+            <ul>
+              <li>
+                
+              </li>
+            </ul>
+          </div>
+
+          <div class="Reference">
+            <h3>BACKGROUND</h3>
+            <p>Summary</p>
+            <p>Objective</p>
+          </div>
+          
+          <div id="intern_last_completed_Degree">
+            <table>
+              <tbody>
+                <tr>
+                  <th>Last completed degree:</th>
+                  <td><%= @student_profile.last_completed_degree %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div id="intern_residential_Address">
+          <h3>Residential address:</h3><hr>
+            <table>
+              <tbody>
+                  <tr>
+                    <th>
+                      <td><%= @student_profile.residential_address %></td>
+                  </th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div id="intern_education_peronal_Resume">
+            <h3>Resume</h3><h
+            <table>
+              <tbody>
+                <tr>
+                  <th>
+                    <td><%= @student_profile.resume %></td>
+                  </th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Skills -->
+          <div id="intern_skills">
+              <h3>Skills</h3><hr>
+              <% if !@student_profile.skills.empty? %>
+              <table>
+                <tr>
+                  <th>Description</th>
+                  <% if current_user.id == @student_profile.user_id.to_i %>
+                  <th></th>
+                  <th></th>
+                  <% end %>
+                </tr>
+
+                <% @skills.each do |skill| %>
+                  <tr>
+                    <td><%= skill.description %></td>
+                    <% if current_user.id == @student_profile.user_id.to_i %>
+                    <td><%= link_to 'Edit', edit_skill_url(skill) %></td>
+                    <td><%= link_to 'Destroy', skill, :method=>:delete, :confirm=>'Are you sure?' %></td>
+                    <% end %>
+                  </tr>
+                <% end %>
+              </table>
+            <% else %>
+              <p>No skills have been added yet!</p>
+            <% end %>
+            <br/>
             <% if current_user.id == @student_profile.user_id.to_i %>
-                <td><%= link_to 'Edit', edit_stu_reference_url(reference) %></td>
-                <td><%= link_to 'Destroy', reference, :method=>:delete, :confirm=>'Are you sure?' %></td>
+              <%= link_to 'Add A Skill', new_skill_url %>
             <% end %>
-          </tr>
-      <% end %>
-    </table>
-<% else %>
-    <p>No references have been added yet!</p>
-<% end %>
-<br />
-<% if current_user.id == @student_profile.user_id.to_i %>
-        <%= link_to 'Add A Reference', new_stu_reference_url %>
-<% end %>
-</div>
-  </div>
+          </div>
+
+          <!-- Reference -->
+          <div id="intern_references">
+            <h3>Reference</h3><hr>
+            <% if !@student_profile.stu_references.empty? %>
+              <table>
+                <tr>
+                  <th>Name</th>
+                  <th>Relationship</th>
+                  <th>Phone</th>
+                  <th>Email</th>
+                  <% if current_user.id == @student_profile.user_id.to_i %>
+                  <th></th>
+                  <th></th>
+                  <% end %>
+                </tr>
+
+                <% @references.each do |reference| %>
+                <tr>
+                  <td><%= reference.name %></td>
+                  <td><%= reference.relationship %></td>
+                  <td><%= reference.phone %></td>
+                  <td><%= mail_to reference.email %></td>
+
+                  <% if current_user.id == @student_profile.user_id.to_i %>
+
+                  <td><%= link_to 'Edit', edit_stu_reference_url(reference) %></td>
+                  <td><%= link_to 'Destroy', reference, :method=>:delete, :confirm=>'Are you sure?' %></td>
+                  <% end %>
+                </tr>
+                <% end %>
+              </table>
+            <% else %>
+              <p>No references have been added yet!</p>
+            <% end %>
+            <br />
+
+            <% if current_user.id == @student_profile.user_id.to_i %>
+              <%= link_to 'Add A Reference', new_stu_reference_url %>
+            <% end %>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div> 

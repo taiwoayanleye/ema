@@ -1,0 +1,82 @@
+
+.panel{
+	margin: 0 20%;
+
+	@media #{$medium-only}{
+		margin: 0px 8%;}
+
+	@media #{$small-only}{
+		margin: 0px 8%;}
+
+	.row{
+		margin: 0px;
+	}
+}
+
+.site-content{
+	//.candidate_profile{
+
+		//.panel{
+			//text-align: center;
+			//padding: 0px;
+		//}
+	//}
+	.top-card{
+		margin: rem-calc(20px) 0px rem-calc(20px) 0px !important;	 
+		.profile_image > img {
+			width: 200px !important;
+		}
+		.profile_overview{
+				margin-left: rem-calc(10px);
+				.intern_name{
+						
+					p{
+					font-size: $varfontsize_hbig1;
+					}
+				}
+				.education{
+					
+					i{
+					float: left;
+					margin-right: rem-calc(4px);
+					font-size: $fontawes_h3;
+					@media #{$medium-only}{font-size: $fontawes_h4;}
+					@media #{$small-only}{font-size: $fontawes_h4;}
+					}
+
+					p{
+					font-size: $varfontsize_h4;
+					@media #{$medium-only}{font-size: $varfontsize_h5;}
+					@media #{$small-only}{font-size: $varfontsize_h5;}
+					}
+				}
+				.year_graduation{
+					i{
+					float: left;
+					margin-right: rem-calc(4px);
+					font-size: $fontawes_h3;
+					@media #{$medium-only}{font-size: $fontawes_h4;}
+					@media #{$small-only}{font-size: $fontawes_h4;}
+					}
+
+					p{
+					font-size: $varfontsize_h4;
+					@media #{$medium-only}{font-size: $varfontsize_h5;}
+					@media #{$small-only}{font-size: $varfontsize_h5;}
+					}
+				}
+			}
+	}
+	.bottom-card{
+
+		.Bio_Header{
+			background-color: red;
+		}
+
+		.brief_text{
+			padding: rem-calc(5px 5px 50px 5px);
+			border: 2px solid black;
+		}
+
+	}
+}

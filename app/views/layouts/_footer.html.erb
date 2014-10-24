@@ -1,5 +1,26 @@
-<footer>
-<%= link_to "About", pages_about_path %>
-<%= link_to "Contact", pages_contact_path %>
-<p>Copyright 2014</p>
-</footer>
+<section class="foot">
+	<div class="row" style="max-width: 30em;">
+		<div class="inner-wrapper">
+
+		<!--About & Contact-->
+			<div class="row">
+				<div class="about_contact">
+				<!--About-->
+			    	<div class="large-6 medium-6 small-6 columns">
+						<%= link_to "About", pages_about_path %>
+					</div>
+					<!--Contact-->
+					<div class="large-6 medium-6 small-6 columns">
+						<%= link_to "Contact", pages_contact_path %>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-12 medium-12 small-12 columns">
+					<p id="copyright">© Stutern, Inc.</p>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</section>
