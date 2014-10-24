@@ -1,20 +1,125 @@
-<h1>Job Postings</h1>
-<div>
+<div class="site-content">
+  
+  <!-- page titlte -->
+  <div class="internship_page">
+    <h1>Internship Page</h1>
+  </div>
+
   <% @job_postings.each do |job_posting| %>
-    <div class="th">
-      <div>
-        <h3><%= job_posting.position %></h3>
+    
+  <div class="large-4 small-12 columns">
+    <div class = 'internship'>
+      
+      <!-- this origins whole -->
+      <div class = "row">
+
+        <!--r1 company name _ top bar-->
+        <div class="large-12 small-12 columns">
+          <div class="company_name">
+            <div class="internship_content">
+            <p><%= "#{job_posting.company_profile.company_name}" %></p>
+            </div>
+          </div>
+        </div>
+
+        <!--r2 company image-->
+        <div class="large-12 small-12 columns">
+          <div class="company_image">
+            <div class="internship_content">
+            <%= image_tag CompanyProfile.find(job_posting.company_profile.id).image_url %>
+            </div>
+          </div>
+        </div>
+
+        <!--internship positions-->
+        <div class="large-12 small-12 columns">
+          <div class="internship_position">
+            <div class="internship_content">
+            <%= job_posting.position %>
+            </div>
+          </div>
+        </div>
+
+        <!--internship description-->
+        <div class="large-12 small-12 columns">
+          <div class="internship_description">
+            <div class="internship_content">
+             <p><%= job_posting.job_description %></p>
+            </div>
+          </div>
+        </div>
+
+        <!--view & links _ bottom bar-->
+        <div class="large-12 small-12 columns">
+          <div class="internship_bottom">
+            <div class="internship_content">
+              <p><%= "#{job_posting.company_profile.location}" %></p>
+              <p><%= "#{job_posting.company_profile.company_type}" %></p>
+              <p><%= "#{job_posting.company_profile.number_of_employees}" %></p>
+            </div>
+          </div>
+        </div>
+
       </div>
-      <%= image_tag CompanyProfile.find(job_posting.company_profile.id).image_url(:thumb) %>
-      <div>
-        <p><%= "#{job_posting.company_profile.company_name}" %></p>
-      </div>
-      <div>
-        <p><%= "#{job_posting.company_profile.location}" %></p>
-        <p><%= "#{job_posting.company_profile.company_type}" %></p>
-        <p><%= "#{job_posting.company_profile.number_of_employees}" %></p>
-      </div>
+
     </div>
+  </div>
+
   <% end %>
+
+<%= link_to 'New Job posting', new_job_posting_path %>
+
 </div>
-<br>
+
+  
+
+
+
+<!-- <table>
+  <thead>
+    <tr>
+      <th>Job</th>
+      <th>Position</th>
+      <th>Job description</th>
+      <th>Job start</th>
+      <th>Job end</th>
+      <th>Posted on</th>
+      <th>Position time</th>
+      <th>Job</th>
+      <th>Job requirements</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @job_postings.each do |job_posting| %>
+      <tr>
+        <td><%= job_posting.job_id %></td>
+        <td><%= job_posting.position %></td>
+        <td><%= job_posting.job_description %></td>
+        <td><%= job_posting.job_start %></td>
+        <td><%= job_posting.job_end %></td>
+        <td><%= job_posting.posted_on %></td>
+        <td><%= job_posting.position_time %></td>
+        <td><%= job_posting.job_paid %></td>
+        <td><%= job_posting.job_requirements %></td>
+        <td><%= link_to 'Show', job_posting %></td>
+        <td><%= link_to 'Edit', edit_job_posting_path(job_posting) %></td>
+        <td><%= link_to 'Destroy', job_posting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table> -->
+
+
+<!--
+Job Posted Box:
+COMPANY: Company Name, Company Picture/Logo
+INTERNSHIP: Duration, Location, Industry, Brief Description, Internship Position
+INTERN: View, Save, Share(Facebook, LinkedIn, Twitter)
+
+Job Posted Content
+COMPANY: Company Name, Company Picture, Company Location, Company Size, Industry
+INTERNSHIP: Description, Requirement, ResponsibilityFull Internship Description,
+INTERN: Apply, Save, Follow Company, Share(Facebook, LinkedIn, Twitter)
+-->
