@@ -69,10 +69,14 @@
 	}
 	.bottom-card{
 
+		.Bio_Header{
+			background-color: red;
+		}
+
+		.brief_text{
+			padding: rem-calc(5px 5px 50px 5px);
+			border: 2px solid black;
+		}
+
 	}
 }
-
-//styling image uploader
-	.image_uploader{
-		width: rem-calc(160px);
-	}
