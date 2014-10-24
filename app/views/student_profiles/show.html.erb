@@ -104,71 +104,65 @@
             </div>
           </div>
 
-          <!-- brief (2 Children)-->
+          <!-- brief (2_children)-->
           <div class="large-12 small-12 columns">
             <div class = "brief">
-              <!-- child1: brief Title -->
+              <!-- child1: brief_title -->
               <div class ="brief_title">
                 <p>Brief</p>
               </div>
-              <!-- child2: brief_text -->
-              <div class="brief_text">
+              <!-- child2: brief_content -->
+              <div class="brief_content">
                 <%= @student_profile.resume %>
               </div>
             </div>
           </div>
 
           
-          <!-- experience (2 Children)-->
+          <!-- experience (2_children)-->
           <div class="large-12 small-12 columns">
             <div class = "experience">
-              <!-- child1: brief Title -->
-              <div class ="brief_title">
+              <!-- child1: experience_title -->
+              <div class ="experience_title">
                 <p>Experience</p>
               </div>
-              <!-- child2: brief_text -->
-              <div class="brief_text">
+              <!-- child2: experience_content -->
+              <div class="experience_content">
                 <div id="intern_experience">
-                  <!-- Work Experience -->
-                  <h3>Work Experience</h3><hr>
+                  
                   <% if !@student_profile.stu_work_experiences.empty? %>
-                    <table>
-                      <tbody>
-                        <tr>
-                          <th>Company</th>
-                          <th>Position</th>
-                          <th>Start date</th>
-                          <th>End date</th>
-                          <th>Job Description</th>
-                          <% if current_user.id == @student_profile.user_id.to_i %>
-                          <th></th>
-                          <th></th>
-                          <% end %>
-                        </tr>
 
-                        <% @work_histories.each do |work_history| %>
-                        
-                        <tr>
-                          <td><%= work_history.company %></td>
-                          <td><%= work_history.position %></td>
-                          <td><%= work_history.start_date %></td>
-                          <td><%= work_history.end_date %></td>
-                          <td><%= work_history.description %></td>
-                          <% if current_user.id == @student_profile.user_id.to_i %>
-                          <td><%= link_to 'Edit', edit_stu_work_experience_url(work_history) %></td>
-                          <td><%= link_to 'Destroy',  work_history, :method => :delete, :confirm => 'Are you sure?' %></td>
-                          <% end %>
-                        </tr>
-                        <% end %>
-                      </tbody>
-                    </table>
-                  <% else %>
-                  <p>No work experiences have been added yet!</p>
+                    
+
+                    <% @work_histories.each do |work_history| %>
+
+                    <!-- position -->
+                    <%= work_history.position %>
+
+                    <!-- company -->
+                    <%= work_history.company %>
+
+                    <!-- start & end dates -->
+                    <%= work_history.start_date %> | <%= work_history.end_date %>
+
+                    <!-- description -->
+                    <%= work_history.description %>
+
+                    <% if current_user.id == @student_profile.user_id.to_i %>
+                    <p><%= link_to 'Edit', edit_stu_work_experience_url(work_history) %></p>
+                    <p><%= link_to 'Destroy',  work_history, :method => :delete, :confirm => 'Are you sure?' %></p>
+                    <% end %>
+
                   <% end %>
 
+                  <% else %>
+                    <p>No work experiences have been added yet!</p>
+                  <% end %>
+                  
                   <% if current_user.id == @student_profile.user_id.to_i %>
                       <%= link_to 'Add Work Experience', new_stu_work_experience_url %>
                   <% end %>
+                  
                 </div>
               </div>
             </div>

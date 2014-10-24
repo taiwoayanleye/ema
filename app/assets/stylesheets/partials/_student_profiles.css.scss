@@ -73,9 +73,15 @@
 			background-color: red;
 		}
 
-		.brief_text{
-			padding: rem-calc(5px 5px 50px 5px);
-			border: 2px solid black;
+		.brief{
+			.brief_content{
+				padding: rem-calc(5px 5px 50px 5px);
+				border: 2px solid black;
+			}
+		}
+
+		.experience{
+			margin-top: 20px;
 		}
 
 	}
