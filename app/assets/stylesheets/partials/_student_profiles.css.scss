@@ -72,63 +72,71 @@
 	
 	//bottom-card styling
 	.bottom-card{
-
-		.bio_header{
-			background-color: white;
-		}
-
-		.brief{
-			.brief_content{
-				padding: rem-calc(5px 5px 50px 5px);
-				border: 2px solid black;
-			}
-		}
-
-		.experience{
-			margin: rem-calc(30px 0px 30px 0px);
-
-			.experience_position{
-
-				a{
-					font-size: $varfontsize_h3;
-					pointer-events: none;
-       				cursor: default;
-       				color: black;
-
-				}
-			}
-
-			.experience_company{
-				a{
-					font-size: $varfontsize_h3;
-					pointer-events: none;
-       				cursor: default;
-       				color: black;
-				}
-			}
-
-			.experience_date{
-				a{
-					font-size: $varfontsize_h3;
-					pointer-events: none;
-       				cursor: default;
-       				color: black;
+		
+			//bio
+			.bio{
+				.bio_header{
+					background-color: white;
 				}
 			}
 			
-			.experience_description{
-				p{
-					font-size: $varfontsize_h4;
-					pointer-events: none;
-       				cursor: default;
+			//brief
+			.brief{
+				.brief_content{
+					padding: rem-calc(5px 5px 50px 5px);
+					border: 2px solid black;
 				}
+			}
+			
+			//experience
+			.experience{
+				margin: rem-calc(30px 0px 30px 0px);
+
+				.experience_position{
+
+					a{
+						font-size: $varfontsize_h3;
+						pointer-events: none;
+	       				cursor: default;
+	       				color: black;
+					}
+				}
+
+				.experience_company{
+					a{
+						font-size: $varfontsize_h3;
+						pointer-events: none;
+	       				cursor: default;
+	       				color: black;
+					}
+				}
+
+				.experience_date{
+					a{
+						font-size: $varfontsize_h3;
+						pointer-events: none;
+	       				cursor: default;
+	       				color: black;
+					}
+				}
+				
+				.experience_description{
+					p{
+						font-size: $varfontsize_h4;
+						pointer-events: none;
+	       				cursor: default;
+					}
+				
 			}
 
 		}
-
+		
+		//experience space
 		.exp_space{
 			margin-bottom: rem-calc(10px);
 		}
+
+		//education
 
 	}
 }

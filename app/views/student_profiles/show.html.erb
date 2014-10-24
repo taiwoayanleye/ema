@@ -99,8 +99,10 @@
           
           <!-- bio_header -->
           <div class="large-12 small-12 columns">
-            <div class="bio_header">
-              <h3> <%= @student_profile.first_name %> <%="'s"%> Bio </h3>
+            <div class="bio">
+              <div class="bio_header">
+                <h3> <%= @student_profile.first_name %> <%="'s"%> Bio </h3>
+              </div>
             </div>
           </div>
 
@@ -118,7 +120,7 @@
             </div>
           </div>
 
-          
+
           <!-- experience (2_children)-->
           <div class="large-12 small-12 columns">
             <div class = "experience">
@@ -184,30 +186,30 @@
                 
               </div>
             </div>
-          </div>
-          
-          <!-- education -->
-          <div class="education">
-            <h3>EDUCATION</h3>
-            <p>Summary</p>
-            <p>Objective</p>
-          </div>
+          </div><hr>
           
           <!-- skills -->
-          <div class="skills">
-            <h3>SKILLS & CERTIFICATION</h3>
-            <p>Skills</p>
-              <ul>
-                <li>
-                
-                </li>
-              </ul>
-            <p>Certification</p>
-              <ul>
-                <li>
-                
-                </li>
-              </ul>
+          <div class="large-12 small-12 columns">
+            <div class="skills">
+              <h3>SKILLS & CERTIFICATION</h3>
+              <p>Skills</p>
+                <ul>
+                  <li>
+                  <% if current_user.id == @student_profile.user_id.to_i %>
+                  
+                  <% @skills.each do |skill| %>
+                  <%= skill.description %>
+                  <% end %>
+                  <% end %>
+                  </li>
+                </ul>
+              <p>Certification</p>
+                <ul>
+                  <li>
+                  
+                  </li>
+                </ul>
+            </div>
           </div>
 
           <div class="Interest">
@@ -250,7 +252,7 @@
           </div>
 
           <div id="intern_education_peronal_Resume">
-            <h3>Resume</h3><h
+            <h3>Resume</h3>
             <table>
               <tbody>
                 <tr>
@@ -262,7 +264,7 @@
             </table>
           </div>
 
-          <!-- Skills -->
+          <!-- Skills 
           <div id="intern_skills">
               <h3>Skills</h3><hr>
               <% if !@student_profile.skills.empty? %>
@@ -293,6 +295,7 @@
               <%= link_to 'Add A Skill', new_skill_url %>
             <% end %>
           </div>
+
 
           <!-- Reference -->
           <div id="intern_references">
