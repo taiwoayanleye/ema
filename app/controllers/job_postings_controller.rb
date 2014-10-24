@@ -3,10 +3,8 @@ class JobPostingsController < ApplicationController
 
 # GET /job_postings
 # GET /job_postings.json
-  before_action :authenticate_user!, :get_user
   #keep user from accessing their profile if they haven't created it yet
-  # before_action :profile_redir
-
+  before_action :authenticate_user!, :get_user
   # Stops current student users and non verified companies from accessing all actions except index and search
   before_action :allowed_user, except: [:index, :search] 
 
@@ -14,7 +12,6 @@ class JobPostingsController < ApplicationController
     @job_postings = JobPosting.all
     # @company = @job_postings.first.company_profile
     # @image = @company.image.url
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @job_postings }

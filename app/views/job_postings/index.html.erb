@@ -1,56 +1,20 @@
 <h1>Job Postings</h1>
 <div>
-  <!-- current_user.profile.image -->
   <% @job_postings.each do |job_posting| %>
-  <div class="row">
-    <div class="col-xs-6 col-md-3">
-        <div class="thumbnail">
-          <%= image_tag CompanyProfile.find(job_posting.company_profile.id).image_url %>
-        </div>
+    <div class="th">
+      <div>
+        <h3><%= job_posting.position %></h3>
+      </div>
+      <%= image_tag CompanyProfile.find(job_posting.company_profile.id).image_url %>
+      <div>
+        <p><%= "#{job_posting.company_profile.company_name}" %></p>
+      </div>
+      <div>
+        <p><%= "#{job_posting.company_profile.location}" %></p>
+        <p><%= "#{job_posting.company_profile.company_type}" %></p>
+        <p><%= "#{job_posting.company_profile.number_of_employees}" %></p>
+      </div>
     </div>
-    <div class="col-xs-6 col-md-3">
-      <p><%= "Posted by #{job_posting.company_profile.company_name}" %></p>
-      <h3><%= job_posting.position %></h3>
-      <p><%=  job_posting.job_id %></p>
-      <p><%= job_posting.job_start %></p>
-    </div>
-  </div>
   <% end %>
 </div>
 <br>
-
-<!-- <table>
-  <thead>
-    <tr>
-      <th>Job</th>
-      <th>Position</th>
-      <th>Job description</th>
-      <th>Job start</th>
-      <th>Job end</th>
-      <th>Posted on</th>
-      <th>Position time</th>
-      <th>Job</th>
-      <th>Job requirements</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @job_postings.each do |job_posting| %>
-      <tr>
-        <td><%= job_posting.job_id %></td>
-        <td><%= job_posting.position %></td>
-        <td><%= job_posting.job_description %></td>
-        <td><%= job_posting.job_start %></td>
-        <td><%= job_posting.job_end %></td>
-        <td><%= job_posting.posted_on %></td>
-        <td><%= job_posting.position_time %></td>
-        <td><%= job_posting.job_paid %></td>
-        <td><%= job_posting.job_requirements %></td>
-        <td><%= link_to 'Show', job_posting %></td>
-        <td><%= link_to 'Edit', edit_job_posting_path(job_posting) %></td>
-        <td><%= link_to 'Destroy', job_posting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table> -->
