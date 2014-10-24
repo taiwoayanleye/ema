@@ -1,0 +1,24 @@
+.all{
+		
+	@media #{$medium-only}{
+		margin: 0px 8%;}
+
+	@media #{$small-only}{
+		margin: 0px 8%;}
+		
+	}
+
+.welcome{
+	margin-top: 10%;
+	margin-bottom: 10%;
+	text-align: center;
+}
+
+hr{
+	margin: 5px 0px;
+}
+
+h2{
+	color: $charcoal;
+	font-size:  $h3-font-size;
+}
