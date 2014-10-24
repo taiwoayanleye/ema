@@ -129,24 +129,30 @@
               <!-- child2: experience_content -->
               <div class="experience_content">
                 <div id="intern_experience">
-                  
                   <% if !@student_profile.stu_work_experiences.empty? %>
-
-                    
 
                     <% @work_histories.each do |work_history| %>
 
-                    <!-- position -->
-                    <%= work_history.position %>
+                    <!-- experience_subheader -->
+                    <div class = 'experience_subheader'>
+                      <!-- experience_position -->
+                      <i class="fa fa-briefcase"></i>
+                      <span class = 'experience_position'><a><%= work_history.position %></a></span>
+                      <%= '|' %>
+                      <!-- experience_company -->
+                      <i class="fa fa-users"></i>
+                      <span class = 'experience_company'><a><%= work_history.company %></a></span>
+                      <%= '|' %>
+                      <!-- experience_date -->
+                      <i class="fa fa-calendar"></i>
+                      <span class = 'experience_date'><a><%= work_history.start_date %> | <%= work_history.end_date %></a></span>
+                    </div>
+                           
+                    <!-- experience_description -->
+                    <div class = 'experience_description'>
+                      <p><%= work_history.description %></p>
+                    </div>
 
-                    <!-- company -->
-                    <%= work_history.company %>
-
-                    <!-- start & end dates -->
-                    <%= work_history.start_date %> | <%= work_history.end_date %>
-
-                    <!-- description -->
-                    <%= work_history.description %>
 
                     <% if current_user.id == @student_profile.user_id.to_i %>
                     <p><%= link_to 'Edit', edit_stu_work_experience_url(work_history) %></p>
@@ -162,7 +168,6 @@
                   <% if current_user.id == @student_profile.user_id.to_i %>
                       <%= link_to 'Add Work Experience', new_stu_work_experience_url %>
                   <% end %>
-                  
                 </div>
               </div>
             </div>
