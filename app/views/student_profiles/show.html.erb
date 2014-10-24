@@ -2,7 +2,7 @@
 
 <h3>Candidate Profile</h3>
 <table>
-  <%= image_tag @student_profile.image_url %>
+  <%= image_tag @student_profile.image_url(:thumb) %>
   <tr>
     <th>First name:</th>
     <td><%= @student_profile.first_name %></td>

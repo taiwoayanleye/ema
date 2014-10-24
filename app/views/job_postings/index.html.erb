@@ -5,7 +5,7 @@
       <div>
         <h3><%= job_posting.position %></h3>
       </div>
-      <%= image_tag CompanyProfile.find(job_posting.company_profile.id).image_url %>
+      <%= image_tag CompanyProfile.find(job_posting.company_profile.id).image_url(:thumb) %>
       <div>
         <p><%= "#{job_posting.company_profile.company_name}" %></p>
       </div>

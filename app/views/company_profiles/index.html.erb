@@ -6,7 +6,7 @@
       <div>
         <h3><%= company_profile.company_name %></h3>
       </div>
-      <td><%= link_to image_tag(company_profile.image_url), company_profile %></td>
+      <td><%= link_to image_tag(company_profile.image_url(:thumb)), company_profile %></td>
       <div>
         <p><%= company_profile.company_type %></p>
         <p><%= company_profile.location %></p>

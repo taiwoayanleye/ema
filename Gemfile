@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.2'
+ruby '2.1.3'
 
 gem 'rails', '4.1.6'
 gem 'sass-rails', '~> 4.0.3'
@@ -19,7 +19,7 @@ gem 'rails_admin'
 # gem 'cancan'
 # Carrierwave
 gem 'carrierwave'
-gem 'rmagick'
+gem 'mini_magick'
 
 group :doc do 
 	gem 'sdoc', '~> 0.4.0'
