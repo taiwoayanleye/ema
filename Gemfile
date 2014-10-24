@@ -8,6 +8,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+gem 'compass-rails'
 
 # Frontend stunts
 gem 'foundation-rails'
@@ -19,7 +20,8 @@ gem 'rails_admin'
 # gem 'cancan'
 # Carrierwave
 gem 'carrierwave'
-gem 'mini_magick'
+# gem 'rmagick'
+gem "mini_magick"
 
 group :doc do 
 	gem 'sdoc', '~> 0.4.0'
