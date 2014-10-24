@@ -1,0 +1,28 @@
+.companies{
+	padding: 0em;
+	margin: 0em;
+	background-color: $bck;
+}
+.intropage{
+	padding: 0em;
+	margin: 0em;
+	max-width:100%;
+}
+.columns{
+	padding: 0px;
+	margin: 0px;
+}
+.pix{
+	padding: 5px;
+}
+.text{
+	width: 100%;
+	text-align: center;
+	padding: 0px 0px;
+	margin: 0% 30%;
+	@media #{$medium-only}{
+		margin: 0px 5%;}
+
+	@media #{$small-only}{
+		margin: 0px 25%;}
+	}

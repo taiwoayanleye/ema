@@ -1,0 +1,15 @@
+.foot{
+	.inner-wrapper{
+		padding-top: 1.6em;
+		.about_contact{
+			margin: 0 10em 0 10em;
+			padding-top: 5em;
+			text-align: center;
+			font-size: $h6-font-size;
+		}
+		#copyright{
+			font-size: $small-font-size;
+			text-align: center;
+		}
+	}
+}
