@@ -3,7 +3,7 @@
 <!-- <h1>We are <br><%# @company_profile.company_name.upcase %></h1> -->
 <h1>Company Profile</h1>
 <table>
-  <%= image_tag @company_profile.image_url %>
+  <% image_tag @company_profile.image_url %>
   <th>Company name:</th>
   <td><%= @company_profile.company_name %></td>
 </table>
