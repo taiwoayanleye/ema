@@ -119,6 +119,8 @@ class StudentProfilesController < ApplicationController
     @skills = @student_profile.skills
     @work_histories = @student_profile.stu_work_experiences
     @references = @student_profile.stu_references
+    @interests = @student_profile.stu_interests
+    @certifications = @student_profile.stu_certifications
 
     # respond_to do |format|
     #   format.html # show.html.erb
