@@ -22,7 +22,7 @@ class SkillsController < ApplicationController
   end
 
   # GET /skills/new
-  # GET /skills/new/.json
+  # GET /skills/new.json
   def new
     @skill = Skill.new
 
