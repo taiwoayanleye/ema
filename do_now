@@ -1,0 +1,72 @@
+GENERAL
+	A - HTML:
+	B - HEADER:
+	C - BODY:
+	D - FOOTER:
+
+	0 - HOME:
+	1 - SIGN IN:
+	2 - REGISTER:
+	3 - ABOUT:
+	4 - CONTACT:
+
+INTERN
+
+	0 - SIGN OUT:
+	1 - EDIT REGISTRATION:
+	2 - PROFILE:
+	3 - EDIT PROFILES:
+	4 - BROWSE COMPANIES:
+	5 - BROWSE JOBS:
+	6 - SEARCH FOR JOBS:
+
+COMPANY
+	0 - SIGN OUT:
+        1 - EDIT REGISTRATION:
+        2 - PROFILE:
+        3 - EDIT PROFILES:
+        4 - BROWSE CANDIDATES:
+        5 - BROWSE FOR CANDIDATES:
+	6 - COMPANY PROFILE:
+
+>>>>>>>>>>>notes<<<<<<<<<<<
+
+HOME:
+	We should have three 'HOME' (General, Student, Companies)
+	General's 'HOME' retains Stutern's introductory
+	Student's 'HOME' shows intrested activites (sounds vague) 
+	Company's 'HOME' shows intrested activities (sounds vague)
+
+SIMPLER:
+	INTERN(PROFILE[0,1,2,3] & INTERNSHIPS[4,5,6])
+	COMPANY(PROFILE[0,1,2,3] & TALENT[4,5,6])
+
+ICONS:
+	Great Icons conveys not a meaning only, but emotion. It's more like accentuated animated character.
+	Great icons aren't solitary, it simulates the reality and that includes staging in it's ecosystem.
+	Icons should be bigger than the text inas much picture speaks a thousand word.
+	Icons according to Github, no words at all just hover and you would see words.
+	REFERENCES: Facebook, Twitter, AprilZero, Stations's Trains & Buses, Feedly.com.
+	OBSERVATION: Check Sites, Sites Enviroment
+	ASK: Ask Artist, Ask Content Makers
+	REIMPLEMENT: Put it all into Work as fast as you can
+
+COMPANIES:
+	Job Posted needs calling (location, company image, company type, industry, employee size job decription)
+
+INTERNS_bird_eye_ view:
+	BROWSE JOBS
+	Job Posted Box:
+		COMPANY: Company Name, Company Picture/Logo
+		INTERNSHIP: Duration, Location, Industry, Brief Description, Internship Position
+		INTERN: View, Save, Share(Facebook, LinkedIn, Twitter)
+
+	Job Posted Content
+		COMPANY: Company Name, Company Picture, Company Location, Company Size, Industry
+		INTERNSHIP: Description, Requirement, Responsibility,
+		INTERN: Apply, Save, Follow Company, Share(Facebook, LinkedIn, Twitter)
+	
+	BROWSE COMPANIES
+
+	
+
