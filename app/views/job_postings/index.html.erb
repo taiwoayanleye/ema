@@ -1,34 +1,31 @@
 <div class="site-content">
-  
-  <!-- page titlte -->
-  <div class="internship_page">
-    <h1>Internship Page</h1>
-  </div>
-
+  <div class = "row">
   <% @job_postings.each do |job_posting| %>
+    
     <div class="large-4 small-12 columns">
       <div class = 'internship'>
       
         <!-- this origins whole -->
           <!--r1 company name | company type _ top bar-->
-          <div class = "row ">
-
-            <div class="large-9 small-9 columns">
+          <div class = "row">
+            <div class="large-12 small-12 columns">
               <div class="company_name">
                 <div class="internship_content">
                 <p><%= "#{job_posting.company_profile.company_name}" %></p>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div class="large-3 small-3 columns">
+          <div class = "row">
+            <div class="large-12 small-12 columns">
               <div class="company_type">
                 <div class="internship_content">
-                <p><%= "#{job_posting.company_profile.company_type}" %></p>
+                <i class="fa fa-tags"></i><a><%= "#{job_posting.company_profile.company_type}" %></a>
+                <i class="fa fa-map-marker"></i><a><%= "#{job_posting.company_profile.location}" %></a>
                 </div>
               </div>
             </div>
-
           </div>
 
           <!--r2 company image-->
@@ -77,8 +74,6 @@
 
       </div>
     </div>
-
-
   </div>
   <% end %>
 </div>
