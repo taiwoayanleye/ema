@@ -6,69 +6,81 @@
   </div>
 
   <% @job_postings.each do |job_posting| %>
-    
-  <div class="large-4 small-12 columns">
-    <div class = 'internship'>
+    <div class="large-4 small-12 columns">
+      <div class = 'internship'>
       
-      <!-- this origins whole -->
-      <div class = "row">
+        <!-- this origins whole -->
+          <!--r1 company name | company type _ top bar-->
+          <div class = "row ">
 
-        <!--r1 company name _ top bar-->
-        <div class="large-12 small-12 columns">
-          <div class="company_name">
-            <div class="internship_content">
-            <p><%= "#{job_posting.company_profile.company_name}" %></p>
+            <div class="large-9 small-9 columns">
+              <div class="company_name">
+                <div class="internship_content">
+                <p><%= "#{job_posting.company_profile.company_name}" %></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="large-3 small-3 columns">
+              <div class="company_type">
+                <div class="internship_content">
+                <p><%= "#{job_posting.company_profile.company_type}" %></p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!--r2 company image-->
+          <div class = 'row'>
+            <div class="large-12 small-12 columns">
+              <div class="company_image">
+                <div class="internship_content">
+                <%= image_tag CompanyProfile.find(job_posting.company_profile.id).image_url %>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+          
+          <!--internship positions | description-->
+          <div class = 'row'>
+            <!--internship positions-->
+            <div class="large-12 small-12 columns">
+              <div class="internship_position">
+                <div class="internship_content">
+                <p><%= job_posting.position %></p>
+                </div>
+              </div>
+            </div>
 
-        <!--r2 company image-->
-        <div class="large-12 small-12 columns">
-          <div class="company_image">
-            <div class="internship_content">
-            <%= image_tag CompanyProfile.find(job_posting.company_profile.id).image_url %>
+            <!--internship description-->
+            <div class="large-12 small-12 columns">
+              <div class="internship_description">
+                <div class="internship_content">
+                 <p><%= job_posting.job_description %></p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!--internship positions-->
-        <div class="large-12 small-12 columns">
-          <div class="internship_position">
-            <div class="internship_content">
-            <%= job_posting.position %>
+          <div class = 'row'>
+            <!--view & links _ bottom bar-->
+            <div class="large-12 small-12 columns">
+              <div class="internship_bottom">
+                <div class="internship_content">
+                  <p><%= "#{job_posting.company_profile.location}" %></p>
+                  <p><%= "#{job_posting.company_profile.number_of_employees}" %></p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-
-        <!--internship description-->
-        <div class="large-12 small-12 columns">
-          <div class="internship_description">
-            <div class="internship_content">
-             <p><%= job_posting.job_description %></p>
-            </div>
-          </div>
-        </div>
-
-        <!--view & links _ bottom bar-->
-        <div class="large-12 small-12 columns">
-          <div class="internship_bottom">
-            <div class="internship_content">
-              <p><%= "#{job_posting.company_profile.location}" %></p>
-              <p><%= "#{job_posting.company_profile.company_type}" %></p>
-              <p><%= "#{job_posting.company_profile.number_of_employees}" %></p>
-            </div>
-          </div>
-        </div>
 
       </div>
-
     </div>
+
+
   </div>
-
   <% end %>
-
-<%= link_to 'New Job posting', new_job_posting_path %>
-
 </div>
 
   

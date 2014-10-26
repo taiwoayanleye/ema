@@ -1,6 +1,6 @@
-.contain-to-grid{
+.sticky{
 	.top-bar{
-		
+		box-shadow: 0 2px 5px rgba(0,0,0,.26);
 		.title-area{
 			
 			.name{
@@ -32,15 +32,3 @@
 	}
 }
 
-.toptext{
-	background-color: none;
-	position: relative;
-	bottom: 30em;
-	color: $white;
-	text-align: center;
-    opacity: 0.8;
-	p{	
-	text-shadow: 0px 0px 1px $black;
-	font-size: 70px;
-	}
-}

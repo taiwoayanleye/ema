@@ -1,11 +1,6 @@
-// Place all the styles related to the JobPostings controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
-.internship{
-	margin: rem-calc(10px);
-}
-
-.internship_content{
-	
-}
+.company_name{background-color:rgba(125, 10, 20, 1);}
+.company_type{background-color:rgba(15, 130, 20, 1);}
+.internship_position{background-color:rgba(125, 10, 220, 1);}
+.internship_description{background-color:rgba(95, 5, 90, 1);}
+.internship_bottom{background-color:rgba(95, 10, 0, 1);}
