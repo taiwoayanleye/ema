@@ -7,18 +7,23 @@
 .internship_bottom{background-color:$silver;}
 
 .internship{
-	padding: rem-calc(0px 0px 0px 0px);
+	padding: rem-calc(0px 10px 0px 10px);
 	width: 100%;
 	height: rem-calc(20px);
-}
-
-.company_name{
-	.intership_content{
-		p{
-		font-size: 5px !important;
+	//post_top
+	.post_top{
+		width: 100%;
+		height: rem-calc(25%);
+		background-color:red;
+		padding: rem-calc(0 0% 0 75%);
+		.company_name{
+			.intership_content{
+				p{
+				font-size: 5px !important;
+				}
+			}
 		}
 	}
 }
-
 //lets go conform to a box size that's a bir wider and less longer
-p{font-size: 5px !important;}
+p{font-size: 15px !important;}
