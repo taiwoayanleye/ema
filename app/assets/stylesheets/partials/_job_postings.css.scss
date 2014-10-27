@@ -48,6 +48,26 @@
 
 
 		//middle
+		.company_image{
+			
+		}
+
+		//page_down
+		.page_down{
+			//...
+			.page_down_one{text-align: center;}
+			//...
+			.page_down_two{
+				.internship_description{
+					p{
+						font-size: $varfontsize_h4;
+					}
+				}
+			}
+			//...
+			.page_down_three{}
+
+		}
 	}
 }
 //lets go conform to a box size that's a bir wider and less longer
