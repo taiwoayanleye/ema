@@ -31,8 +31,10 @@
         <div class = 'row'>
           <div class = "post_mid">
             <div class="large-12 small-12 columns">
-              <div class="company_image">
-                <%= image_tag CompanyProfile.find(job_posting.company_profile.id).image_url %>
+              <div class="image_wrapper">
+                <div class="company_image">
+                  <%= image_tag CompanyProfile.find(job_posting.company_profile.id).image_url %>
+                </div>
               </div>
             </div>
           </div>
@@ -51,7 +53,16 @@
             </div>
           </div>
 
-        
+          <div class = 'row'>
+            <div class ='page_down_two'>
+              <!--internship description-->
+              <div class="large-12 small-12 columns">
+                <div class="internship_description">
+                   <p><%= job_posting.job_description %></p>
+                </div>
+              </div>
+            </div>
+          </div>
           
           
           <!--duration, paid/not, -->

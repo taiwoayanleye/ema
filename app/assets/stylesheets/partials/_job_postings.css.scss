@@ -48,8 +48,17 @@
 
 
 		//middle
-		.company_image{
-
+		.post_mid{
+			.image_wrapper{
+				width: auto;
+    			height: 120px;
+    			overflow: hidden;
+				.company_image{
+				width: auto;
+    			height: auto;
+    			margin: -180px 0 0 -10px;
+				}
+			}
 		}
 
 		//page_down
