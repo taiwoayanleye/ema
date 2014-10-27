@@ -69,52 +69,114 @@
 
 </div><br />
 
+<!-- ...........................////////////\\\\\\\\\\\\\\\\\\\///////////////////\\\\\\\\\\\\\\\\\..........................-->
+<!-- ...........................////////////\\\\\\\\\\\\\\\________///////////////////\\\\\\\\\\\\\\\\\..........................-->
+<section>
+  <div class="content">
+    <% if !@return.nil? && !@return.empty? %>
+    <h3>Search Results</h3>
+    <% @return.each do |job_posting| %>
+    <% com_prof = CompanyProfile.find(job_posting.company_profile_id) %>
 
+    <div class="large-4 medium-4 small-12 columns">
+      <div class = 'int'>
 
+        <!--r1 company name | company type _ top bar-->
+        <div class="row">
+          <div class = "post_top">
+          <!-- company name -->
+            <div class="large-8 medium-8 small-8 columns">
+              <div class="company_name">
+                <p><%= "#{job_posting.company_profile.company_name}" %></p>
+              </div>
+            </div>
 
+            <!-- company_type and location -->
+            <div class="large-4 medium-4 small-4 columns">
+              <div class="company_type">
+                <i class="fa fa-tags"></i><a><%= "#{job_posting.company_profile.company_type}" %></a>
+                <i class="divider"><%= '|' %></i>
+                <i class="fa fa-globe"></i><a><%= "#{job_posting.company_profile.location}" %></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!--r2 company image-->
+        <div class = 'row'>
+          <div class = "post_mid">
+            <div class="large-12 small-12 columns">
+              <div class="image_wrapper">
+                <div class="company_image">
+                  <%= image_tag CompanyProfile.find(job_posting.company_profile.id).image_url %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <div class ='page_down'>
 
-<div>
-  <% if !@return.nil? && !@return.empty? %>
-      <h3>Search Results</h3>
-      <table>
-        <tr>
-          <th>Company Profile</th>
-          <th>Company Culture Grouping</th>
+          <div class = 'row'>
+            <div class ='page_down_one'>
+            <!--int positions-->
+              <div class="large-12 small-12 columns">
+                <div class="int_position"><a><%= job_posting.position %></a>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          <th>Position</th>
-          <th>Job description</th>
-          <th>Job start</th>
-          <th>Job end</th>
-          <th>Posted on</th>
-          <th>Position time</th>
-          <th>Job paid</th>
-          <th>Job requirements</th>
+          <div class = 'row'>
+            <div class ='page_down_two'>
+              <!--int description-->
+              <div class="large-12 small-12 columns">
+                <div class="int_description">
+                   <p><%= job_posting.job_description %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          
+          <!--duration, paid/not, -->
+          <div class = 'row'>
+            <div class ='page_down_three'>
+            <!-- Duration -->
+              <div class="large-6 medium-6 small-6 columns">
+                <div class="int_dur_paid">
+                  <i class="fa fa-calendar"></i><a><%= "#{job_posting.company_profile.number_of_employees}" %></a>
+                </div>
+              </div>
+              <!-- Paid or Unpaid -->
+              <div class="large-6 medium-6 small-6 columns">
+                <div class="int_dur_paid">
+                  <i class="fa fa-usd"></i><a><%= "#{job_posting.job_paid}" %></a>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        </tr>
+        </div>
 
-        <% @return.each do |job_posting| %>
-            <tr>
-              <% com_prof = CompanyProfile.find(job_posting.company_profile_id) %>
-              <td><%= link_to com_prof.company_name, company_profile_url(com_prof) %></td>
+      </div>
+    </div>
 
-              <td><%= job_posting.position %></td>
-              <td><%= job_posting.job_description %></td>
-              <td><%= job_posting.job_start %></td>
-              <td><%= job_posting.job_end %></td>
-              <td><%= job_posting.posted_on %></td>
-              <td><%= job_posting.position_time %></td>
-              <td><%= job_posting.job_paid %></td>
-              <td><%= job_posting.job_requirements %></td>
-
-            </tr>
-        <% end %>
-      </table>
-
-      <br />
-  <% else %>
+    <% end %>
+    
+    <% else %>
       <h3>No results.</h3>
-  <% end %>
-</div>
+    <% end %>
+
+    <div class="row">
+      <div class="large-9 small-9 small-centered large-centered columns">
+        <div class= "button radius large-12 small-12 medium-12">
+          <p>MORE</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 
