@@ -2,13 +2,13 @@
 
 .company_name{background-color:$silver;}
 .company_type{background-color:$silver;}
-.internship_position{background-color:$silver;}
-.internship_description{background-color:$silver;}
-.internship_bottom{background-color:$silver;}
+.int_position{background-color:$silver;}
+.int_description{background-color:$silver;}
+.int_dur_paid{background-color:$silver;}
 
 .content{
-	padding: rem-calc(0px 25px 0px 25px);
-	.internship{
+	padding: rem-calc(0px 18px 0px 18px);
+	.int{
 		padding: rem-calc(30px 5px 0 5px);
 		width: 100%;
 
@@ -63,10 +63,11 @@
 
 		//page_down
 		.page_down{
+			box-shadow: 0 -3px 3px rgba(0,0,0,.26);
 			//...
 			.page_down_one{
 				text-align: center;
-				.internship_position{
+				.int_position{
 					i{
 					padding: rem-calc(0 1% 0 0);
 					font-size: $fontawes_h2;
@@ -80,14 +81,28 @@
 			}
 			//...
 			.page_down_two{
-				.internship_description{
+				.int_description{
 					p{
 						font-size: $varfontsize_h4;
 					}
 				}
 			}
 			//...
-			.page_down_three{}
+			.page_down_three{
+				.int_dur_paid{
+					padding: rem-calc(0 50% 0 50%);
+					a{
+					font-size: $varfontsize_h4;
+					color: $jumbo;
+					}
+
+					i{
+					padding: rem-calc(0 1% 0 0%);
+					font-size: $fontawes_h2;
+					color: $jumbo;
+					}
+				}
+			}
 
 		}
 	}

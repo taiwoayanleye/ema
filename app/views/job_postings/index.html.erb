@@ -4,7 +4,7 @@
     <% @job_postings.each do |job_posting| %>
 
     <div class="large-4 medium-4 small-12 columns">
-      <div class = 'internship'>
+      <div class = 'int'>
 
         <!--r1 company name | company type _ top bar-->
         <div class="row">
@@ -21,7 +21,7 @@
               <div class="company_type">
                 <i class="fa fa-tags"></i><a><%= "#{job_posting.company_profile.company_type}" %></a>
                 <i class="divider"><%= '|' %></i>
-                <i class="fa fa-map-marker"></i><a><%= "#{job_posting.company_profile.location}" %></a>
+                <i class="fa fa-globe"></i><a><%= "#{job_posting.company_profile.location}" %></a>
               </div>
             </div>
           </div>
@@ -44,10 +44,9 @@
 
           <div class = 'row'>
             <div class ='page_down_one'>
-            <!--internship positions-->
+            <!--int positions-->
               <div class="large-12 small-12 columns">
-                <div class="internship_position">
-                  <i class="fa fa-user"></i><a><%= job_posting.position %></a>
+                <div class="int_position"><a><%= job_posting.position %></a>
                 </div>
               </div>
             </div>
@@ -55,23 +54,29 @@
 
           <div class = 'row'>
             <div class ='page_down_two'>
-              <!--internship description-->
+              <!--int description-->
               <div class="large-12 small-12 columns">
-                <div class="internship_description">
+                <div class="int_description">
                    <p><%= job_posting.job_description %></p>
                 </div>
               </div>
             </div>
           </div>
-          
+        
           
           <!--duration, paid/not, -->
           <div class = 'row'>
-            <div class ='page_down_two'>
-              <div class="large-12 small-12 columns">
-                <div class="internship_bottom">
-                  <a><%= "#{job_posting.company_profile.location}" %></a>
-                  <a><%= "#{job_posting.company_profile.number_of_employees}" %></a>
+            <div class ='page_down_three'>
+            <!-- Duration -->
+              <div class="large-6 medium-6 small-6 columns">
+                <div class="int_dur_paid">
+                  <i class="fa fa-calendar"></i><a><%= "#{job_posting.company_profile.number_of_employees}" %></a>
+                </div>
+              </div>
+              <!-- Paid or Unpaid -->
+              <div class="large-6 medium-6 small-6 columns">
+                <div class="int_dur_paid">
+                  <i class="fa fa-usd"></i><a><%= "#{job_posting.job_paid}" %></a>
                 </div>
               </div>
             </div>
@@ -139,11 +144,11 @@
 <!--
 Job Posted Box:
 COMPANY: Company Name, Company Picture/Logo
-INTERNSHIP: Duration, Location, Industry, Brief Description, Internship Position
+int: Duration, Location, Industry, Brief Description, int Position
 INTERN: View, Save, Share(Facebook, LinkedIn, Twitter)
 
 Job Posted Content
 COMPANY: Company Name, Company Picture, Company Location, Company Size, Industry
-INTERNSHIP: Description, Requirement, ResponsibilityFull Internship Description,
+int: Description, Requirement, ResponsibilityFull int Description,
 INTERN: Apply, Save, Follow Company, Share(Facebook, LinkedIn, Twitter)
 -->
