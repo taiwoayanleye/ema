@@ -1,53 +1,55 @@
+<!-- next -->
 <p id="notice"><%= notice %></table>
 
-<!-- <h1>We are <br><%# @company_profile.company_name.upcase %></h1> -->
-<h1>Company Profile</h1>
-<table>
-  <%= image_tag @company_profile.image_url(:thumb) %>
-  <th>Company name:</th>
-  <td><%= @company_profile.company_name %></td>
-</table>
+  <% if @company_profile.company_name.nil? && @company_profile.description.nil? && @company_profile.company_type.nil? && @company_profile.number_of_employees.nil? && @company_profile.website.nil? && @company_profile.location.nil? && @company_profile.reg_code.nil? && @company_profile.image_url.nil? %>
 
-<table>
-  <th>Email:</th>
-  <td><%= @company_profile.user.email %></td>
-</table>
+    Incomplete profile! <%= link_to 'Profile', edit_company_profile_path(@company_profile) %>
 
-<table>
-  <th>Description:</th>
-  <td><%= @company_profile.description %></td>
-</table>
+    <% else %>
 
-<table>
-  <th>Company type:</th>
-  <td><%= @company_profile.company_type %></td>
-</table>
+    <!-- <h1>We are <br><%# @company_profile.company_name.upcase %></h1> -->
+    <h1>Company Profile</h1>
+    <table>
+      <%= image_tag @company_profile.image_url(:thumb) %>
+      <th>Company name:</th>
+      <td><%= @company_profile.company_name %></td>
+    </table>
 
-<table>
-  <th>Number of employees:</th>
-  <td><%= @company_profile.number_of_employees %></td>
-</table>
+    <table>
+      <th>Email:</th>
+      <td><%= @company_profile.user.email %></td>
+    </table>
 
-<table>
-  <th>Website:</th>
-  <td><%= @company_profile.website %></td>
-</table>
+    <table>
+      <th>Description:</th>
+      <td><%= @company_profile.description %></td>
+    </table>
 
-<table>
-  <th>Location:</th>
-  <td><%= @company_profile.location %></td>
-</table>
+    <table>
+      <th>Company type:</th>
+      <td><%= @company_profile.company_type %></td>
+    </table>
 
-<table>
-  <th>Reg code:</th>
-  <td><%= @company_profile.reg_code %></td>
-</table>
+    <table>
+      <th>Number of employees:</th>
+      <td><%= @company_profile.number_of_employees %></td>
+    </table>
 
-<!-- <table>
-  <th>Verified:</th>
-  <td><%= @company_profile.verified %></td>
-</table> -->
+    <table>
+      <th>Website:</th>
+      <td><%= @company_profile.website %></td>
+    </table>
 
+    <table>
+      <th>Location:</th>
+      <td><%= @company_profile.location %></td>
+    </table>
+
+    <table>
+      <th>Reg code:</th>
+      <td><%= @company_profile.reg_code %></td>
+    </table>
+  <% end %>
 
 <%= link_to 'Edit', edit_company_profile_path(@company_profile) %> |
 <%= link_to 'Back', :back %>
