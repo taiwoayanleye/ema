@@ -7,39 +7,39 @@
         <%= form_tag search_job_postings_url, :method => 'get' do %>
         <div class="search_postings">
           <div class="row">
-            <!-- search positions -->
-            <div class="search_position">
-              <div class="large-3 medium-3 small-12 columns">
+            <!-- search_positions -->
+            <div class="large-3 medium-3 small-12 columns">
+              <div class="search_positions">
                 <p>
                   <%= search_field_tag :position_text, @position_text, placeholder: "Position eg. Sales" %>
                 </p>
               </div>
             </div>
             <!-- search_description -->
-            <div class="search_description">
-              <div class="large-3 medium-3 small-12 columns">
+            <div class="large-3 medium-3 small-12 columns">
+              <div class="search_description">
                 <p>
                   <%= text_field_tag :description_text, @description_text, placeholder: "Description eg. Manage team" %>
                 </p>
               </div>
             </div>
             <!-- search_pay -->
-            <div class="search_pay">
-              <div class="large-3 medium-3 small-12 columns">
+            <div class="large-3 medium-3 small-12 columns">
+              <div class="search_pay">
                 <p>
                   <%= select_tag :paid_text, options_for_select(@pay, @paid_text), placeholder: "Pay" %>
                 </p>
               </div> 
             </div>
             <!-- search_requirements-->
-            <div class="search_requirements">
-              <div class="large-3 medium-3 small-12 columns">
+            <div class="large-3 medium-3 small-12 columns">
+              <div class="search_requirements">
                 <p>
                   <%= text_field_tag :requirements_text, @requirements_text, placeholder: "Requirements eg. Statistics" %>
                 </p>
               </div>
             </div>
-            
+
           </div>
         </div>
 
