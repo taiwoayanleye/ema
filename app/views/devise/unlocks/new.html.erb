@@ -1,12 +1,39 @@
-<h2>Resend unlock instructions</h2>
+<div class="site-content">
+  <div class="row" style="max-width: 30em;">
+    <div class="all">
 
-<%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+    <!--title: sign in-->
+    <div class="large-12 small-12 columns">
+      <div class="welcome">
+        <div class="row">
+          <h2>Resend unlock instructions</h2>
+        </div><hr>
+      </div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+	<%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+  	<%= devise_error_messages! %>
 
-  <div><%= f.submit "Resend unlock instructions" %></div>
-<% end %>
+	<!--email-->
+	<div class="row">
+	  <%= f.label :email %>
+	  <%= f.email_field :email, autofocus: true %>
+	</div>
 
-<%= render "devise/shared/links" %>
+  	<div class="row">
+		<div class="large-12 small-12 columns">
+	  		<%= f.submit "Resend unlock instructions", class:"button radius large-12 small-12 medium-12" %>
+		</div>
+	</div>
+
+	<% end %>
+
+	<!--renders login in & forget_passwordlink-->
+	<div class="row">
+        <%= render "devise/shared/links" %>
+    </div>
+
+
+	    </div>
+	  </div>
+	</div>
+</div>
