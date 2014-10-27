@@ -1,5 +1,13 @@
+
+
 .company_name{background-color:rgba(125, 10, 20, 1);}
 .company_type{background-color:rgba(15, 130, 20, 1);}
 .internship_position{background-color:rgba(125, 10, 220, 1);}
 .internship_description{background-color:rgba(95, 5, 90, 1);}
 .internship_bottom{background-color:rgba(95, 10, 0, 1);}
+
+.internship{
+	padding: rem-calc(12px);
+}
+
+//lets go conform to a box size that's a bir wider and less longer
