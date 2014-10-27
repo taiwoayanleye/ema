@@ -1,151 +1,149 @@
 <section>
   <div class="content">
-    
-
     <p id="notice"><%= notice %></p>
-<div style="overflow: auto">
-
-  <div>
-    <h3>Search Job Postings</h3>
-    <%= form_tag search_job_postings_url, :method => 'get' do %>
-    <div class="row">
-      <div class="large-3 medium-3 small-12 columns">
-        <p>
-          <%= search_field_tag :position_text, @position_text, placeholder: "Position eg. Sales" %>
-        </p>
-      </div>  
-      <div class="large-3 medium-3 small-12 columns">
-        <p>
-          <%= text_field_tag :description_text, @description_text, placeholder: "Description eg. Manage team" %>
-        </p>
-      </div> 
-      <div class="large-3 medium-3 small-12 columns">
-        <p>
-          <%= select_tag :paid_text, options_for_select(@pay, @paid_text), placeholder: "Pay" %>
-        </p>
-      </div> 
-      <div class="large-3 medium-3 small-12 columns">
-        <p>
-          <%= text_field_tag :requirements_text, @requirements_text, placeholder: "Requirements eg. Statistics" %>
-        </p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="large-6 medium-6 small-6 columns">
-        <a><%= submit_tag 'Search' , class:"button radius large-12 small-12 medium-12" %></a>
-      </div>
-      <div class="large-6 medium-6 small-6 columns">
-        <a><%= submit_tag 'Save Search', class:"button radius large-12 small-12 medium-12", :name => 'save_search'%></a>
-      </div>
-    </div>
-    <% end %>
-  </div>
-
-
-    <% if !@return.nil? && !@return.empty? %>
-    <h3>Search Results</h3>
-    <% @return.each do |job_posting| %>
-    <% com_prof = CompanyProfile.find(job_posting.company_profile_id) %>
-
-    <div class="large-4 medium-4 small-12 columns">
-      <div class = 'int'>
-
-        <!--r1 company name | company type _ top bar-->
+    <div style="overflow: auto">
+      <div>
+        <h3>Search Job Postings</h3>
+        <%= form_tag search_job_postings_url, :method => 'get' do %>
         <div class="row">
-          <div class = "post_top">
-          <!-- company name -->
-            <div class="large-8 medium-8 small-8 columns">
-              <div class="company_name">
-                <p><%= "#{job_posting.company_profile.company_name}" %></p>
-              </div>
-            </div>
-
-            <!-- company_type and location -->
-            <div class="large-4 medium-4 small-4 columns">
-              <div class="company_type">
-                <i class="fa fa-tags"></i><a><%= "#{job_posting.company_profile.company_type}" %></a>
-                <i class="divider"><%= '|' %></i>
-                <i class="fa fa-globe"></i><a><%= "#{job_posting.company_profile.location}" %></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!--r2 company image-->
-        <div class = 'row'>
-          <div class = "post_mid">
-            <div class="large-12 small-12 columns">
-              <div class="image_wrapper">
-                <div class="company_image">
-                  <%= image_tag CompanyProfile.find(job_posting.company_profile.id).image_url %>
-                </div>
-              </div>
-            </div>
+          <div class="large-3 medium-3 small-12 columns">
+            <p>
+              <%= search_field_tag :position_text, @position_text, placeholder: "Position eg. Sales" %>
+            </p>
+          </div>  
+          <div class="large-3 medium-3 small-12 columns">
+            <p>
+              <%= text_field_tag :description_text, @description_text, placeholder: "Description eg. Manage team" %>
+            </p>
+          </div> 
+          <div class="large-3 medium-3 small-12 columns">
+            <p>
+              <%= select_tag :paid_text, options_for_select(@pay, @paid_text), placeholder: "Pay" %>
+            </p>
+          </div> 
+          <div class="large-3 medium-3 small-12 columns">
+            <p>
+              <%= text_field_tag :requirements_text, @requirements_text, placeholder: "Requirements eg. Statistics" %>
+            </p>
           </div>
         </div>
 
-        <div class ='page_down'>
+        <div class="row">
+          <div class="large-6 medium-6 small-6 columns">
+            <a><%= submit_tag 'Search' , class:"button radius large-12 small-12 medium-12" %></a>
+          </div>
+          <div class="large-6 medium-6 small-6 columns">
+            <a><%= submit_tag 'Save Search', class:"button radius large-12 small-12 medium-12", :name => 'save_search'%></a>
+          </div>
+        </div>
+        <% end %>
+      </div>
 
-          <div class = 'row'>
-            <div class ='page_down_one'>
-            <!--int positions-->
-              <div class="large-12 small-12 columns">
-                <div class="int_position"><a><%= job_posting.position %></a>
+
+      <% if !@return.nil? && !@return.empty? %>
+      <h3>Search Results</h3>
+      <% @return.each do |job_posting| %>
+      <% com_prof = CompanyProfile.find(job_posting.company_profile_id) %>
+
+      <div class="large-4 medium-4 small-12 columns">
+        <div class = 'int'>
+
+          <!--r1 company name | company type _ top bar-->
+          <div class="row">
+            <div class = "post_top">
+            <!-- company name -->
+              <div class="large-8 medium-8 small-8 columns">
+                <div class="company_name">
+                  <p><%= "#{job_posting.company_profile.company_name}" %></p>
+                </div>
+              </div>
+
+              <!-- company_type and location -->
+              <div class="large-4 medium-4 small-4 columns">
+                <div class="company_type">
+                  <i class="fa fa-tags"></i><a><%= "#{job_posting.company_profile.company_type}" %></a>
+                  <i class="divider"><%= '|' %></i>
+                  <i class="fa fa-globe"></i><a><%= "#{job_posting.company_profile.location}" %></a>
                 </div>
               </div>
             </div>
           </div>
-
-          <div class = 'row'>
-            <div class ='page_down_two'>
-              <!--int description-->
-              <div class="large-12 small-12 columns">
-                <div class="int_description">
-                   <p><%= job_posting.job_description %></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        
           
-          <!--duration, paid/not, -->
+          <!--r2 company image-->
           <div class = 'row'>
-            <div class ='page_down_three'>
-            <!-- Duration -->
-              <div class="large-6 medium-6 small-6 columns">
-                <div class="int_dur_paid">
-                  <i class="fa fa-calendar"></i><a><%= "#{job_posting.company_profile.number_of_employees}" %></a>
-                </div>
-              </div>
-              <!-- Paid or Unpaid -->
-              <div class="large-6 medium-6 small-6 columns">
-                <div class="int_dur_paid">
-                  <i class="fa fa-usd"></i><a><%= "#{job_posting.job_paid}" %></a>
+            <div class = "post_mid">
+              <div class="large-12 small-12 columns">
+                <div class="image_wrapper">
+                  <div class="company_image">
+                    <%= image_tag CompanyProfile.find(job_posting.company_profile.id).image_url %>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
+          <div class ='page_down'>
+
+            <div class = 'row'>
+              <div class ='page_down_one'>
+              <!--int positions-->
+                <div class="large-12 small-12 columns">
+                  <div class="int_position"><a><%= job_posting.position %></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class = 'row'>
+              <div class ='page_down_two'>
+                <!--int description-->
+                <div class="large-12 small-12 columns">
+                  <div class="int_description">
+                     <p><%= job_posting.job_description %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            
+            <!--duration, paid/not, -->
+            <div class = 'row'>
+              <div class ='page_down_three'>
+              <!-- Duration -->
+                <div class="large-6 medium-6 small-6 columns">
+                  <div class="int_dur_paid">
+                    <i class="fa fa-calendar"></i><a><%= "#{job_posting.company_profile.number_of_employees}" %></a>
+                  </div>
+                </div>
+                <!-- Paid or Unpaid -->
+                <div class="large-6 medium-6 small-6 columns">
+                  <div class="int_dur_paid">
+                    <i class="fa fa-usd"></i><a><%= "#{job_posting.job_paid}" %></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
         </div>
-
       </div>
-    </div>
 
-    <% end %>
-    
-    <% else %>
-      <h3>No results.</h3>
-    <% end %>
+      <% end %>
+        
+      <% else %>
+        <h3>No results.</h3>
+      <% end %>
 
-    <div class="row">
-      <div class="large-9 small-9 small-centered large-centered columns">
-        <div class= "button radius large-12 small-12 medium-12">
-          <p>MORE</p>
+      <div class="row">
+        <div class="large-9 small-9 small-centered large-centered columns">
+          <div class= "button radius large-12 small-12 medium-12">
+            <p>MORE</p>
+          </div>
         </div>
       </div>
+      
     </div>
-
   </div>
 </section>
 
