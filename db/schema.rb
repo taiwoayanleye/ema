@@ -118,7 +118,7 @@ ActiveRecord::Schema.define(version: 20141025152839) do
     t.string   "last_completed_degree"
     t.string   "residential_address"
     t.string   "major"
-    t.text     "brief_summary"
+    t.string   "brief_summary"
     t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
