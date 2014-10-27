@@ -1,9 +1,7 @@
 <div class="site-content">
   <p id="notice"><%= notice %></p>
 
-  <% if @company_profile.company_name.nil? %>
-
-  <CompanyProfile id: 1, company_name: nil, description: nil, company_type: nil, number_of_employees: nil, website: nil, location: nil, reg_code: nil, verified: nil, image: nil, created_at: "2014-10-27 17:20:58", updated_at: "2014-10-27 17:20:58", user_id: "1">
+<% if @student_profile.first_name.nil? && @student_profile.last_name.nil? && @student_profile.school.nil? && @student_profile.expected_graduation.nil? && @student_profile.school_year.nil? && @student_profile.last_completed_degree.nil? && @student_profile.residential_address.nil? && @student_profile.major.nil? && @student_profile.brief_summary.nil? && @student_profile.image_url.nil? %>
 
     Incomplete profile! <%= link_to 'Profile', edit_student_profile_path(@student_profile) %>
 
