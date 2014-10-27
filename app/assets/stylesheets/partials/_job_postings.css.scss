@@ -49,13 +49,26 @@
 
 		//middle
 		.company_image{
-			
+
 		}
 
 		//page_down
 		.page_down{
 			//...
-			.page_down_one{text-align: center;}
+			.page_down_one{
+				text-align: center;
+				.internship_position{
+					i{
+					padding: rem-calc(0 1% 0 0);
+					font-size: $fontawes_h2;
+					color: $jumbo;
+					}
+					a{
+					font-size: $varfontsize_h3;
+					color: $jumbo;
+					}
+				}
+			}
 			//...
 			.page_down_two{
 				.internship_description{
