@@ -12,7 +12,7 @@
       <th>Last completed degree</th>
       <th>Residential address</th>
       <th>Major</th>
-      <th>Resume</th>
+      <th>Brief</th>
       <th>Image</th>
       <th colspan="3"></th>
     </tr>
@@ -30,7 +30,7 @@
         <td><%= student_profile.last_completed_degree %></td>
         <td><%= student_profile.residential_address %></td>
         <td><%= student_profile.major %></td>
-        <td><%= student_profile.resume %></td>
+        <td><%= student_profile.brief_summary %></td>
         <td><%= student_profile.image %></td>
         <td><%= link_to 'Show', student_profile %></td>
         <td><%= link_to 'Edit', edit_student_profile_path(student_profile) %></td>

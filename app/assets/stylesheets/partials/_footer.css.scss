@@ -1,9 +1,10 @@
 .foot{
+	margin: rem-calc(100px 0px 0px 0px);;
+	padding: rem-calc(20px);
+	background-color: $colorstutern;
+	clear: both;
 	.inner-wrapper{
-		padding-top: 1.6em;
 		.about_contact{
-			margin: 0 10em 0 10em;
-			padding-top: 5em;
 			text-align: center;
 			font-size: $h6-font-size;
 		}
