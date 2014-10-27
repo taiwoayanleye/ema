@@ -19,10 +19,17 @@ gem 'devise'
 gem 'rails_admin'
 # Authorization can
 # gem 'cancan'
-# Carrierwave
-gem 'carrierwave'
+
 # gem 'rmagick'
 gem "mini_magick"
+# Amazon account
+gem 'aws-sdk'
+# Figaro 
+gem "figaro"
+# Fog is used to support Amazon S3
+gem "fog", "~> 1.20", require: "fog/aws/storage"
+# Carrierwave
+gem 'carrierwave'
 
 group :doc do 
 	gem 'sdoc', '~> 0.4.0'
