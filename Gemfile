@@ -16,7 +16,7 @@ gem 'rails_admin'
 # gem 'rmagick'
 gem "mini_magick"
 # Amazon account
-# gem 'aws-sdk'
+gem 'aws-sdk'
 # Secure api keys 
 gem "figaro"
 # Fog is used to support Amazon S3
