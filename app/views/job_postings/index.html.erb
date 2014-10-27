@@ -7,80 +7,89 @@
     </div>
 
     <% @job_postings.each do |job_posting| %>
-    
-      <div class="large-4 medium-4 small-12 columns">
-        <div class = 'internship'>
-          <!-- this origins whole -->
-          <!--r1 company name | company type _ top bar-->
+
+    <div class="large-4 medium-4 small-12 columns">
+      <div class = 'internship'>
+        <!-- this origins whole -->
+        <!--r1 company name | company type _ top bar-->
+        <div class = "row">
+          <div class="large-12 small-12 columns">
+            <div class="company_name">
+              <div class="internship_content">
+              <p><%= "#{job_posting.company_profile.company_name}" %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
           <div class = "row">
             <div class="large-12 small-12 columns">
-              <div class="company_name">
+              <div class="company_type">
                 <div class="internship_content">
-                <p><%= "#{job_posting.company_profile.company_name}" %></p>
+                <i class="fa fa-tags"></i><a><%= "#{job_posting.company_profile.company_type}" %></a>
+                <i class="fa fa-map-marker"></i><a><%= "#{job_posting.company_profile.location}" %></a>
                 </div>
               </div>
             </div>
           </div>
 
-            <div class = "row">
-              <div class="large-12 small-12 columns">
-                <div class="company_type">
-                  <div class="internship_content">
-                  <i class="fa fa-tags"></i><a><%= "#{job_posting.company_profile.company_type}" %></a>
-                  <i class="fa fa-map-marker"></i><a><%= "#{job_posting.company_profile.location}" %></a>
-                  </div>
+          <!--r2 company image-->
+          <div class = 'row'>
+            <div class="large-12 small-12 columns">
+              <div class="company_image">
+                <div class="internship_content">
+                <%= image_tag CompanyProfile.find(job_posting.company_profile.id).image_url %>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!--internship positions | description-->
+          <div class = 'row'>
+            <!--internship positions-->
+            <div class="large-12 small-12 columns">
+              <div class="internship_position">
+                <div class="internship_content">
+                <p><%= job_posting.position %></p>
                 </div>
               </div>
             </div>
 
-            <!--r2 company image-->
-            <div class = 'row'>
-              <div class="large-12 small-12 columns">
-                <div class="company_image">
-                  <div class="internship_content">
-                  <%= image_tag CompanyProfile.find(job_posting.company_profile.id).image_url %>
-                  </div>
+            <!--internship description-->
+            <div class="large-12 small-12 columns">
+              <div class="internship_description">
+                <div class="internship_content">
+                 <p><%= job_posting.job_description %></p>
                 </div>
               </div>
             </div>
-            
-            <!--internship positions | description-->
-            <div class = 'row'>
-              <!--internship positions-->
-              <div class="large-12 small-12 columns">
-                <div class="internship_position">
-                  <div class="internship_content">
-                  <p><%= job_posting.position %></p>
-                  </div>
-                </div>
-              </div>
+          </div>
 
-              <!--internship description-->
-              <div class="large-12 small-12 columns">
-                <div class="internship_description">
-                  <div class="internship_content">
-                   <p><%= job_posting.job_description %></p>
-                  </div>
+          <div class = 'row'>
+            <!--view & links _ bottom bar-->
+            <div class="large-12 small-12 columns">
+              <div class="internship_bottom">
+                <div class="internship_content">
+                  <p><%= "#{job_posting.company_profile.location}" %></p>
+                  <p><%= "#{job_posting.company_profile.number_of_employees}" %></p>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div class = 'row'>
-              <!--view & links _ bottom bar-->
-              <div class="large-12 small-12 columns">
-                <div class="internship_bottom">
-                  <div class="internship_content">
-                    <p><%= "#{job_posting.company_profile.location}" %></p>
-                    <p><%= "#{job_posting.company_profile.number_of_employees}" %></p>
-                  </div>
-                </div>
-              </div>
-            </div>
+      </div>
+    </div>
 
+    <% end %>
+
+
+    <div class="row">
+      <div class="large-9 small-9 small-centered large-centered columns">
+        <div class= "button radius large-12 small-12 medium-12">
+          <p>MORE</p>
         </div>
       </div>
-   
-    <% end %>
+    </div>
 
   </div>
 </section>
