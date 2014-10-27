@@ -10,21 +10,14 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'compass-rails'
-
-# Frontend stunts
 gem 'foundation-rails'
-# Authentication room
 gem 'devise'
-# Admin man
 gem 'rails_admin'
-# Authorization can
-# gem 'cancan'
-
 # gem 'rmagick'
 gem "mini_magick"
 # Amazon account
 gem 'aws-sdk'
-# Figaro 
+# Secure api keys 
 gem "figaro"
 # Fog is used to support Amazon S3
 gem "fog", "~> 1.20", require: "fog/aws/storage"
