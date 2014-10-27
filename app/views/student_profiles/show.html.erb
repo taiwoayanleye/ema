@@ -1,21 +1,32 @@
 <div class="site-content">
   <p id="notice"><%= notice %></p>
 
+  <% if @student_profile.first_name.nil? && @student_profile.last_name.nil? && @student_profile.school.nil? && @student_profile.expected_graduation.nil? && @student_profile.school_year.nil? && @student_profile.last_completed_degree.nil? && @student_profile.residential_address.nil? && @student_profile.major.nil? && @student_profile.brief_summary.nil? && @student_profile.image_url.nil? %>
+
+    Incomplete profile! <%= link_to 'Profile', edit_student_profile_path(@student_profile) %>
+
+  <% else %>
   <!-- top card -->
   <div class="top-card">
     <div class="row"> 
       <div class="large-12 small-12 columns">
+
         <div class="panel">
-          
+
           <div class="row">
             
             <!-- image -->
+            <% if @student_profile.image_url.nil? %>
+            <% else %>
             <div class="large-4 small-4 columns">
               <div class="profile_image">
                 <%= image_tag @student_profile.image_url(:thumb) %>
               </div>
             </div>
-             
+            <% end %>
+            
+            <% if (@student_profile.first_name.nil? && @student_profile.last_name.nil?) %>
+            <% else %> 
             <div class="large-8 small-8 columns">
               <div class = 'profile_overview'>
                 <!-- Name -->
@@ -26,8 +37,11 @@
                      </div>
                   </div>
                 </div>
+                <% end %>
                 
                 <!-- Education/University -->
+                <% if (@student_profile.school.nil? && @student_profile.major.nil?) %>
+                <% else %>
                 <div class='education'>
                   <div class="row">
                     <div class="large-12 small-12 columns">
@@ -36,7 +50,10 @@
                     </div>
                    </div>
                  </div>
+                 <% end %>
                 
+                <% if (@student_profile.school_year.nil? && @student_profile.expected_graduation.nil?) %>
+                <% else %>
                 <!-- School Year % Graduation-->
                 <div class='year_graduation'>
                   <div class="row">
@@ -46,6 +63,7 @@
                     </div>
                   </div>
                 </div>
+                <% end %>
 
               </div>
             </div>
@@ -55,7 +73,8 @@
         </div>
       </div>
     </div>  
-  </div> 
+  </div>
+ 
 
   <!-- bottom card -->
   <div class="bottom-card">
@@ -64,6 +83,8 @@
         <div class="panel">
           
           <!-- bio_header -->
+          <% if @student_profile.first_name.nil? %>
+          <% else %>
           <div class="row">
             <div class="large-12 small-12 columns">
               <div class="bio">
@@ -73,19 +94,26 @@
               </div>
             </div>
           </div>
+          <br>
+          <% end %>
+          
 
           <!-- brief -->
+         
           <div class="row">
             <div class="large-12 small-12 columns">
               <div class = "brief">
-                <!-- brief_title -->
-                <div class ="brief_title">
-                  <p>Brief</p>
-                </div>
-                <!-- brief_content -->
-                <div class="brief_content">
-                  <%= @student_profile.resume %>
-                </div>
+                <% if !@student_profile.brief_summary.nil? %>
+                <% else %>
+                  <!-- brief_title -->
+                  <div class ="brief_title">
+                    <p>BRIEF SUMMARY</p>
+                  </div>
+                  <!-- brief_content -->
+                  <div class="brief_content">
+                    <%= @student_profile.brief_summary %>
+                  </div>
+                  <% end %>
               </div>
             </div>
           </div>
@@ -96,53 +124,48 @@
               <div class = "experience">
                 <!-- child1: experience_title -->
                 <div class ="experience_title">
-                  <p>Experience</p>
+                  <p>EXPERIENCE</p>
                 </div>
                 <!-- child2: experience_content -->
-                <div class="experience_content">
-                  <div id="intern_experience">
-                    <% if !@student_profile.stu_work_experiences.empty? %>
-
+                <% if @student_profile.stu_work_experiences.nil? %>
+                  <p>No work experiences have been added yet!</p>
+                  <%= link_to 'Add experience', new_stu_work_experience_path %>
+                <% else %>
+                  <div class="experience_content">
+                    <div id="intern_experience">
                     <% @work_histories.each do |work_history| %>
-
                     <!-- subheader: position | company | date -->
-                    <div class ="large-12 small-12 columns">
-                      <!-- experience_subheader -->
-                      <div class = 'experience_subheader'>
-                        <!-- experience_position -->
-                        <i class="fa fa-briefcase"></i>
-                        <span class = 'experience_position'><a><%= work_history.position %></a></span>
-                        <%= '|' %>
-                        <!-- experience_company -->
-                        <i class="fa fa-users"></i>
-                        <span class = 'experience_company'><a><%= work_history.company %></a></span>
-                        <%= '|' %>
-                        <!-- experience_date -->
-                        <i class="fa fa-calendar"></i>
-                        <span class = 'experience_date'><a><%= work_history.start_date %> | <%= work_history.end_date %></a></span>
+                      <div class ="large-12 small-12 columns">
+                        <!-- experience_subheader -->
+                        <div class = 'experience_subheader'>
+                          <!-- experience_position -->
+                          <i class="fa fa-briefcase"></i>
+                          <span class = 'experience_position'><a><%= work_history.position %></a></span>
+                          <%= '|' %>
+                          <!-- experience_company -->
+                          <i class="fa fa-users"></i>
+                          <span class = 'experience_company'><a><%= work_history.company %></a></span>
+                          <%= '|' %>
+                          <!-- experience_date -->
+                          <i class="fa fa-calendar"></i>
+                          <span class = 'experience_date'><a><%= work_history.start_date %> | <%= work_history.end_date %></a></span>
+                        </div>
                       </div>
+                      <!-- experience_description -->
+                      <div class = 'experience_description'>
+                        <p><%= work_history.description %></p>
+                      </div>
+                      <div class = "exp_space"></div>
+                      <% end %>
                     </div>
-                    
-                    <!-- experience_description -->
-                    <div class = 'experience_description'>
-                      <p><%= work_history.description %></p>
-                    </div>
-                      
-                    <div class = "exp_space"></div>
-
-                    <% end %>
-                    <% else %>
-                      <p>No work experiences have been added yet!</p>
-                    <% end %>
                   </div>
-                </div>
+                  <% end %>
               </div>
             </div><hr>
           </div>
 
           <!-- skills | interest | certification -->
           <div class="row">
-            
             <!-- skills -->
             <div class="large-4 small-12 columns">
               <div class="skills">
@@ -152,11 +175,16 @@
                 </div>
                 <!-- skills_content -->
                 <div class="skills_content">
-                  <% if current_user.id == @student_profile.user_id.to_i %>
+                  <% #if current_user.id == @student_profile.user_id.to_i %>
+                  <% if @student_profile.skills.empty? %>
+                  <p>No skills have been added yet!</p>
+                  <%= link_to 'Add skill', new_skill_path %>
+                  <% else %>
                     <% @skills.each do |skill| %>
                       <a role="button" class= "button tiny disabled"><%= skill.description %></a>
                     <% end %>
-                  <% end %>
+                    <% end %>
+                  <%# end %>
                 </div>
               </div>
             </div>
@@ -171,11 +199,16 @@
                 
                 <!-- interest_content -->
                 <div class="interest_content">
-                  <% if current_user.id == @student_profile.user_id.to_i %>
-                    <% @skills.each do |skill| %>
-                      <a role="button" class= "button tiny disabled"><%= skill.description %></a>
+                  <%# if current_user.id == @student_profile.user_id.to_i %>
+                  <% if @student_profile.stu_interests.empty? %>
+                    <p>No skills have been added yet!</p>
+                    <%= link_to 'Add interest', new_stu_interest_path %>
+                  <% else %>
+                    <% @interests.each do |interest| %>
+                      <a role="button" class= "button tiny disabled"><%= interest.description %></a>
                     <% end %>
-                  <% end %>
+                    <% end %>
+                  <%# end %>
                 </div>
               </div>
             </div>
@@ -189,10 +222,15 @@
                 </div>
                 <!-- certification_content -->
                 <div class="certification_content">
-                  <% if current_user.id == @student_profile.user_id.to_i %>
-                    <% @skills.each do |skill| %>
-                      <a role="button" class= "button tiny disabled"><%= @student_profile.last_completed_degree %></a>
+                  <%# if current_user.id == @student_profile.user_id.to_i %>
+                  <% if @student_profile.stu_certifications.empty? %>
+                    <p>No certifications have been added yet!</p>
+                    <%= link_to 'Add certification', new_stu_certification_path %>
+                  <% else %>
+                    <% @certifications.each do |certification| %>
+                      <a role="button" class= "button tiny disabled"><%= certification.description %></a>
                     <% end %>
+                  <%# end %>
                   <% end %>
                 </div>
               </div>
@@ -204,17 +242,25 @@
             <div class="large-12 small-12 columns">
               <div class="Reference">
                 <p>Reference</p>
-                <% if current_user.id == @student_profile.user_id.to_i %>
-                  <% @references.each do |reference| %>
-                    <p><%= reference.name %></p>
-                    <p><%= reference.relationship %></p>
-                    <p><%= reference.phone %></p>
-                    <p><%= mail_to reference.email %></p>
-                  <% end %>
+                <%# if current_user.id == @student_profile.user_id.to_i %>
+                <% if @student_profile.stu_references.empty? %>
+                <p>No references have been added yet!</p>
+                <%= link_to 'Add reference', new_stu_reference_path %>
+                <% else %>
+                <% @references.each do |reference| %>
+                  <table>
+                  <td><%= reference.name %></td>
+                  <td><%= reference.relationship %></td>
+                  <td><%= reference.phone %></td>
+                  <td><%= mail_to reference.email %></td>
+                  </table>
                 <% end %>
+                <% end %>
+                <%# end %>
               </div>
             </div>
           </div>
+          <br>
 
           <!-- personal -->
           <div class="row">
@@ -222,22 +268,30 @@
               <div class="personal">
                 <!-- certification_title -->
                 <div class="personal_title">
-                  <p>Certification</p>
+                  <h3>Personal information</h3>
                 </div>
-                <!-- certification_content -->
+                <!-- personal_information -->
                 <div class="personal_content">
+                    <table>
+                      <tr>
+                        <th>Last completed degree:</th>
+                        <td><%= @student_profile.last_completed_degree %></td>
+                      </tr>
+                      <tr>
+                        <th>Residential address:</th>
+                        <td><%= @student_profile.residential_address %></td>
+                      </tr>
+                    </table>
+
                   <% if current_user.id == @student_profile.user_id.to_i %>
-                    <p><%= @student_profile.user.email %></p>
-                    <p>Residential address: <%= @student_profile.residential_address %></p>
                   <% end %>
                 </div>
               </div>
             </div>
           </div>
-
-        </div>
+        </div> 
       </div>
-    </div>
+    </div> 
   </div>
-
 </div> 
+<% end %>

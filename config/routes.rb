@@ -17,9 +17,12 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations"}
   #devise_for :users, :controllers => {:users => "users"}
   
-  #Resources
+  #Student resources
   resources :skills
   resources :stu_references
+  resources :stu_certifications
+  resources :stu_interests
+  resources :stu_work_experiences
   #resources :users
   resources :job_postings do
     collection do
@@ -32,7 +35,6 @@ Rails.application.routes.draw do
       get 'search'
     end
   end  
-  resources :stu_work_experiences
 
   get 'home/home'
   get 'pages/about'

@@ -1,29 +1,35 @@
 <p id="notice"><%= notice %></p>
 <div style="overflow: auto">
-  <div style="display:inline-block; float:left; width:20%;">
+  <div>
     <h3>Search Job Postings</h3>
     <%= form_tag search_job_postings_url, :method => 'get' do %>
+    <div class="row">
+      <div class="col-lg-2">
         <p>
-          <%= label_tag :Position %><br/>
-          <%= text_field_tag :position_text, @position_text %>
+          <%= search_field_tag :position_text, @position_text, placeholder: "Position eg. Sales" %>
         </p>
+      </div>  
+      <div class="col-lg-2">
         <p>
-          <%= label_tag :Description %><br/>
-          <%= text_field_tag :description_text, @description_text %>
+          <%= text_field_tag :description_text, @description_text, placeholder: "Description eg. Manage team" %>
         </p>
+      </div> 
+      <div class="col-lg-2">
         <p>
-          <%= label_tag :Pay %><br/>
-          <%= select_tag :paid_text, options_for_select(@pay, @paid_text) %>
+          <%= select_tag :paid_text, options_for_select(@pay, @paid_text), placeholder: "Pay" %>
         </p>
+      </div> 
+      <div class="col-lg-2">
         <p>
-          <%= label_tag :Requirements %><br/>
-          <%= text_field_tag :requirements_text, @requirements_text %>
+          <%= text_field_tag :requirements_text, @requirements_text, placeholder: "Requirements eg. Statistics" %>
         </p>
+      </div>
         <p>
           <%= submit_tag 'Search' %>
           <%= submit_tag 'Save Search', :name => 'save_search'%>
         </p>
     <% end %>
+    </div>
   </div>
 
 

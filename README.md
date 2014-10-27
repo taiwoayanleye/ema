@@ -34,6 +34,12 @@ Others:
 Add user_id_to_student_profiles
 [ rails generate migration AddUserIdToStudentProfiles user_id]
 
+Change resume_to_summary_in_student_profiles
+[ rails generate migration FixStudentProfile ]
+def change
+  rename_column :student_profiles, :resume, :brife_summary
+end
+
 
 4
 Company profile
@@ -111,3 +117,28 @@ Others:
 Add company_profile_id_to_saved_student_profiles
 [rails generate migration AddCompanyProfileIdToSavedStudentProfiles company_profile_id:integer]
 
+13
+Interests
+column:1
+{description:string}
+[rails generate scaffold StuInterest description]
+
+Others:
+Add user_id_to_stu_interests
+[rails generate migration AddUserIdToStuInterests user_id:integer]
+
+Add student_profile_id_to_stu_interests
+[rails generate migration AddStudentProfileIdToStuInterests student_profile_id:integer]
+
+14
+Certifications
+column:1
+{description:string}
+[rails generate scaffold StuCertification description]
+
+Others:
+Add user_id_to_stu_certifications
+[rails generate migration AddUserIdToStuCertifications user_id:integer]
+
+Add student_profile_id_to_stu_certifications
+[rails generate migration AddStudentProfileIdToStuCertifications student_profile_id:integer]

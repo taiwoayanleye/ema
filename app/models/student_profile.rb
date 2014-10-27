@@ -6,6 +6,8 @@ class StudentProfile < ActiveRecord::Base
 	has_many :skills
 	has_many :stu_references
 	has_many :saved_job_postings
+	has_many :stu_interests
+	has_many :stu_certifications
 
 	# Used for image uploading
 	mount_uploader :image, ImageUploader

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141021181540) do
+ActiveRecord::Schema.define(version: 20141025152839) do
 
   create_table "company_profiles", force: true do |t|
     t.string   "company_name"
@@ -71,6 +71,22 @@ ActiveRecord::Schema.define(version: 20141021181540) do
     t.integer  "student_profile_id"
   end
 
+  create_table "stu_certifications", force: true do |t|
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "student_profile_id"
+  end
+
+  create_table "stu_interests", force: true do |t|
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "student_profile_id"
+  end
+
   create_table "stu_references", force: true do |t|
     t.string   "uid"
     t.string   "name"
@@ -102,7 +118,7 @@ ActiveRecord::Schema.define(version: 20141021181540) do
     t.string   "last_completed_degree"
     t.string   "residential_address"
     t.string   "major"
-    t.string   "resume"
+    t.text     "brief_summary"
     t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -119,6 +119,8 @@ class StudentProfilesController < ApplicationController
     @skills = @student_profile.skills
     @work_histories = @student_profile.stu_work_experiences
     @references = @student_profile.stu_references
+    @interests = @student_profile.stu_interests
+    @certifications = @student_profile.stu_certifications
 
     # respond_to do |format|
     #   format.html # show.html.erb
@@ -177,7 +179,7 @@ class StudentProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_profile_params
-      params.require(:student_profile).permit(:first_name, :last_name, :school, :expected_graduation, :school_year, :last_completed_degree, :residential_address, :major, :resume, :image, user_attributes: [ :id, :email, :password, :user_type ])
+      params.require(:student_profile).permit(:first_name, :last_name, :brief_summary, :school, :expected_graduation, :school_year, :last_completed_degree, :residential_address, :major, :image, user_attributes: [ :id, :email, :password, :user_type ])
     end
     def allowed_user
       # redirect_to root_url, notice: "You shall not pass!" unless current_user.try(:user_type) === "company" && current_user.company_verified? === true
