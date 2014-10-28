@@ -14,3 +14,11 @@
 p{
 	margin: 0px;
 }
+
+.center {
+	text-align: center;
+}
+
+.col-md-3:nth-child(3n+1){
+	clear:left;
+}
