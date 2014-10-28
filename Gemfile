@@ -14,7 +14,7 @@ gem 'foundation-rails'
 gem 'devise'
 gem 'rails_admin'
 # gem 'rmagick'
-gem 'rmagick', '2.13.2'
+gem 'rmagick', :require => 'RMagick'
 # gem "mini_magick"
 # Amazon account
 gem 'aws-sdk'
