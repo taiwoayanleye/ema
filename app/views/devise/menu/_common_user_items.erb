@@ -16,10 +16,27 @@
   <% elsif current_user.user_type == "company" %>
 	 <li>
 	 	<%= link_to 'Post Jobs', new_job_posting_path, :class => 'navbar-link'  %>
-	 </li>	
-     <li>
-       <%= link_to 'Profile', company_profile_path(current_user_id), :class => 'navbar-link' %>
-     </li>
+	 </li>
+    <li class="has-dropdown">
+      <a <%= link_to 'Profile', company_profile_path(current_user_id) %> </a>
+      <ul class="dropdown">
+        <li>
+          <%= link_to 'Edit Profile', edit_company_profile_path(current_user_id), :class => 'navbar-link' %>
+        </li>
+        <li>
+          <%= link_to 'Add experience', new_stu_work_experience_path, :class => 'navbar-link' %>
+        </li>
+        <li>
+          <%= link_to 'Add skill', new_skill_path, :class => 'navbar-link' %>
+        </li>
+        <li>
+          <%= link_to 'Add interest', new_stu_interest_path, :class => 'navbar-link' %>
+        </li>
+        <li>
+          <%= link_to 'Add certification', new_stu_certification_path %>
+        </li>
+      </ul>
+    </li>
      <li>
        <%= link_to 'Browse Candidates', student_profiles_path, :class => 'navbar-link' %>
      </li>

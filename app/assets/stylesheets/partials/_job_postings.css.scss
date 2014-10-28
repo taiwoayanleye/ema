@@ -1,5 +1,3 @@
-
-
 .company_name{background-color:$silver;}
 .company_type{background-color:$silver;}
 .int_position{background-color:$silver;}
@@ -41,7 +39,7 @@
 			//company_name
 			.company_name{
 				p{
-				font-size: $varfontsize_h1;
+				font-size: $varfontsize_h2;
 				color: $charcoal;
 				}
 			}
@@ -54,7 +52,7 @@
 				}
 
 				i{
-				padding: rem-calc(0 1% 0 0);
+				padding: rem-calc(0 0.5% 0 0);
 				font-size: $fontawes_h2;
 				color: $jumbo;
 				}

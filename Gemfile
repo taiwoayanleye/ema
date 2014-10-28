@@ -13,6 +13,8 @@ gem 'compass-rails'
 gem 'foundation-rails'
 gem 'devise'
 gem 'rails_admin'
+# gem 'rmagick'
+
 gem 'rmagick', :require => 'RMagick'
 # gem "mini_magick"
 # Amazon account

@@ -2,7 +2,7 @@ class CompanyProfilesController < ApplicationController
   before_action :set_company_profile, only: [:show, :edit, :update, :destroy]
 
   #make sure the user is logged in
-  before_action :authenticate_user!, :get_user
+  # before_action :authenticate_user!, :get_user
   before_action :user_type_authentication, except: [:index]
   #keep user from accessing thier profile if they haven't created it yet
   # before_action(:except => [:new, :create]) {|c| c.profile_redir}
