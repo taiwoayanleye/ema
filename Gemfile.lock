@@ -226,7 +226,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
-    turbolinks (2.4.0)
+    turbolinks (2.5.1)
       coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
@@ -257,7 +257,7 @@ DEPENDENCIES
   rails (= 4.1.6)
   rails_12factor
   rails_admin
-  rmagick (= 2.13.2)
+  rmagick
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring
