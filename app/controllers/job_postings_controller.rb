@@ -4,7 +4,7 @@ class JobPostingsController < ApplicationController
 # GET /job_postings
 # GET /job_postings.json
   #keep user from accessing their profile if they haven't created it yet
-  before_action :authenticate_user!, :get_user
+  # before_action :authenticate_user!, :get_user
   # Stops current student users and non verified companies from accessing all actions except index and search
   before_action :allowed_user, except: [:index, :search] 
 

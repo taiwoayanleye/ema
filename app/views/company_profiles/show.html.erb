@@ -1,14 +1,10 @@
 <!-- next -->
-<p id="notice"><%= notice %></table>
 
-  <% if @company_profile.company_name.nil? && @company_profile.description.nil? && @company_profile.company_type.nil? && @company_profile.number_of_employees.nil? && @company_profile.website.nil? && @company_profile.location.nil? && @company_profile.reg_code.nil? && @company_profile.image_url.nil? %>
-
-    Incomplete profile! <%= link_to 'Profile', edit_company_profile_path(@company_profile) %>
-
-    <% else %>
-
-    <!-- <h1>We are <br><%# @company_profile.company_name.upcase %></h1> -->
+  <% if !@company_profile.company_name.nil? %>
+    <h1>We are <br><%= @company_profile.company_name.upcase %></h1>
+  <% else %>
     <h1>Company Profile</h1>
+  <% end %>
     <table>
       <%= image_tag @company_profile.image_url(:thumb) %>
       <th>Company name:</th>
@@ -49,7 +45,3 @@
       <th>Reg code:</th>
       <td><%= @company_profile.reg_code %></td>
     </table>
-  <% end %>
-
-<%= link_to 'Edit', edit_company_profile_path(@company_profile) %> |
-<%= link_to 'Back', :back %>
