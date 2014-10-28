@@ -102,3 +102,27 @@
 		
 
 }
+
+//company_profiles/index.html.erb
+.company{
+	margin: 0 15% 0 15%;
+	padding: rem-calc(0px 18px 0px 18px);
+	.company_listing{
+		width: rem-calc(200em);
+		border: 1px solid $jumbo;
+		border-radius: rem-calc(3em);
+		.company_name_wrapper{
+			text-align: center;
+			background-color: $silver;
+			.company_name{font-size: $varfontsize_h1; margin: 0;}
+		}
+		.company_type_wrapper{
+			text-align: center;
+			background-color: $silver;
+			.fa-tags{color: $jumbo; font-size: $fontawes_h3;}
+			.company_type{font-size: $varfontsize_h4; color: $jumbo;}
+		}
+		hr{margin: 0px; padding: 0px; border-color: $jumbo;}
+		.company_known_image{}
+	}
+}

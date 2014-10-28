@@ -24,7 +24,10 @@
 //
 
 .content{
+	
+	margin: 0 15% 0 15%;
 	padding: rem-calc(0px 18px 0px 18px);
+
 	.int{
 		padding: rem-calc(30px 5px 0 5px);
 		width: 100%;
@@ -35,7 +38,6 @@
 			height: rem-calc(30%);
 			background-color:$silver;
 			padding: rem-calc(0 0% 0 0%);
-			box-shadow: 0 3px 3px rgba(0,0,0,.26);
 			//company_name
 			.company_name{
 				p{
@@ -57,9 +59,6 @@
 				color: $jumbo;
 				}
 
-				.divider{
-					color: $gainsboro;
-				}
 			}
 		}
 
@@ -67,23 +66,27 @@
 		//middle
 		.post_mid{
 			.image_wrapper{
-				width: auto;
-    			height: 120px;
-    			overflow: hidden;
+				display: block;
+    			margin-left: auto;
+    			margin-right: auto;
+				//width: auto;
+    			//height: 120px;
+    			//overflow: hidden;
 				.company_image{
-				width: auto;
-    			height: auto;
-    			margin: -180px 0 0 -10px;
+				//width: 50;
+    			//height: auto;
+    			//margin: -180px 0 0 -10px;
 				}
 			}
 		}
 
 		//page_down
 		.page_down{
-			box-shadow: 0 -3px 3px rgba(0,0,0,.26);
 			//...
+			margin: rem-calc(20% 0 20% 0);
 			.page_down_one{
 				text-align: center;
+				
 				.int_position{
 					i{
 					padding: rem-calc(0 1% 0 0);
@@ -106,7 +109,9 @@
 			}
 			//...
 			.page_down_three{
+
 				.int_dur_paid{
+					margin: rem-calc(1% 0 1% 0);
 					padding: rem-calc(0 50% 0 50%);
 					a{
 					font-size: $varfontsize_h4;

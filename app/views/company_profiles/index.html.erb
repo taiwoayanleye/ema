@@ -1,27 +1,37 @@
+<div class="company">
 <h3>Company Profile</h3>
-<h1>Job Postings</h1>
-<div>
-  <% @company_profiles.each do |company_profile| %>
-    <div class="th">
-      <div>
-        <h3><%= company_profile.company_name %></h3>
-      </div>
-      <td><%= link_to image_tag(company_profile.image_url(:thumb)), company_profile %></td>
-      <div>
-        <p><%= company_profile.company_type %></p>
-        <p><%= company_profile.location %></p>
-      </div>
-    </div>
-  <% end %>
+
+<% @company_profiles.each do |company_profile| %>
+<!-- company_listing -->
+<div class="small-12 medium-4 large-4 columns">
+	<div class='company_listing'>
+		<!-- company_name_and_type -->
+		<div class="row">
+			<div class="small-12 medium-12 large-12 columns">
+				<div class='company_name_wrapper'>
+					<i class="company_name"><%= company_profile.company_name %></i>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-12 medium-12 large-12 columns">
+				<div class='company_type_wrapper'>
+					<i class="fa fa-tags"></i><i class="company_type"><%= company_profile.company_type %></i>
+				</div><hr>
+			</div>
+			<div class="small-12 medium-12 large-12 columns">
+				<div class='company_known_image'>
+					<%= link_to image_tag(company_profile.image_url(:thumb)), company_profile %>
+				</div>
+			</div>
+		</div>
+
+		<!-- company_known_image -->
+		<div class="row">
+			
+		</div>
+	</div>
 </div>
-<br>
 
-
-
-<div class="row"> 
-  <div class="large-4 small-12 columns">
-    <div class="company">
-      <p></p>
-    </div>
-  </div>
+<% end %>
 </div>
