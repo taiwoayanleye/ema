@@ -14,7 +14,6 @@
 	.top-card{
 		margin: rem-calc(20px) 0px rem-calc(20px) 0px !important;
 
-		profile_image
 		.profile_image > img {
 			width: 200px !important;
 		}
@@ -24,6 +23,19 @@
 				font-size: $varfontsize_hbig1;
 			}
 		}
+		.editbutton{
+			text-align: center;
+			color: red;
+			text-decoration: none;
+			line-height: none;
+			a{
+			text-align: center;
+			color: red;
+			text-decoration: none;
+			line-height: none;
+			}
+		}
+
 	}
 
 	.mid-card{

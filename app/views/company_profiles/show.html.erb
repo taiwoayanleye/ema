@@ -28,6 +28,12 @@
                 </div>
               </div>
             </div>
+            
+            <div class="row">
+              <div class="large-12 small-12 columns">
+                <a class = 'editbutton'><%= link_to 'Edit', edit_company_profile_path(@company_profile) %></a>
+              </div>
+            </div>
 
           </div>
         </div>
@@ -94,9 +100,6 @@
             </div><hr>
           </div>
           <% end %>
-          
-          <%= link_to 'Edit', edit_company_profile_path(@company_profile) %> |
-          <%= link_to 'Back', :back %>
 
         </div>
       </div>
