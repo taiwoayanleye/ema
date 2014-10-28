@@ -1,0 +1,92 @@
+
+.panel{
+		margin: 0 20%;
+		@media #{$medium-only}{margin: 0px 8%;}
+		@media #{$small-only}{margin: 0px 8%;}
+
+	.row{
+		margin: 0px;
+	}
+}
+
+.site-content{
+	//top-card
+	.top-card{
+		margin: rem-calc(20px) 0px rem-calc(20px) 0px !important;
+
+		profile_image
+		.profile_image > img {
+			width: 200px !important;
+		}
+		.company_name{
+				background-color: $white;
+			p{
+				font-size: $varfontsize_hbig1;
+			}
+		}
+	}
+
+	.mid-card{
+		.company_facts{
+			padding-left: rem-calc(50px);
+		.no_of_employees{
+			i{
+				margin-right: rem-calc(1px);
+				font-size: $fontawes_h3;
+				@media #{$medium-only}{font-size: $fontawes_h4;}
+				@media #{$small-only}{font-size: $fontawes_h4;}
+			}
+
+			.fact_a_content{
+				font-size: $varfontsize_h2;
+				@media #{$medium-only}{font-size: $varfontsize_h5;}
+				@media #{$small-only}{font-size: $varfontsize_h5;}
+			}
+		}
+		.company_type{
+			margin-left: rem-calc(10px);
+			i{
+				
+				font-size: $fontawes_h3;
+				@media #{$medium-only}{font-size: $fontawes_h4;}
+				@media #{$small-only}{font-size: $fontawes_h4;}
+			}
+
+			.fact_a_content{
+				font-size: $varfontsize_h2;
+				@media #{$medium-only}{font-size: $varfontsize_h5;}
+				@media #{$small-only}{font-size: $varfontsize_h5;}
+			}
+			}
+		}
+	}
+	
+	//bottom-card styling
+	.bottom-card{
+			
+		//decsription
+		.description{
+			.description_title{
+				padding: rem-calc(5px 5px 50px 5px);
+				// border: 2px solid black;
+			}
+			.description_content{
+				padding: rem-calc(5px 5px 50px 5px);
+				// border: 2px solid black;
+			}
+		}
+
+		.contact{
+			.contact_title{
+				padding: rem-calc(5px 5px 50px 5px);
+				// border: 2px solid black;
+			}
+			.contact_title{
+				padding: rem-calc(5px 5px 50px 5px);
+				// border: 2px solid black;
+			}
+		}
+	}
+		
+
+}
