@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :saved_job_postings
 
   #Website root page
-  root 'job_postings#index'
+  root 'job_postings#search'
   
   #RailsAdmin
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

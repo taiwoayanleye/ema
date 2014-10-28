@@ -21,7 +21,9 @@ class JobPostingsController < ApplicationController
   def search()
 
     @job_postings_all = JobPosting.all
-    @saved = SavedJobPosting.where(student_profile_id: current_user.profileable_id)
+      if user_signed_in?
+        @saved = SavedJobPosting.where(student_profile_id: current_user.profileable_id)
+      end
     @return = []
     @pay = ['', 'Paid', 'Unpaid']
 
