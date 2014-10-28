@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.2'
+ruby '2.1.3'
 
 gem 'rails', '4.1.6'
 gem 'sass-rails', '~> 4.0.3'
@@ -13,8 +13,8 @@ gem 'compass-rails'
 gem 'foundation-rails'
 gem 'devise'
 gem 'rails_admin'
-# gem 'rmagick'
-gem "mini_magick"
+gem 'rmagick', '2.13.2'
+# gem "mini_magick"
 # Amazon account
 gem 'aws-sdk'
 # Secure api keys 
