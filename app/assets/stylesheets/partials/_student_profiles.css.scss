@@ -140,3 +140,35 @@
 
 	}
 }
+
+
+
+//student_profiles/index.html.erb
+.profiled_intern{
+	margin: 0 15% 0 15%;
+	padding: rem-calc(0px 18px 0px 18px);
+	.pro_int_listing{
+		width: rem-calc(200em);
+		border: 1px solid $jumbo;
+		border-radius: rem-calc(3em);
+		.pro_int_image{}
+
+		.pro_int_n_m_wrapper{
+			text-align: center;
+			background-color: $silver;
+			.pro_int_name{font-size: $varfontsize_h3; margin: 0;}
+			.pro_int_grad{font-size: $varfontsize_h3; margin: 0;}
+		}
+
+		.pro_int_g_s_wrapper{
+			text-align: center;
+			background-color: $silver;
+			.pro_int_major{font-size: $varfontsize_h4; margin: 0;}
+			.pro_int_sch{font-size: $varfontsize_h4; margin: 0;}
+			.fa-tags{color: $jumbo; font-size: $fontawes_h3;}
+			.company_type{font-size: $varfontsize_h4; color: $jumbo;}
+		}
+		hr{margin: 0px; padding: 0px; border-color: $jumbo;}
+		
+	}
+}
