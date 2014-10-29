@@ -15,7 +15,6 @@ gem 'devise'
 gem 'rails_admin'
 # gem 'rmagick'
 gem 'rmagick', :require => 'RMagick'
-# gem "mini_magick"
 # Amazon account
 gem 'aws-sdk'
 # Secure api keys 
@@ -24,6 +23,10 @@ gem "figaro"
 gem "fog", "~> 1.20", require: "fog/aws/storage"
 # Carrierwave
 gem 'carrierwave'
+
+gem 'prawn'
+gem 'prawn-table'
+gem 'prawn-rails'
 
 group :doc do 
 	gem 'sdoc', '~> 0.4.0'
