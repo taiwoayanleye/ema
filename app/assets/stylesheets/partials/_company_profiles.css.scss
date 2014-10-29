@@ -1,3 +1,128 @@
-// Place all the styles related to the CompanyProfiles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.panel{
+		margin: 0 20%;
+		@media #{$medium-only}{margin: 0px 8%;}
+		@media #{$small-only}{margin: 0px 8%;}
+
+	.row{
+		margin: 0px;
+	}
+}
+
+.site-content{
+	//top-card
+	.top-card{
+		margin: rem-calc(20px) 0px rem-calc(20px) 0px !important;
+
+		.profile_image > img {
+			width: 200px !important;
+		}
+		.company_name{
+				background-color: $white;
+			p{
+				font-size: $varfontsize_hbig1;
+			}
+		}
+		.editbutton{
+			text-align: center;
+			color: red;
+			text-decoration: none;
+			line-height: none;
+			a{
+			text-align: center;
+			color: red;
+			text-decoration: none;
+			line-height: none;
+			}
+		}
+
+	}
+
+	.mid-card{
+		.company_facts{
+			padding-left: rem-calc(50px);
+		.no_of_employees{
+			i{
+				margin-right: rem-calc(1px);
+				font-size: $fontawes_h3;
+				@media #{$medium-only}{font-size: $fontawes_h4;}
+				@media #{$small-only}{font-size: $fontawes_h4;}
+			}
+
+			.fact_a_content{
+				font-size: $varfontsize_h2;
+				@media #{$medium-only}{font-size: $varfontsize_h5;}
+				@media #{$small-only}{font-size: $varfontsize_h5;}
+			}
+		}
+		.company_type{
+			margin-left: rem-calc(10px);
+			i{
+				
+				font-size: $fontawes_h3;
+				@media #{$medium-only}{font-size: $fontawes_h4;}
+				@media #{$small-only}{font-size: $fontawes_h4;}
+			}
+
+			.fact_a_content{
+				font-size: $varfontsize_h2;
+				@media #{$medium-only}{font-size: $varfontsize_h5;}
+				@media #{$small-only}{font-size: $varfontsize_h5;}
+			}
+			}
+		}
+	}
+	
+	//bottom-card styling
+	.bottom-card{
+			
+		//decsription
+		.description{
+			.description_title{
+				padding: rem-calc(5px 5px 50px 5px);
+				// border: 2px solid black;
+			}
+			.description_content{
+				padding: rem-calc(5px 5px 50px 5px);
+				// border: 2px solid black;
+			}
+		}
+
+		.contact{
+			.contact_title{
+				padding: rem-calc(5px 5px 50px 5px);
+				// border: 2px solid black;
+			}
+			.contact_title{
+				padding: rem-calc(5px 5px 50px 5px);
+				// border: 2px solid black;
+			}
+		}
+	}
+		
+
+}
+
+//company_profiles/index.html.erb
+.company{
+	margin: 0 15% 0 15%;
+	padding: rem-calc(0px 18px 0px 18px);
+	.company_listing{
+		width: rem-calc(200em);
+		border: 1px solid $jumbo;
+		border-radius: rem-calc(3em);
+		.company_name_wrapper{
+			text-align: center;
+			background-color: $silver;
+			.company_name{font-size: $varfontsize_h1; margin: 0;}
+		}
+		.company_type_wrapper{
+			text-align: center;
+			background-color: $silver;
+			.fa-tags{color: $jumbo; font-size: $fontawes_h3;}
+			.company_type{font-size: $varfontsize_h4; color: $jumbo;}
+		}
+		hr{margin: 0px; padding: 0px; border-color: $jumbo;}
+		.company_known_image{}
+	}
+}

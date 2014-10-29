@@ -1,13 +1,33 @@
-
-
 .company_name{background-color:$silver;}
 .company_type{background-color:$silver;}
 .int_position{background-color:$silver;}
 .int_description{background-color:$silver;}
 .int_dur_paid{background-color:$silver;}
 
+/* Effect 4: fall perspective */
+.int {
+    perspective: 1300px;
+}
+ 
+.int .row {
+    transform-style: preserve-3d;
+}
+ 
+.grid.effect-4 .row.animate {
+    transform: translateZ(400px) translateY(300px) rotateX(-90deg);
+    animation: fallPerspective .8s ease-in-out forwards;
+}
+ 
+@keyframes fallPerspective {
+    100% { transform: translateZ(0px) translateY(0px) rotateX(0deg); opacity: 1; }
+}
+//
+
 .content{
+	
+	margin: 0 15% 0 15%;
 	padding: rem-calc(0px 18px 0px 18px);
+
 	.int{
 		padding: rem-calc(30px 5px 0 5px);
 		width: 100%;
@@ -18,7 +38,6 @@
 			height: rem-calc(30%);
 			background-color:$silver;
 			padding: rem-calc(0 0% 0 0%);
-			box-shadow: 0 3px 3px rgba(0,0,0,.26);
 			//company_name
 			.company_name{
 				p{
@@ -40,9 +59,6 @@
 				color: $jumbo;
 				}
 
-				.divider{
-					color: $gainsboro;
-				}
 			}
 		}
 
@@ -50,23 +66,27 @@
 		//middle
 		.post_mid{
 			.image_wrapper{
-				width: auto;
-    			height: 120px;
-    			overflow: hidden;
+				display: block;
+    			margin-left: auto;
+    			margin-right: auto;
+				//width: auto;
+    			//height: 120px;
+    			//overflow: hidden;
 				.company_image{
-				width: auto;
-    			height: auto;
-    			margin: -180px 0 0 -10px;
+				//width: 50;
+    			//height: auto;
+    			//margin: -180px 0 0 -10px;
 				}
 			}
 		}
 
 		//page_down
 		.page_down{
-			box-shadow: 0 -3px 3px rgba(0,0,0,.26);
 			//...
+			margin: rem-calc(20% 0 20% 0);
 			.page_down_one{
 				text-align: center;
+				
 				.int_position{
 					i{
 					padding: rem-calc(0 1% 0 0);
@@ -74,7 +94,7 @@
 					color: $jumbo;
 					}
 					a{
-					font-size: $varfontsize_h3;
+					font-size: $varfontsize_h1;
 					color: $jumbo;
 					}
 				}
@@ -89,7 +109,9 @@
 			}
 			//...
 			.page_down_three{
+
 				.int_dur_paid{
+					margin: rem-calc(1% 0 1% 0);
 					padding: rem-calc(0 50% 0 50%);
 					a{
 					font-size: $varfontsize_h4;

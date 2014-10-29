@@ -1,47 +1,109 @@
-<!-- next -->
+<div class="site-content">
+  <!-- next -->
+  <p id="notice"><%= notice %></table>
+  <% if @company_profile.company_name.nil? && @company_profile.description.nil? && @company_profile.company_type.nil? && @company_profile.number_of_employees.nil? && @company_profile.website.nil? && @company_profile.location.nil? && @company_profile.reg_code.nil? && @company_profile.image_url.nil? %>
 
-  <% if !@company_profile.company_name.nil? %>
-    <h1>We are <br><%= @company_profile.company_name.upcase %></h1>
+  Incomplete profile! <%= link_to 'Profile', edit_company_profile_path(@company_profile) %>
   <% else %>
-    <h1>Company Profile</h1>
-  <% end %>
-    <table>
-      <%= image_tag @company_profile.image_url(:thumb) %>
-      <th>Company name:</th>
-      <td><%= @company_profile.company_name %></td>
-    </table>
+    
+      <!-- top card -->
+  <div class="top-card">
+    <div class="row"> 
+      <div class="large-12 small-12 columns">
+        <div class="panel">
+          <div class="row">
+            <!--profile_image-->
+            <div class="large-4 small-4 columns">
+              <div class="profile_image">
+                <%= image_tag @company_profile.image_url(:thumb) %>
+              </div>
+            </div>
+ 
+            <div class="large-8 small-8 columns">
+              <div class='company_name'>
+                <div class="row">
+                  <div class="large-12 small-12 columns">
+                    <p><%= @company_profile.company_name %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="large-12 small-12 columns">
+                <a class = 'editbutton'><%= link_to 'Edit', edit_company_profile_path(@company_profile) %></a>
+              </div>
+            </div>
 
-    <table>
-      <th>Email:</th>
-      <td><%= @company_profile.user.email %></td>
-    </table>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
 
-    <table>
-      <th>Description:</th>
-      <td><%= @company_profile.description %></td>
-    </table>
+  <div class="mid-card">
+    <!--no_of_employees-->  
+    <div class='row'>
+      <div class="large-12 small-12 large-centered small-centered columns">
+        <div class = 'panel'>
+          <div class="company_facts">
+            <i class ='no_of_employees'>
+            <i class="fa fa-university"></i><a class = 'fact_a_content'><%= @company_profile.number_of_employees %></i>
+            </a>
+            <i class ='company_type'>
+            <i class="fa fa-graduation-cap"></i>
+            <a class = 'fact_a_content'><%= @company_profile.company_type %></a>
+            </i>
+          </div>
+        </div>
+     </div>
+    </div>
 
-    <table>
-      <th>Company type:</th>
-      <td><%= @company_profile.company_type %></td>
-    </table>
 
-    <table>
-      <th>Number of employees:</th>
-      <td><%= @company_profile.number_of_employees %></td>
-    </table>
+  <div class="bottom-card">
+    <div class="row"> 
+      <div class="large-12 small-12 columns">
+        <div class="panel">
 
-    <table>
-      <th>Website:</th>
-      <td><%= @company_profile.website %></td>
-    </table>
+          <!-- brief -->
+          <div class="row">
+            <div class="large-12 small-12 columns">
+              <div class = "description">
+                <!-- description_title -->
+                <div class ="description_title">
+                  <p>FEW WORDS ABOUT US</p>
+                </div>
+                <!-- description_content -->
+                <div class="description_content">
+                  <%= @company_profile.description %>
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <table>
-      <th>Location:</th>
-      <td><%= @company_profile.location %></td>
-    </table>
+          <!-- contact -->
+          <div class="row">
+            <div class="large-12 small-12 columns">
+              <div class="contact">
+                <!-- _contact_title -->
+                <div class="contact_title">
+                  <p>OUR OFFICES</p>
+                </div>
+                <!-- contact_content -->
+                <div class="contact_content">
+                <p><%= @company_profile.user.email %></p>
+                <p><%= @company_profile.website %></p>
+                <p><%= @company_profile.location %></p>
+                <p><%= @company_profile.reg_code %></p>
+                </div>
+              </div>
+            </div><hr>
+          </div>
+          <% end %>
 
-    <table>
-      <th>Reg code:</th>
-      <td><%= @company_profile.reg_code %></td>
-    </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
