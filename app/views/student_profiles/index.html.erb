@@ -1,44 +1,50 @@
-<h1>Talents</h1>
+<div class="profiled_intern">
+<% @student_profiles.each do |student_profile| %>
+<!-- profiled_intern_listing -->
+<div class="small-12 medium-4 large-4 columns">
+  <div class='pro_int_listing'>
 
-<table>
-  <thead>
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>School</th>
-      <th>Email</th>
-      <th>Expected graduation</th>
-      <th>School year</th>
-      <th>Last completed degree</th>
-      <th>Residential address</th>
-      <th>Major</th>
-      <th>Brief</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <!-- profiled_intern_image -->
+    <div class="row">
+      <div class="small-12 medium-12 large-12 columns">
+        <div class='pro_int_image'>
+          <%= link_to image_tag(student_profile.image_url(:thumb)), student_profile %>
+        </div>
+      </div>
+    </div>
 
-  <tbody>
-    <% @student_profiles.each do |student_profile| %>
-      <tr>
-        <td><%= student_profile.first_name %></td>
-        <td><%= student_profile.last_name %></td>
-        <td><%= student_profile.school %></td>
-        <td><%# student_profile.email %></td>
-        <td><%= student_profile.expected_graduation %></td>
-        <td><%= student_profile.school_year %></td>
-        <td><%= student_profile.last_completed_degree %></td>
-        <td><%= student_profile.residential_address %></td>
-        <td><%= student_profile.major %></td>
-        <td><%= student_profile.brief_summary %></td>
-        <td><%= student_profile.image %></td>
-        <td><%= link_to 'Show', student_profile %></td>
-        <td><%= link_to 'Edit', edit_student_profile_path(student_profile) %></td>
-        <td><%= link_to 'Destroy', student_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <!-- company_name_and_type -->
+    <div class="row">
+      <div class="small-12 medium-12 large-12 columns">
+        <div class='pro_int_g_s_wrapper'>
+           <p class="pro_int_major">
+           <i class="fa fa-book"></i>
+           <%= student_profile.major %></p>
+           <i class="pro_int_sch">
+           <%= student_profile.school %>
+           </i>
+           <i class = "divider"><%= '|' %></i>
+           <i class="pro_int_grad">
+           <i class="fa fa-graduation-cap"></i>
+           <%= student_profile.expected_graduation %>
+           </i>
+        </div>
+      </div>
+    </div>
 
-<br>
-<br>
+    <!-- profiled_intern_name -->
+    <div class="row">
+      <div class="small-12 medium-12 large-12 columns">
+        <div class='pro_int_n_m_wrapper'>
+          <i class="pro_int_name">
+          <%= student_profile.first_name %> <%= student_profile.last_name %>
+          </i>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<% end %>
+
+</div>
