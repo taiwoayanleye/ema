@@ -13,8 +13,6 @@ gem 'compass-rails'
 gem 'foundation-rails'
 gem 'devise'
 gem 'rails_admin'
-# gem 'rmagick'
-
 gem 'rmagick', :require => 'RMagick'
 # Amazon account
 gem 'aws-sdk'
