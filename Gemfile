@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.3'
+ruby '2.1.2'
 
 gem 'rails', '4.1.6'
 gem 'sass-rails', '~> 4.0.3'
@@ -13,10 +13,7 @@ gem 'compass-rails'
 gem 'foundation-rails'
 gem 'devise'
 gem 'rails_admin'
-# gem 'rmagick'
-
 gem 'rmagick', :require => 'RMagick'
-# gem "mini_magick"
 # Amazon account
 gem 'aws-sdk'
 # Secure api keys 
@@ -25,6 +22,10 @@ gem "figaro"
 gem "fog", "~> 1.20", require: "fog/aws/storage"
 # Carrierwave
 gem 'carrierwave'
+
+gem 'prawn'
+gem 'prawn-table'
+gem 'prawn-rails'
 
 group :doc do 
 	gem 'sdoc', '~> 0.4.0'
@@ -36,6 +37,8 @@ group :development do
 	gem 'better_errors'
 	gem 'binding_of_caller'
 	gem 'meta_request'
+	gem 'faker'
+	gem 'populator'
 end
 
 group :production do
