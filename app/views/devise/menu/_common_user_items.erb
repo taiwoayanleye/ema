@@ -1,29 +1,23 @@
 <% if user_signed_in? %>
   <% current_user_id = current_user.id.to_s() %>
   <%  if current_user.user_type == "student" %>
+
+     <!-- Discover -->
     <li>
-      <%= link_to 'Profile', student_profile_path(current_user_id), :class => 'navbar-link' %>
+      <%= link_to 'Discover', search_job_postings_path, :class => 'navbar-link' %>
     </li>
-    <li>
-       <%= link_to 'Browse Companies', company_profiles_path, :class => 'navbar-link' %>
-    </li>
-    <li>
-      <%= link_to 'Browse Jobs', job_postings_path, :class => 'navbar-link' %>
-    </li>
-    <li>
-    	<%= link_to 'Search for Jobs', search_job_postings_path, :class => 'navbar-link' %>
-    </li>
-  <% elsif current_user.user_type == "company" %>
-	 <li>
-	 	<%= link_to 'Post Jobs', new_job_posting_path, :class => 'navbar-link'  %>
-	 </li>
+
+    <!-- student_profile -->
     <li class="has-dropdown">
-      <a <%= link_to 'Profile', company_profile_path(current_user_id) %> </a>
+      <a <%= link_to 'Profile'%> </a>
       <ul class="dropdown">
         <li>
-          <%= link_to 'Edit Profile', edit_company_profile_path(current_user_id), :class => 'navbar-link' %>
+          <%= link_to 'View', student_profile_path(current_user_id), :class => 'navbar-link' %>
         </li>
         <li>
+          <%= link_to 'Edit', edit_student_profile_path(current_user_id), :class => 'navbar-link' %>
+        </li>
+        <!-- <li>
           <%= link_to 'Add experience', new_stu_work_experience_path, :class => 'navbar-link' %>
         </li>
         <li>
@@ -34,9 +28,63 @@
         </li>
         <li>
           <%= link_to 'Add certification', new_stu_certification_path %>
+        </li> -->
+      </ul>
+    </li>
+
+    <!-- Account -->
+    <li class="has-dropdown">
+      <a <%= link_to 'Account' %> </a>
+      <ul class="dropdown">
+        <li>
+        <%= link_to 'Settings', edit_user_registration_path, :class => 'navbar-link' %>
+        </li>
+        <li>
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
         </li>
       </ul>
     </li>
+
+  <% elsif current_user.user_type == "company" %>
+	 <li>
+	 	<%= link_to 'Post Jobs', new_job_posting_path, :class => 'navbar-link'  %>
+	 </li>
+    <li class="has-dropdown">
+      <a <%= link_to 'Profile' %> </a>
+      <ul class="dropdown">
+        <li>
+          <%= link_to 'View', company_profile_path(current_user_id), :class => 'navbar-link' %>
+        </li>
+        <li>
+          <%= link_to 'Edit', edit_company_profile_path(current_user_id), :class => 'navbar-link' %>
+        </li>
+        <!-- <li>
+          <%= link_to 'Add experience', new_stu_work_experience_path, :class => 'navbar-link' %>
+        </li>
+        <li>
+          <%= link_to 'Add skill', new_skill_path, :class => 'navbar-link' %>
+        </li>
+        <li>
+          <%= link_to 'Add interest', new_stu_interest_path, :class => 'navbar-link' %>
+        </li>
+        <li>
+          <%= link_to 'Add certification', new_stu_certification_path %>
+        </li> -->
+      </ul>
+    </li>
+
+    <li class="has-dropdown">
+      <a <%= link_to 'Account' %> </a>
+      <ul class="dropdown">
+        <li>
+        <%= link_to 'Settings', edit_user_registration_path, :class => 'navbar-link' %>
+        </li>
+        <li>
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
+        </li>
+      </ul>
+    </li>
+
      <li>
        <%= link_to 'Browse Candidates', student_profiles_path, :class => 'navbar-link' %>
      </li>
@@ -47,3 +95,10 @@
       <!-- #something to do here for admin -->
   <% end %>
 <% end %>
+
+  <!-- <li>
+       <%= link_to 'Browse Companies', company_profiles_path, :class => 'navbar-link' %>
+    </li> -->
+    <!-- <li>
+      <%= link_to 'Browse Jobs', job_postings_path, :class => 'navbar-link' %>
+    </li> -->
