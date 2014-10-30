@@ -17,12 +17,12 @@ class CompanyProfile < ActiveRecord::Base
             :length => { :minimum => 1,
                          :message => "This field cannot be empty" },
                          :on => :update
-  validates :location,
-            :format => { :with => /\A[a-zA-Z\,\.\- ]*\z/,
-                         :message => "Numbers and symbols are not allowed." },
-            :length => { :minimum => 1,
-                         :message => "This field cannot be empty" },
-                         :on => :update
+  # validates :location,
+  #           :format => { :with => /\A[a-zA-Z\,\.\- ]*\z/,
+  #                        :message => "Numbers and symbols are not allowed." },
+  #           :length => { :minimum => 1,
+  #                        :message => "This field cannot be empty" },
+  #                        :on => :update
   validates :description,
             :length => { :maximum => 300,
                          :message => "Over 300 characters" }
