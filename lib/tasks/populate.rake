@@ -3,19 +3,21 @@ namespace :db do
 	task :populate => :environment do
 		require 'populator'
 		require 'faker'
-			# StudentProfile.populate 100 do |s|
-			# 	s.first_name = Faker::Name.first_name
-			# 	s.last_name = Faker::Name.last_name
-			# 	s.school = Faker::Company.name
-			# 	s.expected_graduation = Faker::Business.credit_card_expiry_date
-			# 	s.school_year = 	Faker::Lorem.word
-			# 	s.last_completed_degree = Faker::Commerce.department
-			# 	s.residential_address = Faker::Address.street_address
-			# 	s.major = Faker::Commerce.department
-			# 	s.brief_summary = Faker::Lorem.paragraph
-			# 	s.image = Faker::Avatar.image("my-own-slug", "50x50")
-			# end
-			# puts 'Student done'
+			StudentProfile.populate 100 do |s|
+				s.first_name = Faker::Name.first_name
+				s.last_name = Faker::Name.last_name
+				s.school = Faker::Company.name
+				s.expected_graduation = Faker::Business.credit_card_expiry_date
+				s.school_year = 	Faker::Lorem.word
+				s.last_completed_degree = Faker::Commerce.department
+				s.residential_address = Faker::Address.street_address
+				s.major = Faker::Commerce.department
+				s.brief_summary = Faker::Lorem.paragraph
+				# s.image = Faker::Avatar.image("my-own-slug", "50x50")
+			end
+			puts 'Student done'
+			StudentProfile.all.each { |s| s.image = File.open(Dir.glob(File.join(Rails.root, 'studentimages', '*')).sample); s.save! }
+			puts 'Student images done'
 
 			CompanyProfile.populate 100 do |c|
 				c.company_name = Faker::Company.name
@@ -31,7 +33,7 @@ namespace :db do
 			end
 			puts 'Company done'
 			CompanyProfile.all.each { |c| c.image = File.open(Dir.glob(File.join(Rails.root, 'sampleimages', '*')).sample); c.save! }
-			puts 'Image done'
+			puts 'Other images done'
 
 			JobPosting.populate 100 do |j|
 				j.position = Faker::Name.title
