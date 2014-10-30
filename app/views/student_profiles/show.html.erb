@@ -53,12 +53,12 @@
                 <div class='year_graduation'>
                   <div class="row">
                     <div class="large-12 small-12 columns">
-                        <i class="fa fa-graduation-cap"></i>
-                        <p><%= @student_profile.school_year %>
+                      <i class="fa fa-graduation-cap"></i>
+                      <p><%= @student_profile.school_year %>
                         <% if !(@student_profile.school_year.nil? && @student_profile.expected_graduation.nil?) %>
-                        <%= '-' %>
+                          <%= '-' %>
                         <% else %>
-                        <p>?</p>
+                          <p>?</p>
                         <% end %> 
                         <%= @student_profile.expected_graduation %></p>
                     </div>
