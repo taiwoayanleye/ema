@@ -137,7 +137,7 @@ class JobPostingsController < ApplicationController
   # GET /job_postings/1.json
   # Blocked by before action allowed user
   def show
-    @job_posting = JobPosting.find(params[:id])
+    @job_posting = JobPosting.find(params[:id]).order("created_at DESC")
 
     respond_to do |format|
       format.html #show.html.erb

@@ -27,6 +27,7 @@ namespace :db do
 				c.website = Faker::Internet.url
 				c.location = Faker::Address.city
 				c.reg_code = Faker::Company.duns_number
+				c.user_id = Faker::Number.digit
 				# c.image = Faker::Company.logo
 				# c.image = File.open(Dir.glob(File.join(Rails.root, 'sampleimages', '*')).sample)
 
@@ -44,6 +45,7 @@ namespace :db do
 				j.position_time = Faker::Lorem.word
 				j.job_paid = Faker::Lorem.word
 				j.job_requirements = Faker::Lorem.sentence
+				j.user_id = Faker::Number.digit
 				j.company_profile_id = Faker::Number.digit
 			end
 			puts 'Job done'
