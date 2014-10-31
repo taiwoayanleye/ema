@@ -27,6 +27,7 @@ gem 'carrierwave'
 gem 'prawn'
 gem 'prawn-table'
 gem 'prawn-rails'
+gem 'css_parser', '~> 1.3.5'
 
 group :doc do 
 	gem 'sdoc', '~> 0.4.0'

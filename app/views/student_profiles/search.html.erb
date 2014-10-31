@@ -3,7 +3,7 @@
     <p id="notice"><%= notice %></p>
 
     <div>
-      <h3>Search Intern Postings</h3>
+      <h3></h3>
       <%= form_tag search_student_profiles_url, :method => 'get' do %>
       <div class="search_postings">
         <div class="row">
@@ -45,7 +45,7 @@
 
     <div class = 'search_intern'>
     <% if !@return.nil? && !@return.empty? %>
-    <h3>Search Results</h3>
+    <h3></h3>
     <% @return.each do |student_profile| %>
     
     <div class="profiled_intern">
@@ -60,17 +60,18 @@
               </div>
             </div>
           </div>
+            
 
           <!-- company_name_and_type -->
           <div class="row">
             <div class="small-12 medium-12 large-12 columns">
               <div class='pro_int_g_s_wrapper'>
                  <p class="pro_int_major">
-                 <i class="fa fa-book"></i><%= student_profile.major %>
+                <!-- <i><i class="fa fa-book rep_major"></i> --><a><%= student_profile.major %></a>
                  </p>
-                 <i class="pro_int_sch">
-                 <%= student_profile.school %>
-                 </i>
+                 <p class="pro_int_sch">
+                 <i class="fa fa-institution"></i><a><%= student_profile.school %></a>
+                 </p>
                  <!-- <i class = "divider"><%= '|' %></i>
                  <i class="pro_int_grad">
                  <i class="fa fa-graduation-cap"></i><%= student_profile.expected_graduation %>
@@ -88,7 +89,7 @@
                 </i>
               </div>
             </div>
-          </div>
+            </div>
 
         </div>
       </div>
