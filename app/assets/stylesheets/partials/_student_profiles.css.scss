@@ -9,6 +9,8 @@
 	}
 }
 
+
+//student personal profile
 .content{
 	margin: 0 5% 0 5%;
 	padding: rem-calc(0px 18px 0px 18px);
@@ -135,7 +137,10 @@
 }
 
 
-//search panel
+
+
+
+//search panel for student_profiles job_postings employers_profile
 .search_wrapper{
 	border-top: 1px solid $silver;
 	margin: rem-calc(50px 0 20px 0);
@@ -168,6 +173,8 @@
 
 
 
+
+
 //student_profiles/index.html.erb & search.html.erb
 .all_intern{
 	padding: rem-calc(20px 40px 20px 40px);
@@ -176,10 +183,9 @@
 	text-align: center;
 	.pro_int_listing{
 		background-color: white;
-		border: 1px solid $jumbo;
+		border: 1px solid $iron;
 		border-radius: rem-calc(3em);
-		margin: rem-calc(0% 0px 0px 0px);
-	
+		margin: rem-calc(0% 0px 0px 0px);	
 		
 		.pro_int_image{}
 		.pro_int_g_s_wrapper{
@@ -215,7 +221,7 @@
 
 		.pro_int_n_m_wrapper{
 			border-radius: rem-calc(2em);
-			border: 3px solid $silver;
+			border: 3px solid $white-smoke;
 			background-color: white;
 			text-align: center;
 			.pro_int_name{font-size: $varfontsize_h4; margin: 0; color:$jumbo;}

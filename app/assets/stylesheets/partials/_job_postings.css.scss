@@ -1,8 +1,8 @@
-.company_name{background-color:$silver;}
-.company_type{background-color:$silver;}
-.int_position{background-color:$silver;}
-.int_description{background-color:$silver;}
-.int_dur_paid{background-color:$silver;}
+.company_name{background-color:red;}
+.company_type{background-color:red;}
+.int_position{background-color:red;}
+.int_description{background-color:red;}
+.int_dur_paid{background-color:red;}
 
 /* Effect 4: fall perspective */
 .int {
@@ -128,12 +128,5 @@
 
 		}
 	}
-}
-
-.search_postings{
-	.search_position{}
-	.search_description{}
-	.search_pay{}
-	.search_requirements{}
 }
 //lets go conform to a box size that's a bir wider and less longer

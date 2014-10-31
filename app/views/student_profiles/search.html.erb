@@ -3,7 +3,6 @@
     <p id="notice"><%= notice %></p>
 
     <div class = 'search_wrapper'>
-      <h3></h3>
       <%= form_tag search_student_profiles_url, :method => 'get' do %>
       <div class="search_postings">
         <div class="row">
@@ -48,7 +47,6 @@
 
     
     <% if !@return.nil? && !@return.empty? %>
-    <h3></h3>
     <% @return.each do |student_profile| %>
     
 
