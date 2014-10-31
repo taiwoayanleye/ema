@@ -1,50 +1,52 @@
-<div class="profiled_intern">
-<% @student_profiles.each do |student_profile| %>
-<!-- profiled_intern_listing -->
-<div class="small-12 medium-4 large-4 columns">
-  <div class='pro_int_listing'>
+<div class = 'content'>
+  <div class="profiled_intern">
+  <% @student_profiles.each do |student_profile| %>
+  <!-- profiled_intern_listing -->
+  <div class="small-12 medium-4 large-4 columns">
+    <div class='pro_int_listing'>
 
-    <!-- profiled_intern_image -->
-    <div class="row">
-      <div class="small-12 medium-12 large-12 columns">
-        <div class='pro_int_image'>
-          <%= link_to image_tag(student_profile.image_url(:thumb)), student_profile %>
+      <!-- profiled_intern_image -->
+      <div class="row">
+        <div class="small-12 medium-12 large-12 columns">
+          <div class='pro_int_image'>
+            <%= link_to image_tag(student_profile.image_url(:thumb)), student_profile %>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- company_name_and_type -->
-    <div class="row">
-      <div class="small-12 medium-12 large-12 columns">
-        <div class='pro_int_g_s_wrapper'>
-           <p class="pro_int_major">
-           <i class="fa fa-book"></i>
-           <%= student_profile.major %></p>
-           <i class="pro_int_sch">
-           <%= student_profile.school %>
-           </i>
-           <i class = "divider"><%= '|' %></i>
-           <i class="pro_int_grad">
-           <i class="fa fa-graduation-cap"></i>
-           <%= student_profile.expected_graduation %>
-           </i>
+      <!-- company_name_and_type -->
+      <div class="row">
+        <div class="small-12 medium-12 large-12 columns">
+          <div class='pro_int_g_s_wrapper'>
+             <p class="pro_int_major">
+             <i class="fa fa-book"></i>
+             <%= student_profile.major %></p>
+             <i class="pro_int_sch">
+             <%= student_profile.school %>
+             </i>
+             <i class = "divider"><%= '|' %></i>
+             <i class="pro_int_grad">
+             <i class="fa fa-graduation-cap"></i>
+             <%= student_profile.expected_graduation %>
+             </i>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- profiled_intern_name -->
-    <div class="row">
-      <div class="small-12 medium-12 large-12 columns">
-        <div class='pro_int_n_m_wrapper'>
-          <i class="pro_int_name">
-          <%= student_profile.first_name %> <%= student_profile.last_name %>
-          </i>
+      <!-- profiled_intern_name -->
+      <div class="row">
+        <div class="small-12 medium-12 large-12 columns">
+          <div class='pro_int_n_m_wrapper'>
+            <i class="pro_int_name">
+            <%= student_profile.first_name %> <%= student_profile.last_name %>
+            </i>
+          </div>
         </div>
       </div>
+
     </div>
+  </div>
+  <% end %>
 
   </div>
-</div>
-<% end %>
-
 </div>

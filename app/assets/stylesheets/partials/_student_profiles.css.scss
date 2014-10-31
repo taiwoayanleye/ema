@@ -9,16 +9,8 @@
 	}
 }
 
-.site-content{
-	//.candidate_profile{
+.content{
 
-		//.panel{
-			//text-align: center;
-			//padding: 0px;
-		//}
-	//}
-
-	//top-card styling
 	.top-card{
 		margin: rem-calc(20px) 0px rem-calc(20px) 0px !important;	
 
@@ -143,35 +135,65 @@
 
 
 
-//student_profiles/index.html.erb
-
-.profiled_intern{
-	margin: 0 0% 0 0%;
-	padding: rem-calc(0px 0px 0px 0px);
-	.pro_int_listing{
-		width: rem-calc(200em);
-		border: 1px solid $jumbo;
-		border-radius: rem-calc(3em);
-		.pro_int_image{}
-
-		.pro_int_g_s_wrapper{
-			text-align: center;
+//student_profiles/index.html.erb & search.html.erb
+.search_intern{
+	position: relative;
+	width: 100%;
+	.profiled_intern{
+		margin: 0 0 0 0;
+		padding: rem-calc(0px 0px 0px 0px);
+		.pro_int_listing{
 			background-color: $silver;
-			.pro_int_major{font-size: $varfontsize_h4; margin: 0;}
-			.pro_int_sch{font-size: $varfontsize_h4; margin: 0;}
-			.divider{font-size: $varfontsize_h3;}
-			.pro_int_grad{font-size: $varfontsize_h4; margin: 0;}
-			.fa-tags{color: $jumbo; font-size: $fontawes_h3;}
-			.company_type{font-size: $varfontsize_h4; color: $jumbo;}
-		}
+			min-width: rem-calc(200em);
+			max-width: rem-calc(200em);
+			border: 1px solid $jumbo;
+			border-radius: rem-calc(3em);
+			margin: rem-calc(60% 0px 50px 0px);
+			min-height: 300px;
+			max-height: 300px;
+			.pro_int_image{}
+			.pro_int_g_s_wrapper{
+				margin: rem-calc(5% 0 0 0);
+				text-align: center;
+				line-height: 5px;
+				.pro_int_major{
+					font-size: $varfontsize_h3;
+					margin: 0;
+					a{
+					font-size: $varfontsize_h4;
+					color: $jumbo;
+					}
+				}
 
-		.pro_int_n_m_wrapper{
-			text-align: center;
-			background-color: $silver;
-			.pro_int_name{font-size: $varfontsize_h3; margin: 0;}
+				.pro_int_sch{
+					font-size: $varfontsize_h4;
+					margin: 0 0 0 0;
+					p{margin:rem-calc(0 0 10px 0);
+					}
+						a{
+					font-size: $varfontsize_h4;
+					color: $jumbo;
+					}
+
+					i{
+					padding: rem-calc(0 2% 0 0);
+					font-size: $fontawes_h3;
+					color: $jumbo;
+					}
+				}
 			}
 
-		hr{margin: 0px; padding: 0px; border-color: $jumbo;}
-		
+			.pro_int_n_m_wrapper{
+				border-radius: rem-calc(2em);
+				border: 1px solid $silver;
+				background-color: white;
+				text-align: center;
+				margin: 5px;
+				.pro_int_name{font-size: $varfontsize_h4; margin: 0;}
+				}
+
+			hr{margin: 0px; padding: 0px; border-color: $jumbo;}
+			
+		}
 	}
 }
