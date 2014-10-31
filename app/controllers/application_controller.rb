@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
     end
 
 
-    #Gets the current user's profile
+    #Gets the current user's get_profile_type
     def get_user
       current_user.profile
     end
@@ -43,7 +43,7 @@ class ApplicationController < ActionController::Base
         if !@user.profile.verified? === true
           edit_company_profile_path(:id)
         else
-          student_profiles_url
+          search_student_profiles_url
         end
       end
     end

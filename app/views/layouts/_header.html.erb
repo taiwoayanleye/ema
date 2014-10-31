@@ -8,12 +8,12 @@
             <% if current_user.present? %>
               <% if current_user.user_type == "company" %>
                 <% if current_user.profile.verified == true %>
-                  <h1><%= link_to image_tag('https://s3-us-west-2.amazonaws.com/stutern/stutern_logo.png'), '/student_profiles' %></h1>
+                  <h1><%= link_to image_tag('https://s3-us-west-2.amazonaws.com/stutern/stutern_logo.png'), search_student_profiles_path %></h1>
                 <% else %>
                   <h1><%= link_to image_tag('https://s3-us-west-2.amazonaws.com/stutern/stutern_logo.png'), '/' %></h1>
                 <% end %>
               <% elsif current_user.user_type == "student" %>
-                <h1><%= link_to image_tag('https://s3-us-west-2.amazonaws.com/stutern/stutern_logo.png'), '/job_postings' %></h1>
+                <h1><%= link_to image_tag('https://s3-us-west-2.amazonaws.com/stutern/stutern_logo.png'), job_postings_path %></h1>
               <% end %>
             <% else %>
               <h1><%= link_to image_tag('https://s3-us-west-2.amazonaws.com/stutern/stutern_logo.png'), '/' %></h1>
