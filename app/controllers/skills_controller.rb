@@ -1,8 +1,8 @@
 class SkillsController < ApplicationController
   before_action :set_skill, only: [:show, :edit, :update, :destroy]
 
+  # User need be logged in before they can perform action
   before_filter :authenticate_user!, :get_user
-  #redirect company if they haven't been verified
 
   # GET /skills
   # GET /skills.json

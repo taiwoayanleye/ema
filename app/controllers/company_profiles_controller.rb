@@ -3,7 +3,7 @@ class CompanyProfilesController < ApplicationController
 
   #make sure the user is logged in
   # before_action :authenticate_user!, :get_user
-  before_action :user_type_authentication, except: [:index]
+  before_action :user_type_authentication, except: [:index, :show]
   #keep user from accessing thier profile if they haven't created it yet
   # before_action(:except => [:new, :create]) {|c| c.profile_redir}
   #keep user from accessing any method that isn't connected to thier profile
@@ -26,8 +26,8 @@ class CompanyProfilesController < ApplicationController
   # GET /company_profiles/1.json
   def show
     # @company_profile = current_user.profile
-    # @company_profile = CompanyProfile.where(user_id: params[:id]).first
-    @company_profile = current_user.profile
+    @company_profile = CompanyProfile.where(user_id: params[:id]).first
+    # @company_profile = current_user.profile
     # @jobs = @company_profile.job_postings
     
 

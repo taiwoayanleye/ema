@@ -9,11 +9,15 @@
     <li>
       <%= link_to 'Employers', company_profiles_path, :class => 'navbar-link' %>
     </li>
+    <!-- student_profile -->
     <li class="has-dropdown">
       <a>
         <%= link_to 'Profile', company_profile_path(current_user_id) %>
       </a>
       <ul class="dropdown">
+        <li>
+          <%= link_to 'View Profile', student_profile_path(current_user_id), :class => 'navbar-link' %>
+        </li>          
         <li>
           <%= link_to 'Edit Profile', edit_student_profile_path(current_user_id), :class => 'navbar-link' %>
         </li>
@@ -27,15 +31,7 @@
           <%= link_to 'Add interest', new_stu_interest_path, :class => 'navbar-link' %>
         </li>
         <li>
-          <%= link_to 'Add certification', new_stu_certification_path %>
-        </li>
-      </ul>
-    </li>
-    <!-- student_profile -->
-    <li class="has-dropdown">
-      <ul class="dropdown">
-        <li>
-          <%= link_to 'View', student_profile_path(current_user_id), :class => 'navbar-link' %>
+          <%= link_to 'Add certification', new_stu_certification_path, :class => 'navbar-link' %>
         </li>
       </ul>
     </li>
