@@ -10,7 +10,8 @@
 }
 
 .content{
-
+	margin: 0 5% 0 5%;
+	padding: rem-calc(0px 18px 0px 18px);
 	.top-card{
 		margin: rem-calc(20px) 0px rem-calc(20px) 0px !important;	
 
@@ -134,66 +135,93 @@
 }
 
 
+//search panel
+.search_wrapper{
+	border-top: 1px solid $silver;
+	margin: rem-calc(50px 0 20px 0);
+.search_postings{
+	
+	.search_positions{
+		text-align: center;
+		margin: rem-calc(0px 10px 0 10px);
+		@media #{$medium-only}{margin: rem-calc(0px 10% 0 10%);}
+		@media #{$small-only}{margin: rem-calc(0px 10% 0 10%);}
+		p{line-height:rem-calc(1%);}
+		input{border-color: $oil;}
+		select{@extend input;}
+	}
+	.search_description{
+		@extend .search_positions;
+	}
+	.search_pay{
+		@extend .search_positions;
+	}
+}
+}
+.search_button{
+	text-align: center;
+	margin: rem-calc(0 375% 0 375%);
+	@media #{$medium-only}{margin: rem-calc(0 305% 0 305%);}
+	@media #{$small-only}{margin: rem-calc(0% 10% 0 10%);}
+}
+
+
+
 
 //student_profiles/index.html.erb & search.html.erb
-.search_intern{
-	position: relative;
+.all_intern{
+	padding: rem-calc(20px 40px 20px 40px);
+	margin-bottom: rem-calc(30px);
 	width: 100%;
-	.profiled_intern{
-		margin: 0 0 0 0;
-		padding: rem-calc(0px 0px 0px 0px);
-		.pro_int_listing{
-			background-color: $silver;
-			min-width: rem-calc(200em);
-			max-width: rem-calc(200em);
-			border: 1px solid $jumbo;
-			border-radius: rem-calc(3em);
-			margin: rem-calc(60% 0px 50px 0px);
-			min-height: 300px;
-			max-height: 300px;
-			.pro_int_image{}
-			.pro_int_g_s_wrapper{
-				margin: rem-calc(5% 0 0 0);
-				text-align: center;
-				line-height: 5px;
-				.pro_int_major{
-					font-size: $varfontsize_h3;
-					margin: 0;
-					a{
-					font-size: $varfontsize_h4;
-					color: $jumbo;
-					}
-				}
-
-				.pro_int_sch{
-					font-size: $varfontsize_h4;
-					margin: 0 0 0 0;
-					p{margin:rem-calc(0 0 10px 0);
-					}
-						a{
-					font-size: $varfontsize_h4;
-					color: $jumbo;
-					}
-
-					i{
-					padding: rem-calc(0 2% 0 0);
-					font-size: $fontawes_h3;
-					color: $jumbo;
-					}
+	text-align: center;
+	.pro_int_listing{
+		background-color: white;
+		border: 1px solid $jumbo;
+		border-radius: rem-calc(3em);
+		margin: rem-calc(0% 0px 0px 0px);
+	
+		
+		.pro_int_image{}
+		.pro_int_g_s_wrapper{
+			margin: rem-calc(5% 0 0 0);
+			text-align: center;
+			line-height: 5px;
+			.pro_int_major{
+				font-size: $varfontsize_h3;
+				margin: 0;
+				a{
+				font-size: $varfontsize_h4;
+				color: $jumbo;
 				}
 			}
 
-			.pro_int_n_m_wrapper{
-				border-radius: rem-calc(2em);
-				border: 1px solid $silver;
-				background-color: white;
-				text-align: center;
-				margin: 5px;
-				.pro_int_name{font-size: $varfontsize_h4; margin: 0;}
+			.pro_int_sch{
+				font-size: $varfontsize_h4;
+				margin: 0 0 0 0;
+				p{margin:rem-calc(0 0 10px 0);
+				}
+					a{
+				font-size: $varfontsize_h4;
+				color: $jumbo;
 				}
 
-			hr{margin: 0px; padding: 0px; border-color: $jumbo;}
-			
+				i{
+				padding: rem-calc(0 2% 0 0);
+				font-size: $fontawes_h3;
+				color: $jumbo;
+				}
+			}
 		}
+
+		.pro_int_n_m_wrapper{
+			border-radius: rem-calc(2em);
+			border: 3px solid $silver;
+			background-color: white;
+			text-align: center;
+			.pro_int_name{font-size: $varfontsize_h4; margin: 0; color:$jumbo;}
+			}
+
+		hr{margin: 0px; padding: 0px; border-color: $jumbo;}
+		
 	}
 }
