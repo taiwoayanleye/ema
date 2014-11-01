@@ -3,6 +3,9 @@
 .int_position{background-color:red;}
 .int_description{background-color:red;}
 .int_dur_paid{background-color:red;}
+.post_mid{background-color:blue;}
+.top{background-color:blue;}
+.post_down{background-color:blue;}
 
 /* Effect 4: fall perspective */
 .int {
@@ -36,7 +39,6 @@
 		.post_top{
 			width: 100%;
 			height: rem-calc(30%);
-			background-color:$silver;
 			padding: rem-calc(0 0% 0 0%);
 			//company_name
 			.company_name{
@@ -84,45 +86,34 @@
 		.page_down{
 			//...
 			margin: rem-calc(20% 0 20% 0);
-			.page_down_one{
-				text-align: center;
-				
-				.int_position{
-					i{
-					padding: rem-calc(0 1% 0 0);
-					font-size: $fontawes_h2;
-					color: $jumbo;
-					}
-					a{
-					font-size: $varfontsize_h1;
-					color: $jumbo;
-					}
+			.int_position{
+				i{
+				padding: rem-calc(0 1% 0 0);
+				font-size: $fontawes_h2;
+				color: $jumbo;
+				}
+				a{
+				font-size: $varfontsize_h1;
+				color: $jumbo;
 				}
 			}
-			//...
-			.page_down_two{
-				.int_description{
-					p{
-						font-size: $varfontsize_h4;
-					}
-				}
-			}
-			//...
-			.page_down_three{
-
-				.int_dur_paid{
-					margin: rem-calc(1% 0 1% 0);
-					padding: rem-calc(0 50% 0 50%);
-					a{
+			.int_description{
+				p{
 					font-size: $varfontsize_h4;
-					color: $jumbo;
-					}
+				}
+			}
+			.int_dur_paid{
+				margin: rem-calc(1% 0 1% 0);
+				padding: rem-calc(0 50% 0 50%);
+				a{
+				font-size: $varfontsize_h4;
+				color: $jumbo;
+				}
 
-					i{
-					padding: rem-calc(0 1% 0 0%);
-					font-size: $fontawes_h2;
-					color: $jumbo;
-					}
+				i{
+				padding: rem-calc(0 1% 0 0%);
+				font-size: $fontawes_h2;
+				color: $jumbo;
 				}
 			}
 
