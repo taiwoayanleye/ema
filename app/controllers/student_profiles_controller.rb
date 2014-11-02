@@ -115,7 +115,8 @@ class StudentProfilesController < ApplicationController
   # GET /student_profiles/1
   # GET /student_profiles/1.json
   def show
-    @student_profile = current_user.profile
+    # @student_profile = current_user.profile
+    @student_profile =  StudentProfile.where(user_id: params[:id]).first
     @skills = @student_profile.skills
     @work_histories = @student_profile.stu_work_experiences
     @references = @student_profile.stu_references

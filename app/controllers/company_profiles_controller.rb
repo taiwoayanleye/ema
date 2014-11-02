@@ -47,18 +47,18 @@ class CompanyProfilesController < ApplicationController
   # PATCH/PUT /company_profiles/1
   # PATCH/PUT /company_profiles/1.json
   def update
-    @company_profile = current_user.profile
+    @company_profile = current_user.profile]
 
-    respond_to do |format|
+    
       # if @company_profile.update_attributes(params[:company_profile])
       if @company_profile.update_attributes(company_profile_params)
-        format.html { redirect_to company_profile_url(@company_profile), notice: 'Company profile was successfully updated.' }
-        format.json { head :no_content }
+        flash[:notice] = 'Company profile was successfully updated.'
+        redirect_to "/company_profile/:id"
       else
-        format.html { render action: "edit" }
-        format.json { render json: @company_profile.errors, status: :unprocessable_entity }
+        # flash[:error] = 'Company profile updating failed.'
+        render action: "edit" 
+        render json: @company_profile.errors, status: :unprocessable_entity 
       end
-    end
   end
 
   # DELETE /company_profiles/1
