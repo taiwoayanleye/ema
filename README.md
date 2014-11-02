@@ -145,3 +145,4 @@ Add student_profile_id_to_stu_certifications
 
 14
 Application model: Boolean 
+This should be a dashboard for companies.
