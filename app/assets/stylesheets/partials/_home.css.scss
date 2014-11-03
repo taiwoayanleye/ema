@@ -11,7 +11,7 @@
 		url("https://s3-us-west-2.amazonaws.com/stutern/cover.png");
 		background-size: cover;
 		background-repeat: no-repeat;
-		@include filter(grayscale(0%) contrast(100%) brightness(0.5) blur(1.8px));
+		@include filter(grayscale(0%) contrast(100%) brightness(0.5) blur(1.6px));
 		}
 
 	.intro_text{

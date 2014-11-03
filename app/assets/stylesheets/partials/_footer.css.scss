@@ -17,9 +17,7 @@
 		background-position: center;
 		width: rem-calc(40px);
 		display: inline-block;
-		-webkit-filter: grayscale(100%);
-		-moz-filter: grayscale(100%);
-		filter: grayscale(100%);
+		@include filter(grayscale(100%));
 		}
 		.contact{
 			@extend .about;
