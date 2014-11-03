@@ -47,7 +47,7 @@ class CompanyProfilesController < ApplicationController
   # PATCH/PUT /company_profiles/1
   # PATCH/PUT /company_profiles/1.json
   def update
-    @company_profile = current_user.profile]
+    @company_profile = current_user.profile
 
     
       # if @company_profile.update_attributes(params[:company_profile])
