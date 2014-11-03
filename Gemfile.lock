@@ -124,6 +124,7 @@ GEM
     fssm (0.2.10)
     haml (4.0.5)
       tilt
+    hashie (3.3.1)
     hike (1.2.3)
     i18n (0.6.11)
     inflecto (0.0.2)
@@ -156,6 +157,15 @@ GEM
     net-ssh (2.9.1)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
+    oauth (0.4.7)
+    omniauth (1.2.2)
+      hashie (>= 1.2, < 4)
+      rack (~> 1.0)
+    omniauth-linkedin (0.1.0)
+      omniauth-oauth (~> 1.0)
+    omniauth-oauth (1.0.1)
+      oauth
+      omniauth (~> 1.0)
     orm_adapter (0.5.0)
     pdf-core (0.4.0)
     pg (0.17.1)
@@ -272,6 +282,8 @@ DEPENDENCIES
   jquery-rails
   kaminari
   meta_request
+  omniauth
+  omniauth-linkedin
   pg
   populator
   prawn

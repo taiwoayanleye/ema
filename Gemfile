@@ -25,11 +25,14 @@ gem "fog", "~> 1.20", require: "fog/aws/storage"
 gem 'carrierwave'
 # Pagination
 gem 'kaminari'
-
+# PDF
 gem 'prawn'
 gem 'prawn-table'
 gem 'prawn-rails'
 gem 'css_parser', '~> 1.3.5'
+# Omniauth
+gem 'omniauth'
+gem 'omniauth-linkedin'
 
 group :doc do 
 	gem 'sdoc', '~> 0.4.0'
