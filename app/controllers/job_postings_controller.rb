@@ -119,13 +119,13 @@ class JobPostingsController < ApplicationController
         end
       else
           @job_postings.each do |profile|
-          @return.append(profile)
+          @return.append(profile).page(params[:page])
         end
       end
 
     else
       #when the search page is initially visited, displays all of the job postings
-      @return = @job_postings_all
+      @return = @job_postings_all.page(params[:page])
     end
       @position_text = params[:position_text]
       @description_text = params[:description_text]
