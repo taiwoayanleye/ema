@@ -1,54 +1,42 @@
 <section>
-  <div class="content">
-    <p id="notice"><%= notice %></p>
-    <div style="overflow: auto">
+	<div class="content_companyprofile_index">
+	    <p id="notice"><%= notice %></p>
 
-    	<% @company_profiles.each do |company_profile| %>
-    	<div class="large-4 medium-4 small-12 columns">
-        	<div class="company">
-        		
-        		<!-- company_listing -->
-        		<div class="small-12 medium-4 large-4 columns">
-        			<div class='company_listing'>
+		<% @company_profiles.each do |company_profile| %>
+		<div class="large-3 medium-3 small-6 columns">
+			<div class="company">
 
-        			<!-- company_name_and_type -->
-        			<div class="row">
-        				<div class="small-12 medium-12 large-12 columns">
-        					<div class='company_name_wrapper'>
-        						<i class="company_name"><%= company_profile.company_name %></i>
-        					</div>
-        				</div>
-        			</div>
-
-					<div class="row">
-						<div class="small-12 medium-12 large-12 columns">
-							<div class='company_type_wrapper'>
-								<i class="fa fa-tags"></i><i class="company_type"><%= company_profile.company_type %></i>
-							</div><hr>
-						</div>
-						<div class="small-12 medium-12 large-12 columns">
-							<div class='company_known_image'>
-								<%= link_to image_tag(company_profile.image_url(:thumb)), company_profile %>
-							</div>
+				<!-- company_name_and_type -->
+				<div class="row">
+					<div class="small-12 medium-12 large-12 columns">
+						<div class='company_type'>
+							<i class ='company_type_wrapper'>
+								<i class="fa fa-tags"></i><a><%= company_profile.company_type %></a>
+							</i>
 						</div>
 					</div>
+				</div>
 
+				<div class="row">
+					<div class="small-12 medium-12 large-12 columns">
+						<div class='company_image'>
+							<%= link_to image_tag(company_profile.image_url(:thumb)), company_profile %>
+						</div>
 					</div>
 				</div>
 
 			</div>
 		</div>
-
 		<% end %>
+	
 
 		<div class="row">
-			<div class="large-9 small-9 small-centered large-centered columns">
-	      		<div class= "button radius large-12 small-12 medium-12 more">
-	        		<p>MORE</p>
-	        	</div>
-	        </div>
-	    </div>
-      
+			<div class="large-9 small-9 small-centered large-centered columns more">
+		  		<div class= "button radius large-12 small-12 medium-12 more">
+		    		<p>MORE</p>
+		    	</div>
+		    </div>
+		</div>
+
     </div>
-  </div>
 </section>

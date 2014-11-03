@@ -104,30 +104,36 @@
 }
 
 //company_profiles/index.html.erb
-.company{
-	margin: 0 15% 0 15%;
+.content_companyprofile_index{
+	margin: 5% 5% 0 5%;
 	padding: rem-calc(0px 18px 0px 18px);
-	.company_listing{
-		width: rem-calc(200em);
-		border: 1px solid $jumbo;
-		border-radius: rem-calc(3em);
-		.company_name_wrapper{
-			text-align: center;
-			background-color: $silver;
-			.company_name{font-size: $varfontsize_h1; margin: 0;}
+	background-color: $white;
+	.company{
+		text-align: center;
+		padding: rem-calc(20px 10px 10 10px);
+		width: 100%;
+		.company_type{
+			width: 100%;
+			height: rem-calc(30%);
+
+			.company_type_wrapper{
+				i{
+				margin: rem-calc(0 2% 0 0%);
+				font-size: $fontawes_h2;
+				color: $oil;
+				}
+				a{
+				font-size: $varfontsize_h4;
+				color: $bck;
+				}
+			}
 		}
-		.company_type_wrapper{
-			text-align: center;
-			background-color: $silver;
-			.fa-tags{color: $jumbo; font-size: $fontawes_h3;}
-			.company_type{font-size: $varfontsize_h4; color: $jumbo;}
+		.company_image{
+			background-color: white;
+			padding: rem-calc(27em);
+			border-radius: 5px;
 		}
-		hr{margin: 0px; padding: 0px; border-color: $jumbo;}
-		.company_known_image{}
 	}
+	.more{margin-top: rem-calc(50px);}
 }
-.company{}
-.company_listing{}
-.company_name_wrapper{}
-.company_type_wrapper{}
-.company_known_image{}
+
