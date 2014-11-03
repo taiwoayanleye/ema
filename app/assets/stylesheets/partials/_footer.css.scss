@@ -1,16 +1,15 @@
 .foot{
-	margin: rem-calc(100px 0px 0px 0px);;
+	margin: rem-calc(100em 0em 0px 0em);
+	height: rem-calc(200em);
 	padding: rem-calc(20px);
-	background-color: $colorstutern;
+	background-color: $white;
 	clear: both;
-	.inner-wrapper{
-		.about_contact{
-			text-align: center;
-			font-size: $h6-font-size;
-		}
-		#copyright{
-			font-size: $small-font-size;
-			text-align: center;
-		}
+	.about_contact{
+		text-align: center;
+		font-size: $h6-font-size;
+	}
+	#copyright{
+		font-size: $small-font-size;
+		text-align: center;
 	}
 }
