@@ -34,7 +34,10 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+  # Creating friendly URLs and caching for pagination
+  get 'page/:page', :action => :search, :on => :collection
   end  
+
 
   get 'home/home'
   get 'pages/about'
