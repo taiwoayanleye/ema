@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
     def after_sign_in_path_for(user)
       user_type = current_user.user_type
       if user_type == "student"
-        job_postings_url
+        search_job_postings_url
       else
         if !@user.profile.verified? === true
           edit_company_profile_path(:id)
