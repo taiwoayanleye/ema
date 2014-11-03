@@ -37,7 +37,9 @@
         <% if params[:action] === "new" %>
           <%= f.hidden_field :user_type, value: params[:user_type] || "student" %>
         <% end %>
-
+        <div>
+          <%= link_to "Register with Twitter", user_omniauth_authorize_path(:twitter), :class => 'navbar-link' %>
+        </div>
         <!--sign_up button-->
         <div class="row">
             <%= f.submit "Sign Up", class:"button radius large-12 small-12 medium-12" %>

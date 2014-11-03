@@ -32,7 +32,7 @@ gem 'prawn-rails'
 gem 'css_parser', '~> 1.3.5'
 # Omniauth
 gem 'omniauth'
-gem 'omniauth-linkedin'
+gem 'omniauth-twitter'
 
 group :doc do 
 	gem 'sdoc', '~> 0.4.0'
