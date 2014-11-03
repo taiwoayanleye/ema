@@ -28,7 +28,7 @@ Add student_profile_id_to_skills
 Student profile
 column:10
 { first_name:string, last_name:string, school:string, email:string, expected_graduation:string, school_year:string, last_completed_degree:string, residential_address:string, major:string, resume:string, image:string}
-[rails generate scaffold StudentProfile first_name last_name school email expected_graduation school_year last_completed_degree residential_address major resume image]
+[rails generate scaffold StudentProfile first_name last_name school email expected_graduation school_year last_completed_degree residential_address major resume image] 
 
 Others:
 Add user_id_to_student_profiles
@@ -142,3 +142,7 @@ Add user_id_to_stu_certifications
 
 Add student_profile_id_to_stu_certifications
 [rails generate migration AddStudentProfileIdToStuCertifications student_profile_id:integer]
+
+14
+Application model: Boolean 
+This should be a dashboard for companies.
