@@ -28,6 +28,8 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    # Creating friendly URLs and caching for pagination
+    get 'page/:page', :action => :search, :on => :collection
   end
   resources :company_profiles
   resources :student_profiles do

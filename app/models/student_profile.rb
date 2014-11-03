@@ -12,6 +12,7 @@ class StudentProfile < ActiveRecord::Base
 	# Used for image uploading
 	mount_uploader :image, ImageUploader
 
+	# Set pagination limit
 	paginates_per 9
 
 	# VALIDATIONS HERE
