@@ -13,7 +13,7 @@
                   <h1><%= link_to image_tag('https://s3-us-west-2.amazonaws.com/stutern/stutern_logo.png'), '/' %></h1>
                 <% end %>
               <% elsif current_user.user_type == "student" %>
-                <h1><%= link_to image_tag('https://s3-us-west-2.amazonaws.com/stutern/stutern_logo.png'), job_postings_path %></h1>
+                <h1><%= link_to image_tag('https://s3-us-west-2.amazonaws.com/stutern/stutern_logo.png'), search_job_postings_path %></h1>
               <% end %>
             <% else %>
               <h1><%= link_to image_tag('https://s3-us-west-2.amazonaws.com/stutern/stutern_logo.png'), '/' %></h1>
