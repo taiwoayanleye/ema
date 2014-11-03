@@ -31,9 +31,10 @@
 		.post_top{
 			width: 100%;
 			height: rem-calc(30%);
-			background-color: $charcoal;
+			background-color: white;
 			border-top-left-radius: 5px;
 			border-top-right-radius: 5px;
+			border-top: 1px solid $oil;
 			//company_type
 			.company_type{
 				padding: rem-calc(2px 0 0 0);
@@ -51,7 +52,7 @@
 			}
 			//company_name
 			.company_name{
-				background-color: $charcoal;
+				background-color: white;
 				padding: rem-calc(0 0 2px 0);
 				p{
 				font-size: $varfontsize_h2;
@@ -63,6 +64,7 @@
 
 		//middle
 			.image_wrapper{
+				background-color: white;
 				display: block;
     			margin-left: auto;
     			margin-right: auto;
@@ -82,21 +84,17 @@
 			background-color: $charcoal;
 			border-bottom-left-radius: 5px;
 			border-bottom-right-radius: 5px;
+			border-bottom: 4px solid $oil;
+
 
 			.int_position{
-				i{
-				padding: rem-calc(0 1% 0 0);
-				font-size: $fontawes_h2;
-				color: $jumbo;
-				}
 				a{
+				color: white;
 				font-size: $varfontsize_h1;
-				color: $jumbo;
 				}
 			}
 
 			.int_dur_paid{
-
 				margin: rem-calc(1% 0 1% 0);
 				padding: rem-calc(0 30px 2px 30px);
 				a{
