@@ -105,9 +105,9 @@
 
 //company_profiles/index.html.erb
 .content_companyprofile_index{
-	margin: 5% 5% 0 5%;
+	
 	padding: rem-calc(0px 18px 0px 18px);
-	background-color: $white;
+
 	.company{
 		text-align: center;
 		padding: rem-calc(20px 10px 10 10px);
@@ -115,16 +115,15 @@
 		.company_type{
 			width: 100%;
 			height: rem-calc(30%);
-
 			.company_type_wrapper{
 				i{
 				margin: rem-calc(0 2% 0 0%);
-				font-size: $fontawes_h2;
+				font-size: $fontawes_h3;
 				color: $oil;
 				}
 				a{
 				font-size: $varfontsize_h4;
-				color: $bck;
+				color: $jumbo;
 				}
 			}
 		}
