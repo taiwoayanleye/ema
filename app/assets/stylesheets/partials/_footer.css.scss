@@ -4,10 +4,28 @@
 	padding: rem-calc(20px);
 	background-color: $white;
 	clear: both;
-	.about_contact{
+	.about_image_contact{
 		text-align: center;
 		font-size: $h6-font-size;
+		padding: rem-calc(10em 400em);
+		.about{
+			a{color: $iron};
+		}
+		.image{
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+		width: rem-calc(40px);
+		display: inline-block;
+		-webkit-filter: grayscale(100%);
+		-moz-filter: grayscale(100%);
+		filter: grayscale(100%);
+		}
+		.contact{
+			@extend .about;
+		}
 	}
+	
 	#copyright{
 		font-size: $small-font-size;
 		text-align: center;
