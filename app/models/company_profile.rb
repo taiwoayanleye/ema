@@ -10,6 +10,9 @@ class CompanyProfile < ActiveRecord::Base
 	# Used for image uploading
 	mount_uploader :image, ImageUploader
 
+  # Set pagination limit
+  paginates_per 12
+
   #VALIDATIONS HERE
   validates :company_name, :company_type,
             :format => { :with => /\A[a-zA-Z\'\-\,\!\.\&\(\)\@\#\$\%\" ]*\z/,

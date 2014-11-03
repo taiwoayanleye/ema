@@ -14,7 +14,7 @@ class CompanyProfilesController < ApplicationController
   # GET /company_profiles
   # GET /company_profiles.json
   def index
-    @company_profiles = CompanyProfile.all
+    @company_profiles = CompanyProfile.all.page(params[:page])
 
     # respond_to do |format|
     #   format.html # index.html.erb

@@ -2,14 +2,9 @@
 
   <div class="content">
     <p id="notice"><%= notice %></p>
-
-<<<<<<< HEAD
     <div>
-      <%= paginate @return %>
       <h3></h3>
-=======
     <div class = 'search_wrapper'>
->>>>>>> new
       <%= form_tag search_student_profiles_url, :method => 'get' do %>
       <div class="search_postings">
         <div class="row">
@@ -52,7 +47,7 @@
     </div>
 
 
-    
+    <%= paginate @return %>
     <% if !@return.nil? && !@return.empty? %>
     <% @return.each do |student_profile| %>
     
@@ -103,20 +98,13 @@
         </div>
       </div>
     </div>
-    
-
     <% end %>
-            
     <% else %>
       <h3>No results.</h3>
     <% end %>
-<<<<<<< HEAD
+    <%= paginate @return %> 
     </div>
-=======
     
-
->>>>>>> new
-  
   </div>
 </section>
 
