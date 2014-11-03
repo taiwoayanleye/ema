@@ -25,6 +25,7 @@ class StudentProfilesController < ApplicationController
 
   def search
     @return = []
+# .page(params[:page])
     @years = ['', 'First Year', 'Second Year', 'Third Year', 'Fourth Year', 'Final Year', 'N/A']
 
     @student_profiles_all = StudentProfile.all
@@ -99,11 +100,11 @@ class StudentProfilesController < ApplicationController
       #   end
       # #culture is not set
       # else
-        @return = @student_profiles
+        @return = @student_profiles.page(params[:page])
       end
     else
       #when the search page is initially visited, display all interns
-      @return = @student_profiles_all
+      @return = @student_profiles_all.page(params[:page])
     end
     @school_text = params[:school_text]
     @year_text = params[:year_text]

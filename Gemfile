@@ -24,7 +24,7 @@ gem "fog", "~> 1.20", require: "fog/aws/storage"
 # Carrierwave
 gem 'carrierwave'
 # Pagination
-gem 'will_paginate', '~> 3.0'
+gem 'kaminari'
 
 gem 'prawn'
 gem 'prawn-table'

@@ -1,8 +1,10 @@
 <section>
+
   <div class="content">
     <p id="notice"><%= notice %></p>
 
     <div>
+      <%= paginate @return %>
       <h3></h3>
       <%= form_tag search_student_profiles_url, :method => 'get' do %>
       <div class="search_postings">
