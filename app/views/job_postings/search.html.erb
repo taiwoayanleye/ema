@@ -4,6 +4,7 @@
     <p id="notice"><%= notice %></p>
     <div style="overflow: auto">
       <div>
+        <%= paginate @return %>
         <h3>Search Intern Postings</h3>
         <%= form_tag search_job_postings_url, :method => 'get' do %>
         <div class="search_postings">
