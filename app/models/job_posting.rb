@@ -2,6 +2,9 @@ class JobPosting < ActiveRecord::Base
 	#ASSOCIATIONS HERE
 	belongs_to :company_profile
 
+	# Set pagination limit
+	paginates_per 9
+
 	#VALIDATIONS HERE
 	validate :validate_end_date_before_start_date
 	def validate_end_date_before_start_date
