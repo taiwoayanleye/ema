@@ -25,7 +25,7 @@ class StudentProfilesController < ApplicationController
 
   def search
     @return = []
-    @years = ['', 'First Year', 'Second Year', 'Third Year', 'Fourth Year', 'Final Year', 'N/A']
+    @years = ['Year', 'First Year', 'Second Year', 'Third Year', 'Fourth Year', 'Final Year', 'N/A']
 
     @student_profiles_all = StudentProfile.all
     # @saved = SavedStudentProfile.find_all_by_company_profile_id(current_user.profileable_id)

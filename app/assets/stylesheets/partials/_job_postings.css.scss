@@ -1,9 +1,3 @@
-.company_name{background-color:$silver;}
-.company_type{background-color:$silver;}
-.int_position{background-color:$silver;}
-.int_description{background-color:$silver;}
-.int_dur_paid{background-color:$silver;}
-
 /* Effect 4: fall perspective */
 .int {
     perspective: 1300px;
@@ -24,30 +18,25 @@
 //
 
 .content{
-	
 	margin: 0 5% 0 5%;
 	padding: rem-calc(0px 18px 0px 18px);
 
 	.int{
-		padding: rem-calc(30px 5px 0 5px);
+		text-align: center;
+		padding: rem-calc(20px 10px 0 10px);
 		width: 100%;
 
 		//post_top
 		.post_top{
 			width: 100%;
 			height: rem-calc(30%);
-			background-color:$silver;
-			padding: rem-calc(0 0% 0 0%);
-			//company_name
-			.company_name{
-				p{
-				font-size: $varfontsize_h2;
-				color: $charcoal;
-				}
-			}
+			background-color: white;
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+			border-top: 1px solid $oil;
 			//company_type
 			.company_type{
-				
+				padding: rem-calc(2px 0 0 0);
 				a{
 				font-size: $varfontsize_h4;
 				color: $jumbo;
@@ -56,17 +45,25 @@
 				i{
 				padding: rem-calc(0 0.5% 0 0);
 				font-size: $fontawes_h2;
-				color: $jumbo;
+				color: rgb(183, 214, 219);
 				}
 
+			}
+			//company_name
+			.company_name{
+				background-color: white;
+				padding: rem-calc(0 0 2px 0);
+				p{
+				font-size: $varfontsize_h2;
+				color: $gainsboro;
+				}
 			}
 		}
 
 
 		//middle
-		.post_mid{
 			.image_wrapper{
-				display: block;
+				background-color: white;
     			margin-left: auto;
     			margin-right: auto;
 				//width: auto;
@@ -78,62 +75,45 @@
     			//margin: -180px 0 0 -10px;
 				}
 			}
-		}
 
 		//page_down
 		.page_down{
-			//...
-			margin: rem-calc(20% 0 20% 0);
-			.page_down_one{
-				text-align: center;
-				
-				.int_position{
-					i{
-					padding: rem-calc(0 1% 0 0);
-					font-size: $fontawes_h2;
-					color: $jumbo;
-					}
-					a{
-					font-size: $varfontsize_h1;
-					color: $jumbo;
-					}
-				}
-			}
-			//...
-			.page_down_two{
-				.int_description{
-					p{
-						font-size: $varfontsize_h4;
-					}
-				}
-			}
-			//...
-			.page_down_three{
+			margin: rem-calc(0% 0 0% 0);
+			background-color: rgb(183, 214, 219);
+			border-bottom-left-radius: 5px;
+			border-bottom-right-radius: 5px;
+			border-bottom: 4px solid $oil;
 
-				.int_dur_paid{
-					margin: rem-calc(1% 0 1% 0);
-					padding: rem-calc(0 50% 0 50%);
-					a{
-					font-size: $varfontsize_h4;
-					color: $jumbo;
-					}
 
-					i{
-					padding: rem-calc(0 1% 0 0%);
-					font-size: $fontawes_h2;
-					color: $jumbo;
-					}
+			.int_position{
+				a{
+				color: $white;
+				font-size: $varfontsize_h1;
 				}
 			}
 
+			.int_dur_paid{	
+				padding: rem-calc(0 20px 2px 20px);
+				a{
+				font-size: $varfontsize_h4;
+				color: $bck;
+				}
+
+				i{
+				margin: rem-calc(0 2% 0 0%);
+				font-size: $fontawes_h2;
+				color: $white;
+				}
+			.int_dur{
+			margin-right:rem-calc(5px);
+			}
+			.int_paid{
+			margin-left:rem-calc(5px);
+			
+			}
+			}
 		}
 	}
+	// available for | job_postings | company_profiles |
+	.more{margin-top: rem-calc(50px);}
 }
-
-.search_postings{
-	.search_position{}
-	.search_description{}
-	.search_pay{}
-	.search_requirements{}
-}
-//lets go conform to a box size that's a bir wider and less longer

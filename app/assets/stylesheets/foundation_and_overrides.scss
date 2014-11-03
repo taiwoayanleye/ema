@@ -119,12 +119,14 @@ $monsoon     : #777777;
 $steel       : #666666;
 $charcoal    : #555555;
 $bck     	 : #eeefed;
+$suboil		 : rgb(183, 214, 219);
 $oil         : #0ee6de;
 $jet         : #222222;
 $black       : #000000;
+$bcgcol		 :#E9EDED;	
 
 // We use these to control various global styles
-// $body-bg: $white;
+	$body-bg: $bck;
 // $body-font-color: $jet;
 // dy-font-family: $font-family-sans-serif;
 // $body-font-weight: $font-weight-normal;

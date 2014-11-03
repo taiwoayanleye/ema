@@ -29,10 +29,14 @@ gem 'kaminari'
 gem 'prawn'
 gem 'prawn-table'
 gem 'prawn-rails'
+<<<<<<< HEAD
 gem 'css_parser', '~> 1.3.5'
 # Omniauth
 gem 'omniauth'
 gem 'omniauth-twitter'
+=======
+
+>>>>>>> new
 
 group :doc do 
 	gem 'sdoc', '~> 0.4.0'
