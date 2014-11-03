@@ -12,7 +12,7 @@ class StudentProfile < ActiveRecord::Base
 	# Used for image uploading
 	mount_uploader :image, ImageUploader
 
-	paginates_per 50
+	paginates_per 9
 
 	# VALIDATIONS HERE
     validates :first_name, :last_name, :last_completed_degree, :school,
