@@ -25,7 +25,6 @@ class StudentProfilesController < ApplicationController
 
   def search
     @return = []
-# .page(params[:page])
     @years = ['', 'First Year', 'Second Year', 'Third Year', 'Fourth Year', 'Final Year', 'N/A']
 
     @student_profiles_all = StudentProfile.all
