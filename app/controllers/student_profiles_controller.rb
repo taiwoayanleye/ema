@@ -99,11 +99,11 @@ class StudentProfilesController < ApplicationController
       #   end
       # #culture is not set
       # else
-        @return = @student_profiles
+        @return = @student_profiles.page(params[:page])
       end
     else
       #when the search page is initially visited, display all interns
-      @return = @student_profiles_all
+      @return = @student_profiles_all.page(params[:page])
     end
     @school_text = params[:school_text]
     @year_text = params[:year_text]
@@ -115,7 +115,8 @@ class StudentProfilesController < ApplicationController
   # GET /student_profiles/1
   # GET /student_profiles/1.json
   def show
-    @student_profile = current_user.profile
+    # @student_profile = current_user.profile
+    @student_profile =  StudentProfile.where(user_id: params[:id]).first
     @skills = @student_profile.skills
     @work_histories = @student_profile.stu_work_experiences
     @references = @student_profile.stu_references
@@ -129,14 +130,14 @@ class StudentProfilesController < ApplicationController
   end
 
   # GET /student_profiles/new
-  def new
-    @student_profile = StudentProfile.new
+  # def new
+  #   @student_profile = StudentProfile.new
 
-      respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @company_profile }
-    end
-  end
+  #     respond_to do |format|
+  #     format.html # new.html.erb
+  #     format.json { render json: @company_profile }
+  #   end
+  # end
 
   # GET /student_profiles/1/edit
   def edit

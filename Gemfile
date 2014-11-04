@@ -1,6 +1,6 @@
-'https://rubygems.org'
+source 'https://rubygems.org'
 
-ruby '2.1.3'
+ruby '2.1.2'
 
 gem 'rails', '4.1.6'
 gem 'sass-rails', '~> 4.0.3'
@@ -23,11 +23,17 @@ gem "figaro"
 gem "fog", "~> 1.20", require: "fog/aws/storage"
 # Carrierwave
 gem 'carrierwave'
-
+# Pagination
+gem 'kaminari'
+# PDF
 gem 'prawn'
 gem 'prawn-table'
 gem 'prawn-rails'
 
+gem 'css_parser', '~> 1.3.5'
+# Omniauth
+gem 'omniauth'
+gem 'omniauth-twitter'
 
 group :doc do 
 	gem 'sdoc', '~> 0.4.0'

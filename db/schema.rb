@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141025152839) do
+ActiveRecord::Schema.define(version: 20141104152925) do
 
   create_table "company_profiles", force: true do |t|
     t.string   "company_name"
@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(version: 20141025152839) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "user_id"
+  end
+
+  create_table "job_applications", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "company_profile_id"
+    t.integer  "student_profile_id"
+    t.integer  "job_posting_id"
   end
 
   create_table "job_postings", force: true do |t|
@@ -149,6 +157,8 @@ ActiveRecord::Schema.define(version: 20141025152839) do
     t.string   "profileable_type"
     t.string   "user_type"
     t.boolean  "admin",                  default: false
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

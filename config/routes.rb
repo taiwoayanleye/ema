@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :job_applications
+
   resources :saved_student_profiles
 
   resources :saved_job_postings
@@ -14,7 +16,8 @@ Rails.application.routes.draw do
   # # devise_for :users
 
   #Devise routes
-  devise_for :users, :controllers => {:registrations => "registrations"}
+  devise_for :users, :controllers => {:registrations => "registrations"}, 
+                      :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   #devise_for :users, :controllers => {:users => "users"}
   
   #Student resources
@@ -28,18 +31,29 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    # Job application link from job postings page
+    resources :job_applications, only: [:new, :create]
+    # Creating URLs and caching for pagination
+    get 'page/:page', :action => :search, :on => :collection
   end
   resources :company_profiles
   resources :student_profiles do
     collection do
       get 'search'
     end
+  # Creating friendly URLs and caching for pagination
+  get 'page/:page', :action => :search, :on => :collection
   end  
+
 
   get 'home/home'
   get 'pages/about'
   get 'pages/contact'
   get 'registrations/destroy'
+
+  get 'talent_hunter' => "search_job_postings#talent_hunter"
+  get 'job_entries' => "job_applications#talent_entries"
+  get 'talent_entries' => "job_applications#talent_entries"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

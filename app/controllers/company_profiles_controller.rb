@@ -3,7 +3,7 @@ class CompanyProfilesController < ApplicationController
 
   #make sure the user is logged in
   # before_action :authenticate_user!, :get_user
-  before_action :user_type_authentication, except: [:index]
+  before_action :user_type_authentication, except: [:index, :show]
   #keep user from accessing thier profile if they haven't created it yet
   # before_action(:except => [:new, :create]) {|c| c.profile_redir}
   #keep user from accessing any method that isn't connected to thier profile
@@ -14,7 +14,8 @@ class CompanyProfilesController < ApplicationController
   # GET /company_profiles
   # GET /company_profiles.json
   def index
-    @company_profiles = CompanyProfile.all
+    @company_profiles = CompanyProfile.all.page(params[:page])
+    # @company_profiles = CompanyProfile.all
 
     # respond_to do |format|
     #   format.html # index.html.erb
@@ -25,15 +26,16 @@ class CompanyProfilesController < ApplicationController
   # GET /company_profiles/1
   # GET /company_profiles/1.json
   def show
+    @company_profile = current_user.profile
+    # @company_profile = CompanyProfile.where(user_id: params[:id]).first
     # @company_profile = current_user.profile
-    @company_profile = CompanyProfile.where(user_id: params[:id]).first
-    @jobs = @company_profile.job_postings
+    # @jobs = @company_profile.job_postings
     
 
-    respond_to do |format|
-      format.html #show.html.erb
-      format.json { render json: @company_profile }
-    end
+    # respond_to do |format|
+    #   format.html #show.html.erb
+    #   format.json { render json: @company_profile }
+    # end
   end
 
 
@@ -46,13 +48,23 @@ class CompanyProfilesController < ApplicationController
   # PATCH/PUT /company_profiles/1
   # PATCH/PUT /company_profiles/1.json
   def update
-    @company_profile = current_user.profile
+    # @company_profile = current_user.profile
+    @company_profile = CompanyProfile.find(params[:id])
+    
+      # # if @company_profile.update_attributes(params[:company_profile])
+      # if @company_profile.update_attributes(company_profile_params)
+      #   flash[:notice] = 'Company profile was successfully updated.'
+      #   redirect_to "/company_profiles/:id"
+      # else
+      #   # flash[:error] = 'Company profile updating failed.'
+      #   render action: "edit" 
+      #   render json: @company_profile.errors, status: :unprocessable_entity 
+      # end
 
-    respond_to do |format|
-      # if @company_profile.update_attributes(params[:company_profile])
+          respond_to do |format|
       if @company_profile.update_attributes(company_profile_params)
-        format.html { redirect_to company_profile_url(@company_profile), notice: 'Company profile was successfully updated.' }
-        format.json { head :no_content }
+        format.html { redirect_to company_profile_path(current_user.profileable_id), notice: 'Company profile was successfully updated.' }
+        format.json { render :show, status: :ok, location: @company_profile }
       else
         format.html { render action: "edit" }
         format.json { render json: @company_profile.errors, status: :unprocessable_entity }

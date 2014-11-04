@@ -1,0 +1,191 @@
+0000000000000000000000000000000000000000 c396b74b3d2740b4f6511ccbf8c0cbd6f7d3e3d0 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413361463 +0100	commit (initial): Initial commit
+c396b74b3d2740b4f6511ccbf8c0cbd6f7d3e3d0 038b687a6a0c1ef44acd057a129f69313b820c4f Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413362198 +0100	commit: Add gem for heroku
+038b687a6a0c1ef44acd057a129f69313b820c4f c14e86e906346d1b50813bd588af619dc6dda236 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413362460 +0100	commit: Add Pages controller
+c14e86e906346d1b50813bd588af619dc6dda236 54df980b41112e1cf2c2b408a259db8b0ccc225a Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413364882 +0100	commit: Add Foundation gem for fronthead
+54df980b41112e1cf2c2b408a259db8b0ccc225a 8518acfe9b9aeed1ec6df92221d65b1f4172f0c4 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413412184 +0100	commit: Edit README.md
+8518acfe9b9aeed1ec6df92221d65b1f4172f0c4 683b2cdd873ff35868a20a81a2eeae71bc2493cf Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413413051 +0100	commit: Add Student work experience
+683b2cdd873ff35868a20a81a2eeae71bc2493cf 7e4b3fe6ea9dff4bd5e48427d88f7daa649761ad Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413413350 +0100	commit: Add Skil
+7e4b3fe6ea9dff4bd5e48427d88f7daa649761ad 5559cebdde4da8447fec0c956bdcaa161fdffaef Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413413431 +0100	commit: Add Student profile
+5559cebdde4da8447fec0c956bdcaa161fdffaef 0b218c127a8bcafff144e2ecb00f06a82b1714ca Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413413555 +0100	commit: Add Company user
+0b218c127a8bcafff144e2ecb00f06a82b1714ca a949c525a0ac28a7dc31b2c18510c4520ec5bde0 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413415092 +0100	commit: Add Devise gem
+a949c525a0ac28a7dc31b2c18510c4520ec5bde0 cfdccfef9c59034bd42cd1b99cf2a37e0091e045 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413416273 +0100	commit: Delete Devise generate models and views
+cfdccfef9c59034bd42cd1b99cf2a37e0091e045 6470fc9c28c28a1712de7e3c67745b3c69884daf Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413416648 +0100	commit: Add Devise gem views and model
+6470fc9c28c28a1712de7e3c67745b3c69884daf 80c2af17262214f6fa1552fae6ba44c83699784f Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413418794 +0100	commit: Polymorphic association for User model
+80c2af17262214f6fa1552fae6ba44c83699784f ae007454c9d402496d101b9e826440069977c1e5 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413419291 +0100	commit: Add Profileable association to User model
+ae007454c9d402496d101b9e826440069977c1e5 d2f10efe6f9f36241d6c7c803cae5712c4f59f8b Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413420132 +0100	commit: Add association to company and employer's model
+d2f10efe6f9f36241d6c7c803cae5712c4f59f8b c7ae575ba36f766aee82902ef1685543d32a6f82 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413451263 +0100	commit: Add gem for rails_admin
+c7ae575ba36f766aee82902ef1685543d32a6f82 dedf4b54ba205ef57a333f61678fcbb6e6054f00 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413456576 +0100	commit: Install ruby 2.1.2 back
+dedf4b54ba205ef57a333f61678fcbb6e6054f00 926491a8ca3a28cec7c9fdc1eb2c8017c204f1b9 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413457101 +0100	commit: Add rails_admin with devise gem
+926491a8ca3a28cec7c9fdc1eb2c8017c204f1b9 c1d61196e5ce9f41bbbd00c089d55b24ab60eabe Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413458973 +0100	commit: Add rails_admin and cancan
+c1d61196e5ce9f41bbbd00c089d55b24ab60eabe 6d2e3a2fa6e711ecac929c5bffb1f852260b39c3 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413459265 +0100	commit: Add jobposting model
+6d2e3a2fa6e711ecac929c5bffb1f852260b39c3 1756cd8acd0c3db377a7c331960251737b073487 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413465447 +0100	commit: Generate migration and association for user_id into job_postings
+1756cd8acd0c3db377a7c331960251737b073487 99226d693131f13383f52403db0decff016f1893 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413465591 +0100	commit: Generate and asscociated company_profile_id to job_postings
+99226d693131f13383f52403db0decff016f1893 f747603c8efcc89c3dd37e19a53b605a8369ac6e Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413467517 +0100	commit: Edit job-posting index
+f747603c8efcc89c3dd37e19a53b605a8369ac6e a72705b5fc2b0e5cb7f88a377d06f6ab6c9c5114 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413468862 +0100	commit: Views signin and signout
+a72705b5fc2b0e5cb7f88a377d06f6ab6c9c5114 e327c8da9a07ed1ad88ffccb131b9986cf2bcd08 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413507076 +0100	commit: Add user_type to user table
+e327c8da9a07ed1ad88ffccb131b9986cf2bcd08 74e5fdd9b05325c74002b11e86b8fe08f85f75f3 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413516672 +0100	commit: Add user_type to user table with default 1
+74e5fdd9b05325c74002b11e86b8fe08f85f75f3 ab954a48d673d35f4e831b0f05538a5ed67627ac Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413543566 +0100	commit: Add home page
+ab954a48d673d35f4e831b0f05538a5ed67627ac be87d13c0afddce4bb2c4154890f670a5833306b Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413556712 +0100	commit: Add strong parameters for devise and user_type
+be87d13c0afddce4bb2c4154890f670a5833306b c7f77e031420cee36d57fac21fb9b5d0cf495efd Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413559956 +0100	commit: Add devise menu and reorganise layouts header
+c7f77e031420cee36d57fac21fb9b5d0cf495efd 478087abcfae378d7a6b2b499cf0aaea682dce60 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413562630 +0100	commit: Fix the views header for student and company
+478087abcfae378d7a6b2b499cf0aaea682dce60 2e9de6eee183827e941df8d0934fa4483f25471a Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413567441 +0100	commit: Add profilable index to users table
+2e9de6eee183827e941df8d0934fa4483f25471a 90bd073a2d1e1182e74539fc5f3e89f6e550c71c Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413583245 +0100	commit: Edit README file and company & student controllers
+90bd073a2d1e1182e74539fc5f3e89f6e550c71c e4839ed2010224b130791b04f2dc720bd1e9716c Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413584897 +0100	commit: Add registration controller to Devise and edit README
+e4839ed2010224b130791b04f2dc720bd1e9716c 729600551f243c56329fe42691c8ffac50bb1ca1 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413585500 +0100	commit: Add user to student profile table
+729600551f243c56329fe42691c8ffac50bb1ca1 57e7e00b7161c4e0ac592b2ce5515a781696e055 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413585633 +0100	commit: Add user id to company profile table
+57e7e00b7161c4e0ac592b2ce5515a781696e055 e9fee40c0d9a0a5a1e2198170eb7bb29c97586de Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413585725 +0100	commit: Edit README
+e9fee40c0d9a0a5a1e2198170eb7bb29c97586de 6e5a8b747ccd295ddea9d2a40238f97445dec012 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413586845 +0100	commit: Getting rails admin working
+6e5a8b747ccd295ddea9d2a40238f97445dec012 fa54ff586378aa2ad826e62850b142c371809886 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413621117 +0100	commit: Authorize the admin panel
+fa54ff586378aa2ad826e62850b142c371809886 5710222e624d16a516973341f40e41311be967b7 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413634080 +0100	commit: Add Carrierwave gem
+5710222e624d16a516973341f40e41311be967b7 dd53e430ade1f42940243c297eb8320f4d63eab8 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413639542 +0100	commit: Add image tag to student profile
+dd53e430ade1f42940243c297eb8320f4d63eab8 7855da2e62e22ad855c6c05c84f30ae11778ab11 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413655451 +0100	commit: Fix company profile issues
+7855da2e62e22ad855c6c05c84f30ae11778ab11 286bbfe563c909644272d334f6942d19b2f27194 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413656362 +0100	commit: Fix student registration profile
+286bbfe563c909644272d334f6942d19b2f27194 93f73950dab265a48eff01f4d0c397e2ceef7212 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413668650 +0100	commit: Testing signups with student profile, company profile, job posting and user models
+93f73950dab265a48eff01f4d0c397e2ceef7212 6275423e151d99447f418cf19a28c414dbaef0f9 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413668700 +0100	commit: Stil testing
+6275423e151d99447f418cf19a28c414dbaef0f9 f7ad56e39fff9a907e08e1207c92ff59ac652380 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413707305 +0100	commit: Add filter to profiles controllers and validations to models
+f7ad56e39fff9a907e08e1207c92ff59ac652380 a55b5f0fdd8e2753e9a6752e212ca8daf747c77c Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413771868 +0100	commit: Add Saved job postings model
+a55b5f0fdd8e2753e9a6752e212ca8daf747c77c 78b8df5491d0fe82e94018b1987cb8ec2fa5d9f2 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413771993 +0100	commit: Add Saved student profile model
+78b8df5491d0fe82e94018b1987cb8ec2fa5d9f2 ee73e06255475df53ae5694beaa70de5e4ada39a Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413774245 +0100	commit: Add Saved job posting controller
+ee73e06255475df53ae5694beaa70de5e4ada39a d0b237d6dab9687be9a79f49723c29628501b8c0 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413775588 +0100	commit: Add Saved student profile contoroller
+d0b237d6dab9687be9a79f49723c29628501b8c0 3f5191af322b041a3b1f3f5644e1b8a352940a5b Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413777030 +0100	commit: Add Skills controller
+3f5191af322b041a3b1f3f5644e1b8a352940a5b f30f8db4e9fbfcd09eca7ef7d8a35a74f855a63a Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413777474 +0100	commit: Add Student references model'
+f30f8db4e9fbfcd09eca7ef7d8a35a74f855a63a 4c5aff75212c7e8bdc6f7be5bb6212f2fdca5464 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413777829 +0100	commit: Rename Student to Stu in Student references MVC
+4c5aff75212c7e8bdc6f7be5bb6212f2fdca5464 ea568649318785c6a253097f4bcf3084d7df4c53 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413784974 +0100	commit: Edit controller: student & company profile, Add student references
+ea568649318785c6a253097f4bcf3084d7df4c53 dd54a2589471c46fc37348fec89f39e63c8ee890 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413796424 +0100	commit: Edit the controllers to work
+dd54a2589471c46fc37348fec89f39e63c8ee890 c0f652f5d3c2eb47d63aff84b413b1fb710fbe40 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413798393 +0100	pull: Merge made by the 'recursive' strategy.
+c0f652f5d3c2eb47d63aff84b413b1fb710fbe40 49959007ccc0ba6ce8ad38067f1043ef53deb8cc Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413799474 +0100	commit: Add student profile id to saved job postings
+49959007ccc0ba6ce8ad38067f1043ef53deb8cc b4af7a8b8caf23b6ce83530640de77d46eeaedcb Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413799817 +0100	commit: Add company profile id to saved student profiles
+b4af7a8b8caf23b6ce83530640de77d46eeaedcb 74d4783186583101c2db2999a07fa76543e09e6d Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413799873 +0100	pull: Merge made by the 'recursive' strategy.
+74d4783186583101c2db2999a07fa76543e09e6d 21f4692fd805fd56d51f7e564444690cb862fe35 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413800588 +0100	commit: Add user id to skills
+21f4692fd805fd56d51f7e564444690cb862fe35 eb79816baf9a7d961a5e2713d1f33d3b194e892b Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413800611 +0100	pull: Merge made by the 'recursive' strategy.
+eb79816baf9a7d961a5e2713d1f33d3b194e892b 0b28a24db89b8e2a1ee91d2eb83556a571738b77 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413800671 +0100	commit: Add student profile id to skills
+0b28a24db89b8e2a1ee91d2eb83556a571738b77 093ffde96b1ad7d19feced93cf7a23c0059b1f32 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413801514 +0100	commit: Add student profiles id to studentr references
+093ffde96b1ad7d19feced93cf7a23c0059b1f32 573ab8d33a6f240d94e843951ca6b227ec37c9b6 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413801527 +0100	pull: Merge made by the 'recursive' strategy.
+573ab8d33a6f240d94e843951ca6b227ec37c9b6 ff84fe5b7fad32e1a625c7592090e239b31439a7 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413803125 +0100	commit: Add student profile id to student work experience
+ff84fe5b7fad32e1a625c7592090e239b31439a7 3eae1d3d4de8d2b262becfeea5119a69babc10e5 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413803141 +0100	pull: Merge made by the 'recursive' strategy.
+3eae1d3d4de8d2b262becfeea5119a69babc10e5 3eae1d3d4de8d2b262becfeea5119a69babc10e5 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413803185 +0100	checkout: moving from master to new_branch
+3eae1d3d4de8d2b262becfeea5119a69babc10e5 3eae1d3d4de8d2b262becfeea5119a69babc10e5 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413807544 +0100	checkout: moving from new_branch to master
+3eae1d3d4de8d2b262becfeea5119a69babc10e5 072748ad4e726852313223d9c1cdfe89378693c2 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413810712 +0100	commit: Add validations to models
+072748ad4e726852313223d9c1cdfe89378693c2 4deb735ed94174dca7a3920031c3279165dd0abe Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413817831 +0100	commit: Delete unwanted views
+4deb735ed94174dca7a3920031c3279165dd0abe c2a8ae8c8970581d8e33d9bf034263f115d5ea5d Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413822776 +0100	commit: Add links into student profile view
+c2a8ae8c8970581d8e33d9bf034263f115d5ea5d 1f61014efb3b07129ae009b26339d976d780f3bf Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413823823 +0100	commit: Edit the views in the student profile page
+1f61014efb3b07129ae009b26339d976d780f3bf f40bcb43cc73d8b84e4f377c478aa2b25337368c Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413829323 +0100	commit: Add search controller and view
+f40bcb43cc73d8b84e4f377c478aa2b25337368c 07886ef61c1192d076d2e81769875858713b68ba Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413843443 +0100	commit: Add search button to header
+07886ef61c1192d076d2e81769875858713b68ba 87e4b6227a41a7a63f2bc11fae9a6d5c2a9d96d8 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413844576 +0100	commit: Correct the search controller\
+87e4b6227a41a7a63f2bc11fae9a6d5c2a9d96d8 33a7d804c227f3382634870eb1b07db44b670a4c Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413887970 +0100	commit: Correct student search
+33a7d804c227f3382634870eb1b07db44b670a4c a0dfe9b8aa429b7dcb847cf2a5fad34cb4a2b7ca Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413889726 +0100	commit: Correct search for jobs
+a0dfe9b8aa429b7dcb847cf2a5fad34cb4a2b7ca aa64c5ff6522a124addab89773ae16678791bd12 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413900896 +0100	commit: Correct search controllers
+aa64c5ff6522a124addab89773ae16678791bd12 e24437c78340b2fe73f8f407932243b09943303b Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413900965 +0100	commit: Add options to postion time under job postings
+e24437c78340b2fe73f8f407932243b09943303b d3d39003c65082b7ac0b5999998259f21ea2b07a Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413905242 +0100	commit: Get search class for job postings
+d3d39003c65082b7ac0b5999998259f21ea2b07a ea14040de8227c17e8272b322b88930cc28d64d2 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413906082 +0100	commit: Get the basics work
+ea14040de8227c17e8272b322b88930cc28d64d2 0778e68c379219634df832d1db5c88480e702b21 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413981416 +0100	commit: Add Tommy's legendary fingerprint
+0778e68c379219634df832d1db5c88480e702b21 40be0ee2ed009de22fd01fa62868a4154d676992 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413986156 +0100	commit: Add skill, work histories and references to student page
+40be0ee2ed009de22fd01fa62868a4154d676992 a4b3d4f180f56d487808d7968222e280b5f8ea5f Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413990616 +0100	commit: Add devise mail confirmation
+a4b3d4f180f56d487808d7968222e280b5f8ea5f 5ced636a50d2e7b12931069e6adc4f32f89d1a7c Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413992201 +0100	commit: Add devise confirmable for production environment
+5ced636a50d2e7b12931069e6adc4f32f89d1a7c cdd3381e2edf27d8080dde3f6ad7f32532796e6c Taiwo Ayanleye <onlyyouandty@yahoo.com> 1413993387 +0100	commit: Add production host url config
+cdd3381e2edf27d8080dde3f6ad7f32532796e6c 9cfe5b0906e46ee0f4196f0c281138c52646584e Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414055770 +0100	commit: Adding admin authorization
+9cfe5b0906e46ee0f4196f0c281138c52646584e 0ee9a8ffe98918025cc40c8d4fbd5e407dcfafc2 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414058616 +0100	commit: Temporaryly remove dropdown link
+0ee9a8ffe98918025cc40c8d4fbd5e407dcfafc2 c9557c40d66070d4df7e548e965957e9d1fc1ae1 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414068549 +0100	commit: Edit company pages
+c9557c40d66070d4df7e548e965957e9d1fc1ae1 65dd87dfd57f586d28a56f9f7bccf064cb880eb0 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414079681 +0100	commit: Edit home url when user signed in
+65dd87dfd57f586d28a56f9f7bccf064cb880eb0 a1cf51a699c50d96a2035f316d24d73ad93af0e0 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414081348 +0100	commit: Change home page for company after it is verified
+a1cf51a699c50d96a2035f316d24d73ad93af0e0 1d57f853a011bc6b96dfb285c544f2f4d025afa5 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414089413 +0100	commit: Logic for company home path when verified and when not
+1d57f853a011bc6b96dfb285c544f2f4d025afa5 4742780eeb29fbcae62033c7cc23c1ecff651725 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414089760 +0100	commit: Restrict company from student profile except verified
+4742780eeb29fbcae62033c7cc23c1ecff651725 895ec1496a3f8e2c312cd62255f84f9e200d4ec0 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414102027 +0100	commit: Add restriction to company from browsing and searching students unless verified
+895ec1496a3f8e2c312cd62255f84f9e200d4ec0 663276d2efa4257a4e1207065107352c8877ee4a Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414110867 +0100	commit: Add image and name of company to job postings
+663276d2efa4257a4e1207065107352c8877ee4a 19a20955ceabbb4b68fdaae8b30a078b0d65b988 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414116291 +0100	commit: Add link to image
+19a20955ceabbb4b68fdaae8b30a078b0d65b988 d9cb429299f9228b8a8abf1370407a057c7cac0d Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414118790 +0100	commit: Temporarily restricy students to view
+d9cb429299f9228b8a8abf1370407a057c7cac0d ace696a39a4f8e6485bc53805a712a69000c0c2d Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414170558 +0100	checkout: moving from master to kehinde
+ace696a39a4f8e6485bc53805a712a69000c0c2d d9cb429299f9228b8a8abf1370407a057c7cac0d Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414170584 +0100	checkout: moving from kehinde to master
+d9cb429299f9228b8a8abf1370407a057c7cac0d 9032931b49873ad446737456052700ec1731049d Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414170596 +0100	merge kehinde: Merge made by the 'recursive' strategy.
+9032931b49873ad446737456052700ec1731049d 8648a43c30545cb01a230353c275e88c1073099d Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414170627 +0100	pull: Merge made by the 'recursive' strategy.
+8648a43c30545cb01a230353c275e88c1073099d 67f05adfd28622b2276e7c1218a39322e2067424 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414183694 +0100	commit: See Frontend
+67f05adfd28622b2276e7c1218a39322e2067424 67f05adfd28622b2276e7c1218a39322e2067424 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414183735 +0100	checkout: moving from master to master
+67f05adfd28622b2276e7c1218a39322e2067424 e76c75634ebff1e449957a4d9a2c1b8a2dfb6367 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414184083 +0100	commit: Deploy to heroku
+e76c75634ebff1e449957a4d9a2c1b8a2dfb6367 ace696a39a4f8e6485bc53805a712a69000c0c2d Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414188429 +0100	checkout: moving from master to kehinde
+ace696a39a4f8e6485bc53805a712a69000c0c2d b9da7d763d534edaf4fa8220972e747ab3a62393 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414188440 +0100	pull: Fast-forward
+b9da7d763d534edaf4fa8220972e747ab3a62393 e76c75634ebff1e449957a4d9a2c1b8a2dfb6367 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414239749 +0100	checkout: moving from kehinde to master
+e76c75634ebff1e449957a4d9a2c1b8a2dfb6367 b9da7d763d534edaf4fa8220972e747ab3a62393 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414239772 +0100	checkout: moving from master to kehinde
+b9da7d763d534edaf4fa8220972e747ab3a62393 e76c75634ebff1e449957a4d9a2c1b8a2dfb6367 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414240774 +0100	checkout: moving from kehinde to master
+e76c75634ebff1e449957a4d9a2c1b8a2dfb6367 e76c75634ebff1e449957a4d9a2c1b8a2dfb6367 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414240804 +0100	checkout: moving from master to groundnut
+e76c75634ebff1e449957a4d9a2c1b8a2dfb6367 b9da7d763d534edaf4fa8220972e747ab3a62393 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414240933 +0100	checkout: moving from groundnut to kehinde
+b9da7d763d534edaf4fa8220972e747ab3a62393 72fa3172081d445eb320ad2d220db4d18d20bea3 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414240973 +0100	pull: Fast-forward
+72fa3172081d445eb320ad2d220db4d18d20bea3 72fa3172081d445eb320ad2d220db4d18d20bea3 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414241059 +0100	checkout: moving from kehinde to groundnull
+72fa3172081d445eb320ad2d220db4d18d20bea3 e76c75634ebff1e449957a4d9a2c1b8a2dfb6367 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414241790 +0100	checkout: moving from groundnull to master
+e76c75634ebff1e449957a4d9a2c1b8a2dfb6367 f33b8a16e7570ca00d27fd1c9afd0578fc4d3e67 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414242229 +0100	commit (merge): Add stylesheets
+f33b8a16e7570ca00d27fd1c9afd0578fc4d3e67 5cb2fc5facb74b2a9a42a4daff92757237341405 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414243947 +0100	commit: White to black
+5cb2fc5facb74b2a9a42a4daff92757237341405 625a23ed625d7b900a1e5f2eb972a674158e5215 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414250224 +0100	commit: Add student interest and certifications
+625a23ed625d7b900a1e5f2eb972a674158e5215 7c5fafcd7e5b57dcee795324fbfb5ab554383cea Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414250424 +0100	pull: Merge made by the 'recursive' strategy.
+7c5fafcd7e5b57dcee795324fbfb5ab554383cea 49952e50db91fed7c273c5b5a1661871f4f3246c Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414251072 +0100	commit: Add user and student id to student's interest and certification models
+49952e50db91fed7c273c5b5a1661871f4f3246c f804e668052b1129719f1b4f891b30fdc5d9fad4 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414251107 +0100	pull: Merge made by the 'recursive' strategy.
+f804e668052b1129719f1b4f891b30fdc5d9fad4 21475547baec7cbac7d103bb410e91a7e5b68e97 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414259167 +0100	commit: Conditional for top-card in student profiles view
+21475547baec7cbac7d103bb410e91a7e5b68e97 82b540099ee9813efb45ff32538d1a9d0ebbfedd Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414277109 +0100	commit: Make students profile page empty when they haven't completed it
+82b540099ee9813efb45ff32538d1a9d0ebbfedd 3c8b4475cdd14b9a54050d35869ee59ddd49bc8d Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414376358 +0000	commit: Edit the job search link
+3c8b4475cdd14b9a54050d35869ee59ddd49bc8d 868f2a733ebb492b6a4d6064d57d0e290ecca574 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414409536 +0000	commit: Setup S3 account
+868f2a733ebb492b6a4d6064d57d0e290ecca574 28ca423e11ea298395418756f48f6b07fa6442cd Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414411986 +0000	commit: Correct Heroku conflict with S3
+28ca423e11ea298395418756f48f6b07fa6442cd e480ab159015cde9845453e43472a2a5fe0f8b6c Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414412194 +0000	commit: Remove aws_sdk gem
+e480ab159015cde9845453e43472a2a5fe0f8b6c 35deba9033fb0e6b00662988428ad40f5eb62363 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414413086 +0000	commit: Include aws gem and aws file
+35deba9033fb0e6b00662988428ad40f5eb62363 16cdbbb014411ffe98727743d6ae45223dbe525f Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414414232 +0000	commit: Conflict between Heroku and S3
+16cdbbb014411ffe98727743d6ae45223dbe525f a31d49d2f602b1f0beca7bff58f93e4312f384c9 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414420630 +0000	commit: Set the cover imgae and logo image to S3
+a31d49d2f602b1f0beca7bff58f93e4312f384c9 d93edb129253705eedfcda703b033f4b2df58a72 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414421771 +0000	commit: Set S3 keys
+d93edb129253705eedfcda703b033f4b2df58a72 031815eb1831eccee29b9bb28abbdfa72459a5af Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414421896 +0000	commit: Set S3 keys
+031815eb1831eccee29b9bb28abbdfa72459a5af 96cf4cccb4cd5600c5e59f1079e3a116d606753a Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414422250 +0000	commit: Set S3 keys
+96cf4cccb4cd5600c5e59f1079e3a116d606753a 92482c0f3eac4c5bbf1bdf2ffb7173260f488266 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414423911 +0000	commit: Set S3
+92482c0f3eac4c5bbf1bdf2ffb7173260f488266 0438fb9f34aef1564b87917208c70f57f23e34b4 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414429823 +0000	commit: AWS and Fog added for users images
+0438fb9f34aef1564b87917208c70f57f23e34b4 34447b821317ff372bcb1be035b6510c5837f585 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414429964 +0000	commit: Company profile adjustment
+34447b821317ff372bcb1be035b6510c5837f585 165d5e3b7150b864377cf4482df33e7541c3e562 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414431669 +0000	commit: Add if profile is not filled condition for company profile
+165d5e3b7150b864377cf4482df33e7541c3e562 b88e030eb42699a4b729368c44bb12d54bcf5cc2 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414450855 +0000	commit: Missing line of code in student show page
+b88e030eb42699a4b729368c44bb12d54bcf5cc2 72fa3172081d445eb320ad2d220db4d18d20bea3 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414451279 +0000	checkout: moving from master to kehinde
+72fa3172081d445eb320ad2d220db4d18d20bea3 8fc63ed07b6dd061234035e019bbdd493db6abab Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414451293 +0000	pull: Fast-forward
+8fc63ed07b6dd061234035e019bbdd493db6abab 8fc63ed07b6dd061234035e019bbdd493db6abab Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414451606 +0000	checkout: moving from kehinde to homechange
+8fc63ed07b6dd061234035e019bbdd493db6abab b88e030eb42699a4b729368c44bb12d54bcf5cc2 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414451742 +0000	checkout: moving from homechange to master
+b88e030eb42699a4b729368c44bb12d54bcf5cc2 f53692e07091fa1c6202a9af15cb6c8b2fcfd612 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414451753 +0000	merge homechange: Merge made by the 'recursive' strategy.
+f53692e07091fa1c6202a9af15cb6c8b2fcfd612 a8c9991833c50c518a8ca6b595d82dddf57345e9 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414461973 +0000	commit: Add some broken stuffs
+a8c9991833c50c518a8ca6b595d82dddf57345e9 7a2b22270bc82acacc428712fc6bd984e45b7ff7 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414463782 +0000	commit: Set job search as homepage
+7a2b22270bc82acacc428712fc6bd984e45b7ff7 adf544b76dfbc7f49b779a3dec70c5e45a780e94 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414499638 +0000	commit: Company image link to profile
+adf544b76dfbc7f49b779a3dec70c5e45a780e94 8fc63ed07b6dd061234035e019bbdd493db6abab Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414500002 +0000	checkout: moving from master to kehinde
+8fc63ed07b6dd061234035e019bbdd493db6abab a8f92ea086386376341c101e0142350ddcf66e03 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414500013 +0000	pull: Fast-forward
+a8f92ea086386376341c101e0142350ddcf66e03 eabe4ada9957735c04cafc2d5a4342f8f86f790a Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414503510 +0000	commit: update merge
+eabe4ada9957735c04cafc2d5a4342f8f86f790a 4919b6a29c6f21ce752c6c6582e90202be8c4547 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414509873 +0000	commit: thanks boss
+4919b6a29c6f21ce752c6c6582e90202be8c4547 adf544b76dfbc7f49b779a3dec70c5e45a780e94 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414511742 +0000	checkout: moving from kehinde to master
+adf544b76dfbc7f49b779a3dec70c5e45a780e94 6fe1e9f0035b9b2808090cb08221c49313645e27 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414514793 +0000	commit: Rmagick gem
+6fe1e9f0035b9b2808090cb08221c49313645e27 46dc37080b8276684030dafcc25dec42190f67a1 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414541349 +0000	commit: Grill prawn
+46dc37080b8276684030dafcc25dec42190f67a1 e8190213ec264c3b43ec77f97c8d5e7fcec67058 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414542794 +0000	commit: Serve prawn
+e8190213ec264c3b43ec77f97c8d5e7fcec67058 e8190213ec264c3b43ec77f97c8d5e7fcec67058 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414542833 +0000	checkout: moving from master to master
+e8190213ec264c3b43ec77f97c8d5e7fcec67058 4919b6a29c6f21ce752c6c6582e90202be8c4547 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414542844 +0000	checkout: moving from master to kehinde
+4919b6a29c6f21ce752c6c6582e90202be8c4547 4919b6a29c6f21ce752c6c6582e90202be8c4547 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414542910 +0000	checkout: moving from kehinde to new
+4919b6a29c6f21ce752c6c6582e90202be8c4547 4919b6a29c6f21ce752c6c6582e90202be8c4547 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414543101 +0000	checkout: moving from new to kehinde
+4919b6a29c6f21ce752c6c6582e90202be8c4547 557fbe1bae179c94eef0ff3fa2232cbae277ad30 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414543109 +0000	pull: Fast-forward
+557fbe1bae179c94eef0ff3fa2232cbae277ad30 4919b6a29c6f21ce752c6c6582e90202be8c4547 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414543221 +0000	checkout: moving from kehinde to new
+4919b6a29c6f21ce752c6c6582e90202be8c4547 557fbe1bae179c94eef0ff3fa2232cbae277ad30 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414543308 +0000	checkout: moving from new to kehinde
+557fbe1bae179c94eef0ff3fa2232cbae277ad30 557fbe1bae179c94eef0ff3fa2232cbae277ad30 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414543405 +0000	checkout: moving from kehinde to new
+557fbe1bae179c94eef0ff3fa2232cbae277ad30 e8190213ec264c3b43ec77f97c8d5e7fcec67058 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414543541 +0000	checkout: moving from new to master
+e8190213ec264c3b43ec77f97c8d5e7fcec67058 0ac4f44afc6f048dca9af3032c1a3a20b4eee43b Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414543741 +0000	commit (merge): Merge with new
+0ac4f44afc6f048dca9af3032c1a3a20b4eee43b 1ef3529a974547d1a4bcd85017834bb04092a604 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414544344 +0000	commit: Divide fighters
+1ef3529a974547d1a4bcd85017834bb04092a604 dc1fea42d0ede2ca65586fb7027043ba285cf8f4 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414592817 +0000	commit: Test with fake data
+dc1fea42d0ede2ca65586fb7027043ba285cf8f4 557fbe1bae179c94eef0ff3fa2232cbae277ad30 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414592869 +0000	checkout: moving from master to new
+557fbe1bae179c94eef0ff3fa2232cbae277ad30 dc1fea42d0ede2ca65586fb7027043ba285cf8f4 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414592940 +0000	checkout: moving from new to master
+dc1fea42d0ede2ca65586fb7027043ba285cf8f4 557fbe1bae179c94eef0ff3fa2232cbae277ad30 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414592961 +0000	checkout: moving from master to kehinde
+557fbe1bae179c94eef0ff3fa2232cbae277ad30 2e7fdb232e2702a23e364af7daaf2c7635fbc18e Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414592969 +0000	pull: Fast-forward
+2e7fdb232e2702a23e364af7daaf2c7635fbc18e 2e7fdb232e2702a23e364af7daaf2c7635fbc18e Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414592989 +0000	checkout: moving from kehinde to new
+2e7fdb232e2702a23e364af7daaf2c7635fbc18e dc1fea42d0ede2ca65586fb7027043ba285cf8f4 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414593059 +0000	checkout: moving from new to master
+dc1fea42d0ede2ca65586fb7027043ba285cf8f4 59d6d581c378849f16620501bd2b4be5dbab883a Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414593070 +0000	merge new: Merge made by the 'recursive' strategy.
+59d6d581c378849f16620501bd2b4be5dbab883a 891d9b4e1ffe9f9e5e931fd97db6ee6b0c17cff7 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414596753 +0000	commit: Simulate profiles
+891d9b4e1ffe9f9e5e931fd97db6ee6b0c17cff7 e8c74d37b4716bafc7a4b2482c0b43b3c22421b2 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414633433 +0000	commit: Generate postings and companies
+e8c74d37b4716bafc7a4b2482c0b43b3c22421b2 4fdd4253eea35363e740aeda63e36f7e2e1fc580 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414633630 +0000	commit: Delete company image directory
+4fdd4253eea35363e740aeda63e36f7e2e1fc580 7ebf684a605786f348a144ac52d6c025acce4f3f Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414670418 +0000	commit: Generate profiles and postings with images
+7ebf684a605786f348a144ac52d6c025acce4f3f a602900dd703fd379516f8dc930989404582ba59 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414700922 +0000	commit: Set deafult image and edit student profile if empty
+a602900dd703fd379516f8dc930989404582ba59 e95ec7c114be5f2164be723e1215516c862a1112 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414705352 +0000	commit: Some conditonal to company show page when theit profile isn't filled
+e95ec7c114be5f2164be723e1215516c862a1112 a30edb71dbadc81672caf0b28dc4ccb6054c0db2 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414706714 +0000	commit: Finish company profile conditions
+a30edb71dbadc81672caf0b28dc4ccb6054c0db2 61c9415bf8ec0e981a51463a65ee8dad76a3e424 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414707637 +0000	commit: Correct misplace of profile dropdowns
+61c9415bf8ec0e981a51463a65ee8dad76a3e424 e803f10204d924b4a95ff97b84394c518aba400b Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414726996 +0000	commit: Testing
+e803f10204d924b4a95ff97b84394c518aba400b 2e7fdb232e2702a23e364af7daaf2c7635fbc18e Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414727022 +0000	checkout: moving from master to kehinde
+2e7fdb232e2702a23e364af7daaf2c7635fbc18e 7a3fe9e66367ca458ec1f432f91d493aa75e0bef Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414727039 +0000	pull: Fast-forward
+7a3fe9e66367ca458ec1f432f91d493aa75e0bef 7a3fe9e66367ca458ec1f432f91d493aa75e0bef Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414727073 +0000	checkout: moving from kehinde to new
+7a3fe9e66367ca458ec1f432f91d493aa75e0bef e803f10204d924b4a95ff97b84394c518aba400b Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414727172 +0000	checkout: moving from new to master
+e803f10204d924b4a95ff97b84394c518aba400b 83b741fada4ebf2ac6955f4e5bdd61986ec3c8ab Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414727273 +0000	commit (merge): First merge on deadline date
+83b741fada4ebf2ac6955f4e5bdd61986ec3c8ab 2f7a29bb8cf0012662d7667af2d3b0faaccf609a Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414755597 +0000	commit: Resolve merge confilt
+2f7a29bb8cf0012662d7667af2d3b0faaccf609a 1491f2027e2ec5e51a030958ffde91ae8b073d6e Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414788841 +0000	commit: Let job show
+1491f2027e2ec5e51a030958ffde91ae8b073d6e bac3fd8080307e16f084a89b84d6f30b5d16918a Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414789657 +0000	commit: Set validations
+bac3fd8080307e16f084a89b84d6f30b5d16918a fbe1943b54b9096c770b759ec76656e347c8d7bc Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414795132 +0000	commit: Kick off aws
+fbe1943b54b9096c770b759ec76656e347c8d7bc 75eee5732eb90fad6398eaf4090765396b4913e0 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414917499 +0000	commit: Get image tag direct to thr right
+75eee5732eb90fad6398eaf4090765396b4913e0 73919ca585d71244e7b0577d88ac658f23e29872 Taiwo Ayanleye <onlyyouandty@yahoo.com> 1414918824 +0000	commit: Resolving student image tag

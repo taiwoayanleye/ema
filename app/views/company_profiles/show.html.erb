@@ -1,17 +1,12 @@
 <div class="site-content">
-  <!-- next -->
-  <p id="notice"><%= notice %></table>
-  <% if @company_profile.company_name.nil? && @company_profile.description.nil? && @company_profile.company_type.nil? && @company_profile.number_of_employees.nil? && @company_profile.website.nil? && @company_profile.location.nil? && @company_profile.reg_code.nil? && @company_profile.image_url.nil? %>
-
-  Incomplete profile! <%= link_to 'Profile', edit_company_profile_path(@company_profile) %>
-  <% else %>
-    
+  <!-- next -->    
       <!-- top card -->
   <div class="top-card">
     <div class="row"> 
       <div class="large-12 small-12 columns">
         <div class="panel">
           <div class="row">
+
             <!--profile_image-->
             <div class="large-4 small-4 columns">
               <div class="profile_image">
@@ -23,7 +18,12 @@
               <div class='company_name'>
                 <div class="row">
                   <div class="large-12 small-12 columns">
-                    <p><%= @company_profile.company_name %></p>
+                    <i class="fa fa-university"></i>
+                    <% if !@company_profile.company_name.nil? %>
+                    <%= @company_profile.company_name %>
+                    <% else %>
+                     <i>?</i>
+                    <% end %>
                   </div>
                 </div>
               </div>
@@ -31,7 +31,9 @@
             
             <div class="row">
               <div class="large-12 small-12 columns">
+                <% if !@company_profile %>
                 <a class = 'editbutton'><%= link_to 'Edit', edit_company_profile_path(@company_profile) %></a>
+                <% end %>
               </div>
             </div>
 
@@ -48,11 +50,24 @@
         <div class = 'panel'>
           <div class="company_facts">
             <i class ='no_of_employees'>
-            <i class="fa fa-university"></i><a class = 'fact_a_content'><%= @company_profile.number_of_employees %></i>
+            <i class="fa fa-university"></i>
+            <a class = 'fact_a_content'>
+              <% if !@company_profile.number_of_employees.nil? %>
+                <%= @company_profile.number_of_employees %>
+              <% else %>
+              <i>?</i> 
+              <% end %>
             </a>
+            </i>
             <i class ='company_type'>
             <i class="fa fa-graduation-cap"></i>
-            <a class = 'fact_a_content'><%= @company_profile.company_type %></a>
+            <a class = 'fact_a_content'>
+              <% if !@company_profile.company_type.nil? %>
+                <%= @company_profile.company_type %>
+              <% else %>
+                <i>?</i>
+              <% end %>
+            </a>
             </i>
           </div>
         </div>
@@ -75,7 +90,11 @@
                 </div>
                 <!-- description_content -->
                 <div class="description_content">
-                  <%= @company_profile.description %>
+                  <% if !@company_profile.description.nil? %>
+                    <%= @company_profile.description %>
+                  <% else %>
+                  <i>No description has been provided</i>
+                  <% end %>
                 </div>
               </div>
             </div>
@@ -91,15 +110,31 @@
                 </div>
                 <!-- contact_content -->
                 <div class="contact_content">
-                <p><%= @company_profile.user.email %></p>
-                <p><%= @company_profile.website %></p>
-                <p><%= @company_profile.location %></p>
-                <p><%= @company_profile.reg_code %></p>
+                <p>
+                  <% if !@company_profile.website.nil? %>
+                    <%= @company_profile.website %>
+                  <% else %>
+                    <i>No website has been provided</i>
+                  <% end %>
+                </p>
+                <p>
+                  <% if !@company_profile.location.nil? %>
+                    <%= @company_profile.location %>
+                  <% else %>
+                    <i>No location has been provided</i>
+                  <% end %>
+                </p>
+                <p>
+                  <% if  !@company_profile.reg_code.nil? %>
+                    <%= @company_profile.reg_code %>
+                  <% else %>
+                    <i>No company registration code has been provided</i>
+                  <% end %>
+                </p>
                 </div>
               </div>
             </div><hr>
           </div>
-          <% end %>
 
         </div>
       </div>

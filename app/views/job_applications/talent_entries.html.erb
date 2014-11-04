@@ -1,0 +1,26 @@
+<table class="table table-striped table-bordered">
+  <tr>
+    <th class="center">Image</th>
+    <th class="center">Name</th>
+    <th class="center">Price</th>
+    <th class="center">Customer</th>
+    <th class="center">Date Sold</th>
+  </tr>
+  <% @job_applications.each do |job_application| %>
+  <tr>
+    <td><%= image_tag job_application.job_posting.image.url(:thumb)%></td>
+    <td><%= job_application.job_posting.title %></td>
+    <td><%= number_to_currency(job_application.job_posting.title) %></td>
+    <td><%= job_application.job_hunter.first_name %></td>
+    <td><% job_application.created_at.strftime("%B %-d, %Y")%></td>
+    <td>
+      
+    </td>
+  </tr>
+  <%end%>
+</table>
+
+<br>
+<% if (user_signed_in?) %>
+<%= link_to 'New Listing', new_job_posting_path, class: "btn btn-link", data: { no_turbolink: true } %>
+<% end %>

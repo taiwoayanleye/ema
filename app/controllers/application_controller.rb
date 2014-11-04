@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
     end
 
 
-    #Gets the current user's profile
+    #Gets the current user's get_profile_type
     def get_user
       current_user.profile
     end
@@ -38,15 +38,13 @@ class ApplicationController < ActionController::Base
     def after_sign_in_path_for(user)
       user_type = current_user.user_type
       if user_type == "student"
-        job_postings_url
+        search_job_postings_url
       else
-        company_profile_url(current_user.profileable_id)
-      # elsif user_type == "company"
-      #   if @user.profile.verified? === true
-      #     company_profile_url(current_user.profileable_id)
-      #   else
-      #     student_profiles_url
-      #   end
+        if !@user.profile.verified? === true
+          edit_company_profile_path(:id)
+        else
+          search_student_profiles_url
+        end
       end
     end
 

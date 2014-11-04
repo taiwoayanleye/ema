@@ -6,7 +6,7 @@ class JobPostingsController < ApplicationController
   #keep user from accessing their profile if they haven't created it yet
   # before_action :authenticate_user!, :get_user
   # Stops current student users and non verified companies from accessing all actions except index and search
-  before_action :allowed_user, except: [:index, :search] 
+  before_action :allowed_user, except: [:index, :show, :search] 
 
   def index
     @job_postings = JobPosting.all
@@ -119,13 +119,13 @@ class JobPostingsController < ApplicationController
         end
       else
           @job_postings.each do |profile|
-          @return.append(profile)
+          @return.append(profile).page(params[:page])
         end
       end
 
     else
       #when the search page is initially visited, displays all of the job postings
-      @return = @job_postings_all
+      @return = @job_postings_all.page(params[:page])
     end
       @position_text = params[:position_text]
       @description_text = params[:description_text]

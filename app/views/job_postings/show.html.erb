@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div id = 'figure' class="image_wrapper">
+    <div class="company_image">
+        <%= image_tag CompanyProfile.find(@job_posting.company_profile.id).image_url(:thumb)%>
+    </div>
+  </div>
+  <div >
+    <h3><%= @job_posting.company_profile.company_name %></h3>
+    <h2>
+      <strong>Job position:</strong>
+      <%= @job_posting.position %>
+    </h2>
+    <p>
+      <strong>Job description:</strong>
+      <%= @job_posting.job_description %>
+    </p>
+    <p>
+      <strong>Job start:</strong>
+      <%= @job_posting.job_start %>
+    </p>
+    <p>
+      <strong>Job end:</strong>
+      <%= @job_posting.job_end %>
+    </p>
+    <p>
+      <strong>Posted on:</strong>
+      <%= @job_posting.posted_on %>
+    </p>
+    <p>
+      <strong>Position time:</strong>
+      <%= @job_posting.position_time %>
+    </p>
+    <p>
+      <strong>Job requirements:</strong>
+      <%= @job_posting.job_requirements %>
+    </p>
+
+    <div class="center">
+     <%= link_to "Apply for this internship", new_job_posting_job_application_path(@job_posting) %>
+    </div><br>
+  </div>
+</div>
+
+<% if (current_user.id == @job_posting.user_id) %>
+  <%= link_to 'Edit', edit_job_posting_path(@job_posting) %>|
+<% end %>
+<%= link_to 'Back', job_postings_path %>
