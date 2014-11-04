@@ -24,27 +24,16 @@
           
           <!--r2 company image-->
           <div class = 'row'>
-<<<<<<< HEAD
-            <div class = "post_mid">
-              <div class="large-12 small-12 columns">
-                <div class="image_wrapper">
-                  <div class="company_image">
-                    <%# link_to (image_tag CompanyProfile.find(job_posting.company_profile.id).image_url), company_profile_path(job_posting.company_profile.id) %>
-                    <%= %>
-                  </div>
-=======
             <div class="large-12 small-12 columns">
               <div id = 'figure' class="image_wrapper">
                 <div class="company_image">
                   <%= link_to (image_tag CompanyProfile.find(job_posting.company_profile.id).image_url(:thumb)), company_profile_path(job_posting.company_profile.id) %>
->>>>>>> new
                 </div>
               </div>
             </div>
           </div>
 
           
-
             <div class = 'row'>
               <div class="large-12 small-12 columns">
                 <div class ='page_down'>
