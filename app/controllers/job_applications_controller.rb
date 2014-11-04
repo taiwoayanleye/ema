@@ -18,21 +18,23 @@ class JobApplicationsController < ApplicationController
 
   def create
     @job_application = JobApplication.new(job_application_params)
-    @job_posting = JobPosting.where(id: params[:job_posting_id])
+    @job_posting = JobPosting.find(params[:job_posting_id])
+    # @job_posting = JobPosting.where(id: params[:job_posting_id])
     @company_profile = @job_posting.company_profile
 
     @job_application.job_posting_id = @job_posting.id
     @job_application.student_profile_id = current_user.id
     @job_application.company_profile_id = @company_profile.id 
 
-    
+    respond_to do |format|
       if @job_application.save
-        redirect_to root_url, notice: "Thanks for applying!" 
-        render action: 'show', status: :created, location: @job_application
+        format.html {redirect_to root_url, notice: "Thanks for applying!" }
+        format.json {render action: 'show', status: :created, location: @job_application}
       else
-        render action: 'new'
-        render json: @job_application.errors, status: :unprocessable_entity
+        format.html {render action: 'new'}
+        format.json {render json: @job_application.errors, status: :unprocessable_entity}
       end
+    end
   end
 
   # def destroy
