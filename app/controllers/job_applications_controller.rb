@@ -14,12 +14,14 @@ class JobApplicationsController < ApplicationController
   def new
     @job_application = JobApplication.new
     @job_posting = JobPosting.find(params[:job_posting_id])
+    # @job_posting = JobPosting.where(params[:id])
   end
 
 
   def create
     @job_application = JobApplication.new(job_application_params)
-    @job_posting = JobPosting.find(params[:job_posting_id])
+    # @job_posting = JobPosting.find(params[:job_posting_id])
+    @job_posting = JobPosting.where(:id])
     @company_profile = @job_posting.company_profile
 
     @job_application.job_posting_id = @job_posting.id
