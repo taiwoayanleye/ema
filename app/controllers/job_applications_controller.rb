@@ -21,6 +21,7 @@ class JobApplicationsController < ApplicationController
   def create
     @job_application = JobApplication.new(job_application_params)
     @job_posting = JobPosting.find(params[:job_posting_id])
+    # @job_posting = JobPosting.where(id: params[:job_posting_id])
     # @job_posting = JobPosting.where(:id])
     @company_profile = @job_posting.company_profile
 

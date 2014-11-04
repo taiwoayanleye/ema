@@ -130,14 +130,14 @@ class StudentProfilesController < ApplicationController
   end
 
   # GET /student_profiles/new
-  def new
-    @student_profile = StudentProfile.new
+  # def new
+  #   @student_profile = StudentProfile.new
 
-      respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @company_profile }
-    end
-  end
+  #     respond_to do |format|
+  #     format.html # new.html.erb
+  #     format.json { render json: @company_profile }
+  #   end
+  # end
 
   # GET /student_profiles/1/edit
   def edit
