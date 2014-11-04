@@ -149,3 +149,10 @@ Job applications
 column:
 {student_profile_id, company_profile_id}
 [rails generate scaffold JobApplications]
+
+Others:
+Add company_profile_id_to_job_applications
+[ rails generate migration AddCompanyProfileIdToJobApplications company_profile_id ]
+
+Add student_profile_id_to_job_applications
+[ rails generate migration AddStudentProfileIdToJobApplications student_profile_id ]
