@@ -33,6 +33,7 @@ Rails.application.routes.draw do
     end
     # Creating friendly URLs and caching for pagination
     get 'page/:page', :action => :search, :on => :collection
+    resources :job_applications, only: [:new, :create]
   end
   resources :company_profiles
   resources :student_profiles do

@@ -20,7 +20,7 @@ class JobApplicationsController < ApplicationController
   def create
     @job_application = JobApplication.new(job_application_params)
     @job_posting = JobPosting.find(params[:job_posting_id])
-    @talent_hunter = @job_posting.company_profile
+    @company_profile = @job_posting.company_profile
 
     @job_application.job_posting_id = @job_posting.id
     @job_application.job_hunter_id = current_user.id
@@ -37,10 +37,10 @@ class JobApplicationsController < ApplicationController
     end
   end
 
-  def destroy
-    @job_application.destroy
-    respond_with(@job_application)
-  end
+  # def destroy
+  #   @job_application.destroy
+  #   respond_with(@job_application)
+  # end
 
   private
     def set_job_application
