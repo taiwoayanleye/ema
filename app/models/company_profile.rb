@@ -7,6 +7,7 @@ class CompanyProfile < ActiveRecord::Base
 	has_many :job_postings
   has_many :saved_student_profiles
   has_many :job_applications
+  has_many :offers, class_name: "JobApplication", foreign_key: "company_profile.id "
   
   # has_many :talent_entires, class_name: "JobApplication", foreign_key: "talent_hunter_id"
   

@@ -51,9 +51,9 @@ Rails.application.routes.draw do
   get 'pages/contact'
   get 'registrations/destroy'
 
-  get 'talent_hunter' => "search_job_postings#talent_hunter"
-  get 'job_entries' => "job_applications#talent_entries"
-  get 'talent_entries' => "job_applications#talent_entries"
+  get 'company_profile' => "search_job_postings#company_profile"
+  get 'offers' => "job_applications#offers"
+  get 'applicants' => "job_applications#applicants"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
