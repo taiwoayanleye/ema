@@ -8,6 +8,7 @@ class StudentProfile < ActiveRecord::Base
 	has_many :saved_job_postings
 	has_many :stu_interests
 	has_many :stu_certifications
+	has_many :job_entries, class_name: "JobApplication", foreign_key: "job_hunter_id"
 
 	# Used for image uploading
 	mount_uploader :image, ImageUploader

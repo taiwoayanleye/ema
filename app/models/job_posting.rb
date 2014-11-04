@@ -1,6 +1,7 @@
 class JobPosting < ActiveRecord::Base
 	#ASSOCIATIONS HERE
 	belongs_to :company_profile
+	has_many :job_applications
 
 	# Set pagination limit
 	paginates_per 9

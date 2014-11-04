@@ -6,7 +6,8 @@ class CompanyProfile < ActiveRecord::Base
 
 	has_many :job_postings
   has_many :saved_student_profiles
-
+  has_many :talent_entires, class_name: "JobApplication", foreign_key: "talent_hunter_id"
+  
 	# Used for image uploading
 	mount_uploader :image, ImageUploader
 
