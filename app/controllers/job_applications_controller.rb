@@ -2,32 +2,39 @@ class JobApplicationsController < ApplicationController
   before_action :set_job_application, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
-  def index
-    @job_applications = JobApplication.all
-    respond_with(@job_applications)
+  def job_entries
+    @job_applications = JobApplication.all.where(talent_hunter: current_user).order("created_at DESC")
   end
 
-  def show
-    respond_with(@job_application)
+  def talent_entries
+    @job_applications = JobApplication.all.where(job_hunter: current_user).order("created_at DESC")
   end
+
 
   def new
     @job_application = JobApplication.new
-    respond_with(@job_application)
+    @job_posting = JobPosting.find(params[:job_posting_id])
   end
 
-  def edit
-  end
 
   def create
     @job_application = JobApplication.new(job_application_params)
-    @job_application.save
-    respond_with(@job_application)
-  end
+    @job_posting = JobPosting.find(params[:job_posting_id])
+    @talent_hunter = @job_posting.company_profile
 
-  def update
-    @job_application.update(job_application_params)
-    respond_with(@job_application)
+    @job_application.job_posting_id = @job_posting.id
+    @job_application.job_hunter_id = current_user.id
+    @job_application.talent_hunter_id = @company_profile.id 
+
+    respond_to do |format|
+      if @job_application.save
+        format.html { redirect_to root_url, notice: "Thanks for applying!" }
+        format.json { render action: 'show', status: :created, location: @job_application}
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @job_application.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
