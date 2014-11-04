@@ -144,5 +144,8 @@ Add student_profile_id_to_stu_certifications
 [rails generate migration AddStudentProfileIdToStuCertifications student_profile_id:integer]
 
 14
-Application model: Boolean 
 This should be a dashboard for companies.
+Job applications
+column:
+{student_profile_id, company_profile_id}
+[rails generate scaffold JobApplications]
