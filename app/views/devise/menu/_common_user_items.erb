@@ -12,7 +12,7 @@
     <!-- student_profile -->
     <li class="has-dropdown">
       <a>
-        <%= link_to 'Profile', company_profile_path(current_user_id) %>
+        <%= link_to 'Profile', student_profile_path(current_user_id) %>
       </a>
       <ul class="dropdown">
         <li>
@@ -61,7 +61,7 @@
       <%= link_to 'Internships', new_job_posting_path, :class => 'navbar-link'  %>
     </li>
     <li class="has-dropdown">
-      <a <%= link_to 'Profile' %> </a>
+      <a> <%= link_to 'Profile', company_profile_path(current_user_id) %> </a>
       <ul class="dropdown">
         <li>
           <%= link_to 'View', company_profile_path(current_user_id), :class => 'navbar-link' %>
