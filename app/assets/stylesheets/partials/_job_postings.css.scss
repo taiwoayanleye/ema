@@ -150,55 +150,98 @@
 
 		}
 
-		#position_container{
-			height: rem-calc(46px);
-			margin:0px;
-			clear: both;
-			@media #{$medium-only}{
-				height: rem-calc(42px);
-			}
-			@media #{$small-only}{
-				height: rem-calc(36px);
-			}
+		#internship_top_board{
+			width: 50%;
+			margin-top: rem-calc(20px);
+			float: left;
+			#position_container{
+				height: rem-calc(46px);
+				clear: both;
+				@media #{$medium-only}{
+					height: rem-calc(42px);
+				}
+				@media #{$small-only}{
+					height: rem-calc(36px);
+				}
 
-			dl{
-				display: inline;
-				vertical-align: baseline;
-				margin: 0px;
-				dd{
-					display: none;
+				dl{
+					display: inline;
+					vertical-align: baseline;
 					margin: 0px;
+					dd{
+						display: none;
+						margin: 0px;
+					}
+					dt{
+						display:inline;
+						vertical-align:baseline;
+					}
 				}
-				dt{
-					display:inline;
-					vertical-align:baseline;
+
+				#intern_position{
+				margin: 0px;
+				clear: both;
+				font-size: $varfontsize_hbig3;
+				@media #{$medium-only}{
+					font-size: $varfontsize_hbig2;
+				}
+				@media #{$small-only}{
+					font-size: $varfontsize_hbig1;}
 				}
 			}
 
-			#intern_position{
-			margin:0px;
-			clear: both;
-			font-size: $varfontsize_hbig3;
-			@media #{$medium-only}{
-				font-size: $varfontsize_hbig2;
-			}
-			@media #{$small-only}{
-				font-size: $varfontsize_hbig1;}
+
+			#date_location_container{
+				dl{
+					display: inline;
+					vertical-align: baseline;
+					margin: 0px;
+					dd{
+						display: none;
+						margin: 0px;
+					}
+					dt{
+						display:inline;
+						vertical-align:baseline;
+						
+						i{
+							padding: rem-calc(0 4% 0 0);
+							font-size: $fontawes_h2;
+						}
+					}
+				}
+			
+				#duration_time{font-size: $varfontsize_h2; margin:rem-calc(0px 0px 0px 20px);}
+				// #start_date{font-size: $varfontsize_h2;}
+				// #end_date{font-size: $varfontsize_h2;}
+				#intern_location{
+				clear: both;
+				font-size: $varfontsize_h2;
+				}
 			}
 		}
 
-		#date_location_container{
+		#apply_button{
+			margin-top: rem-calc(35px);
+			float: right;
+		}
+
+		#internship_details{
+			clear: both;
 			dl{
 				display: inline;
 				vertical-align: baseline;
 				margin: 0px;
 				dd{
-					display: none;
 					margin: 0px;
+					font-weight: normal;
+					font-size: $varfontsize_h0;
 				}
 				dt{
 					display:inline;
 					vertical-align:baseline;
+					font-weight: normal;
+					font-size: $varfontsize_h2;
 					
 					i{
 						padding: rem-calc(0 4% 0 0);
@@ -206,20 +249,7 @@
 					}
 				}
 			}
-			
-			#duration_time{font-size: $varfontsize_h2; margin:rem-calc(0px 0px 0px 20px);}
-			// #start_date{font-size: $varfontsize_h2;}
-			// #end_date{font-size: $varfontsize_h2;}
-			#intern_location{
-			clear: both;
-			font-size: $varfontsize_h2;
-			}
-		}
-
-		#internship_details{
-			clear: both;
-			#internship_description{
-				
-			}
+			#internship_description{margin-top: rem-calc(20px);}
+			#internship_requirements{margin-top: rem-calc(20px);}
 		}
 }

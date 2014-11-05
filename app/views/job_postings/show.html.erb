@@ -35,35 +35,43 @@
   <div class="about_company">
     <h4>About Company</h4>
   </div> -->
+  <div id ="internship_top_board">
+    <!--intern_position-->
+    <div id="position_container">
+      <dl>
+        <dd> Position </dd>
+        <dt id="intern_position"><%= @job_posting.position %></dt>
+      </dl>
+    </div>
 
-  <!--intern_position-->
-  <div id="position_container">
-    <dl>
-      <dd> Position </dd>
-      <dt id="intern_position"><%= @job_posting.position %></dt>
-    </dl>
+    <div id="date_location_container">
+      <dl>
+        <dd> Location </dd>
+        <dt id="intern_location"><i class="fa fa-map-marker"></i><%= CompanyProfile.find(@job_posting.company_profile.id).location %></dt>
+      </dl>
+
+      <dl>
+        <dd> Duration </dd>
+        <dt id='duration_time'><i class="fa fa-calendar"></i><%= @job_posting.position_time %></dt>
+      </dl>
+     <!--  <dl>
+        <dd> Start Date </dd>
+        <dt id='start_date'>(<%= @job_posting.job_start %></dt>
+      </dl>
+
+      <dl>
+        <dd> End Date </dd>
+        <dt id='end_date'><%= @job_posting.job_end %>)</dt>
+      </dl> -->
+    </div>
   </div>
 
-  <div id="date_location_container">
-    <dl>
-      <dd> Location </dd>
-      <dt id="intern_location"><i class="fa fa-map-marker"></i><%= CompanyProfile.find(@job_posting.company_profile.id).location %></dt>
-    </dl>
 
-    <dl>
-      <dd> Duration </dd>
-      <dt id='duration_time'><i class="fa fa-calendar"></i><%= @job_posting.position_time %></dt>
-    </dl>
-   <!--  <dl>
-      <dd> Start Date </dd>
-      <dt id='start_date'>(<%= @job_posting.job_start %></dt>
-    </dl>
-
-    <dl>
-      <dd> End Date </dd>
-      <dt id='end_date'><%= @job_posting.job_end %>)</dt>
-    </dl> -->
+  <!-- button -->
+  <div id="apply_button">
+    <a><%= link_to "Apply for this internship", new_job_posting_job_application_path(@job_posting), class:"button radius" %></a>
   </div>
+
 
   <div id="internship_details">
     <!--internship_description-->
@@ -74,20 +82,14 @@
       </dl>
     </div>
     
-
-
     <!--internship_requirements-->
     <div id="internship_requirements">
-      <h4>Requirements</h4>
-      <p><%= @job_posting.job_requirements %></p>
+      <dl>
+        <dd id='requirements_title'>Requirements</dd>
+        <dt id='requirements_content'><%= @job_posting.job_requirements %></dt>
+      </dl>
     </div>
   </div>
-
-
-
-  <div id="center">
-   <%= link_to "Apply for this internship", new_job_posting_job_application_path(@job_posting) %>
-  </div><br>
 
   <% if (current_user.id == @job_posting.user_id) %>
     <%= link_to 'Edit', edit_job_posting_path(@job_posting) %>|
