@@ -138,10 +138,12 @@
 					}
 				}
 				#about_title{
-					font-size: $varfontsize_hmini1;
+					font-size: $varfontsize_h1;
+					font-weight: bolder;
 				}
 				#about_content{
 					font-size: $varfontsize_h2;
+					font-weight: normal;
 
 				}
 			}
@@ -213,7 +215,11 @@
 			font-size: $varfontsize_h2;
 			}
 		}
-		#internship_description{
+
+		#internship_details{
 			clear: both;
+			#internship_description{
+				
+			}
 		}
 }

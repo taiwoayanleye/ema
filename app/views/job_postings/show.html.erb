@@ -65,17 +65,25 @@
     </dl> -->
   </div>
 
-  <!--internship_description-->
-  <div id="internship_description">
-    <h4>Description</h4>
-    <p><%= @job_posting.job_description %></p>
+  <div id="internship_details">
+    <!--internship_description-->
+    <div id="internship_description">
+      <dl>
+        <dd id='description_title'>Description</dd>
+        <dt id='description_content'><%= @job_posting.job_description %></dt>
+      </dl>
+    </div>
+    
+
+
+    <!--internship_requirements-->
+    <div id="internship_requirements">
+      <h4>Requirements</h4>
+      <p><%= @job_posting.job_requirements %></p>
+    </div>
   </div>
 
-  <!--internship_requirements-->
-  <div id="internship_requirements">
-    <h4>Requirements</h4>
-    <p><%= @job_posting.job_requirements %></p>
-  </div>
+
 
   <div id="center">
    <%= link_to "Apply for this internship", new_job_posting_job_application_path(@job_posting) %>
