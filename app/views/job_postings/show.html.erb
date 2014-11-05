@@ -1,15 +1,16 @@
 <div id='show_content'>
 
-  <!--image-->
+  
   <div id='mini_job_company_profile'>
-  <div id="show_image_wrapper">
-      <%= image_tag CompanyProfile.find(@job_posting.company_profile.id).image_url(:thumb)%>
-  </div>
+    <!--image-->
+    <div id="show_image_wrapper">
+        <%= image_tag CompanyProfile.find(@job_posting.company_profile.id).image_url(:thumb)%>
+    </div>
 
-  <!--company_name-->
-  <div id="company_name">     
-    <h3><%= @job_posting.company_profile.company_name %></h3>
-  </div><hr>
+    <!--company_name-->
+    <div id="company_name">     
+      <h3><%= @job_posting.company_profile.company_name %></h3>
+    </div><hr>
   </div>
 
   <!--  about_company
@@ -18,22 +19,22 @@
   </div> -->
 
   <!--intern_position-->
-  <div id="position_container">
+  <div id="position_location_container">
     <dl>
       <dd> Position </dd>
-      <dt id="intern_position"><%= @job_posting.position %></dt>
+      <dt id="intern_position"><%= @job_posting.position %> - </dt>
     </dl>
 
     <dl>
       <dd> Location </dd>
-      <dt><%= CompanyProfile.find(@job_posting.company_profile.id).location %></dt>
+      <dt id="intern_location"><%= CompanyProfile.find(@job_posting.company_profile.id).location %></dt>
     </dl>
   </div>
 
   <div id="date_container">
     <dl>
       <dd> Duration </dd>
-      <dt id='duration_time'><%= @job_posting.position_time %></dt>
+      <dt id='duration_time'><i class="fa fa-calendar"></i><%= @job_posting.position_time %></dt>
     </dl>
 
     <dl>

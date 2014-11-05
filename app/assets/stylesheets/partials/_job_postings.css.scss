@@ -100,17 +100,27 @@
 
 }
 
+
+
 //show.html
 #show_content{
 		margin: rem-calc(20px 250px 0 250px);
 		@media #{$medium-only}{margin: rem-calc(20px 100px 0 100px)};
 		@media #{$small-only}{margin: rem-calc(20px 20px 0 20px)};
-		#show_image_wrapper{
-			width:rem-calc(50%);
-			float: left;
-			margin: rem-calc(0 10px 0 0);
+		
+		#mini_job_company_profile{
+			vertical-align: baseline;
+			#show_image_wrapper{
+				width:rem-calc(50%);
+				float: left;
+				margin: rem-calc(0 10px 0 0);
+			}
+			#company_name{
+			font-size: $varfontsize_hbig3;
+			}
 		}
-		#position_container{
+
+		#position_location_container{
 			clear: both;
 			dl{
 				display: inline;
@@ -123,15 +133,16 @@
 					vertical-align:baseline;
 				}
 			}
-		}
-		#company_name{
-			font-size: $varfontsize_hbig3;
-		}
-
-		#intern_position{
+			#intern_position{
 			clear: both;
 			font-size: $varfontsize_hbig3;
+			}
+			#intern_location{
+			clear: both;
+			font-size: $varfontsize_hbig3;
+			}
 		}
+
 		#date_container{
 			dl{
 				display: inline;
@@ -142,6 +153,10 @@
 				dt{
 					display:inline;
 					vertical-align:baseline;
+					i{
+						padding: rem-calc(0 4% 0 0);
+						font-size: $fontawes_h2;
+					}
 				}
 			}
 			
