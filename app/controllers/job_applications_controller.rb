@@ -53,6 +53,8 @@ class JobApplicationsController < ApplicationController
     end
 
     def job_application_params
-      params[:job_application]
+      # params[:job_application]
+      params.require(:job_application).permit(:cover_letter)
     end
+
 end
