@@ -11,14 +11,14 @@ class StuInterestsController < ApplicationController
 
   # GET /stu_interests/1
   # GET /stu_interests/1.json
-  def show
-    @stu_interest = StuInterest.find(params[:id])
+  # def show
+  #   @stu_interest = StuInterest.find(params[:id])
 
-    respond_to do |format|
-      format.html #show html
-      format.json {render json: @stu_interest }
-    end
-  end
+  #   respond_to do |format|
+  #     format.html #show html
+  #     format.json {render json: @stu_interest }
+  #   end
+  # end
 
   # GET /stu_interests/new
   # GET /stu_interests/new.json
@@ -43,7 +43,7 @@ class StuInterestsController < ApplicationController
     @stu_interest.user_id = current_user.id
     @stu_interest.student_profile_id = current_user.profileable_id
       if @stu_interest.save
-        redirect_to @stu_interest, notice: 'Interest was successfully created.' 
+        redirect_to student_profile_url(current_user.profileable_id), notice: 'Interest was successfully created.' 
       else
         render :new 
       end

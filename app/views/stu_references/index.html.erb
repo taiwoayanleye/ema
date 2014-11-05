@@ -1,5 +1,6 @@
-<h1>Listing student_references</h1>
-
+<h1>Your references</h1>
+<% if !@stu_references.empty? %>
+<%= link_to 'New Student reference', new_stu_reference_path %>
 <table>
   <thead>
     <tr>
@@ -12,20 +13,19 @@
   </thead>
 
   <tbody>
-    <% @student_references.each do |student_reference| %>
+    <% @stu_references.each do |stu_reference| %>
       <tr>
-        <td><%= student_reference.name %></td>
-        <td><%= student_reference.relationship %></td>
-        <td><%= student_reference.phone %></td>
-        <td><%= student_reference.email %></td>
-        <td><%= link_to 'Show', student_reference %></td>
-        <td><%= link_to 'Edit', edit_student_reference_path(student_reference) %></td>
-        <td><%= link_to 'Destroy', student_reference, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= stu_reference.name %></td>
+        <td><%= stu_reference.relationship %></td>
+        <td><%= stu_reference.phone %></td>
+        <td><%= stu_reference.email %></td>
+        <td><%= link_to 'Show', stu_reference %></td>
+        <td><%= link_to 'Edit', edit_stu_reference_path(stu_reference) %></td>
+        <td><%= link_to 'Destroy', stu_reference, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Student reference', new_student_reference_path %>
+<% else %>
+<p>You have no references, <%= link_to 'add references', new_stu_reference_path %></p>
+<% end %>

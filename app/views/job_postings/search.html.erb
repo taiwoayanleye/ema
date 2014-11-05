@@ -1,45 +1,44 @@
 <%= render 'home/home' %>
 <section>
   <div class="content">
-    <p id="notice"><%= notice %></p>
-      <div>
-        <h3>Search Intern Postings</h3>
-        <div class = 'search_wrapper'>
-          <%= form_tag search_job_postings_url, :method => 'get' do %>
-          <div class="search_postings">
-            <div class="row">
-              <!-- search_positions -->
-              <div class="large-6 medium-6 small-12 columns">
-                <div class="search_positions">
-                  <p>
-                    <%= search_field_tag :position_text, @position_text, placeholder: "Position eg. Sales" %>
-                  </p>
-                </div>
-              </div>
-
-              <!-- search_pay -->
-              <div class="large-6 medium-6 small-12 columns">
-                <div class="search_pay">
-                  <p>
-                    <%= select_tag :paid_text, options_for_select(@pay, @paid_text), placeholder: "Pay" %>
-                  </p>
-                </div> 
-              </div>
-
-            </div>
-          </div>
-
+    <div>
+      <h3>Search Intern Postings</h3>
+      <div class = 'search_wrapper'>
+        <%= form_tag search_job_postings_url, :method => 'get' do %>
+        <div class="search_postings">
           <div class="row">
-            <div class="large-12 medium-12 small-12 columns">
-              <div class = 'search_button'>
-              <a><%= submit_tag 'Search' , class:"button radius large-12 small-12 medium-12" %></a>
+            <!-- search_positions -->
+            <div class="large-6 medium-6 small-12 columns">
+              <div class="search_positions">
+                <p>
+                  <%= search_field_tag :position_text, @position_text, placeholder: "Position eg. Sales" %>
+                </p>
               </div>
             </div>
-          </div>
 
-        <% end %>
+            <!-- search_pay -->
+            <div class="large-6 medium-6 small-12 columns">
+              <div class="search_pay">
+                <p>
+                  <%= select_tag :paid_text, options_for_select(@pay, @paid_text), placeholder: "Pay" %>
+                </p>
+              </div> 
+            </div>
+
+          </div>
         </div>
+
+        <div class="row">
+          <div class="large-12 medium-12 small-12 columns">
+            <div class = 'search_button'>
+            <a><%= submit_tag 'Search' , class:"button radius large-12 small-12 medium-12" %></a>
+            </div>
+          </div>
+        </div>
+
+      <% end %>
       </div>
+    </div>
       
       <%= paginate @return %>
       <% if !@return.nil? && !@return.empty? %>
