@@ -2,6 +2,7 @@
 	margin: 0 5% 0 5%;
 	padding: rem-calc(0px 18px 0px 18px);
 
+
 	.int{
 		text-align: center;
 		padding: rem-calc(20px 10px 0 10px);
@@ -100,14 +101,28 @@
 }
 
 //show.html
-.show_content{
+#show_content{
 		margin: rem-calc(20px 250px 0 250px);
 		@media #{$medium-only}{margin: rem-calc(20px 100px 0 100px)};
 		@media #{$small-only}{margin: rem-calc(20px 20px 0 20px)};
-		.show_image_wrapper{
+		#show_image_wrapper{
 			width:rem-calc(50%);
 			float: left;
 			margin: rem-calc(0 10px 0 0);
 		}
-		.company_name{}
+		#company_name{}
+
+		#intern_position{
+			text-align:center;
+			clear: both;
+		}
+		#intern_duration{
+			text-align:center;
+			#duration_time{float:left; font-size: $varfontsize_h4;}
+			#start_date{@extend #duration_time;}
+			#end_date{@extend #duration_time;}
+		}
+		#internship_description{
+			clear: both;
+		}
 }

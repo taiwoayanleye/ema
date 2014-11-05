@@ -1,46 +1,48 @@
-<div class='show_content'>
-  <div class="row">
-    <!--image-->
-    <div class="show_image_wrapper">
-        <%= image_tag CompanyProfile.find(@job_posting.company_profile.id).image_url(:thumb)%>
-    </div>
-    <!--company_name-->
-    <div class="company_name">     
-      <h3><%= @job_posting.company_profile.company_name %></h3>
-    </div>
-      <h2>
-        <strong>Job position:</strong>
-        <%= @job_posting.position %>
-      </h2>
-      <p>
-        <strong>Job description:</strong>
-        <%= @job_posting.job_description %>
-      </p>
-      <p>
-        <strong>Job start:</strong>
-        <%= @job_posting.job_start %>
-      </p>
-      <p>
-        <strong>Job end:</strong>
-        <%= @job_posting.job_end %>
-      </p>
-      <p>
-        <strong>Posted on:</strong>
-        <%= @job_posting.posted_on %>
-      </p>
-      <p>
-        <strong>Position time:</strong>
-        <%= @job_posting.position_time %>
-      </p>
-      <p>
-        <strong>Job requirements:</strong>
-        <%= @job_posting.job_requirements %>
-      </p>
+<div id='show_content'>
 
-      <div class="center">
-       <%= link_to "Apply for this internship", new_job_posting_job_application_path(@job_posting) %>
-      </div><br>
-    </div>
+  <!--image-->
+  <div id="show_image_wrapper">
+      <%= image_tag CompanyProfile.find(@job_posting.company_profile.id).image_url(:thumb)%>
+  </div>
+
+  <!--company_name-->
+  <div id="company_name">     
+    <h3><%= @job_posting.company_profile.company_name %></h3>
+  </div>
+
+  <!--  about_company
+  <div class="about_company">
+    <h4>About Company</h4>
+  </div> -->
+
+  <!--intern_position-->
+  <div id="intern_position">
+    <h2><%= @job_posting.position %></h2>
+  </div>
+
+  <div id="intern_duration">
+    
+      <p id='duration_time'><%= @job_posting.position_time %></p>
+      <p id='start_date'>(<%= @job_posting.job_start %></p>
+      <p id='end_date'><%= @job_posting.job_end %>)</p>
+   
+  </div>
+
+  <!--internship_description-->
+  <div id="internship_description">
+    <h4>Description</h4>
+    <p><%= @job_posting.job_description %></p>
+  </div>
+
+  <!--internship_requirements-->
+  <div id="internship_requirements">
+    <h4>Requirements</h4>
+    <p><%= @job_posting.job_requirements %></p>
+  </div>
+
+  <div id="center">
+   <%= link_to "Apply for this internship", new_job_posting_job_application_path(@job_posting) %>
+  </div><br>
 
   <% if (current_user.id == @job_posting.user_id) %>
     <%= link_to 'Edit', edit_job_posting_path(@job_posting) %>|
