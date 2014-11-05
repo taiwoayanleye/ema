@@ -1,22 +1,3 @@
-/* Effect 4: fall perspective */
-.int {
-    perspective: 1300px;
-}
- 
-.int .row {
-    transform-style: preserve-3d;
-}
- 
-.grid.effect-4 .row.animate {
-    transform: translateZ(400px) translateY(300px) rotateX(-90deg);
-    animation: fallPerspective .8s ease-in-out forwards;
-}
- 
-@keyframes fallPerspective {
-    100% { transform: translateZ(0px) translateY(0px) rotateX(0deg); opacity: 1; }
-}
-//
-
 .content{
 	margin: 0 5% 0 5%;
 	padding: rem-calc(0px 18px 0px 18px);
