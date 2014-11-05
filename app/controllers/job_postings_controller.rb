@@ -230,6 +230,6 @@ class JobPostingsController < ApplicationController
     end
 
     def allowed_user
-      redirect_to root_url, notice: "You shall not pass!" unless current_user.try(:user_type) === "company" && current_user.company_verified? === true
+      redirect_to root_url, notice: "This acount await validation, contact info@stutern.com!" unless current_user.try(:user_type) === "company" && current_user.company_verified? === true
     end
 end
