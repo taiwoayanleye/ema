@@ -107,18 +107,43 @@
 		margin: rem-calc(20px 250px 0 250px);
 		@media #{$medium-only}{margin: rem-calc(20px 100px 0 100px);}
 		@media #{$small-only}{margin: rem-calc(20px 20px 0 20px);}
-		
-		#mini_job_company_profile{
 
-			vertical-align: baseline;
-			#show_image_wrapper{
-				width:rem-calc(50%);
-				float: left;
-				margin: rem-calc(0 10px 0 0);
+		#min_company{
+			padding: rem-calc(10px);
+			background-color: white;
+			#company_intro_container{
+				vertical-align: baseline;
+				#show_image_wrapper{
+					width:rem-calc(50%);
+					float: left;
+					margin: rem-calc(0 10px 0 30px);
+				}
+				#company_name{
+				font-size: $varfontsize_hbig1;
+				}
 			}
-			#company_name{
-			font-size: $varfontsize_hbig3;
+			#company_about_container{
+				margin: rem-calc(40px 0 0 0);
+				dl{
+					margin: 0px;
+					dd{
+						clear: both;
+						margin: 0px;
+					}
+					dt{
+						display:inline;
+						vertical-align:baseline;
+					}
+				}
+				#about_title{
+					font-size: $varfontsize_hmini1;
+				}
+				#about_content{
+					font-size: $varfontsize_h2;
+
+				}
 			}
+
 		}
 
 		#position_container{
