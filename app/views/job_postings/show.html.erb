@@ -1,12 +1,13 @@
 <div class='show_content'>
   <div class="row">
+    <!--image-->
     <div class="show_image_wrapper">
         <%= image_tag CompanyProfile.find(@job_posting.company_profile.id).image_url(:thumb)%>
     </div>
-    <div >
-      <div>     
-        <h3><%= @job_posting.company_profile.company_name %></h3>
-      <div >
+    <!--company_name-->
+    <div class="company_name">     
+      <h3><%= @job_posting.company_profile.company_name %></h3>
+    </div>
       <h2>
         <strong>Job position:</strong>
         <%= @job_posting.position %>
@@ -40,7 +41,6 @@
        <%= link_to "Apply for this internship", new_job_posting_job_application_path(@job_posting) %>
       </div><br>
     </div>
-  </div>
 
   <% if (current_user.id == @job_posting.user_id) %>
     <%= link_to 'Edit', edit_job_posting_path(@job_posting) %>|
