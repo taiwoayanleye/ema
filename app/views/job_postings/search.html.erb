@@ -68,10 +68,8 @@
           <!--r2 company image-->
           <div class = 'row'>
             <div class="large-12 small-12 columns">
-              <div id = 'figure' class="image_wrapper">
-                <div class="company_image">
-                  <%= link_to (image_tag CompanyProfile.find(job_posting.company_profile.id).image_url(:thumb)), job_posting_path(job_posting.id) %>
-                </div>
+              <div class="image_wrapper">
+                <%= link_to (image_tag CompanyProfile.find(job_posting.company_profile.id).image_url(:thumb)), job_posting_path(job_posting.id) %>
               </div>
             </div>
           </div>
