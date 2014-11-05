@@ -159,3 +159,6 @@ Add student_profile_id_to_job_applications
 
 Add job_posting_id_to_job_applications
 [ rails generate migration AddJobPostingIdToJobApplications job_posting_id ]
+
+Add cover_leter_to_job_applications
+[ rails generate migration AddCoverLetterToJobApplications cover_letter:string ]
