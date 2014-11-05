@@ -121,6 +121,7 @@
 		}
 
 		#position_location_container{
+			margin:0px;
 			clear: both;
 			dl{
 				display: inline;
@@ -133,11 +134,9 @@
 					vertical-align:baseline;
 				}
 			}
+
 			#intern_position{
-			clear: both;
-			font-size: $varfontsize_hbig3;
-			}
-			#intern_location{
+			margin:0px;
 			clear: both;
 			font-size: $varfontsize_hbig3;
 			}
@@ -160,9 +159,13 @@
 				}
 			}
 			
-			#duration_time{font-size: $varfontsize_h2;}
-			#start_date{font-size: $varfontsize_h4;}
-			#end_date{font-size: $varfontsize_h4;}
+			#duration_time{font-size: $varfontsize_h2; margin:rem-calc(0px 0px 0px 20px);}
+			// #start_date{font-size: $varfontsize_h2;}
+			// #end_date{font-size: $varfontsize_h2;}
+			#intern_location{
+			clear: both;
+			font-size: $varfontsize_h2;
+			}
 		}
 		#internship_description{
 			clear: both;

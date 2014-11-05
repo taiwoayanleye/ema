@@ -22,22 +22,23 @@
   <div id="position_location_container">
     <dl>
       <dd> Position </dd>
-      <dt id="intern_position"><%= @job_posting.position %> - </dt>
-    </dl>
-
-    <dl>
-      <dd> Location </dd>
-      <dt id="intern_location"><%= CompanyProfile.find(@job_posting.company_profile.id).location %></dt>
+      <dt id="intern_position"><%= @job_posting.position %></dt>
     </dl>
   </div>
 
   <div id="date_container">
+
+    <dl>
+      <dd> Location </dd>
+      <dt id="intern_location"><i class="fa fa-map-marker"></i><%= CompanyProfile.find(@job_posting.company_profile.id).location %></dt>
+    </dl>
+
     <dl>
       <dd> Duration </dd>
       <dt id='duration_time'><i class="fa fa-calendar"></i><%= @job_posting.position_time %></dt>
     </dl>
 
-    <dl>
+   <!--  <dl>
       <dd> Start Date </dd>
       <dt id='start_date'>(<%= @job_posting.job_start %></dt>
     </dl>
@@ -45,7 +46,8 @@
     <dl>
       <dd> End Date </dd>
       <dt id='end_date'><%= @job_posting.job_end %>)</dt>
-    </dl>
+    </dl> -->
+
   </div>
 
   <!--internship_description-->
