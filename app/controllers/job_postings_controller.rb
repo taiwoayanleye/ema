@@ -1,6 +1,6 @@
 class JobPostingsController < ApplicationController
   before_action :set_job_posting, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!, only: [:company_profile, :new, :create, :edit, :update, :destroy]
+  before_filter :authenticate_user!, only: [:company_posting, :new, :create, :edit, :update, :destroy]
 
 # GET /job_postings
 # GET /job_postings.json
@@ -9,8 +9,8 @@ class JobPostingsController < ApplicationController
   # Stops current student users and non verified companies from accessing all actions except index and search
   before_action :allowed_user, except: [:index, :show, :search] 
 
-  def company_profile
-    @job_postings = JobPosting.where(user: current_user).order("created_at DESC")
+  def company_posting
+    @job_postings = JobPosting.all.where(company_profile: current_user.profile).order("created_at DESC")
   end
 
   def index

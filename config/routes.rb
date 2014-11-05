@@ -51,7 +51,7 @@ Rails.application.routes.draw do
   get 'pages/contact'
   get 'registrations/destroy'
 
-  get 'company_profile' => "search_job_postings#company_profile"
+  get 'company_posting' => "job_postings#company_posting"
   get 'offers' => "job_applications#offers"
   get 'applicants' => "job_applications#applicants"
 
