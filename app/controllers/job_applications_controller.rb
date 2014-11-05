@@ -3,11 +3,15 @@ class JobApplicationsController < ApplicationController
   before_action :authenticate_user!
 
   def offers
-    @job_applications = JobApplication.all.where(company_profile: current_user).order("created_at DESC")
+    if current_user.user_type == 'company'
+      @job_applications = JobApplication.all.where(company_profile: current_user.profile).order("created_at DESC")
+    end
   end
 
   def applicants
-    @job_applications = JobApplication.all.where(student_profile: current_user).order("created_at DESC")
+    if current_user.user_type == 'student'
+      @job_applications = JobApplication.all.where(student_profile: current_user.profile).order("created_at DESC")
+    end
   end
 
   def new
@@ -24,7 +28,8 @@ class JobApplicationsController < ApplicationController
 
     @job_application.job_posting_id = @job_posting.id
     @job_application.student_profile_id = current_user.id
-    @job_application.company_profile_id = @company_profile.id 
+    @job_application.company_profile_id = @company_profile.id
+    # @company_profile.id 
 
     respond_to do |format|
       if @job_application.save

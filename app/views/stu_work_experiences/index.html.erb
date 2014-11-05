@@ -1,0 +1,32 @@
+<%= link_to 'Add new work experience', new_stu_work_experience_path %>
+<h1>Your work experience</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Company</th>
+      <th>Position</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stu_work_experiences.each do |stu_work_experience| %>
+      <tr>
+        <td><%= stu_work_experience.company %></td>
+        <td><%= stu_work_experience.position %></td>
+        <td><%= stu_work_experience.start_date %></td>
+        <td><%= stu_work_experience.end_date %></td>
+        <td><%= stu_work_experience.description %></td>
+<!--         <td><%# link_to 'Show', stu_work_experience %></td>
+ -->        <td><%= link_to 'Edit', edit_stu_work_experience_path(stu_work_experience) %></td>
+        <td><%= link_to 'Destroy', stu_work_experience, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

@@ -3,15 +3,15 @@ class StuWorkExperiencesController < ApplicationController
 
   # GET /stu_work_experiences
   # GET /stu_work_experiences.json
-  # def index
-  #   @stu_work_experiences = StuWorkExperience.all
-  # end
+  def index
+    @stu_work_experiences = StuWorkExperience.all
+  end
 
   # GET /stu_work_experiences/1
   # GET /stu_work_experiences/1.json
-  def show
-    # stu_work_experience = StuWorkExperience.find(params[:id])
-  end
+  # def show
+  #   stu_work_experience = StuWorkExperience.find(params[:id])
+  # end
 
   # GET /stu_work_experiences/new
   def new
@@ -30,7 +30,7 @@ class StuWorkExperiencesController < ApplicationController
 
     respond_to do |format|
       if @stu_work_experience.save
-        format.html { redirect_to @stu_work_experience, notice: 'Stu work experience was successfully created.' }
+        format.html { redirect_to student_profile_url(current_user.profileable_id), notice: 'Stu work experience was successfully created.' }
         format.json { render :show, status: :created, location: @stu_work_experience }
       else
         format.html { render :new }

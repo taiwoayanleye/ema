@@ -12,14 +12,14 @@ class SkillsController < ApplicationController
 
   # GET /skills/1
   # GET /skills/1.json
-  def show
-    @skill = Skill.find(params[:id])
+  # def show
+  #   @skill = Skill.find(params[:id])
 
-    respond_to do |format|
-      format.html #show.html.erb
-      format.json { render json: @skill }
-    end
-  end
+  #   respond_to do |format|
+  #     format.html #show.html.erb
+  #     format.json { render json: @skill }
+  #   end
+  # end
 
   # GET /skills/new
   # GET /skills/new.json
@@ -40,12 +40,12 @@ class SkillsController < ApplicationController
   # POST /skills
   # POST /skills.json
   def create
-    # @skill = Skill.new(skill_params)
+    # @skills = Skill.all
     @skill = Skill.new(skill_params)
     @skill.user_id = current_user.id
     @skill.student_profile_id = current_user.profileable_id
       if @skill.save
-        redirect_to @skill, notice: 'Skill was successfully created.' 
+        redirect_to student_profile_url(current_user.profileable_id), notice: 'Skill was successfully created.' 
       else
         render :new 
       end

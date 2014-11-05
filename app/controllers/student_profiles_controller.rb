@@ -3,12 +3,6 @@ class StudentProfilesController < ApplicationController
   
   #make sure the user is logged in
   before_action :authenticate_user!, :get_user
-  #keep user from accessing their profile if they haven't created it yet
-  # before_filter(:except => [:new, :create]) { |c| c.profile_redir}
-  #keep user from accessing any method that isn't connected to thier profile
-  # before_filter(:only =>[:edit, :new, :destroy, :create, :update]) {|c| c.deny_access(params[:id])}
-  # before_action(:only=>[:index]) {|c| if c.get_profile_type == 'student'; c.deny_access(-1) end}
-  #redirect company if they haven't been verified
   # Stops current student users and non verified companies from accessing all actions except index and search
   before_action :allowed_user
 
@@ -82,23 +76,6 @@ class StudentProfilesController < ApplicationController
       end
 
       if params[:culture] != ''
-        # culture is set but there are no search hits
-      #   if @student_profiles.nil?
-      #       @student_profiles_all.each do |profile|
-      #         if profile.qsort == params[:culture]
-      #           @return.append(profile)
-      #         end
-      #       end
-      #   #culture is set and there are search hits
-      #   else
-      #     @student_profiles.each do |profile|
-      #       if profile.qsort == params[:culture]
-      #         @return.append(profile)
-      #       end
-      #     end
-      #   end
-      # #culture is not set
-      # else
         @return = @student_profiles.page(params[:page])
       end
     else
@@ -122,22 +99,7 @@ class StudentProfilesController < ApplicationController
     @references = @student_profile.stu_references
     @interests = @student_profile.stu_interests
     @certifications = @student_profile.stu_certifications
-
-    # respond_to do |format|
-    #   format.html # show.html.erb
-    #   format.json { render json: @student_profile }
-    # end
   end
-
-  # GET /student_profiles/new
-  # def new
-  #   @student_profile = StudentProfile.new
-
-  #     respond_to do |format|
-  #     format.html # new.html.erb
-  #     format.json { render json: @company_profile }
-  #   end
-  # end
 
   # GET /student_profiles/1/edit
   def edit
@@ -185,7 +147,7 @@ class StudentProfilesController < ApplicationController
     def allowed_user
       # redirect_to root_url, notice: "You shall not pass!" unless current_user.try(:user_type) === "company" && current_user.company_verified? === true
       if current_user.user_type === "company" && unless current_user.company_verified? === true
-      redirect_to root_url, notice: "You shall not pass!"
+      redirect_to root_url, notice: "This acount await validation, contact info@stutern.com!"
         end
       end
     end

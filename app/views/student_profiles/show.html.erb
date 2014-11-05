@@ -88,7 +88,7 @@
                   <% if !@student_profile.first_name.nil? %>
                   <h3><%= @student_profile.first_name %>&acute;<%="s"%> <%= 'Bio' %></h3>
                   <% else %>
-                  <h5><%= link_to "Update your profile here", edit_student_profile_path %></h5>
+                  <h5><%= link_to "Edit profile", edit_student_profile_path %></h5>
                   <% end %>
                 </div>
               </div>

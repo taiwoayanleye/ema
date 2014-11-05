@@ -11,14 +11,13 @@ class StuReferencesController < ApplicationController
 
   def index
     @stu_references = StuReference.all
-    respond_with(@stu_references)
   end
 
   # GET /stu_references/1
   # GET /stu_references/1.json
-  def show
-    @stu_reference = StuReference.find(params[:id])
-  end
+  # def show
+  #   @stu_reference = StuReference.find(params[:id])
+  # end
 
   # GET /stu_references/new
   # GET .stu_refenreces/new/.json

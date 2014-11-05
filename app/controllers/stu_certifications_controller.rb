@@ -11,14 +11,14 @@ class StuCertificationsController < ApplicationController
 
   #GET /stu_certifications/1
   #GET /stu_certifications/1.json
-  def show
-    stu_certification = StuCertification.find(params[:id])
+  # def show
+  #   stu_certification = StuCertification.find(params[:id])
 
-    respond_to do |format|
-      format.html #show.html
-      format.json { render json: @stu_certification }
-    end
-  end
+  #   respond_to do |format|
+  #     format.html #show.html
+  #     format.json { render json: @stu_certification }
+  #   end
+  # end
 
   #GET /stu_certifications/new
   #GET /stu_certifications/new.json
@@ -43,7 +43,7 @@ class StuCertificationsController < ApplicationController
     @stu_certification.user_id = current_user.id
     @stu_certification.student_profile_id = current_user.profileable_id
     if @stu_certification.save
-      redirect_to @stu_certification, notice: 'Certification was successfully saved.'
+      redirect_to student_profile_url(current_user.profileable_id), notice: 'Certification was successfully saved.'
     else
       render :new
     end

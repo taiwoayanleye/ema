@@ -1,0 +1,26 @@
+<div class="center">
+  <h2>Your Postings History</h2>
+</div>
+
+<table class="table table-striped table-bordered">
+  <tr>
+    <th class="center">Job Position</th>
+    <th class="center">Student</th>
+    <th class="center">Application Date</th>
+  </tr>
+  <% @job_applications.each do |job_application| %>
+  <tr>
+    <td><%= job_application.job_posting.position %></td>
+    <td><%= StudentProfile.find(job_application.student_profile_id).first_name %></td>
+    <td><% job_application.created_at.strftime("%B %-d, %Y")%></td>
+    <td>
+      
+    </td>
+  </tr>
+  <%end%>
+</table>
+
+<br>
+<% if (user_signed_in?) %>
+<%= link_to 'Post new internship', new_job_posting_path, class: "btn btn-link", data: { no_turbolink: true } %>
+<% end %>

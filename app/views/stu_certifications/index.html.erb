@@ -1,4 +1,6 @@
 <h1>Listing stu_certifications</h1>
+<% if !@stu_certifications.empty? %>
+<%= link_to 'New Stu certification', new_stu_certification_path %>
 
 <table>
   <thead>
@@ -12,14 +14,12 @@
     <% @stu_certifications.each do |stu_certification| %>
       <tr>
         <td><%= stu_certification.description %></td>
-        <td><%= link_to 'Show', stu_certification %></td>
         <td><%= link_to 'Edit', edit_stu_certification_path(stu_certification) %></td>
         <td><%= link_to 'Destroy', stu_certification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Stu certification', new_stu_certification_path %>
+<% else %>
+<p>You have no ceertification added, </p><%= link_to 'Add certification', new_stu_certification_path %>
+<% end %>
