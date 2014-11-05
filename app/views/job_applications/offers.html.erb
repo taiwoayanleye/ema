@@ -6,16 +6,17 @@
   <tr>
     <th class="center">Job Position</th>
     <th class="center">Student</th>
+    <th class="center">Cover Letter</th>
     <th class="center">Application Date</th>
   </tr>
   <% @job_applications.each do |job_application| %>
   <tr>
     <td><%= job_application.job_posting.position %></td>
     <td><%= StudentProfile.find(job_application.student_profile_id).first_name %></td>
-    <td><% job_application.created_at.strftime("%B %-d, %Y")%></td>
-    <td>
-      
-    </td>
+    <% if !job_application.cover_letter.nil? && job_application.cover_letter.to_s != "" %>
+      <td class="center"><%= link_to 'View', "#{root_url[0...-1]}#{job_application.cover_letter}" %></td>
+    <% end %>
+    <td><%= job_application.created_at.strftime("%B %-d, %Y")%></td>
   </tr>
   <%end%>
 </table>
