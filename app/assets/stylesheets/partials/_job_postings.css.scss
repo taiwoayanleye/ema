@@ -105,8 +105,8 @@
 //show.html
 #show_content{
 		margin: rem-calc(20px 250px 0 250px);
-		@media #{$medium-only}{margin: rem-calc(20px 100px 0 100px)};
-		@media #{$small-only}{margin: rem-calc(20px 20px 0 20px)};
+		@media #{$medium-only}{margin: rem-calc(20px 100px 0 100px);}
+		@media #{$small-only}{margin: rem-calc(20px 20px 0 20px);}
 		
 		#mini_job_company_profile{
 
@@ -122,8 +122,15 @@
 		}
 
 		#position_container{
+			height: rem-calc(46px);
 			margin:0px;
 			clear: both;
+			@media #{$medium-only}{
+				height: rem-calc(42px);
+			}
+			@media #{$small-only}{
+				height: rem-calc(36px);
+			}
 
 			dl{
 				display: inline;
@@ -143,6 +150,11 @@
 			margin:0px;
 			clear: both;
 			font-size: $varfontsize_hbig3;
+			@media #{$medium-only}{
+				font-size: $varfontsize_hbig2;
+			}
+			@media #{$small-only}{
+				font-size: $varfontsize_hbig1;}
 			}
 		}
 
