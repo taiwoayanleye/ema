@@ -110,17 +110,20 @@
 			float: left;
 			margin: rem-calc(0 10px 0 0);
 		}
-		#company_name{}
+		#company_name{
+			h3{margin:0;}
+		}
 
 		#intern_position{
 			text-align:center;
 			clear: both;
+			h2{margin:0;}
 		}
 		#intern_duration{
 			text-align:center;
-			#duration_time{float:left; font-size: $varfontsize_h4;}
-			#start_date{@extend #duration_time;}
-			#end_date{@extend #duration_time;}
+			#duration_time{font-size: $varfontsize_h2;}
+			#start_date{font-size: $varfontsize_h4;}
+			#end_date{font-size: $varfontsize_h4;}
 		}
 		#internship_description{
 			clear: both;
