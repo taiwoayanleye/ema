@@ -20,12 +20,19 @@
     <h2><%= @job_posting.position %></h2>
   </div>
 
-  <div id="intern_duration">
-    
-      <a id='duration_time'><%= @job_posting.position_time %></a>
-      <a id='start_date'>(<%= @job_posting.job_start %></a>
-      <a id='end_date'><%= @job_posting.job_end %>)</a>
-   
+  <div id="details_container">
+      <dl>
+        <dd> Position </dd>
+        <dt id='duration_time'><%= @job_posting.position_time %></dt></dl>
+      <dl>
+        <dd> Start Date </dd>
+        <dt id='start_date'>(<%= @job_posting.job_start %></dt></dl>
+      <dl>
+        <dd> End Date </dd>
+        <dt id='end_date'><%= @job_posting.job_end %>)</dt></dl>
+      <dl>
+        <dd> Location </dd>
+        <dt><%= CompanyProfile.find(@job_posting.company_profile.id).location %></dt></dl>
   </div>
 
   <!--internship_description-->

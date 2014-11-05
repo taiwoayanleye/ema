@@ -115,12 +115,22 @@
 		}
 
 		#intern_position{
-			text-align:center;
 			clear: both;
 			h2{margin:0;}
 		}
-		#intern_duration{
-			text-align:center;
+		#details_container{
+			dl{
+				display: inline;
+				vertical-align: baseline;
+				dd{
+					display: none;
+				}
+				dt{
+					display:inline;
+					vertical-align:baseline;
+				}
+			}
+			
 			#duration_time{font-size: $varfontsize_h2;}
 			#start_date{font-size: $varfontsize_h4;}
 			#end_date{font-size: $varfontsize_h4;}
