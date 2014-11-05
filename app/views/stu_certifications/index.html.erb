@@ -14,7 +14,6 @@
     <% @stu_certifications.each do |stu_certification| %>
       <tr>
         <td><%= stu_certification.description %></td>
-        <td><%= link_to 'Show', stu_certification %></td>
         <td><%= link_to 'Edit', edit_stu_certification_path(stu_certification) %></td>
         <td><%= link_to 'Destroy', stu_certification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
