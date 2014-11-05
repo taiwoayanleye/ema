@@ -154,6 +154,14 @@
 			width: 50%;
 			margin-top: rem-calc(20px);
 			float: left;
+				@media #{$medium-only}{
+					width: 100%;
+					clear: both;
+				}
+				@media #{$small-only}{
+					width: 100%;
+					clear: both;
+				}
 			#position_container{
 				height: rem-calc(46px);
 				clear: both;
@@ -186,7 +194,8 @@
 					font-size: $varfontsize_hbig2;
 				}
 				@media #{$small-only}{
-					font-size: $varfontsize_hbig1;}
+					font-size: $varfontsize_hbig1;
+				}
 				}
 			}
 
@@ -224,6 +233,24 @@
 		#apply_button{
 			margin-top: rem-calc(35px);
 			float: right;
+				@media #{$medium-only}{
+					margin: rem-calc(5px 0px 0px 0px);
+					float: left;
+				}
+				@media #{$small-only}{
+					margin: rem-calc(5px 0px 0px 0px);
+					float: left;
+				}
+			.button{padding: rem-calc(10px 10px);}
+			a{
+				font-size: $varfontsize_h2;
+				@media #{$medium-only}{
+					font-size: $varfontsize_h4;
+				}
+				@media #{$small-only}{
+					font-size: $varfontsize_h3;
+				}
+			}
 		}
 
 		#internship_details{
@@ -252,4 +279,7 @@
 			#internship_description{margin-top: rem-calc(20px);}
 			#internship_requirements{margin-top: rem-calc(20px);}
 		}
+
+
 }
+

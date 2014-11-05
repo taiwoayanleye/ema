@@ -35,6 +35,7 @@
   <div class="about_company">
     <h4>About Company</h4>
   </div> -->
+  
   <div id ="internship_top_board">
     <!--intern_position-->
     <div id="position_container">
@@ -69,7 +70,7 @@
 
   <!-- button -->
   <div id="apply_button">
-    <a><%= link_to "Apply for this internship", new_job_posting_job_application_path(@job_posting), class:"button radius" %></a>
+    <a><%= link_to "Apply To This Internship".upcase, new_job_posting_job_application_path(@job_posting), class:"button radius" %></a>
   </div>
 
 
