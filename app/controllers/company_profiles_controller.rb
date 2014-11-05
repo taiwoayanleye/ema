@@ -26,7 +26,8 @@ class CompanyProfilesController < ApplicationController
   # GET /company_profiles/1
   # GET /company_profiles/1.json
   def show
-    @company_profile = current_user.profile
+    # @company_profile = current_user.profile
+    @company_profile =  CompanyProfile.where(user_id: params[:id]).first
     # @company_profile = CompanyProfile.where(user_id: params[:id]).first
     # @company_profile = current_user.profile
     # @jobs = @company_profile.job_postings

@@ -7,7 +7,8 @@ class CompanyProfile < ActiveRecord::Base
 	has_many :job_postings
   has_many :saved_student_profiles
   has_many :job_applications
-  has_many :offers, class_name: "JobApplication", foreign_key: "company_profile_id "
+  has_many :offers, class_name: "JobApplication", foreign_key: "company_profile_id"
+
   
 	# Used for image uploading
 	mount_uploader :image, ImageUploader

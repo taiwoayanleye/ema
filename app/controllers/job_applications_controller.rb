@@ -4,13 +4,13 @@ class JobApplicationsController < ApplicationController
 
   def offers
     if current_user.user_type == 'company'
-      @job_applications = JobApplication.all.where(company_profile: current_user).order("created_at DESC")
+      @job_applications = JobApplication.all.where(company_profile: current_user.profile).order("created_at DESC")
     end
   end
 
   def applicants
     if current_user.user_type == 'student'
-      @job_applications = JobApplication.all.where(student_profile: current_user).order("created_at DESC")
+      @job_applications = JobApplication.all.where(student_profile: current_user.profile).order("created_at DESC")
     end
   end
 
