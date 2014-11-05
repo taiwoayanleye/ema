@@ -109,6 +109,7 @@
 		@media #{$small-only}{margin: rem-calc(20px 20px 0 20px)};
 		
 		#mini_job_company_profile{
+
 			vertical-align: baseline;
 			#show_image_wrapper{
 				width:rem-calc(50%);
@@ -120,14 +121,17 @@
 			}
 		}
 
-		#position_location_container{
+		#position_container{
 			margin:0px;
 			clear: both;
+
 			dl{
 				display: inline;
 				vertical-align: baseline;
+				margin: 0px;
 				dd{
 					display: none;
+					margin: 0px;
 				}
 				dt{
 					display:inline;
@@ -142,16 +146,19 @@
 			}
 		}
 
-		#date_container{
+		#date_location_container{
 			dl{
 				display: inline;
 				vertical-align: baseline;
+				margin: 0px;
 				dd{
 					display: none;
+					margin: 0px;
 				}
 				dt{
 					display:inline;
 					vertical-align:baseline;
+					
 					i{
 						padding: rem-calc(0 4% 0 0);
 						font-size: $fontawes_h2;
