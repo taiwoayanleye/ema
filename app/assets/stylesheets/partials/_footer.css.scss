@@ -6,7 +6,7 @@
 	.about_image_contact{
 		text-align: center;
 		font-size: $h6-font-size;
-		padding: rem-calc(10em 400em);
+		padding: rem-calc(10em 500em);
 		.about{
 			a{color: $iron};
 		}
@@ -14,7 +14,7 @@
 		background-repeat: no-repeat;
 		background-size: contain;
 		background-position: center;
-		width: rem-calc(40px);
+		width: rem-calc(30px);
 		display: inline-block;
 		@include filter(grayscale(100%));
 		}

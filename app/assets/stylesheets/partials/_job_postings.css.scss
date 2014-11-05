@@ -98,3 +98,12 @@
 	}
 
 }
+
+.show_content{
+		margin: rem-calc(20px 250px 0 250px);
+		@media #{$medium-only}{margin: rem-calc(20px 100px 0 100px)};
+		@media #{$small-only}{margin: rem-calc(20px 20px 0 20px)};
+		.show_image_wrapper{
+			width:rem-calc(50%);
+		}
+}
