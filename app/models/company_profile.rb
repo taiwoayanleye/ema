@@ -16,7 +16,7 @@ class CompanyProfile < ActiveRecord::Base
   # Set pagination limit
   paginates_per 12
 
-  #VALIDATIONS HERE
+  # VALIDATIONS HERE
   validates :company_name, :company_type,
             :format => { :with => /\A[a-zA-Z\'\-\,\!\.\&\(\)\@\#\$\%\" ]*\z/,
                          :message => "Numbers are not allowed." },
