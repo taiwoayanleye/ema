@@ -1,6 +1,6 @@
 <%= link_to 'Add new work experience', new_stu_work_experience_path %>
-<h1>Your work experience</h1>
-
+<h1>Your experience</h1>
+<% if !@stu_work_experiences.empty? %>
 <table>
   <thead>
     <tr>
@@ -28,5 +28,6 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
+<% else %>
+<p>You have no experience added, <%= link_to "add here", new_stu_work_experience_path %></p>
+<% end %>

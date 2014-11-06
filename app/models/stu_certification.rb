@@ -2,7 +2,7 @@ class StuCertification < ActiveRecord::Base
 	#ASSOCIATIONS
 	belongs_to :student_profile
 
-	#VALIDATIONS HERE
+	# VALIDATIONS HERE
 	validates :description,
 	        :length => { :minimum => 1,
 	                     :message => "This field cannot be empty" }
