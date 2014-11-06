@@ -37,22 +37,22 @@
 <div id='manage_content'>
   <div id ="manage_internship">
     <!--intern_position-->
-    <div id="position_container">
+    <div id="manage_position">
       <dl>
         <dd> Position </dd>
         <dt id="intern_position"><%= @job_posting.position %></dt>
       </dl>
     </div>
 
-    <div id="date_location_container">
+    <div id="manage_date_location">
       <dl>
         <dd> Location </dd>
-        <dt id="intern_location"><i class="fa fa-map-marker"></i><%= CompanyProfile.find(@job_posting.company_profile.id).location %></dt>
+        <dt id="manage_intern_location"><i class="fa fa-map-marker"></i><%= CompanyProfile.find(@job_posting.company_profile.id).location %></dt>
       </dl>
 
       <dl>
         <dd> Duration </dd>
-        <dt id='duration_time'><i class="fa fa-calendar"></i><%= @job_posting.position_time %></dt>
+        <dt id='manage_duration_time'><i class="fa fa-calendar"></i><%= @job_posting.position_time %></dt>
       </dl>
      <!--  <dl>
         <dd> Start Date </dd>
