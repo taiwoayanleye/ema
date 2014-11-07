@@ -1,80 +1,38 @@
 <% if (user_signed_in? && current_user.user_type == "company") %>
-      <%= link_to 'New Job Posting', new_job_posting_path, class: "btn btn-link" %>
-      <% end %>
-      <% @job_postings.each do |job_posting| %>
-      <div class="large-4 medium-4 small-12 columns">
-        <div class = 'int'>
+<%= link_to 'New Job Posting', new_job_posting_path, class: "btn btn-link" %>
+<% end %>
+<% @job_postings.each do |job_posting| %>
+<div class="large-12 medium-12 small-12 columns">
+  <div id='manage_postings'>
 
-          <!--r1 company name | company type _ top bar-->
-          <div class="row">
-            <div class = "post_top">
-              <div class="large-12 medium-12 small-12 columns">
-                <!-- company_type and location -->
-                <div id = 'aside' class="company_type">
-                  <i class="fa fa-tags"></i><a><%= "#{job_posting.company_profile.company_type}" %></a>
-                </div>
-                <!-- company name -->
-                <div id = 'figure' class="company_name">
-                  <p><%= "#{job_posting.company_profile.company_name}" %></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!--r2 company image-->
-          <div class = 'row'>
-            <div class="large-12 small-12 columns">
-              <div class="image_wrapper">
-                <%= link_to (image_tag CompanyProfile.find(job_posting.company_profile.id).image_url(:thumb)), job_posting_path(job_posting.id) %>
-              </div>
-            </div>
-          </div>
+    <div id="int_position_container">
+      <dl>
+        <dd> Position </dd>
+        <dt id="intern_position_content"><%= job_posting.position %></dt>
+      </dl>
+    </div>
 
-          
+    <div id="int_duration_container">
+      <dl>
+        <dd> Duration </dd>
+        <dt id="intern_position_content"><i class="fa fa-calendar"></i><%= "#{job_posting.company_profile.number_of_employees}" %></dt>
+      </dl>
+    </div>
 
-            <div class = 'row'>
-              <div class="large-12 small-12 columns">
-                <div class ='page_down'>
+  </div>
 
-                  <!--int positions-->
-                  <div class="int_position">
-                    <a><%= job_posting.position %></a>
-                  </div>
-                    <div class="center">
-                      <%# link_to "Apply Now", new_job_posting_job_application_path(@job_posting) %>
-                    </div><br>
+    <!-- Single button
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Edit<span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><%= link_to "View", job_posting, class: "btn btn-link" %></li>
+        <li><%= link_to "Edit", edit_job_posting_path(job_posting), class: "btn btn-link" %></li>
+        <li><%= link_to "Destroy", job_posting, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-link" %></li>
+      </ul>
+    </div>
+    -->
+</div> 
+<% end %>
 
-                  <div id = 'aside' class="int_dur_paid">
-                  <!--duration of position-->
-                    <i id = 'aside' class="int_dur">
-                      <i class="fa fa-calendar"></i><a><%= "#{job_posting.company_profile.number_of_employees}" %></a>
-                    </i>
-                     <!-- Paid or Unpaid -->
-                    <i id='aside' class="int_paid">
-                      <i class="fa fa-usd"></i><a><%= "#{job_posting.job_paid}" %></a>
-                    </i>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-
-            <!-- Single button -->
-      <div class="btn-group">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-          Action <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" role="menu">
-          <li><%= link_to "View", job_posting, class: "btn btn-link" %></li>
-          <li><%= link_to "Edit", edit_job_posting_path(job_posting), class: "btn btn-link" %></li>
-          <li><%= link_to "Destroy", job_posting, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-link" %></li>
-        </ul>
-      </div>
-
-
-
-        </div>
-      </div>
-
-      <% end %>
 
