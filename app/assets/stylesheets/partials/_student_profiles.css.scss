@@ -176,11 +176,14 @@
 
 
 //student_profiles/index.html.erb & search.html.erb
+
+
 .all_intern{
 	padding: rem-calc(20px 40px 20px 40px);
 	margin-bottom: rem-calc(30px);
 	width: 100%;
 	text-align: center;
+
 	.pro_int_listing{
 		background-color: white;
 		border: 1px solid $iron;
@@ -231,3 +234,4 @@
 		
 	}
 }
+
