@@ -1,6 +1,31 @@
 <% if (user_signed_in? && current_user.user_type == "company") %>
 <%= link_to 'New Job Posting', new_job_posting_path, class: "btn btn-link" %>
 <% end %>
+<% @job_postings.each do |job_posting| %>
+<div id='manage_content'>
+  <div id ="manage_internship">
+
+    <!--intern_position-->
+    <div id="manage_position">
+      <dl>
+        <dd> Position </dd>
+        <dt id="intern_position"><%= job_posting.position %></dt>
+        <dt id="intern_position"><%= job_posting.job_description %></dt>
+      </dl>
+    </div>
+
+    <div id="manage_position">
+      <dl>
+        <dd> Action </dd>
+        <dt id="intern_position"><%= job_posting.job_description %></dt>
+      </dl>
+    </div>
+       
+  </div>
+</div>
+
+
+
 
 <table class="table table-striped table-bordered">
   <tr>
@@ -30,39 +55,3 @@
 
 <br>
 
-<% if user_signed_in? && current_user.user_type == "company" %>
-  <%= link_to 'New job_posting', new_job_posting_path, class: "btn btn-link", data: { no_turbolink: true } %>
-<% end %>
-
-<div id='manage_content'>
-  <div id ="manage_internship">
-    <!--intern_position-->
-    <div id="manage_position">
-      <dl>
-        <dd> Position </dd>
-        <dt id="intern_position"><%= @job_posting.position %></dt>
-      </dl>
-    </div>
-
-    <div id="manage_date_location">
-      <dl>
-        <dd> Location </dd>
-        <dt id="manage_intern_location"><i class="fa fa-map-marker"></i><%= CompanyProfile.find(@job_posting.company_profile.id).location %></dt>
-      </dl>
-
-      <dl>
-        <dd> Duration </dd>
-        <dt id='manage_duration_time'><i class="fa fa-calendar"></i><%= @job_posting.position_time %></dt>
-      </dl>
-     <!--  <dl>
-        <dd> Start Date </dd>
-        <dt id='start_date'>(<%= @job_posting.job_start %></dt>
-      </dl>
-
-      <dl>
-        <dd> End Date </dd>
-        <dt id='end_date'><%= @job_posting.job_end %>)</dt>
-      </dl> -->
-    </div>
-  </div>
-</div>

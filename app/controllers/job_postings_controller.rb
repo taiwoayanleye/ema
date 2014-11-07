@@ -10,7 +10,7 @@ class JobPostingsController < ApplicationController
   before_action :allowed_user, except: [:index, :show, :search] 
 
   def company_posting
-    @job_postings = JobPosting.all.where(company_profile: current_user.profile).order("created_at DESC")
+    @job_postings = JobPosting.all.where(company_profile: current_user.profile.id).order("created_at DESC")
   end
 
   def index
