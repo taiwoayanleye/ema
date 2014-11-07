@@ -103,7 +103,7 @@
 		#min_company{
 			padding: rem-calc(10px);
 			background-color: white;
-			border: 1px solid $iron;
+			border: 1px solid $gainsboro;
 			border-radius: rem-calc(2px);
 			#company_intro_container{
 				#show_image_wrapper{
@@ -273,35 +273,67 @@
 			}
 		}
 
+
 //company_posting.html.erb
 #manage_postings{
+	border-radius: 3px;
+	border: 1px solid $gainsboro;
+	text-align: center;
 	background-color: $white;
 	margin: rem-calc(20px 250px 0 250px);
-	padding: rem-calc(20px 20px);
+	padding: rem-calc(20px 20px 0px 20px);
 	@media #{$medium-only}{margin: rem-calc(20px 100px 0 100px);}
 	@media #{$small-only}{margin: rem-calc(20px 20px 0 20px);}
 	dl{
-				display: inline;
-				vertical-align: baseline;
-				margin: 0px;
-				dd{
-					margin: 0px;
-					font-weight: normal;
-					font-size: $varfontsize_h0;
+		display: inline;
+		vertical-align: baseline;
+		margin: 0px;
+		dd{
+			display: none;
+			margin: 0px;
+		}
+		dt{
+			margin: 0px;
+			
+			i{
+				padding: rem-calc(0 4% 0 0);
+				font-size: $fontawes_h2;
+			}
+		}
+	}
+	#int_position_container{
+		#intern_position_content{
+			font-weight: normal;
+			font-size: $varfontsize_hmini3;
+		}
+	}
+	#int_duration_container{
+		#intern_duration_content{
+			font-weight: normal;
+			font-size: $varfontsize_h2;
+		}
+	}
+	#edit_button{
+			margin-top: rem-calc(20px);
+				@media #{$medium-only}{
+					margin: rem-calc(5px 0px 0px 0px);
+					float: left;
 				}
-				dt{
-					display:inline;
-					vertical-align:baseline;
-					font-weight: normal;
-					font-size: $varfontsize_h2;
-					
-					i{
-						padding: rem-calc(0 4% 0 0);
-						font-size: $fontawes_h2;
-					}
+				@media #{$small-only}{
+					margin: rem-calc(5px 0px 0px 0px);
+					float: left;
 				}
-	#int_position{}
-	#int_duration{}
+			.button{padding: rem-calc(10px 10px);}
+			p{	
+				font-size: $varfontsize_h2;
+				@media #{$medium-only}{
+					font-size: $varfontsize_h4;
+				}
+				@media #{$small-only}{
+					font-size: $varfontsize_h3;
+				}
+			}
+		}
 }
 
 
