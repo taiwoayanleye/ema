@@ -19,11 +19,13 @@
       </dl>
     </div>
     
-    <!-- button -->
-    <div id="edit_button">
-      <p><%= link_to "Edit".upcase, class:"button radius" %></p>
-    </div>
-  
+    <button id="edit_button" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false">Edit</button>
+    <dl id="drop1" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+    <dd><dt><%= link_to "View", job_posting, class: "btn btn-link" %></dt></dd>
+    <dd><dt><%= link_to "Edit", edit_job_posting_path(job_posting), class: "btn btn-link" %></dt></dd>
+    <dd><dt><%= link_to "Destroy", job_posting, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-link" %></dt></dd>
+    </dl>
+
 
   <!--
   <div class="has-dropdown">
