@@ -313,18 +313,35 @@
 			font-size: $varfontsize_h2;
 		}
 	}
+	#new_job_button{
+		margin-top: rem-calc(20px);
+				@media #{$medium-only}{
+					margin: rem-calc(5px 0px 0px 0px);
+				}
+				@media #{$small-only}{
+					margin: rem-calc(5px 0px 0px 0px);
+				}
+			.button{padding: rem-calc(10px 10px);}
+			a{	
+				font-size: $varfontsize_h2;
+				@media #{$medium-only}{
+					font-size: $varfontsize_h4;
+				}
+				@media #{$small-only}{
+					font-size: $varfontsize_h3;
+				}
+			}
+	}
 	#edit_button{
 			margin-top: rem-calc(20px);
 				@media #{$medium-only}{
 					margin: rem-calc(5px 0px 0px 0px);
-					float: left;
 				}
 				@media #{$small-only}{
 					margin: rem-calc(5px 0px 0px 0px);
-					float: left;
 				}
 			.button{padding: rem-calc(10px 10px);}
-			p{	
+			a{	
 				font-size: $varfontsize_h2;
 				@media #{$medium-only}{
 					font-size: $varfontsize_h4;
