@@ -279,34 +279,59 @@
 		margin: rem-calc(20px 250px 0 250px);
 		@media #{$medium-only}{margin: rem-calc(20px 100px 0 100px);}
 		@media #{$small-only}{margin: rem-calc(20px 20px 0 20px);}
+
 	#new_job_button{
+		text-align: center;
 		@media #{$medium-only}{
 			margin: rem-calc(5px 0px 0px 0px);
 		}
 		@media #{$small-only}{
-			margin: rem-calc(5px 0px 0px 0px);
+			margin: rem-calc(5px 0px 30px 0px);
 		}
-	.button{
-		border: 1px solid $gainsboro;
-		padding: rem-calc(10px 10px);}
-	a{	
-		margin:0px;
-		font-size: $varfontsize_h2;
-		@media #{$medium-only}{
-			font-size: $varfontsize_h4;
-		}
-		@media #{$small-only}{
-			font-size: $varfontsize_h3;
+		.button{
+			
+			padding: rem-calc(10px 10px);}
+		a{	
+			margin:0px;
+			font-size: $varfontsize_h2;
+			@media #{$medium-only}{
+				font-size: $varfontsize_h4;
+			}
+			@media #{$small-only}{
+				font-size: $varfontsize_h3;
+			}
 		}
 	}
-	}
+
+	#edit_button{
+				margin-top: rem-calc(20px);
+					@media #{$medium-only}{
+						margin: rem-calc(5px 0px 0px 0px);
+					}
+					@media #{$small-only}{
+						margin: rem-calc(5px 0px 0px 0px);
+					}
+				.button{
+					padding: rem-calc(10px 10px);}
+				a{	
+					margin: 0px;
+					font-size: $varfontsize_h2;
+					@media #{$medium-only}{
+						font-size: $varfontsize_h4;
+					}
+					@media #{$small-only}{
+						font-size: $varfontsize_h3;
+					}
+				}
+			}
+
 	#manage_postings{
 		border-radius: 3px;
 		border: 1px solid $gainsboro;
 		text-align: center;
 		background-color: $white;
 		margin-bottom: rem-calc(20px);
-		padding: rem-calc(20px 20px 0px 20px);
+		padding: rem-calc(20px 20px 20px 20px);
 		
 		dl{
 			display: inline;
@@ -337,25 +362,6 @@
 				font-size: $varfontsize_h2;
 			}
 		}
-		#edit_button{
-				margin-top: rem-calc(20px);
-					@media #{$medium-only}{
-						margin: rem-calc(5px 0px 0px 0px);
-					}
-					@media #{$small-only}{
-						margin: rem-calc(5px 0px 0px 0px);
-					}
-				.button{padding: rem-calc(10px 10px);}
-				a{	
-					font-size: $varfontsize_h2;
-					@media #{$medium-only}{
-						font-size: $varfontsize_h4;
-					}
-					@media #{$small-only}{
-						font-size: $varfontsize_h3;
-					}
-				}
-			}
 	}
 }
 
