@@ -1,38 +1,41 @@
-<% if (user_signed_in? && current_user.user_type == "company") %>
-  <div id="new_job_button">
-    <a><%= link_to "New Job Posting".upcase, new_job_posting_path, class:"button radius" %></a>
+<div id="company_posting_container">
+  
+  <div class="large-12 medium-12 small-12 columns">
+  <% @job_postings.each do |job_posting| %>
+
+    <% if (user_signed_in? && current_user.user_type == "company") %>
+    <div id="new_job_button">
+      <a><%= link_to "New Job Posting".upcase, new_job_posting_path, class:"button radius" %></a>
+    </div>
+    <% end %>
+
+    <div id='manage_postings'>
+
+      <div id="int_position_container">
+        <dl>
+          <dd> Position </dd>
+          <dt id="intern_position_content"><%= job_posting.position %></dt>
+        </dl>
+      </div>
+
+      <div id="int_duration_container">
+        <dl>
+          <dd> Duration </dd>
+          <dt id="intern_duration_content"><i class="fa fa-calendar"></i><%= "#{job_posting.company_profile.number_of_employees}" %></dt>
+        </dl>
+      </div>
+
+      <div id="edit_button">
+        <a data-dropdown="drop1" class="button radius"><%= 'Manage'.upcase %></a>
+        <dl id="drop1" class="f-dropdown" data-dropdown-content aria-hidden="false" tabindex="-1">
+          <dd><dt><%= link_to "View", job_posting, class: "btn btn-link" %></dt></dd>
+          <dd><dt><%= link_to "Edit", edit_job_posting_path(job_posting), class: "btn btn-link" %></dt></dd>
+          <dd><dt><%= link_to "Destroy", job_posting, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-link" %></dt></dd>
+        </dl>
+      </div>
+    </div>
+
+  <% end %>
   </div>
-<% end %>
-
-<div class="large-12 medium-12 small-12 columns">
-<% @job_postings.each do |job_posting| %>
-
-  <div id='manage_postings'>
-
-    <div id="int_position_container">
-      <dl>
-        <dd> Position </dd>
-        <dt id="intern_position_content"><%= job_posting.position %></dt>
-      </dl>
-    </div>
-
-    <div id="int_duration_container">
-      <dl>
-        <dd> Duration </dd>
-        <dt id="intern_duration_content"><i class="fa fa-calendar"></i><%= "#{job_posting.company_profile.number_of_employees}" %></dt>
-      </dl>
-    </div>
-
-    <div id="edit_button">
-      <a data-dropdown="drop1" class="button radius"><%= 'Manage'.upcase %></a>
-      <dl id="drop1" class="f-dropdown" data-dropdown-content aria-hidden="false" tabindex="-1">
-        <dd><dt><%= link_to "View", job_posting, class: "btn btn-link" %></dt></dd>
-        <dd><dt><%= link_to "Edit", edit_job_posting_path(job_posting), class: "btn btn-link" %></dt></dd>
-        <dd><dt><%= link_to "Destroy", job_posting, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-link" %></dt></dd>
-      </dl>
-    </div>
-  </div>
-
-<% end %>
 </div>
 
