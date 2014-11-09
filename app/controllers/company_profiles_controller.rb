@@ -19,11 +19,6 @@ class CompanyProfilesController < ApplicationController
     else
     @company_profile =  CompanyProfile.where(id: params[:id]).first
     end
-    # @company_profile = CompanyProfile.current_user.profileable_id
-    # @company_profile = CompanyProfile.where(user_id: params[:id]).first
-    # @company_profile = current_user.profile
-    # @jobs = @company_profile.job_postings
-    
   end
 
 
