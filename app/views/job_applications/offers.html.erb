@@ -13,7 +13,7 @@
   <tr>
     <td><%= job_application.job_posting.position %></td>
     <td><%= StudentProfile.find(job_application.student_profile_id).first_name %></td>
-    <% if !job_application.cover_letter.nil? && job_application.cover_letter.to_s != "" %>
+    <td><%= image_tag StudentProfile.find(job_application.student_profile_id).image_url(:thumb) %></td>    <% if !job_application.cover_letter.nil? && job_application.cover_letter.to_s != "" %>
       <td class="center"><%= link_to 'View', "#{root_url[0...-1]}#{job_application.cover_letter}" %></td>
     <% end %>
     <td><%= job_application.created_at.strftime("%B %-d, %Y")%></td>
