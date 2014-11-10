@@ -163,3 +163,5 @@ Add job_posting_id_to_job_applications
 Add cover_leter_to_job_applications
 [ rails generate migration AddCoverLetterToJobApplications cover_letter:string ]
 
+15
+Adid hire or fire button for employers
