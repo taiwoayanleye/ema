@@ -1,38 +1,44 @@
 <% @job_applications.each do |job_application| %>
-<div id="Job_position">
-  <dl>
-    <dd> Job_position </dd>
-    <dt id="intern_duration_content"><%= job_application.job_posting.position %></dt>
-  </dl>
-</div>
+<div id="job_applications_container">
+  <div id="Job_position">
+    <dl>
+      <dd> Job_position </dd>
+      <dt id="intern_duration_content"><%= job_application.job_posting.position %></dt>
+    </dl>
+  </div>
 
-<div id="image">
-  <dl>
-    <dd> image </dd>
-    <dt id="intern_duration_content"><%= image_tag StudentProfile.find(job_application.student_profile_id).image_url(:thumb) %></dt>
-  </dl>
-</div>
+  <div id='profile_container'>
+    <div id="image">
+      <dl>
+        <dd> image </dd>
+        <dt id="intern_duration_content"><%= image_tag StudentProfile.find(job_application.student_profile_id).image_url(:thumb) %></dt>
+      </dl>
+    </div>
 
-<div id="Student">
-  <dl>
-    <dd> Student </dd>
-    <dt id="intern_duration_content"><%= StudentProfile.find(job_application.student_profile_id).first_name %></dt>
-  </dl>
-</div>
-<% if !job_application.cover_letter.nil? && job_application.cover_letter.to_s != "" %>
-<div id="Cover_letter">
-  <dl>
-    <dd> Cover_letter </dd>
-    <dt id="intern_duration_content"><%= link_to 'View', "#{root_url[0...-1]}#{job_application.cover_letter}" %></dt>
-  </dl>
-</div>
-<% end %>
+    <div id="student">
+      <dl>
+        <dd> Student </dd>
+        <dt id="intern_duration_content"><%= StudentProfile.find(job_application.student_profile_id).first_name %></dt>
+      </dl>
+    </div>
 
-<div id="Application_date">
-  <dl>
-    <dd> Application_date </dd>
-    <dt id="intern_duration_content"><%= job_application.created_at.strftime("%B %-d, %Y")%></dt>
-  </dl>
+    <% if !job_application.cover_letter.nil? && job_application.cover_letter.to_s != "" %>
+
+    <div id="cover_letter">
+      <dl>
+        <dd> Cover_letter </dd>
+        <dt id="intern_duration_content"><%= link_to 'View', "#{root_url[0...-1]}#{job_application.cover_letter}" %></dt>
+      </dl>
+    </div>
+    <% end %>
+  </div>
+
+  <div id="Application_date">
+    <dl>
+      <dd> Application_date </dd>
+      <dt id="intern_duration_content"><%= job_application.created_at.strftime("%B %-d, %Y")%></dt>
+    </dl>
+  </div>
 </div>
 <% end %>
 
