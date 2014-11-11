@@ -1,9 +1,10 @@
 <section>
   <div class="content">
+    <p id="notice"><%= notice %></p>
 
-    <% @job_postings.each do |job_posting| %>
+      <% @job_postings.each do |job_posting| %>
 
-     <div class="large-4 medium-4 small-12 columns">
+      <div class="large-4 medium-4 small-12 columns">
         <div class = 'int'>
 
           <!--r1 company name | company type _ top bar-->
@@ -63,56 +64,18 @@
         </div>
       </div>
 
-    <% end %>
+      <% end %>
 
-    <div class="row">
-      <div class="large-9 small-9 small-centered large-centered columns">
-        <div class= "button radius large-12 small-12 medium-12">
-          <p>MORE</p>
+      <div class="row">
+        <div class="large-9 small-9 small-centered large-centered columns">
+          <div class= "button radius large-12 small-12 medium-12 more">
+            <p>MORE</p>
+          </div>
         </div>
       </div>
-    </div>
-
+    
   </div>
 </section>
-
-
-<!-- <table>
-  <thead>
-    <tr>
-      <th>Job</th>
-      <th>Position</th>
-      <th>Job description</th>
-      <th>Job start</th>
-      <th>Job end</th>
-      <th>Posted on</th>
-      <th>Position time</th>
-      <th>Job</th>
-      <th>Job requirements</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @job_postings.each do |job_posting| %>
-      <tr>
-        <td><%= job_posting.job_id %></td>
-        <td><%= job_posting.position %></td>
-        <td><%= job_posting.job_description %></td>
-        <td><%= job_posting.job_start %></td>
-        <td><%= job_posting.job_end %></td>
-        <td><%= job_posting.posted_on %></td>
-        <td><%= job_posting.position_time %></td>
-        <td><%= job_posting.job_paid %></td>
-        <td><%= job_posting.job_requirements %></td>
-        <td><%= link_to 'Show', job_posting %></td>
-        <td><%= link_to 'Edit', edit_job_posting_path(job_posting) %></td>
-        <td><%= link_to 'Destroy', job_posting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table> -->
-
 
 <!--
 Job Posted Box:
@@ -125,3 +88,4 @@ COMPANY: Company Name, Company Picture, Company Location, Company Size, Industry
 int: Description, Requirement, ResponsibilityFull int Description,
 INTERN: Apply, Save, Follow Company, Share(Facebook, LinkedIn, Twitter)
 -->
+

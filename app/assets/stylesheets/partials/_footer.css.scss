@@ -1,16 +1,31 @@
 .foot{
-	margin: rem-calc(100px 0px 0px 0px);;
+	margin: rem-calc(100em 0em 0px 0em);
+	height: rem-calc(200em);
 	padding: rem-calc(20px);
-	background-color: $colorstutern;
+	background-color: $white;
 	clear: both;
-	.inner-wrapper{
-		.about_contact{
-			text-align: center;
-			font-size: $h6-font-size;
+	.about_image_contact{
+		text-align: center;
+		font-size: $h6-font-size;
+		padding: rem-calc(10em 400em);
+		.about{
+			a{color: $iron};
 		}
-		#copyright{
-			font-size: $small-font-size;
-			text-align: center;
+		.image{
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+		width: rem-calc(40px);
+		display: inline-block;
+		@include filter(grayscale(100%));
 		}
+		.contact{
+			@extend .about;
+		}
+	}
+	
+	#copyright{
+		font-size: $small-font-size;
+		text-align: center;
 	}
 }

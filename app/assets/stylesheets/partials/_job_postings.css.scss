@@ -28,6 +28,7 @@
 		text-align: center;
 		padding: rem-calc(20px 10px 0 10px);
 		width: 100%;
+		margin-bottom: rem-calc(50px);
 
 		//post_top
 		.post_top{
@@ -109,6 +110,5 @@
 			}
 		}
 	}
-	// available for | job_postings | company_profiles |
-	.more{margin-top: rem-calc(50px);}
+
 }

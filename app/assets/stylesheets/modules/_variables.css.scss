@@ -26,3 +26,10 @@ $fontawes_h3: rem-calc(12.8px);
 $fontawes_h4: rem-calc(10.8px);
 $fontawes_h5: rem-calc(8.8px);
 $fontawes_h6: rem-calc(6.8px);
+
+//filter mixin
+@mixin filter($filter...) {
+  -moz-filter: $filter;
+  -webkit-filter: $filter;
+  filter: $filter;
+}

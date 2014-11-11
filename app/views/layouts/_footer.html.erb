@@ -1,26 +1,33 @@
 <section class="foot">
-	<div class="row" style="max-width: 30em;">
-		<div class="inner-wrapper">
-
-		<!--About & Contact-->
-			<div class="row">
-				<div class="about_contact">
-				<!--About-->
-			    	<div class="large-6 medium-6 small-6 columns">
-						<%= link_to "About", pages_about_path %>
-					</div>
-					<!--Contact-->
-					<div class="large-6 medium-6 small-6 columns">
-						<%= link_to "Contact", pages_contact_path %>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="large-12 medium-12 small-12 columns">
-					<p id="copyright">© Stutern, Inc.</p>
-				</div>
-			</div>
+	<!--About & Contact-->
+	<div class="about_image_contact">
+		<div class="row">
+			<div class="large-12 medium-12 small-12 columns">
 			
+				<!--About-->
+		    	<div class="large-4 medium-4 small-4 columns">
+		    	<div class ="about">
+					<a><%= link_to "About", pages_about_path %></a>
+				</div>
+				</div>
+				<!--Image-->
+				<div class="large-4 medium-4 small-4 columns">
+				<div class ="image">
+					<%= link_to image_tag('https://s3-us-west-2.amazonaws.com/stutern/stutern_logo.png'), '/student_profiles' %>
+				</div>
+				</div>
+				<!--Contact-->
+				<div class="large-4 medium-4 small-4 columns">
+				<div class ="contact">
+					<a><%= link_to "Contact", pages_contact_path %></a>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-12 medium-12 small-12 columns">
+			<p id="copyright">© Stutern, Inc.</p>
 		</div>
 	</div>
 </section>
