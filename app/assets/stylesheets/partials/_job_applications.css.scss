@@ -67,5 +67,17 @@
 		#student{}
 		#cover_letter{}
 	}	
-	#Application_date{}
+	#Application_date{
+		dl{
+			margin: 0px;
+			text-align: center;
+			dd{
+				display: none;
+				margin: 0px;
+			}
+			dt{
+			text-align: center;	
+			}
+		}
+	}
 }
