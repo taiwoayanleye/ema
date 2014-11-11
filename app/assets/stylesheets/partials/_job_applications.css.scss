@@ -4,10 +4,48 @@
 	margin: rem-calc(20px 250px 0 250px);
 	@media #{$medium-only}{margin: rem-calc(20px 100px 0 100px);}
 	@media #{$small-only}{margin: rem-calc(20px 20px 0 20px);}
-	text-align: left;
-	#Job_position{}
-	#profile_container{}
-	#student{}
-	#cover_letter{}
+	#Job_position{
+		background-color:red;
+		dl{
+			margin: 0px;
+			text-align: center;
+			dd{
+				display: none;
+				margin: 0px;
+			}
+			dt{
+			text-align: center;	
+			}
+		}
+	}
+	#profile_container{
+		background-color: white;
+		border: 1px solid $iron;
+		border-radius: rem-calc(3em);
+		margin: rem-calc(0% 0px 0px 0px);
+		dl{
+			margin: 0px;
+			text-align: center;
+			dd{
+				display: none;
+				margin: 0px;
+			}
+			dt{
+			text-align: center;	
+			}
+		}
+		#about_title{
+			font-size: $varfontsize_h1;
+			font-weight: bolder;
+		}
+		#about_content{
+			font-size: $varfontsize_h2;
+			font-weight: normal;
+
+		}
+		#image{}
+		#student{}
+		#cover_letter{}
+	}	
 	#Application_date{}
 }
