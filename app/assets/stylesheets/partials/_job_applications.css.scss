@@ -1,3 +1,13 @@
-.just{
-	color:yellow;
+
+//job applications
+#job_applications_container{
+	margin: rem-calc(20px 250px 0 250px);
+	@media #{$medium-only}{margin: rem-calc(20px 100px 0 100px);}
+	@media #{$small-only}{margin: rem-calc(20px 20px 0 20px);}
+	text-align: left;
+	#Job_position{}
+	#profile_container{}
+	#student{}
+	#cover_letter{}
+	#Application_date{}
 }
