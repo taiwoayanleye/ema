@@ -166,3 +166,5 @@ Add cover_leter_to_job_applications
 15
 Add hire or fire button for employers
 
+16
+Set stutern.com 
