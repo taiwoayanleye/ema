@@ -143,6 +143,13 @@ GEM
       activesupport (>= 3.0.0)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mandrill-api (1.0.49)
+      excon (>= 0.16.0, < 1.0)
+      json (>= 1.7.7, < 2.0)
+    mandrill_mailer (0.4.11)
+      actionpack
+      activesupport
+      mandrill-api (~> 1.0.9)
     meta_request (0.3.4)
       callsite (~> 0.0, >= 0.0.11)
       rack-contrib (~> 1.1)
@@ -282,6 +289,8 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
+  mandrill-api
+  mandrill_mailer
   meta_request
   omniauth
   omniauth-twitter
