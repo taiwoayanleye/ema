@@ -1,4 +1,4 @@
-RailsAdmin.config do |config|
+RailsAdmin.config do |config| 
   ### Popular gems integration
 
   ## == Devise ==
