@@ -19,7 +19,7 @@ task :np do
     end
 
     begin
-      config = {'editor' => 'mate'}
+      config = {'editor' => 'gedit'}
       if File.exist?("#{Dir.home}/.bloggyrc")
         config.merge!(YAML.load_file("#{Dir.home}/.bloggyrc"))
       end
