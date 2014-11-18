@@ -37,6 +37,8 @@ gem 'omniauth-twitter'
 #Mandrill
 gem 'mandrill-api'
 gem 'mandrill_mailer'
+#Blogging
+gem 'bloggy'
 
 
 group :doc do 
