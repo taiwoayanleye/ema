@@ -34,6 +34,12 @@ gem 'css_parser', '~> 1.3.5'
 # Omniauth
 gem 'omniauth'
 gem 'omniauth-twitter'
+#Mandrill
+gem 'mandrill-api'
+gem 'mandrill_mailer'
+#Blogging
+gem 'bloggy'
+
 
 group :doc do 
 	gem 'sdoc', '~> 0.4.0'
