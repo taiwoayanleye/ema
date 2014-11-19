@@ -4,7 +4,7 @@
  <title>BLOG_NAME</title>
  <link href="YOUR_URL/atom.xml" rel="self"/>
  <link href="YOUR_URL"/>
- <updated>2014-11-18T20:34:06+00:00</updated>
+ <updated>2014-11-19T18:12:09+00:00</updated>
  <id>BLOG_URL</id>
  <author>
    <name>BLOG_NAME</name>
@@ -16,7 +16,9 @@
    <link href="YOUR_URL/launching.html"/>
    <updated>2014-11-18T00:00:00+00:00</updated>
    <id>BLOG_URL/launching</id>
-   <content type="html">&lt;p&gt;Use the same font in your cover letter as
+   <content type="html">&lt;p&gt;&lt;img alt=&quot;Rails&quot; src=&quot;https://tm-pilbox.global.ssl.fastly.net/?url=https%3A%2F%2Ftm-prod.global.ssl.fastly.net%2Fuploaded%2Fattachments%2F15701.jpg%3Fv%3D7f6184&amp;h=367&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Use the same font in your cover letter as
 what you use on your resume. 1-inch
 margins and font size 10.5-12 is best.
 Your Present Address
