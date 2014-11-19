@@ -94,6 +94,6 @@
 <% if (user_signed_in? && current_user.id == @job_posting.user_id) %>
   <%= link_to 'Edit', edit_job_posting_path(@job_posting) %>|
 <% end %>
-<%= link_to 'Back', job_postings_path %>
+<%= link_to 'Back', '/' %>
 
 </div>
