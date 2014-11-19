@@ -1,17 +1,24 @@
 RailsAdmin.config do |config| 
+  ADMIN_EMAILS = ['taiwo@stutern.com']
+
+  config.current_user_method { current_user }
   ### Popular gems integration
 
   ## == Devise ==
+    config.authenticate_with {} 
 #   config.authenticate_with do
 #     warden.authenticate! scope: :user
 #   end
 
-#   config.current_user_method &:current_admin
+  # config.current_user_method &:current_admin
 
 
-# config.authorize_with do
-#    redirect_to main_app.root_path unless warden.user.admin?
-# end
+config.authorize_with do
+  is_admin  = ADMIN_EMAILS.include?(current_user)
+    if current_user
+      redirect_to main_app.root_path unless is_admin?
+    end
+end
 
   
 
