@@ -11,61 +11,49 @@ class ApplicationController < ActionController::Base
   helper_method :admin?
   helper_method :current_admin
 
-   # def authenticate_active_admin_user!
-   #  authenticate_user!
-   #  unless current_user.user_type == "admin"
-   #    flash[:alert] = "Unauthorized Access!"
-   #    if current_user.user_type == "student"
-   #      redirect_to student_profile_url(current_user.id)
-   #    else
-   #      redirect_to company_profile_url(current_user.id)
-   #    end
-   #  end
-   # end
-
-    #Returns the type of profile for the current user
-    def get_profile_type
-      current_user.user_type
-    end
+  #Returns the type of profile for the current user
+  def get_profile_type
+    current_user.user_type
+  end
 
 
-    #Gets the current user's get_profile_type
-    def get_user
-      current_user.profile
-    end
+  #Gets the current user's get_profile_type
+  def get_user
+    current_user.profile
+  end
 
-    #Redirects the user after successful sign in
-    def after_sign_in_path_for(user)
-      user_type = current_user.user_type
-      if user_type == "student"
-        search_job_postings_url
+  #Redirects the user after successful sign in
+  def after_sign_in_path_for(user)
+    user_type = current_user.user_type
+    if user_type == "student"
+      search_job_postings_url
+    else
+      if !@user.profile.verified? === true
+        edit_company_profile_path(:id)
       else
-        if !@user.profile.verified? === true
-          edit_company_profile_path(:id)
-        else
-          search_student_profiles_url
-        end
+        search_student_profiles_url
       end
     end
+  end
 
-    def admin?
-      return true if current_user.try(:admin)
+  def admin?
+    return true if current_user.try(:admin)
+  end
+
+  def current_admin
+    return current_user if current_user.try(:admin)
+  end
+
+  protected
+
+  #needed for strong parameters to customize our views for Devise in Rails 4
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) << :user_type
+  end
+
+  def verified?
+    unless current_user || current_user.company_verified?
+      redirect_to root_path, notice: "Not allowed"
     end
-
-    def current_admin
-      return current_user if current_user.try(:admin)
-    end
-
-    protected
-
-    #needed for strong parameters to customize our views for Devise in Rails 4
-    def configure_permitted_parameters
-      devise_parameter_sanitizer.for(:sign_up) << :user_type
-    end
-
-    def verified?
-      unless current_user || current_user.company_verified?
-        redirect_to root_path, notice: "Not allowed"
-      end
-    end
+  end
 end
