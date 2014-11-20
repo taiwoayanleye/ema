@@ -192,6 +192,8 @@ GEM
     rack-pjax (0.8.0)
       nokogiri (~> 1.5)
       rack (~> 1.1)
+    rack-reverse-proxy (0.4.4)
+      rack (>= 1.0.0)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.1.6)
@@ -299,6 +301,7 @@ DEPENDENCIES
   prawn
   prawn-rails
   prawn-table
+  rack-reverse-proxy
   rails (= 4.1.6)
   rails_12factor
   rails_admin
