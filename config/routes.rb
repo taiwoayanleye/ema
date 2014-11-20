@@ -55,6 +55,9 @@ Rails.application.routes.draw do
   get 'offers' => "job_applications#offers"
   get 'applicants' => "job_applications#applicants"
 
+  #Blog
+  get '/blog' => redirect('/blog/')  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

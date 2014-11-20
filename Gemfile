@@ -38,7 +38,8 @@ gem 'omniauth-twitter'
 gem 'mandrill-api'
 gem 'mandrill_mailer'
 #Blogging
-gem 'bloggy'
+# gem 'bloggy'
+gem "rack-reverse-proxy", require: "rack/reverse_proxy"
 
 
 group :doc do 
