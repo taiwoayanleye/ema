@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'blog/index'
+
   resources :job_applications
 
   resources :saved_student_profiles
