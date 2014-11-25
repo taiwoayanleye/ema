@@ -1,30 +1,31 @@
-// .foot{
-// 	margin: rem-calc(100em 0em 0px 0em);
-// 	padding: rem-calc(0px 0px);
-// 	background-color: $white;
-// 	clear: both;
-// 	.about_image_contact{
-// 		text-align: center;
-// 		font-size: $h6-font-size;
-// 		padding: rem-calc(10em 500em);
-// 		.about{
-// 			a{color: $jumbo};
-// 		}
-// 		.image{
-// 		background-repeat: no-repeat;
-// 		background-size: contain;
-// 		background-position: center;
-// 		width: rem-calc(30px);
-// 		display: inline-block;
-// 		@include filter(grayscale(100%));
-// 		}
-// 		.contact{
-// 			@extend .about;
-// 		}
-// 	}
+.foot{
+	margin: rem-calc(100em 0em 0px 0em);
+	padding: rem-calc(10px 0px);
+	background-color: $oil;
+	clear: both;
+	#about_contact_outter{
+			text-align: center;
+			a{color: $white};
+		#about_contact_inner{
+				color: $white;
+				font-size: $varfontsize_h3;
+			img{
+			margin: rem-calc(0 0 0 -20px);
+			padding: 0;
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+			width: rem-calc(40px);
+			display: inline-block;
+			}
+		}
+	}
 	
-// 	#copyright{
-// 		font-size: $small-font-size;
-// 		text-align: center;
-// 	}
-// }
+	p{
+		font-size: $varfontsize_h5;
+		text-align: center;
+		color: $white;
+		margin-top: rem-calc(5em);
+		margin-bottom: rem-calc(5em);
+	}
+}
