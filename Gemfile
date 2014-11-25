@@ -40,6 +40,7 @@ gem 'mandrill_mailer'
 #Blogging
 # gem 'bloggy'
 # gem "rack-reverse-proxy", require: "rack/reverse_proxy"
+gem 'tumblr_client'
 
 
 group :doc do 
