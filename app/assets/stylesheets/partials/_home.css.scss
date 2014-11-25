@@ -4,7 +4,11 @@
 }
 
 .intropage{
-	.intro_image{
+	position: relative;
+	overflow: hidden;
+	display: block;
+		.intro_image{
+		display:block;
 		width: 100%;
 		height: rem-calc(400em);
 		background-image:url("cover.png");
@@ -12,21 +16,44 @@
 		background-repeat: no-repeat;
 		@include filter(grayscale(0%) contrast(110%) brightness(0.5) blur(1px));
 		}
-
-	.intro_text{
-		position: absolute;
-		bottom: rem-calc(120em);
-		left: rem-calc(300em);
-		color: white;
-		.text_head{
-		line-height: rem-calc(45em);
-		font-size: rem-calc(50em);
-		font-weight: normal;
-		}
-		.text_body{
-		line-height: rem-calc(50em);
-		font-size: rem-calc(20em);
-		font-weight: normal;
+	.columns{
+		height:rem-calc(170em);
+		.intro_text{
+			position: relative;
+			bottom: rem-calc(70em);
+			left: rem-calc(300em);
+			color: white;
+			@media #{$medium-only}{
+				left: rem-calc(300em);
+				}
+				@media #{$small-only}{
+				left: rem-calc(0em);
+				margin: rem-calc(0 10em);
+				}
+			.text_head{
+			margin: auto;
+			line-height: rem-calc(45em);
+			font-size: rem-calc(50em);
+			font-weight: normal;
+			@media #{$medium-only}{
+				}
+				@media #{$small-only}{
+				line-height: rem-calc(40em);
+				font-size: rem-calc(46em);
+				}
+			}
+			.text_body{
+			margin: auto;
+			line-height: rem-calc(50em);
+			font-size: rem-calc(20em);
+			font-weight: normal;
+			@media #{$medium-only}{
+				}
+				@media #{$small-only}{
+				font-size: rem-calc(9em);
+				line-height: rem-calc(10em);
+				}
+			}
 		}
 	}
 }
