@@ -9,8 +9,10 @@
 	}
 }
 
+/* ==========================================================================
+  	student personal profile
+   ========================================================================== */
 
-//student personal profile
 .content{
 	margin: 0 5% 0 5%;
 	padding: rem-calc(0px 18px 0px 18px);
@@ -139,8 +141,9 @@
 
 
 
-
-//search panel for student_profiles job_postings employers_profile
+/* ==========================================================================
+  	search panel for student_profiles job_postings employers_profile
+   ========================================================================== */
 .search_wrapper{
 	border-top: 1px solid $silver;
 	margin: rem-calc(50px 0 20px 0);
@@ -173,11 +176,9 @@
 
 
 
-
-
-//student_profiles/index.html.erb & search.html.erb
-
-
+/* ==========================================================================
+  	student_profiles/index.html.erb & search.html.erb
+   ========================================================================== */
 .all_intern{
 	padding: rem-calc(20px 40px 20px 40px);
 	margin-bottom: rem-calc(30px);

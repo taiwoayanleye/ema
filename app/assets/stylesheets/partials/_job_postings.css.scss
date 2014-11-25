@@ -93,8 +93,9 @@
 }
 
 
-
-//show.html
+/* ==========================================================================
+  	show.html
+   ========================================================================== */
 #show_content{
 		margin: rem-calc(20px 250px 0 250px);
 		@media #{$medium-only}{margin: rem-calc(20px 100px 0 100px);}
@@ -273,8 +274,9 @@
 			}
 		}
 
-
-//company_posting.html.erb
+/* ==========================================================================
+  	company_posting.html.erb
+   ========================================================================== */
 #company_posting_container{
 		margin: rem-calc(20px 250px 0 250px);
 		@media #{$medium-only}{margin: rem-calc(20px 100px 0 100px);}
