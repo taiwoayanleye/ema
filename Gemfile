@@ -41,8 +41,9 @@ gem 'mandrill_mailer'
 # gem 'bloggy'
 # gem "rack-reverse-proxy", require: "rack/reverse_proxy"
 # gem 'omniauth-tumblr'
-gem 'tumblr_client'
+gem 'tumblr_client', '0.8.2'
 gem 'haml', '~> 4.0.5' 
+gem 'faraday', '0.8.0'
 
 
 group :doc do 
