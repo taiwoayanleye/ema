@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   resources :saved_job_postings
 
   #Website root page
-  root 'job_postings#search'
+  root 'blog#index'
+  # root 'job_postings#search'
   
   #RailsAdmin
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -58,7 +59,7 @@ Rails.application.routes.draw do
   get 'applicants' => "job_applications#applicants"
 
   #Blog
-  get '/blog' => redirect('/blog/')  
+  # get '/blog' => redirect('/blog/')  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

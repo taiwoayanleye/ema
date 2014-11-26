@@ -330,6 +330,7 @@ DEPENDENCIES
   figaro
   fog (~> 1.20)
   foundation-rails
+  haml (~> 4.0.5)
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
