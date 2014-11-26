@@ -2,8 +2,8 @@ class BlogController < ApplicationController
   def index
 
     # Keys given from Tumblr API
-    @key = ENV["TUMBLR_KEY"]
-    @secret = ENV["TUMBLR_SECRET_KEY"]
+    @key = ENV["TUMBLR_CONSUMER_KEY"]
+    @secret = ENV["TUMBLR_CONSUMER_SECRET"]
     @oauth_token = ENV["TUMBLR_OAUTH_TOKEN"]
     @oauth_token_secret = ENV["TUMBLR_OAUTH_TOKEN_SECRET"]
 
