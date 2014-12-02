@@ -1,7 +1,5 @@
 <section>
   <div class="content">
-    <p id="notice"><%= notice %></p>
-
       <% @job_postings.each do |job_posting| %>
 
       <div class="large-4 medium-4 small-12 columns">
@@ -16,8 +14,8 @@
                   <i class="fa fa-tags"></i><a><%= "#{job_posting.company_profile.company_type}" %></a>
                 </div>
                 <!-- company name -->
-                <div id = 'figure' class="company_name">
-                  <p><%= "#{job_posting.company_profile.company_name}" %></p>
+                <div d = 'figure' class="company_name">
+        i          <p><%= "#{job_posting.company_profile.company_name}" %></p>
                 </div>
               </div>
             </div>

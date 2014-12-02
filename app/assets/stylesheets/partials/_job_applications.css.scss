@@ -1,0 +1,85 @@
+/* ==========================================================================
+  	job applications
+   ========================================================================== */
+
+#job_applications_container{
+	margin: rem-calc(20px 250px 0 250px);
+	@media #{$medium-only}{margin: rem-calc(20px 100px 0 100px);}
+	@media #{$small-only}{margin: rem-calc(20px 20px 0 20px);}
+	#Job_position{
+		dl{
+			margin: 0px;
+			text-align: center;
+			dd{
+				display: none;
+				margin: 0px;
+			}
+			dt{
+			text-align: center;	
+			}
+		}
+	}
+	#post_new_button{
+				@media #{$medium-only}{
+					margin: rem-calc(5px 0px 0px 0px);
+				}
+				@media #{$small-only}{
+					margin: rem-calc(5px 0px 0px 0px);
+				}
+			.button{
+				padding: rem-calc(10px 10px);
+				}
+			a{	
+				margin: 0px;
+				font-size: $varfontsize_h2;
+				@media #{$medium-only}{
+					font-size: $varfontsize_h4;
+				}
+				@media #{$small-only}{
+					font-size: $varfontsize_h3;
+				}
+			}
+		}
+	#profile_container{
+		background-color: white;
+		border: 1px solid $iron;
+		border-radius: rem-calc(3em);
+		margin: rem-calc(0% 0px 0px 0px);
+		dl{
+			margin: 0px;
+			text-align: center;
+			dd{
+				display: none;
+				margin: 0px;
+			}
+			dt{
+			text-align: center;	
+			}
+		}
+		#about_title{
+			font-size: $varfontsize_h1;
+			font-weight: bolder;
+		}
+		#about_content{
+			font-size: $varfontsize_h2;
+			font-weight: normal;
+
+		}
+		#image{}
+		#student{}
+		#cover_letter{}
+	}	
+	#Application_date{
+		dl{
+			margin: 0px;
+			text-align: center;
+			dd{
+				display: none;
+				margin: 0px;
+			}
+			dt{
+			text-align: center;	
+			}
+		}
+	}
+}

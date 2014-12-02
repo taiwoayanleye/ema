@@ -1,109 +1,109 @@
-<section>
-  <div class="content">
-    <div>
-      <h3></h3>
-    <div class = 'search_wrapper'>
-      <%= form_tag search_student_profiles_url, :method => 'get' do %>
-      <div class="search_postings">
-        <div class="row">
-          <!-- search_positions -->
-          <div class="large-4 medium-4 small-4 columns">
-            <div class="search_positions">
-              <p>
-               <%= text_field_tag :school_text, @school_text, placeholder: 'School' %>
-              </p>
+  <section>
+    <div class="content">
+      <div>
+        <h3></h3>
+      <div class = 'search_wrapper'>
+        <%= form_tag search_student_profiles_url, :method => 'get' do %>
+        <div class="search_postings">
+          <div class="row">
+            <!-- search_positions -->
+            <div class="large-4 medium-4 small-4 columns">
+              <div class="search_positions">
+                <p>
+                 <%= text_field_tag :school_text, @school_text, placeholder: 'School' %>
+                </p>
+              </div>
             </div>
-          </div>
-          <!-- search_description -->
-          <div class="large-4 medium-4 small-4 columns">
-            <div class="search_description">
-              <p>
-                <%= select_tag :year_text, options_for_select(@years, @year_text), placeholder: 'Year' %>
-              </p>
+            <!-- search_description -->
+            <div class="large-4 medium-4 small-4 columns">
+              <div class="search_description">
+                <p>
+                  <%= select_tag :year_text, options_for_select(@years, @year_text), placeholder: 'Year' %>
+                </p>
+              </div>
             </div>
-          </div>
-          <!-- search_pay -->
-          <div class="large-4 medium-4 small-4 columns">
-            <div class="search_pay">
-              <p>
-                <%= text_field_tag :skill_text, @skill_text, placeholder: 'Skill'%>
-              </p>
-            </div> 
-          </div>
+            <!-- search_pay -->
+            <div class="large-4 medium-4 small-4 columns">
+              <div class="search_pay">
+                <p>
+                  <%= text_field_tag :skill_text, @skill_text, placeholder: 'Skill'%>
+                </p>
+              </div> 
+            </div>
 
+          </div>
         </div>
+
+        <div class="row">
+            <div class="large-12 medium-12 small-12 columns">
+              <div class = 'search_button'>
+                <a><%= submit_tag 'Search' , class:"button radius large-12 small-12 medium-12" %></a>
+              </div>
+            </div>
+        </div>
+        <% end %>
       </div>
 
-      <div class="row">
-        <div class="large-12 medium-12 small-12 columns">
-          <div class = 'search_button'>
-            <a><%= submit_tag 'Search' , class:"button radius large-12 small-12 medium-12" %></a>
+
+      <%# paginate @return %>
+      <% if !@return.nil? && !@return.empty? %>
+      <% @return.each do |student_profile| %>
+      
+
+        <!-- profiled_intern_listing -->
+      <div class="small-12 medium-4 large-4 columns">
+        <div class = 'all_intern'>
+          <div class='pro_int_listing'>
+            <!-- profiled_intern_image -->
+            <div class="row">
+              <div class="small-12 medium-12 large-12 columns">
+                <div class='pro_int_image'>
+                  <%= link_to image_tag(student_profile.image_url(:thumb)), student_profile %>
+                </div>
+              </div>
+            </div>
+              
+
+            <!-- company_name_and_type -->
+            <div class="row">
+              <div class="small-12 medium-12 large-12 columns">
+                <div class='pro_int_g_s_wrapper'>
+                   <p class="pro_int_major">
+                  <!-- <i><i class="fa fa-book rep_major"></i> --><a><%= student_profile.major %></a>
+                   </p>
+                   <p class="pro_int_sch">
+                   <i class="fa fa-institution"></i><a><%= student_profile.school %></a>
+                   </p>
+                   <!-- <i class = "divider"><%= '|' %></i>
+                   <i class="pro_int_grad">
+                   <i class="fa fa-graduation-cap"></i><%= student_profile.expected_graduation %>
+                   </i> -->
+                </div>
+              </div>
+            </div>
+
+            <!-- profiled_intern_name -->
+            <div class="row">
+              <div class="small-12 medium-12 large-12 columns">
+                <div class='pro_int_n_m_wrapper'>
+                  <i class="pro_int_name">
+                  <%= student_profile.first_name %>
+                  </i>
+                </div>
+              </div>
+              </div>
+
           </div>
         </div>
       </div>
       <% end %>
-    </div>
-
-
-    <%= paginate @return %>
-    <% if !@return.nil? && !@return.empty? %>
-    <% @return.each do |student_profile| %>
-    
-
-      <!-- profiled_intern_listing -->
-    <div class="small-12 medium-4 large-4 columns">
-      <div class = 'all_intern'>
-        <div class='pro_int_listing'>
-          <!-- profiled_intern_image -->
-          <div class="row">
-            <div class="small-12 medium-12 large-12 columns">
-              <div class='pro_int_image'>
-                <%= link_to image_tag(student_profile.image_url(:thumb)), student_profile %>
-              </div>
-            </div>
-          </div>
-            
-
-          <!-- company_name_and_type -->
-          <div class="row">
-            <div class="small-12 medium-12 large-12 columns">
-              <div class='pro_int_g_s_wrapper'>
-                 <p class="pro_int_major">
-                <!-- <i><i class="fa fa-book rep_major"></i> --><a><%= student_profile.major %></a>
-                 </p>
-                 <p class="pro_int_sch">
-                 <i class="fa fa-institution"></i><a><%= student_profile.school %></a>
-                 </p>
-                 <!-- <i class = "divider"><%= '|' %></i>
-                 <i class="pro_int_grad">
-                 <i class="fa fa-graduation-cap"></i><%= student_profile.expected_graduation %>
-                 </i> -->
-              </div>
-            </div>
-          </div>
-
-          <!-- profiled_intern_name -->
-          <div class="row">
-            <div class="small-12 medium-12 large-12 columns">
-              <div class='pro_int_n_m_wrapper'>
-                <i class="pro_int_name">
-                <%= student_profile.first_name %>
-                </i>
-              </div>
-            </div>
-            </div>
-
-        </div>
+      <% else %>
+        <h3>No results.</h3>
+      <% end %>
+      <%= paginate @return %> 
       </div>
+      
     </div>
-    <% end %>
-    <% else %>
-      <h3>No results.</h3>
-    <% end %>
-    <%= paginate @return %> 
-    </div>
-    
-  </div>
-</section>
+  </section>
 
 

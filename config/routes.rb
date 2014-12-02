@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'blog/index'
+
   resources :job_applications
 
   resources :saved_student_profiles
@@ -7,6 +9,7 @@ Rails.application.routes.draw do
   resources :saved_job_postings
 
   #Website root page
+  # root 'blog#index'
   root 'job_postings#search'
   
   #RailsAdmin
@@ -56,8 +59,12 @@ Rails.application.routes.draw do
   get 'applicants' => "job_applications#applicants"
 
   #Blog
+<<<<<<< HEAD
   # get '/blog' => redirect('/blog/')
   mount Monologue::Engine, at: '/blog'  
+=======
+  # get '/blog' => redirect('/blog/')  
+>>>>>>> 556ba72919a4198a025fbf3e18015a310a8d96b2
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

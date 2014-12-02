@@ -14,10 +14,11 @@ class CompanyProfilesController < ApplicationController
   # GET /company_profiles/1
   # GET /company_profiles/1.json
   def show
+
     if current_user.user_type == 'company'
-    @company_profile = current_user.profile
+      @company_profile = current_user.profile
     else
-    @company_profile =  CompanyProfile.where(id: params[:id]).first
+      @company_profile =  CompanyProfile.where(id: params[:id]).first
     end
   end
 

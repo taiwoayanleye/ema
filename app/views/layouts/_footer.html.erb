@@ -1,33 +1,28 @@
 <section class="foot">
-	<!--About & Contact-->
-	<div class="about_image_contact">
+	<!--About & Contact with enclosed Image-->
+	<div id="about_contact_outter">
 		<div class="row">
 			<div class="large-12 medium-12 small-12 columns">
-			
-				<!--About-->
-		    	<div class="large-4 medium-4 small-4 columns">
-		    	<div class ="about">
-					<a><%= link_to "About", pages_about_path %></a>
-				</div>
-				</div>
-				<!--Image-->
-				<div class="large-4 medium-4 small-4 columns">
-				<div class ="image">
-					<%= link_to image_tag('https://s3-us-west-2.amazonaws.com/stutern/stutern_logo.png'), '/student_profiles' %>
-				</div>
-				</div>
-				<!--Contact-->
-				<div class="large-4 medium-4 small-4 columns">
-				<div class ="contact">
-					<a><%= link_to "Contact", pages_contact_path %></a>
-				</div>
+				<div id="about_contact_inner">
+					<img class ="image">
+					<!-- #<%= link_to image_tag('stutern_logo.png')%> -->
+					<%= link_to image_tag('https://s3-us-west-2.amazonaws.com/stutern/stutern_logo.png'), '/student_profiles' %> 
+					</img>
+					<a id='about'><%= link_to "About", pages_about_path %></a>
+					<!-- spacing use for indentation -->
+					&#124
+					
+
+					<a id='contact'><%= link_to "Contact", pages_contact_path %></a>
 				</div>
 			</div>
 		</div>
 	</div>
+
+	<!-- Copyright -->
 	<div class="row">
 		<div class="large-12 medium-12 small-12 columns">
-			<p id="copyright">© STUTERN, INC.</p>
+			<p id="copyright">© 2014 . All Rights Reserved. Privacy Policy | Terms of Use</p>
 		</div>
 	</div>
 </section>

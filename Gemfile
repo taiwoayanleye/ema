@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.2'
+ruby '2.1.3'
 
 gem 'rails', '4.1.6'
 gem 'sass-rails', '~> 4.0.3'
@@ -40,7 +40,14 @@ gem 'mandrill_mailer'
 #Blogging
 # gem 'bloggy'
 # gem "rack-reverse-proxy", require: "rack/reverse_proxy"
-gem 'tumblr_client'
+# <<<<<<< HEAD
+# gem 'tumblr_client'
+# =======
+# # gem 'omniauth-tumblr'
+# gem 'tumblr_client', '0.8.2'
+# gem 'haml', '~> 4.0.5' 
+# gem 'faraday', '0.8.0'
+# >>>>>>> 556ba72919a4198a025fbf3e18015a310a8d96b2
 
 
 group :doc do 

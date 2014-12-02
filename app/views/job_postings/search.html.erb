@@ -1,20 +1,20 @@
-<%= render 'home/home' %>
+ <%= render 'home/home' %>
 <section>
   <div class="content">
-    <div>
-      <h3>Search Intern Postings</h3>
-      <div class = 'search_wrapper'>
-        <%= form_tag search_job_postings_url, :method => 'get' do %>
-        <div class="search_postings">
-          <div class="row">
-            <!-- search_positions -->
-            <div class="large-6 medium-6 small-12 columns">
-              <div class="search_positions">
-                <p>
-                  <%= search_field_tag :position_text, @position_text, placeholder: "Position eg. Sales" %>
-                </p>
+      <div>
+<!--         <h3>Search Intern Postings</h3> -->
+        <div class = 'search_wrapper'>
+          <%= form_tag search_job_postings_url, :method => 'get' do %>
+          <div class="search_postings">
+            <div class="row">
+              <!-- search_positions -->
+              <div class="large-6 medium-6 small-12 columns">
+                <div class="search_positions">
+                  <p>
+                    <%= search_field_tag :position_text, @position_text, placeholder: "Position eg. Sales" %>
+                  </p>
+                </div>
               </div>
-            </div>
 
             <!-- search_pay -->
             <div class="large-6 medium-6 small-12 columns">
@@ -102,8 +102,6 @@
               </div>
             </div>
 
-          
-
         </div>
       </div>
 
@@ -114,6 +112,7 @@
         <h3>No results.</h3>
       <% end %>
       <%= paginate @return %>
+
 <!--       <div class="row">
         <div class="large-9 small-9 small-centered large-centered columns">
           <div class= "button radius large-12 small-12 medium-12 more">

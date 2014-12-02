@@ -1,6 +1,21 @@
-<h1>Editing job_posting</h1>
+<div class="site-content">
+  <div class="row" style="max-width: 30em;">
+    <div class="all">
+    	 
+        <!--title: New Skill-->
+      <div class="large-12 small-12 columns">
+        <div class="welcome">
+          <div class="row">
+            <div class="large-12 medium-12 small-12 columns">
+            <h2>Edit Internship Posting</h2></div><hr>
+          </div>
+        </div>
+      </div>
 
-<%= render 'form' %>
+		<%= render 'form' %>
+		<%= link_to 'Show', @job_posting %> |
+		<%= link_to 'Back', job_postings_path %>
 
-<%= link_to 'Show', @job_posting %> |
-<%= link_to 'Back', job_postings_path %>
+		</div>
+	</div>
+</div>
