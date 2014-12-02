@@ -56,7 +56,8 @@ Rails.application.routes.draw do
   get 'applicants' => "job_applications#applicants"
 
   #Blog
-  get '/blog' => redirect('/blog/')  
+  # get '/blog' => redirect('/blog/')
+  mount Monologue::Engine, at: '/blog'  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
