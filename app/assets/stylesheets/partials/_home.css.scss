@@ -11,7 +11,7 @@
 		display:block;
 		width: 100%;
 		height: rem-calc(400em);
-		background-image:url("cover.png");
+		background-image:url("https://s3-us-west-2.amazonaws.com/stutern/cover.png");
 		background-size: cover;
 		background-repeat: no-repeat;
 		@include filter(grayscale(0%) contrast(110%) brightness(0.5) blur(1px));
