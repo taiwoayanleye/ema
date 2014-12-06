@@ -38,16 +38,6 @@ gem 'omniauth-twitter'
 gem 'mandrill-api'
 gem 'mandrill_mailer'
 #Blogging
-# gem 'bloggy'
-# gem "rack-reverse-proxy", require: "rack/reverse_proxy"
-# <<<<<<< HEAD
-# gem 'tumblr_client'
-# =======
-# # gem 'omniauth-tumblr'
-# gem 'tumblr_client', '0.8.2'
-# gem 'haml', '~> 4.0.5' 
-# gem 'faraday', '0.8.0'
-# >>>>>>> 556ba72919a4198a025fbf3e18015a310a8d96b2
 
 
 group :doc do 
@@ -68,18 +58,4 @@ group :production do
 	gem 'pg'
 	gem 'rails_12factor'
 end
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-
-gem 'monologue', github: 'jipiboily/monologue'
 
