@@ -38,7 +38,7 @@ gem 'omniauth-twitter'
 gem 'mandrill-api'
 gem 'mandrill_mailer'
 #Blogging
-
+gem 'monologue'
 
 group :doc do 
 	gem 'sdoc', '~> 0.4.0'
