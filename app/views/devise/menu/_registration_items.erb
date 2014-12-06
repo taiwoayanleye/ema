@@ -7,10 +7,10 @@
 	        <a href="#">Register</a>
 	        <ul class="dropdown">
 	          <li>
-	          	<%= link_to 'Candidate', new_user_registration_path(user_type: "student"), :class => 'navbar-link' %>
+	          	<%= link_to 'Candidate', main_app.new_user_registration_path(user_type: "student"), :class => 'navbar-link' %>
 	          </li>
 	          <li>
-	          	<%= link_to 'Employer', new_user_registration_path(user_type: "company"), :class => 'navbar-link' %>
+	          	<%= link_to 'Employer', main_app.new_user_registration_path(user_type: "company"), :class => 'navbar-link' %>
 	          </li>
 	        </ul>
 	      </li>
