@@ -149,6 +149,7 @@ GEM
     fssm (0.2.10)
     haml (4.0.5)
       tilt
+    hashie (3.3.1)
     hike (1.2.3)
     i18n (0.6.11)
     inflecto (0.0.2)
@@ -198,6 +199,9 @@ GEM
     newrelic_rpm (3.9.6.257)
     nokogiri (1.6.4.1)
       mini_portile (~> 0.6.0)
+    omniauth (1.2.2)
+      hashie (>= 1.2, < 4)
+      rack (~> 1.0)
     opennebula (4.10.1)
       json
       nokogiri
@@ -330,6 +334,7 @@ DEPENDENCIES
   meta_request
   monologue
   newrelic_rpm
+  omniauth
   pg
   populator
   prawn
