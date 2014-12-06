@@ -1,0 +1,65 @@
+.container .twelve.columns {
+    width: 940px;
+}
+.contrainer {
+    width: 940px;
+}
+
+.welcome_container {
+    position: absolute;
+    width: 960px;
+    margin: 0px auto;
+    padding: 0px;
+}
+
+.welcome_content {
+    border-top: 1px solid #000;
+    margin-top: -10px;
+}
+
+.social_wrapper i {
+    float: right;
+    margin: 0px 5px;
+}
+
+.social_wrapper {
+    width: 200px;
+    margin: 10px auto;
+}
+
+#main_subtitle {
+    display: none;
+}
+
+.main_title_wrapper{
+    float: left;
+}
+
+.main_social_wrapper{
+    float: right;
+    margin-top: 20px;
+}
+
+#main_title a, a:visited{
+    text-decoration: none;
+}
+
+.welcome_header img {
+    width: 30px;
+    margin-right: 5px;
+}
+
+#main_title img {
+    width: 30px;
+    margin-right:  5px;
+}
+
+.welcome_header h1 {
+    width: 300px;
+    position: relative;
+    margin: 0px auto 15px auto; 
+}
+
+.welcome_header h1 a, a:visited {
+    text-decoration: none;
+}
