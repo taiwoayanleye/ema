@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-ruby '2.1.3'
+ruby '2.1.2'
 
-gem 'rails', '4.1.6'
+gem 'rails', '4.1.9'
 gem 'sass-rails', '~> 4.0.3'
 gem 'sass', '3.2.19'
 gem 'uglifier', '>= 1.3.0'
