@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141202091922) do
+ActiveRecord::Schema.define(version: 20141206133017) do
 
   create_table "company_profiles", force: true do |t|
     t.string   "company_name"
@@ -162,7 +162,7 @@ ActiveRecord::Schema.define(version: 20141202091922) do
     t.string   "last_completed_degree"
     t.string   "residential_address"
     t.string   "major"
-    t.string   "brief_summary"
+    t.text     "brief_summary"
     t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
